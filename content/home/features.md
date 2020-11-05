@@ -15,28 +15,40 @@ subtitle = "Provides a convenient solution for data collection and processing of
 # For available icons, see: https://sourcethemes.com/academic/docs/page-builder/#icons
 
 [[feature]]
-  icon = "database"
+  icon = "file-import"
   icon_pack = "fas"
-  name = "Data Collection"
-  description = "Implement mature and robust API to collect the well-organized metadata of PDB"
+  name = "Collection"
+  description = "Implement various API to collect the well-organized metadata of PDB in real time."
   
 [[feature]]
   icon = "search"
   icon_pack = "fas"
   name = "Detection"
-  description = "Reorganize metadata to evaluate a PDB structure in various level"  
-  
-[[feature]]
-  icon = "list-alt"
-  icon_pack = "fas"
-  name = "Selection"
-  description = "Define the representative set of PDB structures in mo/ho/he states"
+  description = "Reorganize metadata to evaluate a PDB structure in Entry-Assembly/Model-Entity-Chain-Residue level and integrated with UniProt-KB."  
   
 [[feature]]
   icon = "object-ungroup"
   icon_pack = "fas"
+  name = "Compatibility"
+  description = "Provide enough information for integrating mmCIF format and PDB format."  
+
+[[feature]]
+  icon = "project-diagram"
+  icon_pack = "fas"
+  name = "Interaction"
+  description = "Include UniProt Isoform Interaction in Asymmetric unit plus Biologial Assembly level."  
+
+[[feature]]
+  icon = "list-alt"
+  icon_pack = "fas"
+  name = "Selection"
+  description = "Define the representative set of PDB structures in Monomeric|Homomeric|Heteromeric states."
+  
+[[feature]]
+  icon = "exchange-alt"
+  icon_pack = "fas"
   name = "Mapping"
-  description = "Provide interface for ID/residue mapping"
+  description = "Provide interface for both entty-identifier/accession-level and residue-level bidirectional mapping."
 
 # Uncomment to use emoji icons.
 # [[feature]]
