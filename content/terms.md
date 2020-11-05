@@ -1,7 +1,8 @@
 ---
-title: "pdb-profiling: Profiling Protein Structures from Protein Data Bank and
-  integrate various resources"
+title: pdb-profiling (2020-now)
 date: 2020-11-05T09:14:05.782Z
+subtitle: Profiling Protein Structures from Protein Data Bank and integrate
+  various resources
 summary: ""
 draft: false
 ---
