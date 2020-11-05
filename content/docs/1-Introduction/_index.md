@@ -1,13 +1,13 @@
 ---
 # Title, summary, and page position.
-linktitle: Introduction
+linktitle: Section1 Introduction
 summary: A brife summary of the problems it solves and some background information.
 weight: 1
 icon: book
 icon_pack: fas
 
 # Page metadata.
-title: Introduction
+title: Section1 Introduction
 date: "2020-11-05T00:00:00Z"
 type: book  # Do not modify.
 ---
@@ -23,7 +23,7 @@ type: book  # Do not modify.
 * 解析PDB完整文件需要大量存储空间与下载/计算时间，为获取相关元数据而对完整PDB文件进行处理有些南辕北辙
 * 解析各种PDB文件格式(`.pdb`, `.cif`, `.mmtf` etc.)在具有相关现成parser函数的情况下仍具有较高编程成本且存在各种边缘异常情况
 
-所幸，`EBI`提供的`PDBe RESTful API`等服务能够很好的解决获取元数据的便捷性问题。面对上述问题，`pdb-profiling`应用了`PDBe`的`Entry-Based API`与`Aggregated API`(`PDBe Graph API`)。利用`Entry-Based API`能够实时地获取最新的PDB在`Entry-Assembly/Model-Entity-Chain-Residue`水平的元数据信息，进型相关信息的批量检索与收集。此外，这些信息也为.pdb与.cif及其他格式之间的数据标识符转化提供了足够信息，能够做到向前兼容一些较为早期的(old history)软件所需的标识符格式信息。且不单单应对`asymmetric unit`，同时处理好`biological assembly`。利用`Entry-Based API`中的`SIFTS API`能够做到最新版本下`UniProt Isofrom`与对应PDB在`chain-level`以及`residue-level`的高效映射，结合`EBI's Proteins API`能够实现突变信息在转录本与对应`PDB Chain Instance`的残基的双向映射。`PDBe`的`Aggregated API`与`Entry-Based API`还一同提供了`chain-level`和`residue-level`的丰富注释信息，能够获取结构域、二级结构、残基保守性、配体结合倾向等大量且丰富的预先计算好的特征。
+所幸，`EBI`提供的`PDBe RESTful API`等服务能够很好的解决获取元数据的便捷性问题。面对上述问题，`pdb-profiling`应用了`PDBe`的`Entry-Based API`与`Aggregated API`(`PDBe Graph API`)。利用`Entry-Based API`能够实时地获取最新的PDB在`Entry-Assembly/Model-Entity-Chain-Residue`水平的元数据信息，进行相关信息的批量检索与收集。此外，这些信息也为.pdb与.cif及其他格式之间的数据标识符转化提供了足够信息，能够做到向前兼容一些较为早期的(old history)软件所需的标识符格式信息。且不单单应对`asymmetric unit`，同时处理好`biological assembly`。利用`Entry-Based API`中的`SIFTS API`能够做到最新版本下`UniProt Isofrom`与对应PDB在`chain-level`以及`residue-level`的高效映射，结合`EBI's Proteins API`能够实现突变信息在转录本与对应`PDB Chain Instance`的残基的双向映射。`PDBe`的`Aggregated API`与`Entry-Based API`还一同提供了`chain-level`和`residue-level`的丰富注释信息，能够获取结构域、二级结构、残基保守性、配体结合倾向等大量且丰富的预先计算好的特征。
 
 ## 与`UniProt-KB`数据资源在整合时的问题
 
@@ -125,7 +125,7 @@ type: book  # Do not modify.
 
 `pdb-profiling`在`SIFTS API`等提供的数据的基础上，自主探查出
 
-* UniProt Isoform与PDB Chain的对应关系中的Deletion、InDel区域情况，并对匹配区域进型修正
+* UniProt Isoform与PDB Chain的对应关系中的Deletion、InDel区域情况，并对匹配区域进行修正
 * mapped out segment(have removed artifact residues)情况
 * repeated mapping与reversed mapping情况
 * 匹配区域中的残基坐标缺失情况

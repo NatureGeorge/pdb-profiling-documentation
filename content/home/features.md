@@ -21,16 +21,16 @@ subtitle = "Provides a convenient solution for data collection and processing of
   description = "Implement various API to collect the well-organized metadata of PDB in real time."
   
 [[feature]]
-  icon = "search"
-  icon_pack = "fas"
-  name = "Detection"
-  description = "Reorganize metadata to evaluate a PDB structure in Entry-Assembly/Model-Entity-Chain-Residue level and integrated with UniProt-KB."  
-  
-[[feature]]
   icon = "object-ungroup"
   icon_pack = "fas"
   name = "Compatibility"
-  description = "Provide enough information for integrating mmCIF format and PDB format."  
+  description = "Provide a unified call for API-interface and return-data-form as well as subsequent data processing."
+
+[[feature]]
+  icon = "search"
+  icon_pack = "fas"
+  name = "Detection"
+  description = "Reorganize metadata to evaluate a PDB structure in Entry-Assembly/Model-Entity-Chain-Residue level and integrated with UniProt-KB."    
 
 [[feature]]
   icon = "project-diagram"
@@ -48,7 +48,7 @@ subtitle = "Provides a convenient solution for data collection and processing of
   icon = "exchange-alt"
   icon_pack = "fas"
   name = "Mapping"
-  description = "Provide interface for both entty-identifier/accession-level and residue-level bidirectional mapping."
+  description = "Provide interface for both entry-identifier/accession-level and residue-level bidirectional mapping."
 
 # Uncomment to use emoji icons.
 # [[feature]]
