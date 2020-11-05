@@ -6,7 +6,7 @@ active = true  # Activate this widget? true/false
 weight = 20  # Order that this section will appear.
 
 title = "Features"
-subtitle = "Document _anything_ ✨"
+subtitle = "Provides a convenient solution for data collection and processing of PDB metadata. 🏄‍♂️"
 
 # Showcase features.
 # 
@@ -15,22 +15,28 @@ subtitle = "Document _anything_ ✨"
 # For available icons, see: https://sourcethemes.com/academic/docs/page-builder/#icons
 
 [[feature]]
-  icon = "book-open"
+  icon = "database"
   icon_pack = "fas"
-  name = "Project Documentation"
-  description = "For users"
+  name = "Data Collection"
+  description = "Implement mature and robust API to collect the well-organized metadata of PDB"
   
 [[feature]]
-  icon = "question"
+  icon = "search"
   icon_pack = "fas"
-  name = "Knowledge Base"
-  description = "For teams"  
+  name = "Detection"
+  description = "Reorganize metadata to evaluate a PDB structure in various level"  
   
 [[feature]]
   icon = "list-alt"
   icon_pack = "fas"
-  name = "Personal Notebook"
-  description = "For yourself"
+  name = "Selection"
+  description = "Define the representative set of PDB structures in mo/ho/he states"
+  
+[[feature]]
+  icon = "object-ungroup"
+  icon_pack = "fas"
+  name = "Mapping"
+  description = "Provide interface for ID/residue mapping"
 
 # Uncomment to use emoji icons.
 # [[feature]]
