@@ -176,6 +176,12 @@ $$
 \end{bmatrix}
 $$
 
+$$
+\text{RAW\_BS}=\cfrac{\text{Score}}{\text{length of UniProt Isoform}}
+$$
+
+RAW_BS分值最佳为1，取值范围为$(-\infty, 1]$
+
 ### Coverage Metric
 
 对于单体蛋白结构代表集选择即利用贪婪算法与`overlap similarity coefficient` metric来选择出排名靠前的且覆盖`UniProt Isoform`范围有足够差异的`PDB Chain`。
