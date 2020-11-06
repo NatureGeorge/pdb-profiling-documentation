@@ -166,21 +166,10 @@ W = [1, -1, -1, -1.79072623, -2.95685934, -4.6231746]
 $$
 
 $$
-\text{Score} = W\begin{bmatrix}
-  s_1\\
-  s_2\\
-  s_3\\
-  s_4\\
-  s_5\\
-  s_6\\
-\end{bmatrix}
+\text{Score}=\cfrac{\sum_{i=1}^{n=6}w_i\cdot s_i}{\text{length of UniProt Isoform Seq}}
 $$
 
-$$
-\text{RAW\_BS}=\cfrac{\text{Score}}{\text{length of UniProt Isoform}}
-$$
-
-RAW_BS分值最佳为1，取值范围为$(-\infty, 1]$
+分值最佳为1，取值范围为$(-\infty, 1]$
 
 ### Coverage Metric
 
