@@ -2,7 +2,7 @@
 # Title, summary, and page position.
 linktitle: How-to Guides
 summary: Problem-Oriented
-weight: 2
+weight: 3
 icon: book-reader
 icon_pack: fas
 

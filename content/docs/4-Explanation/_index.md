@@ -2,7 +2,7 @@
 # Title, summary, and page position.
 linktitle: Explanation
 summary: Understanding-Oriented
-weight: 2
+weight: 4
 icon: book-reader
 icon_pack: fas
 
