@@ -14,6 +14,8 @@ type: book  # Do not modify.
 
 > The problem it solves
 
+在自然生物体内，一生物功能的实现，往往需要具有生物学效应的蛋白质参与实施。对蛋白质结构本身、蛋白-蛋白相互作用(PPI)等层面的研究火热进行中。在繁复多样的数据中，**P**rotein**D**ata**B**ank(PDB)无疑是公认的重要资源，其与UniProt-KB等资源的整合能够很好地将生物学意义落实到具体的功能结构上。但是，处理PDB以及相关数据的相关工作还存在不少gap需要跨越。`pdb-profiling`为此而生。
+
 ## PDB元数据获取层面的相关问题
 
 随着PDB条目数据的增长，对PDB元数据(metadata)批量处理的需求也在逐渐增加。同时，处理PDB数据本身也有着如下特点:
@@ -43,6 +45,7 @@ type: book  # Do not modify.
   * modified residue
   * ligand binding residue
   * ca_p_only chain
+* UniProt数据本身也会随着版本更新而对条目数据进行变化，包括条目的增删改、canonical isoform的重新界定等
 
 这使得确定一个严谨准确的蛋白质结构代表集流程对科学研究有着相当的重要性。
 
@@ -149,6 +152,32 @@ type: book  # Do not modify.
 
 并依据这些信息结合相关Entry-Based API获取来的信息对`UniProt Isoform`与`PDB Chain`的对应关系进行打分，即得到固定`UniProt Isoform`下其对应的多条`PDB Chain`的符合度指标，并进行排序。
 
+### How it score
+
+1. $s_1$: the number of residues that observed & mapped & standard
+2. $s_2$: the number of residues out of mapped ranges while ignoring artifact residues
+3. $s_3$: the number of residues that binds ligands
+4. $s_4$: the number of residues that missing in the tertiary structure
+5. $s_5$: the number of residues that observed & mapped & (conflict | modified)
+6. $s_6$: the number of residues that fall into the ranges of Indel region
+
+$$
+W = [1, -1, -1, -1.79072623, -2.95685934, -4.6231746]
+$$
+
+$$
+\text{Score} = W\begin{bmatrix}
+  s_1\\
+  s_2\\
+  s_3\\
+  s_4\\
+  s_5\\
+  s_6\\
+\end{bmatrix}
+$$
+
+### Coverage Metric
+
 对于单体蛋白结构代表集选择即利用贪婪算法与`overlap similarity coefficient` metric来选择出排名靠前的且覆盖`UniProt Isoform`范围有足够差异的`PDB Chain`。
 
 $$
@@ -164,6 +193,8 @@ $$
 $$
 \text{WD}_{\text{ho}} = \text{wasserstein\_distance}(\text{interface\_res1\_distribution}, \text{interface\_res2\_distribution})
 $$
+
+### Selection Algorithm
 
 <table>
   <tr>
