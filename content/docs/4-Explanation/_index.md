@@ -1,13 +1,13 @@
 ---
 # Title, summary, and page position.
-linktitle: Section4 Explanation🛠
+linktitle: Explanation
 summary: Understanding-Oriented
-weight: 1
+weight: 2
 icon: book-reader
 icon_pack: fas
 
 # Page metadata.
-title: Section4 Explanation
+title: Explanation
 date: "2020-11-05T00:00:00Z"
 type: book  # Do not modify.
 ---

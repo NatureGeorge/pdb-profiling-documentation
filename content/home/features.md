@@ -36,7 +36,7 @@ subtitle = "Provides a convenient solution for data collection and processing of
   icon = "project-diagram"
   icon_pack = "fas"
   name = "Interaction"
-  description = "Include UniProt Isoform Interaction in Asymmetric unit plus Biologial Assembly level."  
+  description = "Include UniProt Isoform Interaction in Asymmetric unit plus Biological Assembly level."  
 
 [[feature]]
   icon = "list-alt"

@@ -1,13 +1,13 @@
 ---
 # Title, summary, and page position.
-linktitle: Section1 Introduction
+linktitle: Introduction
 summary: A brife summary of the problems it solves and some background information.
 weight: 1
 icon: book
 icon_pack: fas
 
 # Page metadata.
-title: Section1 Introduction
+title: Introduction
 date: "2020-11-05T00:00:00Z"
 type: book  # Do not modify.
 ---
@@ -51,14 +51,18 @@ type: book  # Do not modify.
     <td>
       <img src="https://naturegeorge.github.io/eigenblog/assets/img/unp_map_pdb.drawio.svg">
     </td>
-    <td>
-      <img src="https://naturegeorge.github.io/eigenblog/assets/img/unp_map_pdb_insertion.drawio.svg">
-    </td>
   </tr>
   <tr>
     <td>
       P68871 mapped with 1a01 Chain B
     </td>
+  </tr>
+  <tr>
+    <td>
+      <img src="https://naturegeorge.github.io/eigenblog/assets/img/unp_map_pdb_insertion.drawio.svg">
+    </td>
+  </tr>
+  <tr>
     <td>
       Insertion: P30038-3 mapped with 4oe5 Chain D
     </td>
@@ -67,14 +71,18 @@ type: book  # Do not modify.
     <td>
       <img src="https://naturegeorge.github.io/eigenblog/assets/img/unp_map_pdb_deletion.drawio.svg">
     </td>
-    <td>
-      <img src="https://naturegeorge.github.io/eigenblog/assets/img/unp_map_pdb_indel.drawio.svg">
-    </td>
   </tr>
   <tr>
     <td>
       Deletion: Q13303-3 mapped with 1zsx Chain A
     </td>
+  </tr>
+  <tr>
+    <td>
+      <img src="https://naturegeorge.github.io/eigenblog/assets/img/unp_map_pdb_indel.drawio.svg">
+    </td>
+  </tr>
+  <tr>
     <td>
       InDel: Q01780 mapped with 6d6q Chain J
     </td>
@@ -83,14 +91,18 @@ type: book  # Do not modify.
     <td>
       <img src="https://raw.githubusercontent.com/NatureGeorge/pdb-profiling/a7841d4033b3d5be6d17d225133e40912cf000ea/docs/figs/sifts_reversed_mapping.drawio.svg">
     </td>
-    <td>
-      <img src="https://raw.githubusercontent.com/NatureGeorge/pdb-profiling/a7841d4033b3d5be6d17d225133e40912cf000ea/docs/figs/sifts_repeated_mapping.drawio.svg">
-    </td>
   </tr>
   <tr>
     <td>
       Reversed Mapping: P00441 mapped with 5j0c Chain A
     </td>
+  </tr>
+  <tr>
+    <td>
+      <img src="https://raw.githubusercontent.com/NatureGeorge/pdb-profiling/a7841d4033b3d5be6d17d225133e40912cf000ea/docs/figs/sifts_repeated_mapping.drawio.svg">
+    </td>
+  </tr>
+  <tr>
     <td>
       Repeated Mapping: Q7KZ85-3 mapped with 6gmh Chain M
     </td>
@@ -99,14 +111,18 @@ type: book  # Do not modify.
     <td>
       <img src="https://raw.githubusercontent.com/NatureGeorge/pdb-profiling/a7841d4033b3d5be6d17d225133e40912cf000ea/docs/figs/sifts_mapped_out_1.drawio.svg">
     </td>
-    <td>
-      <img src="https://raw.githubusercontent.com/NatureGeorge/pdb-profiling/a7841d4033b3d5be6d17d225133e40912cf000ea/docs/figs/sifts_mapped_out_2.drawio.svg">
-    </td>
   </tr>
   <tr>
     <td>
       Mapped Out Situation: P14647 mapped with 3agp Chain A
     </td>
+  </tr>
+  <tr>
+    <td>
+      <img src="https://raw.githubusercontent.com/NatureGeorge/pdb-profiling/a7841d4033b3d5be6d17d225133e40912cf000ea/docs/figs/sifts_mapped_out_2.drawio.svg">
+    </td>
+  </tr>
+  <tr>
     <td>
       Mapped Out Situation: Q16611 mapped with 4u2v Chain C
     </td>

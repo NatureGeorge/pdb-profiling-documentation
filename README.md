@@ -14,3 +14,5 @@
 > Profiling Protein Structures from Protein Data Bank and integrate various resources.
 
 Implement Wowchemy Book Template.
+
+The `Molecule` icon used in the home page is made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon"> www.flaticon.com</a>
