@@ -17,7 +17,8 @@ table.dataframe {
     display: block;
     overflow-x: auto;
     white-space: nowrap;
-    overflow: scroll;
+    overflow-y: auto;
+    height: 200px;
 }
 </style>
 
@@ -83,7 +84,7 @@ from pdb_profiling.processors import PDB
 
 ### 检索并获取Tabular Format结果
 
-下面以获取<https://www.ebi.ac.uk/pdbe/api/pdb/entry/molecules/3hl2>的信息为例:
+下面以获取<https://www.ebi.ac.uk/pdbe/api/pdb/entry/molecules/3hl2>的信息为例,其给出PDB条目中所有分子Entity-Chain level元数据信息，包括分子类型、分子名称、SEQRES序列等:
 
 ```python
 pdb_object = PDB('3hl2')
@@ -4400,7 +4401,7 @@ df2
 
 这个过程自动完成了上面提及的reformat、打分及与PISA、Interactome3D数据资源整合等步骤，下面的`pipe_select_ho_iso,pipe_select_he`同理。
 
-## 同聚体(isofrom)代表集结构选择
+## 同聚体(isoform)代表集结构选择
 
 ```python
 df3 = sifts_demo.pipe_select_ho_iso(run_as_completed=True).result()
