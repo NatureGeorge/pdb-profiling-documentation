@@ -12,6 +12,15 @@ date: "2020-11-05T00:00:00Z"
 type: book  # Do not modify.
 ---
 
+<style>
+table.dataframe {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+    overflow: scroll;
+}
+</style>
+
 ## 预备知识
 
 这是一篇写给使用者中的初学者的指南，将介绍`pdb-profiling`的基本功能。阅读之前，请先了解以下知识点:
@@ -88,175 +97,151 @@ dfrm = pdb_object.fetch_from_web_api('api/pdb/entry/molecules/', PDB.to_datafram
   <thead>
     <tr style="text-align: right;">
       <th></th>
-      <th>0</th>
-      <th>1</th>
-      <th>2</th>
-      <th>3</th>
-      <th>4</th>
-      <th>5</th>
+      <th>ca_p_only</th>
+      <th>entity_id</th>
+      <th>gene_name</th>
+      <th>in_chains</th>
+      <th>in_struct_asyms</th>
+      <th>length</th>
+      <th>molecule_name</th>
+      <th>molecule_type</th>
+      <th>mutation_flag</th>
+      <th>number_of_copies</th>
+      <th>pdb_sequence</th>
+      <th>pdb_sequence_indices_with_multiple_residues</th>
+      <th>sample_preparation</th>
+      <th>sequence</th>
+      <th>source</th>
+      <th>synonym</th>
+      <th>weight</th>
+      <th>pdb_id</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <th>ca_p_only</th>
+      <th>0</th>
       <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-    </tr>
-    <tr>
-      <th>entity_id</th>
       <td>1</td>
-      <td>2</td>
-      <td>3</td>
-      <td>4</td>
-      <td>5</td>
-      <td>6</td>
-    </tr>
-    <tr>
-      <th>gene_name</th>
       <td>["SEPSECS","TRNP48"]</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>in_chains</th>
       <td>["A","B","C","D"]</td>
-      <td>["E"]</td>
       <td>["A","B","C","D"]</td>
-      <td>["A","C"]</td>
-      <td>["B","D"]</td>
-      <td>["A","B","C","D","E"]</td>
-    </tr>
-    <tr>
-      <th>in_struct_asyms</th>
-      <td>["A","B","C","D"]</td>
-      <td>["E"]</td>
-      <td>["F","I","L","N"]</td>
-      <td>["G","H","M"]</td>
-      <td>["J","K","O","P"]</td>
-      <td>["Q","R","S","T","U"]</td>
-    </tr>
-    <tr>
-      <th>length</th>
-      <td>501</td>
-      <td>90</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>molecule_name</th>
+      <td>501.0</td>
       <td>["O-phosphoseryl-tRNA(Sec) selenium transferase"]</td>
-      <td>["tRNASec"]</td>
-      <td>["(5-HYDROXY-4,6-DIMETHYLPYRIDIN-3-YL)METHYL D...</td>
-      <td>["Monothiophosphate"]</td>
-      <td>["PHOSPHOSERINE"]</td>
-      <td>["water"]</td>
-    </tr>
-    <tr>
-      <th>molecule_type</th>
       <td>polypeptide(L)</td>
-      <td>polyribonucleotide</td>
-      <td>bound</td>
-      <td>bound</td>
-      <td>bound</td>
-      <td>water</td>
-    </tr>
-    <tr>
-      <th>mutation_flag</th>
       <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>number_of_copies</th>
       <td>4</td>
-      <td>1</td>
-      <td>4</td>
-      <td>3</td>
-      <td>4</td>
-      <td>288</td>
-    </tr>
-    <tr>
-      <th>pdb_sequence</th>
       <td>MNRESFAAGERLVSPAYVRQGCEARRSHEHLIRLLLEKGKCPENGW...</td>
-      <td>GCCCGGAUGAUCCUCAGUGGUCUGGGGUGCAGGCUUCAAACCUGUA...</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>pdb_sequence_indices_with_multiple_residues</th>
       <td>{}</td>
-      <td>{}</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>sample_preparation</th>
       <td>Genetically manipulated</td>
-      <td>Genetically manipulated</td>
-      <td>Synthetically obtained</td>
-      <td>Synthetically obtained</td>
-      <td>Synthetically obtained</td>
-      <td>Natural source</td>
-    </tr>
-    <tr>
-      <th>sequence</th>
       <td>MNRESFAAGERLVSPAYVRQGCEARRSHEHLIRLLLEKGKCPENGW...</td>
-      <td>GCCCGGAUGAUCCUCAGUGGUCUGGGGUGCAGGCUUCAAACCUGUA...</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>source</th>
       <td>[{"expression_host_scientific_name":"Escherich...</td>
-      <td>[{"expression_host_scientific_name":"Escherich...</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>synonym</th>
       <td>O-phosphoseryl-tRNA(Sec) selenium transferase</td>
+      <td>55801.211</td>
+      <td>3hl2</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>False</td>
+      <td>2</td>
+      <td>NaN</td>
+      <td>["E"]</td>
+      <td>["E"]</td>
+      <td>90.0</td>
+      <td>["tRNASec"]</td>
+      <td>polyribonucleotide</td>
+      <td>NaN</td>
+      <td>1</td>
+      <td>GCCCGGAUGAUCCUCAGUGGUCUGGGGUGCAGGCUUCAAACCUGUA...</td>
+      <td>{}</td>
+      <td>Genetically manipulated</td>
+      <td>GCCCGGAUGAUCCUCAGUGGUCUGGGGUGCAGGCUUCAAACCUGUA...</td>
+      <td>[{"expression_host_scientific_name":"Escherich...</td>
       <td>tRNASec</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td>28908.084</td>
+      <td>3hl2</td>
     </tr>
     <tr>
-      <th>weight</th>
-      <td>55801.2</td>
-      <td>28908.1</td>
+      <th>2</th>
+      <td>False</td>
+      <td>3</td>
+      <td>NaN</td>
+      <td>["A","B","C","D"]</td>
+      <td>["F","I","L","N"]</td>
+      <td>NaN</td>
+      <td>["(5-HYDROXY-4,6-DIMETHYLPYRIDIN-3-YL)METHYL D...</td>
+      <td>bound</td>
+      <td>NaN</td>
+      <td>4</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>Synthetically obtained</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
       <td>233.158</td>
-      <td>114.061</td>
-      <td>185.072</td>
-      <td>18.015</td>
+      <td>3hl2</td>
     </tr>
     <tr>
-      <th>pdb_id</th>
+      <th>3</th>
+      <td>False</td>
+      <td>4</td>
+      <td>NaN</td>
+      <td>["A","C"]</td>
+      <td>["G","H","M"]</td>
+      <td>NaN</td>
+      <td>["Monothiophosphate"]</td>
+      <td>bound</td>
+      <td>NaN</td>
+      <td>3</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>Synthetically obtained</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>114.061</td>
       <td>3hl2</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>False</td>
+      <td>5</td>
+      <td>NaN</td>
+      <td>["B","D"]</td>
+      <td>["J","K","O","P"]</td>
+      <td>NaN</td>
+      <td>["PHOSPHOSERINE"]</td>
+      <td>bound</td>
+      <td>NaN</td>
+      <td>4</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>Synthetically obtained</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>185.072</td>
       <td>3hl2</td>
-      <td>3hl2</td>
-      <td>3hl2</td>
-      <td>3hl2</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>False</td>
+      <td>6</td>
+      <td>NaN</td>
+      <td>["A","B","C","D","E"]</td>
+      <td>["Q","R","S","T","U"]</td>
+      <td>NaN</td>
+      <td>["water"]</td>
+      <td>water</td>
+      <td>NaN</td>
+      <td>288</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>Natural source</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>18.015</td>
       <td>3hl2</td>
     </tr>
   </tbody>
@@ -399,7 +384,7 @@ res = pdb_objects.fetch(
 
 ```python
 from pandas import concat
-concat(res, sort=False, ignore_index=True).T
+concat(res, sort=False, ignore_index=True)
 ```
 
 <details>
@@ -408,109 +393,89 @@ concat(res, sort=False, ignore_index=True).T
   <thead>
     <tr style="text-align: right;">
       <th></th>
-      <th>0</th>
-      <th>1</th>
-      <th>2</th>
-      <th>3</th>
+      <th>assemblies</th>
+      <th>deposition_date</th>
+      <th>deposition_site</th>
+      <th>entry_authors</th>
+      <th>experimental_method</th>
+      <th>experimental_method_class</th>
+      <th>number_of_entities</th>
+      <th>pdb_id</th>
+      <th>processing_site</th>
+      <th>related_structures</th>
+      <th>release_date</th>
+      <th>revision_date</th>
+      <th>split_entry</th>
+      <th>title</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <th>assemblies</th>
-      <td>[{"preferred":true,"form":"hetero","name":"pen...</td>
+      <th>0</th>
       <td>[{"assembly_id":"1","form":"Non-polymer only",...</td>
-      <td>[{"preferred":true,"form":"homo","name":"monom...</td>
-      <td>[{"assembly_id":"1","form":"homo","preferred":...</td>
-    </tr>
-    <tr>
-      <th>deposition_date</th>
-      <td>20090526</td>
       <td>19971208</td>
-      <td>20101118</td>
-      <td>20121010</td>
-    </tr>
-    <tr>
-      <th>deposition_site</th>
-      <td>RCSB</td>
       <td>NaN</td>
-      <td>PDBE</td>
-      <td>RCSB</td>
-    </tr>
-    <tr>
-      <th>entry_authors</th>
-      <td>["Palioura, S.","Steitz, T.A.","Soll, D.","Sim...</td>
       <td>["Kavanaugh, J.S.","Arnone, A."]</td>
-      <td>["Salah, E.","Ugochukwu, E.","Elkins, J.M.","B...</td>
-      <td>["Moshe, B.-D.","Grzegorz, W.","Mikael, E.","I...</td>
-    </tr>
-    <tr>
-      <th>experimental_method</th>
       <td>["X-ray diffraction"]</td>
-      <td>["X-ray diffraction"]</td>
-      <td>["X-ray diffraction"]</td>
-      <td>["X-ray diffraction"]</td>
-    </tr>
-    <tr>
-      <th>experimental_method_class</th>
       <td>["x-ray"]</td>
-      <td>["x-ray"]</td>
-      <td>["x-ray"]</td>
-      <td>["x-ray"]</td>
-    </tr>
-    <tr>
-      <th>number_of_entities</th>
-      <td>{"water":1,"polypeptide":1,"other":0,"dna":0,"...</td>
       <td>{"polypeptide":2,"dna":0,"ligand":1,"dna/rna":...</td>
-      <td>{"water":1,"polypeptide":1,"other":0,"dna":0,"...</td>
-      <td>{"polypeptide":1,"dna":0,"ligand":3,"dna/rna":...</td>
-    </tr>
-    <tr>
-      <th>pdb_id</th>
-      <td>3hl2</td>
       <td>1a01</td>
-      <td>2xyn</td>
-      <td>4hho</td>
-    </tr>
-    <tr>
-      <th>processing_site</th>
-      <td>RCSB</td>
       <td>BNL</td>
-      <td>PDBE</td>
-      <td>RCSB</td>
-    </tr>
-    <tr>
-      <th>related_structures</th>
       <td>[]</td>
-      <td>[]</td>
-      <td>[]</td>
-      <td>[]</td>
-    </tr>
-    <tr>
-      <th>release_date</th>
-      <td>20091006</td>
       <td>19980318</td>
-      <td>20101201</td>
-      <td>20130327</td>
-    </tr>
-    <tr>
-      <th>revision_date</th>
-      <td>20180124</td>
       <td>20110713</td>
-      <td>20190403</td>
-      <td>20130327</td>
-    </tr>
-    <tr>
-      <th>split_entry</th>
       <td>[]</td>
-      <td>[]</td>
-      <td>[]</td>
-      <td>[]</td>
-    </tr>
-    <tr>
-      <th>title</th>
-      <td>The crystal structure of the human SepSecS-tRN...</td>
       <td>HEMOGLOBIN (VAL BETA1 MET, TRP BETA37 ALA) MUTANT</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>[{"preferred":true,"form":"homo","name":"monom...</td>
+      <td>20101118</td>
+      <td>PDBE</td>
+      <td>["Salah, E.","Ugochukwu, E.","Elkins, J.M.","B...</td>
+      <td>["X-ray diffraction"]</td>
+      <td>["x-ray"]</td>
+      <td>{"water":1,"polypeptide":1,"other":0,"dna":0,"...</td>
+      <td>2xyn</td>
+      <td>PDBE</td>
+      <td>[]</td>
+      <td>20101201</td>
+      <td>20190403</td>
+      <td>[]</td>
       <td>HUMAN ABL2 IN COMPLEX WITH AURORA KINASE INHIB...</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>[{"preferred":true,"form":"hetero","name":"pen...</td>
+      <td>20090526</td>
+      <td>RCSB</td>
+      <td>["Palioura, S.","Steitz, T.A.","Soll, D.","Sim...</td>
+      <td>["X-ray diffraction"]</td>
+      <td>["x-ray"]</td>
+      <td>{"water":1,"polypeptide":1,"other":0,"dna":0,"...</td>
+      <td>3hl2</td>
+      <td>RCSB</td>
+      <td>[]</td>
+      <td>20091006</td>
+      <td>20180124</td>
+      <td>[]</td>
+      <td>The crystal structure of the human SepSecS-tRN...</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>[{"assembly_id":"1","form":"homo","preferred":...</td>
+      <td>20121010</td>
+      <td>RCSB</td>
+      <td>["Moshe, B.-D.","Grzegorz, W.","Mikael, E.","I...</td>
+      <td>["X-ray diffraction"]</td>
+      <td>["x-ray"]</td>
+      <td>{"polypeptide":1,"dna":0,"ligand":3,"dna/rna":...</td>
+      <td>4hho</td>
+      <td>RCSB</td>
+      <td>[]</td>
+      <td>20130327</td>
+      <td>20130327</td>
+      <td>[]</td>
       <td>Serum paraoxonase-1 by directed evolution with...</td>
     </tr>
   </tbody>
@@ -619,116 +584,94 @@ sifts_from_pdb_demo.fetch_from_web_api('api/mappings/all_isoforms/', SIFTS.to_da
   <thead>
     <tr style="text-align: right;">
       <th></th>
-      <th>0</th>
-      <th>1</th>
-      <th>2</th>
-      <th>3</th>
+      <th>UniProt</th>
+      <th>chain_id</th>
+      <th>end</th>
+      <th>entity_id</th>
+      <th>identifier</th>
+      <th>identity</th>
+      <th>is_canonical</th>
+      <th>name</th>
+      <th>pdb_end</th>
+      <th>pdb_id</th>
+      <th>pdb_start</th>
+      <th>start</th>
+      <th>struct_asym_id</th>
+      <th>unp_end</th>
+      <th>unp_start</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <th>UniProt</th>
+      <th>0</th>
       <td>P68871</td>
+      <td>B</td>
+      <td>{"author_residue_number":146,"author_insertion...</td>
+      <td>2</td>
+      <td>HBB_HUMAN</td>
+      <td>0.99</td>
+      <td>True</td>
+      <td>HBB_HUMAN</td>
+      <td>146</td>
+      <td>1a01</td>
+      <td>1</td>
+      <td>{"author_residue_number":1,"author_insertion_c...</td>
+      <td>B</td>
+      <td>147</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>1</th>
       <td>P68871</td>
-      <td>P69905</td>
-      <td>P69905</td>
-    </tr>
-    <tr>
-      <th>chain_id</th>
-      <td>B</td>
       <td>D</td>
-      <td>A</td>
-      <td>C</td>
-    </tr>
-    <tr>
-      <th>end</th>
       <td>{"author_residue_number":146,"author_insertion...</td>
-      <td>{"author_residue_number":146,"author_insertion...</td>
-      <td>{"author_residue_number":141,"author_insertion...</td>
-      <td>{"author_residue_number":141,"author_insertion...</td>
-    </tr>
-    <tr>
-      <th>entity_id</th>
       <td>2</td>
-      <td>2</td>
-      <td>1</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <th>identifier</th>
       <td>HBB_HUMAN</td>
-      <td>HBB_HUMAN</td>
-      <td>HBA_HUMAN</td>
-      <td>HBA_HUMAN</td>
-    </tr>
-    <tr>
-      <th>identity</th>
       <td>0.99</td>
-      <td>0.99</td>
-      <td>1</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <th>is_canonical</th>
       <td>True</td>
-      <td>True</td>
-      <td>True</td>
-      <td>True</td>
-    </tr>
-    <tr>
-      <th>name</th>
       <td>HBB_HUMAN</td>
-      <td>HBB_HUMAN</td>
-      <td>HBA_HUMAN</td>
-      <td>HBA_HUMAN</td>
-    </tr>
-    <tr>
-      <th>pdb_end</th>
       <td>146</td>
-      <td>146</td>
-      <td>141</td>
-      <td>141</td>
-    </tr>
-    <tr>
-      <th>pdb_id</th>
       <td>1a01</td>
-      <td>1a01</td>
-      <td>1a01</td>
-      <td>1a01</td>
-    </tr>
-    <tr>
-      <th>pdb_start</th>
       <td>1</td>
-      <td>1</td>
-      <td>1</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <th>start</th>
       <td>{"author_residue_number":1,"author_insertion_c...</td>
-      <td>{"author_residue_number":1,"author_insertion_c...</td>
-      <td>{"author_residue_number":1,"author_insertion_c...</td>
-      <td>{"author_residue_number":1,"author_insertion_c...</td>
-    </tr>
-    <tr>
-      <th>struct_asym_id</th>
-      <td>B</td>
       <td>D</td>
+      <td>147</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>P69905</td>
       <td>A</td>
+      <td>{"author_residue_number":141,"author_insertion...</td>
+      <td>1</td>
+      <td>HBA_HUMAN</td>
+      <td>1.00</td>
+      <td>True</td>
+      <td>HBA_HUMAN</td>
+      <td>141</td>
+      <td>1a01</td>
+      <td>1</td>
+      <td>{"author_residue_number":1,"author_insertion_c...</td>
+      <td>A</td>
+      <td>142</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>P69905</td>
       <td>C</td>
-    </tr>
-    <tr>
-      <th>unp_end</th>
-      <td>147</td>
-      <td>147</td>
+      <td>{"author_residue_number":141,"author_insertion...</td>
+      <td>1</td>
+      <td>HBA_HUMAN</td>
+      <td>1.00</td>
+      <td>True</td>
+      <td>HBA_HUMAN</td>
+      <td>141</td>
+      <td>1a01</td>
+      <td>1</td>
+      <td>{"author_residue_number":1,"author_insertion_c...</td>
+      <td>C</td>
       <td>142</td>
-      <td>142</td>
-    </tr>
-    <tr>
-      <th>unp_start</th>
-      <td>2</td>
-      <td>2</td>
-      <td>2</td>
       <td>2</td>
     </tr>
   </tbody>
@@ -743,6 +686,590 @@ sifts_from_pdb_demo.fetch_from_web_api('api/mappings/all_isoforms/', SIFTS.to_da
 ```python
 sifts_from_unp_demo.fetch_from_web_api('api/mappings/all_isoforms/', SIFTS.to_dataframe).result()
 ```
+
+<details>
+<summary>Click to view dataframe</summary>
+<table class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>UniProt</th>
+      <th>chain_id</th>
+      <th>end</th>
+      <th>entity_id</th>
+      <th>identity</th>
+      <th>is_canonical</th>
+      <th>pdb_id</th>
+      <th>start</th>
+      <th>struct_asym_id</th>
+      <th>unp_end</th>
+      <th>unp_start</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Q5VST9</td>
+      <td>A</td>
+      <td>{"author_residue_number":97,"author_insertion_...</td>
+      <td>1</td>
+      <td>1.00</td>
+      <td>True</td>
+      <td>2dku</td>
+      <td>{"author_residue_number":8,"author_insertion_c...</td>
+      <td>A</td>
+      <td>3004</td>
+      <td>2915</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Q5VST9</td>
+      <td>A</td>
+      <td>{"author_residue_number":102,"author_insertion...</td>
+      <td>1</td>
+      <td>0.75</td>
+      <td>True</td>
+      <td>2dm7</td>
+      <td>{"author_residue_number":8,"author_insertion_c...</td>
+      <td>A</td>
+      <td>3631</td>
+      <td>3537</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Q5VST9</td>
+      <td>A</td>
+      <td>{"author_residue_number":548,"author_insertion...</td>
+      <td>1</td>
+      <td>0.89</td>
+      <td>True</td>
+      <td>2yz8</td>
+      <td>{"author_residue_number":459,"author_insertion...</td>
+      <td>A</td>
+      <td>3273</td>
+      <td>3184</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Q5VST9</td>
+      <td>A</td>
+      <td>{"author_residue_number":null,"author_insertio...</td>
+      <td>1</td>
+      <td>0.98</td>
+      <td>True</td>
+      <td>5tzm</td>
+      <td>{"author_residue_number":3,"author_insertion_c...</td>
+      <td>A</td>
+      <td>4521</td>
+      <td>4431</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Q5VST9</td>
+      <td>A</td>
+      <td>{"author_residue_number":null,"author_insertio...</td>
+      <td>1</td>
+      <td>0.93</td>
+      <td>True</td>
+      <td>4rsv</td>
+      <td>{"author_residue_number":null,"author_insertio...</td>
+      <td>A</td>
+      <td>4429</td>
+      <td>4337</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>Q5VST9</td>
+      <td>O</td>
+      <td>{"author_residue_number":null,"author_insertio...</td>
+      <td>1</td>
+      <td>1.00</td>
+      <td>True</td>
+      <td>4c4k</td>
+      <td>{"author_residue_number":9,"author_insertion_c...</td>
+      <td>A</td>
+      <td>103</td>
+      <td>9</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>Q5VST9</td>
+      <td>A</td>
+      <td>{"author_residue_number":109,"author_insertion...</td>
+      <td>1</td>
+      <td>1.00</td>
+      <td>True</td>
+      <td>2cr6</td>
+      <td>{"author_residue_number":8,"author_insertion_c...</td>
+      <td>A</td>
+      <td>3100</td>
+      <td>2999</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>Q5VST9</td>
+      <td>A</td>
+      <td>{"author_residue_number":68,"author_insertion_...</td>
+      <td>1</td>
+      <td>1.00</td>
+      <td>True</td>
+      <td>1v1c</td>
+      <td>{"author_residue_number":1,"author_insertion_c...</td>
+      <td>A</td>
+      <td>5668</td>
+      <td>5601</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>Q5VST9</td>
+      <td>A</td>
+      <td>{"author_residue_number":93,"author_insertion_...</td>
+      <td>1</td>
+      <td>0.93</td>
+      <td>True</td>
+      <td>2mwc</td>
+      <td>{"author_residue_number":1,"author_insertion_c...</td>
+      <td>A</td>
+      <td>4429</td>
+      <td>4337</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>Q5VST9</td>
+      <td>A</td>
+      <td>{"author_residue_number":96,"author_insertion_...</td>
+      <td>1</td>
+      <td>1.00</td>
+      <td>True</td>
+      <td>2edr</td>
+      <td>{"author_residue_number":8,"author_insertion_c...</td>
+      <td>A</td>
+      <td>3449</td>
+      <td>3361</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>Q5VST9</td>
+      <td>A</td>
+      <td>{"author_residue_number":101,"author_insertion...</td>
+      <td>1</td>
+      <td>1.00</td>
+      <td>True</td>
+      <td>2edq</td>
+      <td>{"author_residue_number":8,"author_insertion_c...</td>
+      <td>A</td>
+      <td>3806</td>
+      <td>3713</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>Q5VST9</td>
+      <td>A</td>
+      <td>{"author_residue_number":101,"author_insertion...</td>
+      <td>1</td>
+      <td>1.00</td>
+      <td>True</td>
+      <td>2edw</td>
+      <td>{"author_residue_number":8,"author_insertion_c...</td>
+      <td>A</td>
+      <td>3630</td>
+      <td>3537</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>Q5VST9</td>
+      <td>A</td>
+      <td>{"author_residue_number":96,"author_insertion_...</td>
+      <td>1</td>
+      <td>1.00</td>
+      <td>True</td>
+      <td>2edt</td>
+      <td>{"author_residue_number":8,"author_insertion_c...</td>
+      <td>A</td>
+      <td>3537</td>
+      <td>3449</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>Q5VST9</td>
+      <td>A</td>
+      <td>{"author_residue_number":101,"author_insertion...</td>
+      <td>1</td>
+      <td>0.82</td>
+      <td>True</td>
+      <td>2gqh</td>
+      <td>{"author_residue_number":8,"author_insertion_c...</td>
+      <td>A</td>
+      <td>3807</td>
+      <td>3714</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>Q5VST9</td>
+      <td>0</td>
+      <td>{"author_residue_number":98,"author_insertion_...</td>
+      <td>1</td>
+      <td>0.30</td>
+      <td>True</td>
+      <td>4uow</td>
+      <td>{"author_residue_number":5,"author_insertion_c...</td>
+      <td>A</td>
+      <td>203</td>
+      <td>110</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>Q5VST9</td>
+      <td>2</td>
+      <td>{"author_residue_number":98,"author_insertion_...</td>
+      <td>1</td>
+      <td>0.30</td>
+      <td>True</td>
+      <td>4uow</td>
+      <td>{"author_residue_number":5,"author_insertion_c...</td>
+      <td>C</td>
+      <td>203</td>
+      <td>110</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>Q5VST9</td>
+      <td>4</td>
+      <td>{"author_residue_number":98,"author_insertion_...</td>
+      <td>1</td>
+      <td>0.30</td>
+      <td>True</td>
+      <td>4uow</td>
+      <td>{"author_residue_number":5,"author_insertion_c...</td>
+      <td>E</td>
+      <td>203</td>
+      <td>110</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>Q5VST9</td>
+      <td>6</td>
+      <td>{"author_residue_number":98,"author_insertion_...</td>
+      <td>1</td>
+      <td>0.30</td>
+      <td>True</td>
+      <td>4uow</td>
+      <td>{"author_residue_number":5,"author_insertion_c...</td>
+      <td>G</td>
+      <td>203</td>
+      <td>110</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>Q5VST9</td>
+      <td>8</td>
+      <td>{"author_residue_number":98,"author_insertion_...</td>
+      <td>1</td>
+      <td>0.30</td>
+      <td>True</td>
+      <td>4uow</td>
+      <td>{"author_residue_number":5,"author_insertion_c...</td>
+      <td>I</td>
+      <td>203</td>
+      <td>110</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>Q5VST9</td>
+      <td>A</td>
+      <td>{"author_residue_number":98,"author_insertion_...</td>
+      <td>1</td>
+      <td>0.30</td>
+      <td>True</td>
+      <td>4uow</td>
+      <td>{"author_residue_number":5,"author_insertion_c...</td>
+      <td>K</td>
+      <td>203</td>
+      <td>110</td>
+    </tr>
+    <tr>
+      <th>20</th>
+      <td>Q5VST9</td>
+      <td>C</td>
+      <td>{"author_residue_number":98,"author_insertion_...</td>
+      <td>1</td>
+      <td>0.30</td>
+      <td>True</td>
+      <td>4uow</td>
+      <td>{"author_residue_number":5,"author_insertion_c...</td>
+      <td>M</td>
+      <td>203</td>
+      <td>110</td>
+    </tr>
+    <tr>
+      <th>21</th>
+      <td>Q5VST9</td>
+      <td>E</td>
+      <td>{"author_residue_number":98,"author_insertion_...</td>
+      <td>1</td>
+      <td>0.30</td>
+      <td>True</td>
+      <td>4uow</td>
+      <td>{"author_residue_number":5,"author_insertion_c...</td>
+      <td>O</td>
+      <td>203</td>
+      <td>110</td>
+    </tr>
+    <tr>
+      <th>22</th>
+      <td>Q5VST9</td>
+      <td>G</td>
+      <td>{"author_residue_number":98,"author_insertion_...</td>
+      <td>1</td>
+      <td>0.30</td>
+      <td>True</td>
+      <td>4uow</td>
+      <td>{"author_residue_number":5,"author_insertion_c...</td>
+      <td>Q</td>
+      <td>203</td>
+      <td>110</td>
+    </tr>
+    <tr>
+      <th>23</th>
+      <td>Q5VST9</td>
+      <td>I</td>
+      <td>{"author_residue_number":98,"author_insertion_...</td>
+      <td>1</td>
+      <td>0.30</td>
+      <td>True</td>
+      <td>4uow</td>
+      <td>{"author_residue_number":5,"author_insertion_c...</td>
+      <td>S</td>
+      <td>203</td>
+      <td>110</td>
+    </tr>
+    <tr>
+      <th>24</th>
+      <td>Q5VST9</td>
+      <td>K</td>
+      <td>{"author_residue_number":98,"author_insertion_...</td>
+      <td>1</td>
+      <td>0.30</td>
+      <td>True</td>
+      <td>4uow</td>
+      <td>{"author_residue_number":5,"author_insertion_c...</td>
+      <td>U</td>
+      <td>203</td>
+      <td>110</td>
+    </tr>
+    <tr>
+      <th>25</th>
+      <td>Q5VST9</td>
+      <td>M</td>
+      <td>{"author_residue_number":98,"author_insertion_...</td>
+      <td>1</td>
+      <td>0.30</td>
+      <td>True</td>
+      <td>4uow</td>
+      <td>{"author_residue_number":5,"author_insertion_c...</td>
+      <td>W</td>
+      <td>203</td>
+      <td>110</td>
+    </tr>
+    <tr>
+      <th>26</th>
+      <td>Q5VST9</td>
+      <td>O</td>
+      <td>{"author_residue_number":98,"author_insertion_...</td>
+      <td>1</td>
+      <td>0.30</td>
+      <td>True</td>
+      <td>4uow</td>
+      <td>{"author_residue_number":5,"author_insertion_c...</td>
+      <td>Y</td>
+      <td>203</td>
+      <td>110</td>
+    </tr>
+    <tr>
+      <th>27</th>
+      <td>Q5VST9</td>
+      <td>Q</td>
+      <td>{"author_residue_number":98,"author_insertion_...</td>
+      <td>1</td>
+      <td>0.30</td>
+      <td>True</td>
+      <td>4uow</td>
+      <td>{"author_residue_number":5,"author_insertion_c...</td>
+      <td>AA</td>
+      <td>203</td>
+      <td>110</td>
+    </tr>
+    <tr>
+      <th>28</th>
+      <td>Q5VST9</td>
+      <td>S</td>
+      <td>{"author_residue_number":98,"author_insertion_...</td>
+      <td>1</td>
+      <td>0.30</td>
+      <td>True</td>
+      <td>4uow</td>
+      <td>{"author_residue_number":5,"author_insertion_c...</td>
+      <td>CA</td>
+      <td>203</td>
+      <td>110</td>
+    </tr>
+    <tr>
+      <th>29</th>
+      <td>Q5VST9</td>
+      <td>U</td>
+      <td>{"author_residue_number":98,"author_insertion_...</td>
+      <td>1</td>
+      <td>0.30</td>
+      <td>True</td>
+      <td>4uow</td>
+      <td>{"author_residue_number":5,"author_insertion_c...</td>
+      <td>EA</td>
+      <td>203</td>
+      <td>110</td>
+    </tr>
+    <tr>
+      <th>30</th>
+      <td>Q5VST9</td>
+      <td>W</td>
+      <td>{"author_residue_number":98,"author_insertion_...</td>
+      <td>1</td>
+      <td>0.30</td>
+      <td>True</td>
+      <td>4uow</td>
+      <td>{"author_residue_number":5,"author_insertion_c...</td>
+      <td>GA</td>
+      <td>203</td>
+      <td>110</td>
+    </tr>
+    <tr>
+      <th>31</th>
+      <td>Q5VST9</td>
+      <td>Y</td>
+      <td>{"author_residue_number":98,"author_insertion_...</td>
+      <td>1</td>
+      <td>0.30</td>
+      <td>True</td>
+      <td>4uow</td>
+      <td>{"author_residue_number":5,"author_insertion_c...</td>
+      <td>IA</td>
+      <td>203</td>
+      <td>110</td>
+    </tr>
+    <tr>
+      <th>32</th>
+      <td>Q5VST9</td>
+      <td>A</td>
+      <td>{"author_residue_number":97,"author_insertion_...</td>
+      <td>1</td>
+      <td>1.00</td>
+      <td>True</td>
+      <td>2edf</td>
+      <td>{"author_residue_number":8,"author_insertion_c...</td>
+      <td>A</td>
+      <td>2915</td>
+      <td>2826</td>
+    </tr>
+    <tr>
+      <th>33</th>
+      <td>Q5VST9</td>
+      <td>A</td>
+      <td>{"author_residue_number":97,"author_insertion_...</td>
+      <td>1</td>
+      <td>1.00</td>
+      <td>True</td>
+      <td>2eo1</td>
+      <td>{"author_residue_number":8,"author_insertion_c...</td>
+      <td>A</td>
+      <td>1712</td>
+      <td>1623</td>
+    </tr>
+    <tr>
+      <th>34</th>
+      <td>Q5VST9</td>
+      <td>A</td>
+      <td>{"author_residue_number":98,"author_insertion_...</td>
+      <td>1</td>
+      <td>0.94</td>
+      <td>True</td>
+      <td>2eny</td>
+      <td>{"author_residue_number":8,"author_insertion_c...</td>
+      <td>A</td>
+      <td>2825</td>
+      <td>2735</td>
+    </tr>
+    <tr>
+      <th>35</th>
+      <td>Q5VST9</td>
+      <td>A</td>
+      <td>{"author_residue_number":107,"author_insertion...</td>
+      <td>1</td>
+      <td>1.00</td>
+      <td>True</td>
+      <td>2edh</td>
+      <td>{"author_residue_number":8,"author_insertion_c...</td>
+      <td>A</td>
+      <td>3713</td>
+      <td>3614</td>
+    </tr>
+    <tr>
+      <th>36</th>
+      <td>Q5VST9</td>
+      <td>A</td>
+      <td>{"author_residue_number":104,"author_insertion...</td>
+      <td>1</td>
+      <td>0.92</td>
+      <td>True</td>
+      <td>2edl</td>
+      <td>{"author_residue_number":8,"author_insertion_c...</td>
+      <td>A</td>
+      <td>3897</td>
+      <td>3801</td>
+    </tr>
+    <tr>
+      <th>37</th>
+      <td>Q5VST9</td>
+      <td>A</td>
+      <td>{"author_residue_number":93,"author_insertion_...</td>
+      <td>1</td>
+      <td>0.95</td>
+      <td>True</td>
+      <td>6mg9</td>
+      <td>{"author_residue_number":2,"author_insertion_c...</td>
+      <td>A</td>
+      <td>4338</td>
+      <td>4247</td>
+    </tr>
+    <tr>
+      <th>38</th>
+      <td>Q5VST9</td>
+      <td>A</td>
+      <td>{"author_residue_number":95,"author_insertion_...</td>
+      <td>1</td>
+      <td>0.99</td>
+      <td>True</td>
+      <td>2n56</td>
+      <td>{"author_residue_number":1,"author_insertion_c...</td>
+      <td>A</td>
+      <td>4524</td>
+      <td>4430</td>
+    </tr>
+    <tr>
+      <th>39</th>
+      <td>Q5VST9</td>
+      <td>A</td>
+      <td>{"author_residue_number":97,"author_insertion_...</td>
+      <td>1</td>
+      <td>1.00</td>
+      <td>True</td>
+      <td>2e7b</td>
+      <td>{"author_residue_number":8,"author_insertion_c...</td>
+      <td>A</td>
+      <td>3273</td>
+      <td>3184</td>
+    </tr>
+  </tbody>
+</table>
+</details>
 
 ### Reformat & Detect
 
@@ -762,428 +1289,417 @@ SIFTS('P21359-2').fetch_from_web_api('api/mappings/all_isoforms/', SIFTS.to_data
   <thead>
     <tr style="text-align: right;">
       <th></th>
-      <th>0</th>
-      <th>1</th>
-      <th>2</th>
-      <th>3</th>
-      <th>4</th>
-      <th>5</th>
-      <th>6</th>
-      <th>7</th>
-      <th>8</th>
-      <th>9</th>
-      <th>10</th>
-      <th>11</th>
-      <th>12</th>
-      <th>13</th>
-      <th>14</th>
-      <th>15</th>
+      <th>UniProt</th>
+      <th>chain_id</th>
+      <th>entity_id</th>
+      <th>identity</th>
+      <th>is_canonical</th>
+      <th>pdb_id</th>
+      <th>struct_asym_id</th>
+      <th>pdb_range</th>
+      <th>unp_range</th>
+      <th>Entry</th>
+      <th>...</th>
+      <th>sifts_range_tag</th>
+      <th>repeated</th>
+      <th>reversed</th>
+      <th>InDel_sum</th>
+      <th>new_pdb_range</th>
+      <th>new_unp_range</th>
+      <th>conflict_pdb_index</th>
+      <th>conflict_pdb_range</th>
+      <th>conflict_unp_range</th>
+      <th>unp_len</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <th>UniProt</th>
+      <th>0</th>
       <td>P21359-2</td>
-      <td>P21359-2</td>
-      <td>P21359-2</td>
-      <td>P21359-2</td>
-      <td>P21359-2</td>
-      <td>P21359-2</td>
-      <td>P21359-2</td>
-      <td>P21359-2</td>
-      <td>P21359-2</td>
-      <td>P21359-2</td>
-      <td>P21359-2</td>
-      <td>P21359-2</td>
-      <td>P21359-2</td>
-      <td>P21359-2</td>
-      <td>P21359-2</td>
-      <td>P21359-2</td>
-    </tr>
-    <tr>
-      <th>chain_id</th>
       <td>A</td>
-      <td>A</td>
-      <td>B</td>
-      <td>A</td>
-      <td>B</td>
-      <td>A</td>
-      <td>B</td>
-      <td>A</td>
-      <td>A</td>
-      <td>B</td>
-      <td>B</td>
-      <td>D</td>
-      <td>B</td>
-      <td>D</td>
-      <td>B</td>
-      <td>B</td>
-    </tr>
-    <tr>
-      <th>entity_id</th>
       <td>1</td>
-      <td>1</td>
-      <td>1</td>
-      <td>1</td>
-      <td>1</td>
-      <td>1</td>
-      <td>1</td>
-      <td>1</td>
-      <td>1</td>
-      <td>1</td>
-      <td>2</td>
-      <td>2</td>
-      <td>2</td>
-      <td>2</td>
-      <td>2</td>
-      <td>2</td>
-    </tr>
-    <tr>
-      <th>identity</th>
-      <td>1</td>
-      <td>1</td>
-      <td>1</td>
-      <td>0.99</td>
-      <td>0.99</td>
-      <td>0.98</td>
-      <td>0.98</td>
-      <td>0.94</td>
-      <td>1</td>
-      <td>1</td>
-      <td>1</td>
-      <td>1</td>
-      <td>1</td>
-      <td>1</td>
-      <td>1</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <th>is_canonical</th>
+      <td>1.00</td>
       <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-    </tr>
-    <tr>
-      <th>pdb_id</th>
       <td>1nf1</td>
-      <td>2d4q</td>
-      <td>2d4q</td>
-      <td>2e2x</td>
-      <td>2e2x</td>
-      <td>3p7z</td>
-      <td>3p7z</td>
-      <td>3peg</td>
-      <td>3pg7</td>
-      <td>3pg7</td>
-      <td>6ob2</td>
-      <td>6ob2</td>
-      <td>6ob3</td>
-      <td>6ob3</td>
-      <td>6v65</td>
-      <td>6v6f</td>
-    </tr>
-    <tr>
-      <th>struct_asym_id</th>
       <td>A</td>
-      <td>A</td>
-      <td>B</td>
-      <td>A</td>
-      <td>B</td>
-      <td>A</td>
-      <td>B</td>
-      <td>A</td>
-      <td>A</td>
-      <td>B</td>
-      <td>B</td>
-      <td>D</td>
-      <td>B</td>
-      <td>D</td>
-      <td>B</td>
-      <td>B</td>
-    </tr>
-    <tr>
-      <th>pdb_range</th>
       <td>[[1,333]]</td>
-      <td>[[1,257]]</td>
-      <td>[[1,257]]</td>
-      <td>[[6,277]]</td>
-      <td>[[6,277]]</td>
-      <td>[[5,276]]</td>
-      <td>[[5,276]]</td>
-      <td>[[5,172],[174,290]]</td>
-      <td>[[1,256]]</td>
-      <td>[[1,256]]</td>
-      <td>[[2,256]]</td>
-      <td>[[2,256]]</td>
-      <td>[[2,256]]</td>
-      <td>[[2,256]]</td>
-      <td>[[2,329]]</td>
-      <td>[[2,329]]</td>
-    </tr>
-    <tr>
-      <th>unp_range</th>
       <td>[[1198,1530]]</td>
+      <td>P21359</td>
+      <td>...</td>
+      <td>Safe</td>
+      <td>False</td>
+      <td>False</td>
+      <td>0</td>
+      <td>[[1,333]]</td>
+      <td>[[1198,1530]]</td>
+      <td>{"216":"R"}</td>
+      <td>[[216,216]]</td>
+      <td>[[1413,1413]]</td>
+      <td>2818</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>P21359-2</td>
+      <td>A</td>
+      <td>1</td>
+      <td>1.00</td>
+      <td>False</td>
+      <td>2d4q</td>
+      <td>A</td>
+      <td>[[1,257]]</td>
       <td>[[1560,1816]]</td>
+      <td>P21359</td>
+      <td>...</td>
+      <td>Safe</td>
+      <td>False</td>
+      <td>False</td>
+      <td>0</td>
+      <td>[[1,257]]</td>
       <td>[[1560,1816]]</td>
+      <td>{}</td>
+      <td>[]</td>
+      <td>[]</td>
+      <td>2818</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>P21359-2</td>
+      <td>B</td>
+      <td>1</td>
+      <td>1.00</td>
+      <td>False</td>
+      <td>2d4q</td>
+      <td>B</td>
+      <td>[[1,257]]</td>
+      <td>[[1560,1816]]</td>
+      <td>P21359</td>
+      <td>...</td>
+      <td>Safe</td>
+      <td>False</td>
+      <td>False</td>
+      <td>0</td>
+      <td>[[1,257]]</td>
+      <td>[[1560,1816]]</td>
+      <td>{}</td>
+      <td>[]</td>
+      <td>[]</td>
+      <td>2818</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>P21359-2</td>
+      <td>A</td>
+      <td>1</td>
+      <td>0.99</td>
+      <td>False</td>
+      <td>2e2x</td>
+      <td>A</td>
+      <td>[[6,277]]</td>
       <td>[[1545,1816]]</td>
+      <td>P21359</td>
+      <td>...</td>
+      <td>Safe</td>
+      <td>False</td>
+      <td>False</td>
+      <td>0</td>
+      <td>[[6,277]]</td>
       <td>[[1545,1816]]</td>
+      <td>{}</td>
+      <td>[]</td>
+      <td>[]</td>
+      <td>2818</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>P21359-2</td>
+      <td>B</td>
+      <td>1</td>
+      <td>0.99</td>
+      <td>False</td>
+      <td>2e2x</td>
+      <td>B</td>
+      <td>[[6,277]]</td>
       <td>[[1545,1816]]</td>
+      <td>P21359</td>
+      <td>...</td>
+      <td>Safe</td>
+      <td>False</td>
+      <td>False</td>
+      <td>0</td>
+      <td>[[6,277]]</td>
       <td>[[1545,1816]]</td>
+      <td>{}</td>
+      <td>[]</td>
+      <td>[]</td>
+      <td>2818</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>P21359-2</td>
+      <td>A</td>
+      <td>1</td>
+      <td>0.98</td>
+      <td>False</td>
+      <td>3p7z</td>
+      <td>A</td>
+      <td>[[5,276]]</td>
+      <td>[[1545,1816]]</td>
+      <td>P21359</td>
+      <td>...</td>
+      <td>Safe</td>
+      <td>False</td>
+      <td>False</td>
+      <td>0</td>
+      <td>[[5,276]]</td>
+      <td>[[1545,1816]]</td>
+      <td>{"44":"I"}</td>
+      <td>[[44,44]]</td>
+      <td>[[1584,1584]]</td>
+      <td>2818</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>P21359-2</td>
+      <td>B</td>
+      <td>1</td>
+      <td>0.98</td>
+      <td>False</td>
+      <td>3p7z</td>
+      <td>B</td>
+      <td>[[5,276]]</td>
+      <td>[[1545,1816]]</td>
+      <td>P21359</td>
+      <td>...</td>
+      <td>Safe</td>
+      <td>False</td>
+      <td>False</td>
+      <td>0</td>
+      <td>[[5,276]]</td>
+      <td>[[1545,1816]]</td>
+      <td>{"44":"I"}</td>
+      <td>[[44,44]]</td>
+      <td>[[1584,1584]]</td>
+      <td>2818</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>P21359-2</td>
+      <td>A</td>
+      <td>1</td>
+      <td>0.94</td>
+      <td>False</td>
+      <td>3peg</td>
+      <td>A</td>
+      <td>[[5,172],[174,290]]</td>
       <td>[[1545,1712],[1700,1816]]</td>
-      <td>[[1560,1816]]</td>
-      <td>[[1560,1816]]</td>
-      <td>[[1209,1463]]</td>
-      <td>[[1209,1463]]</td>
-      <td>[[1209,1463]]</td>
-      <td>[[1209,1463]]</td>
-      <td>[[1203,1530]]</td>
-      <td>[[1203,1530]]</td>
-    </tr>
-    <tr>
-      <th>Entry</th>
       <td>P21359</td>
-      <td>P21359</td>
-      <td>P21359</td>
-      <td>P21359</td>
-      <td>P21359</td>
-      <td>P21359</td>
-      <td>P21359</td>
-      <td>P21359</td>
-      <td>P21359</td>
-      <td>P21359</td>
-      <td>P21359</td>
-      <td>P21359</td>
-      <td>P21359</td>
-      <td>P21359</td>
-      <td>P21359</td>
-      <td>P21359</td>
-    </tr>
-    <tr>
-      <th>range_diff</th>
-      <td>[0]</td>
-      <td>[0]</td>
-      <td>[0]</td>
-      <td>[0]</td>
-      <td>[0]</td>
-      <td>[0]</td>
-      <td>[0]</td>
-      <td>[0, 0]</td>
-      <td>[1]</td>
-      <td>[1]</td>
-      <td>[0]</td>
-      <td>[0]</td>
-      <td>[0]</td>
-      <td>[0]</td>
-      <td>[0]</td>
-      <td>[0]</td>
-    </tr>
-    <tr>
-      <th>sifts_range_tag</th>
-      <td>Safe</td>
-      <td>Safe</td>
-      <td>Safe</td>
-      <td>Safe</td>
-      <td>Safe</td>
-      <td>Safe</td>
-      <td>Safe</td>
+      <td>...</td>
       <td>InDel_1</td>
-      <td>Deletion</td>
-      <td>Deletion</td>
-      <td>Safe</td>
-      <td>Safe</td>
-      <td>Safe</td>
-      <td>Safe</td>
-      <td>Safe</td>
-      <td>Safe</td>
-    </tr>
-    <tr>
-      <th>repeated</th>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
       <td>True</td>
       <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-    </tr>
-    <tr>
-      <th>reversed</th>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-    </tr>
-    <tr>
-      <th>InDel_sum</th>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
       <td>-12</td>
-      <td>1</td>
-      <td>1</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>new_pdb_range</th>
-      <td>[[1,333]]</td>
-      <td>[[1,257]]</td>
-      <td>[[1,257]]</td>
-      <td>[[6,277]]</td>
-      <td>[[6,277]]</td>
-      <td>[[5,276]]</td>
-      <td>[[5,276]]</td>
       <td>[[5,172],[174,290]]</td>
-      <td>((1, 191), (192, 256))</td>
-      <td>((1, 191), (192, 256))</td>
-      <td>[[2,256]]</td>
-      <td>[[2,256]]</td>
-      <td>[[2,256]]</td>
-      <td>[[2,256]]</td>
-      <td>[[2,329]]</td>
-      <td>[[2,329]]</td>
-    </tr>
-    <tr>
-      <th>new_unp_range</th>
-      <td>[[1198,1530]]</td>
-      <td>[[1560,1816]]</td>
-      <td>[[1560,1816]]</td>
-      <td>[[1545,1816]]</td>
-      <td>[[1545,1816]]</td>
-      <td>[[1545,1816]]</td>
-      <td>[[1545,1816]]</td>
       <td>[[1545,1712],[1700,1816]]</td>
+      <td>{}</td>
+      <td>[]</td>
+      <td>[]</td>
+      <td>2818</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>P21359-2</td>
+      <td>A</td>
+      <td>1</td>
+      <td>1.00</td>
+      <td>False</td>
+      <td>3pg7</td>
+      <td>A</td>
+      <td>[[1,256]]</td>
+      <td>[[1560,1816]]</td>
+      <td>P21359</td>
+      <td>...</td>
+      <td>Deletion</td>
+      <td>False</td>
+      <td>False</td>
+      <td>1</td>
+      <td>((1, 191), (192, 256))</td>
       <td>((1560, 1750), (1752, 1816))</td>
+      <td>{"191":"K"}</td>
+      <td>[[191,191]]</td>
+      <td>[[1750,1750]]</td>
+      <td>2818</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>P21359-2</td>
+      <td>B</td>
+      <td>1</td>
+      <td>1.00</td>
+      <td>False</td>
+      <td>3pg7</td>
+      <td>B</td>
+      <td>[[1,256]]</td>
+      <td>[[1560,1816]]</td>
+      <td>P21359</td>
+      <td>...</td>
+      <td>Deletion</td>
+      <td>False</td>
+      <td>False</td>
+      <td>1</td>
+      <td>((1, 191), (192, 256))</td>
       <td>((1560, 1750), (1752, 1816))</td>
-      <td>[[1209,1463]]</td>
-      <td>[[1209,1463]]</td>
-      <td>[[1209,1463]]</td>
-      <td>[[1209,1463]]</td>
-      <td>[[1203,1530]]</td>
-      <td>[[1203,1530]]</td>
-    </tr>
-    <tr>
-      <th>conflict_pdb_index</th>
-      <td>{"216":"R"}</td>
-      <td>{}</td>
-      <td>{}</td>
-      <td>{}</td>
-      <td>{}</td>
-      <td>{"44":"I"}</td>
-      <td>{"44":"I"}</td>
-      <td>{}</td>
       <td>{"191":"K"}</td>
-      <td>{"191":"K"}</td>
-      <td>{}</td>
-      <td>{}</td>
-      <td>{}</td>
-      <td>{}</td>
-      <td>{}</td>
-      <td>{}</td>
-    </tr>
-    <tr>
-      <th>conflict_pdb_range</th>
-      <td>[[216,216]]</td>
-      <td>[]</td>
-      <td>[]</td>
-      <td>[]</td>
-      <td>[]</td>
-      <td>[[44,44]]</td>
-      <td>[[44,44]]</td>
-      <td>[]</td>
       <td>[[191,191]]</td>
-      <td>[[191,191]]</td>
-      <td>[]</td>
-      <td>[]</td>
-      <td>[]</td>
-      <td>[]</td>
-      <td>[]</td>
-      <td>[]</td>
+      <td>[[1750,1750]]</td>
+      <td>2818</td>
     </tr>
     <tr>
-      <th>conflict_unp_range</th>
-      <td>[[1413,1413]]</td>
+      <th>10</th>
+      <td>P21359-2</td>
+      <td>B</td>
+      <td>2</td>
+      <td>1.00</td>
+      <td>False</td>
+      <td>6ob2</td>
+      <td>B</td>
+      <td>[[2,256]]</td>
+      <td>[[1209,1463]]</td>
+      <td>P21359</td>
+      <td>...</td>
+      <td>Safe</td>
+      <td>False</td>
+      <td>False</td>
+      <td>0</td>
+      <td>[[2,256]]</td>
+      <td>[[1209,1463]]</td>
+      <td>{}</td>
       <td>[]</td>
       <td>[]</td>
-      <td>[]</td>
-      <td>[]</td>
-      <td>[[1584,1584]]</td>
-      <td>[[1584,1584]]</td>
-      <td>[]</td>
-      <td>[[1750,1750]]</td>
-      <td>[[1750,1750]]</td>
-      <td>[]</td>
-      <td>[]</td>
-      <td>[]</td>
-      <td>[]</td>
-      <td>[]</td>
-      <td>[]</td>
+      <td>2818</td>
     </tr>
     <tr>
-      <th>unp_len</th>
+      <th>11</th>
+      <td>P21359-2</td>
+      <td>D</td>
+      <td>2</td>
+      <td>1.00</td>
+      <td>False</td>
+      <td>6ob2</td>
+      <td>D</td>
+      <td>[[2,256]]</td>
+      <td>[[1209,1463]]</td>
+      <td>P21359</td>
+      <td>...</td>
+      <td>Safe</td>
+      <td>False</td>
+      <td>False</td>
+      <td>0</td>
+      <td>[[2,256]]</td>
+      <td>[[1209,1463]]</td>
+      <td>{}</td>
+      <td>[]</td>
+      <td>[]</td>
       <td>2818</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>P21359-2</td>
+      <td>B</td>
+      <td>2</td>
+      <td>1.00</td>
+      <td>False</td>
+      <td>6ob3</td>
+      <td>B</td>
+      <td>[[2,256]]</td>
+      <td>[[1209,1463]]</td>
+      <td>P21359</td>
+      <td>...</td>
+      <td>Safe</td>
+      <td>False</td>
+      <td>False</td>
+      <td>0</td>
+      <td>[[2,256]]</td>
+      <td>[[1209,1463]]</td>
+      <td>{}</td>
+      <td>[]</td>
+      <td>[]</td>
       <td>2818</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>P21359-2</td>
+      <td>D</td>
+      <td>2</td>
+      <td>1.00</td>
+      <td>False</td>
+      <td>6ob3</td>
+      <td>D</td>
+      <td>[[2,256]]</td>
+      <td>[[1209,1463]]</td>
+      <td>P21359</td>
+      <td>...</td>
+      <td>Safe</td>
+      <td>False</td>
+      <td>False</td>
+      <td>0</td>
+      <td>[[2,256]]</td>
+      <td>[[1209,1463]]</td>
+      <td>{}</td>
+      <td>[]</td>
+      <td>[]</td>
       <td>2818</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>P21359-2</td>
+      <td>B</td>
+      <td>2</td>
+      <td>1.00</td>
+      <td>False</td>
+      <td>6v65</td>
+      <td>B</td>
+      <td>[[2,329]]</td>
+      <td>[[1203,1530]]</td>
+      <td>P21359</td>
+      <td>...</td>
+      <td>Safe</td>
+      <td>False</td>
+      <td>False</td>
+      <td>0</td>
+      <td>[[2,329]]</td>
+      <td>[[1203,1530]]</td>
+      <td>{}</td>
+      <td>[]</td>
+      <td>[]</td>
       <td>2818</td>
-      <td>2818</td>
-      <td>2818</td>
-      <td>2818</td>
-      <td>2818</td>
-      <td>2818</td>
-      <td>2818</td>
-      <td>2818</td>
-      <td>2818</td>
-      <td>2818</td>
-      <td>2818</td>
-      <td>2818</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>P21359-2</td>
+      <td>B</td>
+      <td>2</td>
+      <td>1.00</td>
+      <td>False</td>
+      <td>6v6f</td>
+      <td>B</td>
+      <td>[[2,329]]</td>
+      <td>[[1203,1530]]</td>
+      <td>P21359</td>
+      <td>...</td>
+      <td>Safe</td>
+      <td>False</td>
+      <td>False</td>
+      <td>0</td>
+      <td>[[2,329]]</td>
+      <td>[[1203,1530]]</td>
+      <td>{}</td>
+      <td>[]</td>
+      <td>[]</td>
       <td>2818</td>
     </tr>
   </tbody>
 </table>
 </details>
-
 
 ### 批量检索SIFTS
 
@@ -1210,243 +1726,854 @@ sifts_info, score_detail, experimental_info = SIFTS('P21359-3').pipe_score().res
 对于一个PDB，其对应的Assembly相关信息可以通过如下方式获取:
 
 ```python
-pdb_object.profile_id().result().query('molecule_type == "polypeptide(L)"').T
+pdb_object.profile_id().result()
 ```
 
 <details>
 <summary>Click to view dataframe</summary>
+
 <table class="dataframe">
   <thead>
     <tr style="text-align: right;">
       <th></th>
-      <th>0</th>
-      <th>1</th>
-      <th>2</th>
-      <th>3</th>
-      <th>16</th>
-      <th>17</th>
-      <th>24</th>
-      <th>25</th>
-      <th>33</th>
-      <th>34</th>
-      <th>40</th>
-      <th>41</th>
+      <th>pdb_id</th>
+      <th>entity_id</th>
+      <th>molecule_type</th>
+      <th>chain_id</th>
+      <th>struct_asym_id</th>
+      <th>assembly_id</th>
+      <th>model_id</th>
+      <th>asym_id_rank</th>
+      <th>oper_expression</th>
+      <th>symmetry_operation</th>
+      <th>symmetry_id</th>
+      <th>struct_asym_id_in_assembly</th>
+      <th>au_subset</th>
+      <th>details</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <th>pdb_id</th>
+      <th>0</th>
       <td>3hl2</td>
-      <td>3hl2</td>
-      <td>3hl2</td>
-      <td>3hl2</td>
-      <td>3hl2</td>
-      <td>3hl2</td>
-      <td>3hl2</td>
-      <td>3hl2</td>
-      <td>3hl2</td>
-      <td>3hl2</td>
-      <td>3hl2</td>
-      <td>3hl2</td>
-    </tr>
-    <tr>
-      <th>entity_id</th>
       <td>1</td>
-      <td>1</td>
-      <td>1</td>
-      <td>1</td>
-      <td>1</td>
-      <td>1</td>
-      <td>1</td>
-      <td>1</td>
-      <td>1</td>
-      <td>1</td>
-      <td>1</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <th>molecule_type</th>
       <td>polypeptide(L)</td>
-      <td>polypeptide(L)</td>
-      <td>polypeptide(L)</td>
-      <td>polypeptide(L)</td>
-      <td>polypeptide(L)</td>
-      <td>polypeptide(L)</td>
-      <td>polypeptide(L)</td>
-      <td>polypeptide(L)</td>
-      <td>polypeptide(L)</td>
-      <td>polypeptide(L)</td>
-      <td>polypeptide(L)</td>
-      <td>polypeptide(L)</td>
-    </tr>
-    <tr>
-      <th>chain_id</th>
       <td>A</td>
-      <td>C</td>
-      <td>B</td>
-      <td>D</td>
       <td>A</td>
-      <td>B</td>
-      <td>A</td>
-      <td>B</td>
-      <td>C</td>
-      <td>D</td>
-      <td>C</td>
-      <td>D</td>
-    </tr>
-    <tr>
-      <th>struct_asym_id</th>
-      <td>A</td>
-      <td>C</td>
-      <td>B</td>
-      <td>D</td>
-      <td>A</td>
-      <td>B</td>
-      <td>A</td>
-      <td>B</td>
-      <td>C</td>
-      <td>D</td>
-      <td>C</td>
-      <td>D</td>
-    </tr>
-    <tr>
-      <th>assembly_id</th>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
       <td>0</td>
       <td>1</td>
       <td>1</td>
-      <td>1</td>
-      <td>1</td>
-      <td>2</td>
-      <td>2</td>
-      <td>2</td>
-      <td>2</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>A</td>
+      <td>False</td>
+      <td>asymmetric_unit</td>
     </tr>
     <tr>
-      <th>model_id</th>
+      <th>1</th>
+      <td>3hl2</td>
+      <td>1</td>
+      <td>polypeptide(L)</td>
+      <td>C</td>
+      <td>C</td>
+      <td>0</td>
       <td>1</td>
       <td>1</td>
-      <td>1</td>
-      <td>1</td>
-      <td>1</td>
-      <td>1</td>
-      <td>2</td>
-      <td>2</td>
-      <td>1</td>
-      <td>1</td>
-      <td>2</td>
-      <td>2</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>C</td>
+      <td>False</td>
+      <td>asymmetric_unit</td>
     </tr>
     <tr>
-      <th>asym_id_rank</th>
+      <th>2</th>
+      <td>3hl2</td>
+      <td>1</td>
+      <td>polypeptide(L)</td>
+      <td>B</td>
+      <td>B</td>
+      <td>0</td>
       <td>1</td>
       <td>1</td>
-      <td>1</td>
-      <td>1</td>
-      <td>1</td>
-      <td>1</td>
-      <td>2</td>
-      <td>2</td>
-      <td>1</td>
-      <td>1</td>
-      <td>2</td>
-      <td>2</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>B</td>
+      <td>False</td>
+      <td>asymmetric_unit</td>
     </tr>
     <tr>
-      <th>oper_expression</th>
+      <th>3</th>
+      <td>3hl2</td>
+      <td>1</td>
+      <td>polypeptide(L)</td>
+      <td>D</td>
+      <td>D</td>
+      <td>0</td>
+      <td>1</td>
+      <td>1</td>
       <td></td>
       <td></td>
       <td></td>
+      <td>D</td>
+      <td>False</td>
+      <td>asymmetric_unit</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>3hl2</td>
+      <td>2</td>
+      <td>polyribonucleotide</td>
+      <td>E</td>
+      <td>E</td>
+      <td>0</td>
+      <td>1</td>
+      <td>1</td>
       <td></td>
+      <td></td>
+      <td></td>
+      <td>E</td>
+      <td>False</td>
+      <td>asymmetric_unit</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>3hl2</td>
+      <td>3</td>
+      <td>bound</td>
+      <td>B</td>
+      <td>I</td>
+      <td>0</td>
+      <td>1</td>
+      <td>1</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>I</td>
+      <td>False</td>
+      <td>asymmetric_unit</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>3hl2</td>
+      <td>3</td>
+      <td>bound</td>
+      <td>D</td>
+      <td>N</td>
+      <td>0</td>
+      <td>1</td>
+      <td>1</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>N</td>
+      <td>False</td>
+      <td>asymmetric_unit</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>3hl2</td>
+      <td>3</td>
+      <td>bound</td>
+      <td>C</td>
+      <td>L</td>
+      <td>0</td>
+      <td>1</td>
+      <td>1</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>L</td>
+      <td>False</td>
+      <td>asymmetric_unit</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>3hl2</td>
+      <td>3</td>
+      <td>bound</td>
+      <td>A</td>
+      <td>F</td>
+      <td>0</td>
+      <td>1</td>
+      <td>1</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>F</td>
+      <td>False</td>
+      <td>asymmetric_unit</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>3hl2</td>
+      <td>4</td>
+      <td>bound</td>
+      <td>A</td>
+      <td>H</td>
+      <td>0</td>
+      <td>1</td>
+      <td>1</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>H</td>
+      <td>False</td>
+      <td>asymmetric_unit</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>3hl2</td>
+      <td>4</td>
+      <td>bound</td>
+      <td>C</td>
+      <td>M</td>
+      <td>0</td>
+      <td>1</td>
+      <td>1</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>M</td>
+      <td>False</td>
+      <td>asymmetric_unit</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>3hl2</td>
+      <td>4</td>
+      <td>bound</td>
+      <td>A</td>
+      <td>G</td>
+      <td>0</td>
+      <td>1</td>
+      <td>1</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>G</td>
+      <td>False</td>
+      <td>asymmetric_unit</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>3hl2</td>
+      <td>5</td>
+      <td>bound</td>
+      <td>D</td>
+      <td>P</td>
+      <td>0</td>
+      <td>1</td>
+      <td>1</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>P</td>
+      <td>False</td>
+      <td>asymmetric_unit</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>3hl2</td>
+      <td>5</td>
+      <td>bound</td>
+      <td>B</td>
+      <td>K</td>
+      <td>0</td>
+      <td>1</td>
+      <td>1</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>K</td>
+      <td>False</td>
+      <td>asymmetric_unit</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>3hl2</td>
+      <td>5</td>
+      <td>bound</td>
+      <td>B</td>
+      <td>J</td>
+      <td>0</td>
+      <td>1</td>
+      <td>1</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>J</td>
+      <td>False</td>
+      <td>asymmetric_unit</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>3hl2</td>
+      <td>5</td>
+      <td>bound</td>
+      <td>D</td>
+      <td>O</td>
+      <td>0</td>
+      <td>1</td>
+      <td>1</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>O</td>
+      <td>False</td>
+      <td>asymmetric_unit</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>3hl2</td>
+      <td>1</td>
+      <td>polypeptide(L)</td>
+      <td>A</td>
+      <td>A</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
       <td>["1"]</td>
+      <td>["x,x-y-1,-z"]</td>
+      <td>["6_545"]</td>
+      <td>A</td>
+      <td>False</td>
+      <td>author_defined_assembly</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>3hl2</td>
+      <td>1</td>
+      <td>polypeptide(L)</td>
+      <td>B</td>
+      <td>B</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
       <td>["1"]</td>
-      <td>["2"]</td>
-      <td>["2"]</td>
-      <td>["3"]</td>
-      <td>["3"]</td>
-      <td>["2"]</td>
-      <td>["2"]</td>
-    </tr>
-    <tr>
-      <th>symmetry_operation</th>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
       <td>["x,x-y-1,-z"]</td>
+      <td>["6_545"]</td>
+      <td>B</td>
+      <td>False</td>
+      <td>author_defined_assembly</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>3hl2</td>
+      <td>3</td>
+      <td>bound</td>
+      <td>A</td>
+      <td>F</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>["1"]</td>
       <td>["x,x-y-1,-z"]</td>
-      <td>["x,y,z"]</td>
-      <td>["x,y,z"]</td>
-      <td>["-x+y,y,-z+1/3"]</td>
-      <td>["-x+y,y,-z+1/3"]</td>
-      <td>["x,y,z"]</td>
-      <td>["x,y,z"]</td>
+      <td>["6_545"]</td>
+      <td>F</td>
+      <td>False</td>
+      <td>author_defined_assembly</td>
     </tr>
     <tr>
-      <th>symmetry_id</th>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
+      <th>19</th>
+      <td>3hl2</td>
+      <td>4</td>
+      <td>bound</td>
+      <td>A</td>
+      <td>G</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>["1"]</td>
+      <td>["x,x-y-1,-z"]</td>
       <td>["6_545"]</td>
-      <td>["6_545"]</td>
-      <td>["1_555"]</td>
-      <td>["1_555"]</td>
-      <td>["5_555"]</td>
-      <td>["5_555"]</td>
-      <td>["1_555"]</td>
-      <td>["1_555"]</td>
+      <td>G</td>
+      <td>False</td>
+      <td>author_defined_assembly</td>
     </tr>
     <tr>
-      <th>struct_asym_id_in_assembly</th>
+      <th>20</th>
+      <td>3hl2</td>
+      <td>4</td>
+      <td>bound</td>
       <td>A</td>
-      <td>C</td>
+      <td>H</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>["1"]</td>
+      <td>["x,x-y-1,-z"]</td>
+      <td>["6_545"]</td>
+      <td>H</td>
+      <td>False</td>
+      <td>author_defined_assembly</td>
+    </tr>
+    <tr>
+      <th>21</th>
+      <td>3hl2</td>
+      <td>3</td>
+      <td>bound</td>
       <td>B</td>
-      <td>D</td>
+      <td>I</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>["1"]</td>
+      <td>["x,x-y-1,-z"]</td>
+      <td>["6_545"]</td>
+      <td>I</td>
+      <td>False</td>
+      <td>author_defined_assembly</td>
+    </tr>
+    <tr>
+      <th>22</th>
+      <td>3hl2</td>
+      <td>5</td>
+      <td>bound</td>
+      <td>B</td>
+      <td>J</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>["1"]</td>
+      <td>["x,x-y-1,-z"]</td>
+      <td>["6_545"]</td>
+      <td>J</td>
+      <td>False</td>
+      <td>author_defined_assembly</td>
+    </tr>
+    <tr>
+      <th>23</th>
+      <td>3hl2</td>
+      <td>5</td>
+      <td>bound</td>
+      <td>B</td>
+      <td>K</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>["1"]</td>
+      <td>["x,x-y-1,-z"]</td>
+      <td>["6_545"]</td>
+      <td>K</td>
+      <td>False</td>
+      <td>author_defined_assembly</td>
+    </tr>
+    <tr>
+      <th>24</th>
+      <td>3hl2</td>
+      <td>1</td>
+      <td>polypeptide(L)</td>
       <td>A</td>
-      <td>B</td>
+      <td>A</td>
+      <td>1</td>
+      <td>2</td>
+      <td>2</td>
+      <td>["2"]</td>
+      <td>["x,y,z"]</td>
+      <td>["1_555"]</td>
       <td>AA</td>
+      <td>False</td>
+      <td>author_defined_assembly</td>
+    </tr>
+    <tr>
+      <th>25</th>
+      <td>3hl2</td>
+      <td>1</td>
+      <td>polypeptide(L)</td>
+      <td>B</td>
+      <td>B</td>
+      <td>1</td>
+      <td>2</td>
+      <td>2</td>
+      <td>["2"]</td>
+      <td>["x,y,z"]</td>
+      <td>["1_555"]</td>
       <td>BA</td>
+      <td>False</td>
+      <td>author_defined_assembly</td>
+    </tr>
+    <tr>
+      <th>26</th>
+      <td>3hl2</td>
+      <td>2</td>
+      <td>polyribonucleotide</td>
+      <td>E</td>
+      <td>E</td>
+      <td>1</td>
+      <td>2</td>
+      <td>1</td>
+      <td>["2"]</td>
+      <td>["x,y,z"]</td>
+      <td>["1_555"]</td>
+      <td>E</td>
+      <td>False</td>
+      <td>author_defined_assembly</td>
+    </tr>
+    <tr>
+      <th>27</th>
+      <td>3hl2</td>
+      <td>3</td>
+      <td>bound</td>
+      <td>A</td>
+      <td>F</td>
+      <td>1</td>
+      <td>2</td>
+      <td>2</td>
+      <td>["2"]</td>
+      <td>["x,y,z"]</td>
+      <td>["1_555"]</td>
+      <td>FA</td>
+      <td>False</td>
+      <td>author_defined_assembly</td>
+    </tr>
+    <tr>
+      <th>28</th>
+      <td>3hl2</td>
+      <td>4</td>
+      <td>bound</td>
+      <td>A</td>
+      <td>G</td>
+      <td>1</td>
+      <td>2</td>
+      <td>2</td>
+      <td>["2"]</td>
+      <td>["x,y,z"]</td>
+      <td>["1_555"]</td>
+      <td>GA</td>
+      <td>False</td>
+      <td>author_defined_assembly</td>
+    </tr>
+    <tr>
+      <th>29</th>
+      <td>3hl2</td>
+      <td>4</td>
+      <td>bound</td>
+      <td>A</td>
+      <td>H</td>
+      <td>1</td>
+      <td>2</td>
+      <td>2</td>
+      <td>["2"]</td>
+      <td>["x,y,z"]</td>
+      <td>["1_555"]</td>
+      <td>HA</td>
+      <td>False</td>
+      <td>author_defined_assembly</td>
+    </tr>
+    <tr>
+      <th>30</th>
+      <td>3hl2</td>
+      <td>3</td>
+      <td>bound</td>
+      <td>B</td>
+      <td>I</td>
+      <td>1</td>
+      <td>2</td>
+      <td>2</td>
+      <td>["2"]</td>
+      <td>["x,y,z"]</td>
+      <td>["1_555"]</td>
+      <td>IA</td>
+      <td>False</td>
+      <td>author_defined_assembly</td>
+    </tr>
+    <tr>
+      <th>31</th>
+      <td>3hl2</td>
+      <td>5</td>
+      <td>bound</td>
+      <td>B</td>
+      <td>J</td>
+      <td>1</td>
+      <td>2</td>
+      <td>2</td>
+      <td>["2"]</td>
+      <td>["x,y,z"]</td>
+      <td>["1_555"]</td>
+      <td>JA</td>
+      <td>False</td>
+      <td>author_defined_assembly</td>
+    </tr>
+    <tr>
+      <th>32</th>
+      <td>3hl2</td>
+      <td>5</td>
+      <td>bound</td>
+      <td>B</td>
+      <td>K</td>
+      <td>1</td>
+      <td>2</td>
+      <td>2</td>
+      <td>["2"]</td>
+      <td>["x,y,z"]</td>
+      <td>["1_555"]</td>
+      <td>KA</td>
+      <td>False</td>
+      <td>author_defined_assembly</td>
+    </tr>
+    <tr>
+      <th>33</th>
+      <td>3hl2</td>
+      <td>1</td>
+      <td>polypeptide(L)</td>
       <td>C</td>
+      <td>C</td>
+      <td>2</td>
+      <td>1</td>
+      <td>1</td>
+      <td>["3"]</td>
+      <td>["-x+y,y,-z+1/3"]</td>
+      <td>["5_555"]</td>
+      <td>C</td>
+      <td>False</td>
+      <td>author_defined_assembly</td>
+    </tr>
+    <tr>
+      <th>34</th>
+      <td>3hl2</td>
+      <td>1</td>
+      <td>polypeptide(L)</td>
       <td>D</td>
+      <td>D</td>
+      <td>2</td>
+      <td>1</td>
+      <td>1</td>
+      <td>["3"]</td>
+      <td>["-x+y,y,-z+1/3"]</td>
+      <td>["5_555"]</td>
+      <td>D</td>
+      <td>False</td>
+      <td>author_defined_assembly</td>
+    </tr>
+    <tr>
+      <th>35</th>
+      <td>3hl2</td>
+      <td>3</td>
+      <td>bound</td>
+      <td>C</td>
+      <td>L</td>
+      <td>2</td>
+      <td>1</td>
+      <td>1</td>
+      <td>["3"]</td>
+      <td>["-x+y,y,-z+1/3"]</td>
+      <td>["5_555"]</td>
+      <td>L</td>
+      <td>False</td>
+      <td>author_defined_assembly</td>
+    </tr>
+    <tr>
+      <th>36</th>
+      <td>3hl2</td>
+      <td>4</td>
+      <td>bound</td>
+      <td>C</td>
+      <td>M</td>
+      <td>2</td>
+      <td>1</td>
+      <td>1</td>
+      <td>["3"]</td>
+      <td>["-x+y,y,-z+1/3"]</td>
+      <td>["5_555"]</td>
+      <td>M</td>
+      <td>False</td>
+      <td>author_defined_assembly</td>
+    </tr>
+    <tr>
+      <th>37</th>
+      <td>3hl2</td>
+      <td>3</td>
+      <td>bound</td>
+      <td>D</td>
+      <td>N</td>
+      <td>2</td>
+      <td>1</td>
+      <td>1</td>
+      <td>["3"]</td>
+      <td>["-x+y,y,-z+1/3"]</td>
+      <td>["5_555"]</td>
+      <td>N</td>
+      <td>False</td>
+      <td>author_defined_assembly</td>
+    </tr>
+    <tr>
+      <th>38</th>
+      <td>3hl2</td>
+      <td>5</td>
+      <td>bound</td>
+      <td>D</td>
+      <td>O</td>
+      <td>2</td>
+      <td>1</td>
+      <td>1</td>
+      <td>["3"]</td>
+      <td>["-x+y,y,-z+1/3"]</td>
+      <td>["5_555"]</td>
+      <td>O</td>
+      <td>False</td>
+      <td>author_defined_assembly</td>
+    </tr>
+    <tr>
+      <th>39</th>
+      <td>3hl2</td>
+      <td>5</td>
+      <td>bound</td>
+      <td>D</td>
+      <td>P</td>
+      <td>2</td>
+      <td>1</td>
+      <td>1</td>
+      <td>["3"]</td>
+      <td>["-x+y,y,-z+1/3"]</td>
+      <td>["5_555"]</td>
+      <td>P</td>
+      <td>False</td>
+      <td>author_defined_assembly</td>
+    </tr>
+    <tr>
+      <th>40</th>
+      <td>3hl2</td>
+      <td>1</td>
+      <td>polypeptide(L)</td>
+      <td>C</td>
+      <td>C</td>
+      <td>2</td>
+      <td>2</td>
+      <td>2</td>
+      <td>["2"]</td>
+      <td>["x,y,z"]</td>
+      <td>["1_555"]</td>
       <td>CA</td>
+      <td>False</td>
+      <td>author_defined_assembly</td>
+    </tr>
+    <tr>
+      <th>41</th>
+      <td>3hl2</td>
+      <td>1</td>
+      <td>polypeptide(L)</td>
+      <td>D</td>
+      <td>D</td>
+      <td>2</td>
+      <td>2</td>
+      <td>2</td>
+      <td>["2"]</td>
+      <td>["x,y,z"]</td>
+      <td>["1_555"]</td>
       <td>DA</td>
+      <td>False</td>
+      <td>author_defined_assembly</td>
     </tr>
     <tr>
-      <th>au_subset</th>
+      <th>42</th>
+      <td>3hl2</td>
+      <td>2</td>
+      <td>polyribonucleotide</td>
+      <td>E</td>
+      <td>E</td>
+      <td>2</td>
+      <td>2</td>
+      <td>1</td>
+      <td>["2"]</td>
+      <td>["x,y,z"]</td>
+      <td>["1_555"]</td>
+      <td>E</td>
       <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
+      <td>author_defined_assembly</td>
     </tr>
     <tr>
-      <th>details</th>
-      <td>asymmetric_unit</td>
-      <td>asymmetric_unit</td>
-      <td>asymmetric_unit</td>
-      <td>asymmetric_unit</td>
+      <th>43</th>
+      <td>3hl2</td>
+      <td>3</td>
+      <td>bound</td>
+      <td>C</td>
+      <td>L</td>
+      <td>2</td>
+      <td>2</td>
+      <td>2</td>
+      <td>["2"]</td>
+      <td>["x,y,z"]</td>
+      <td>["1_555"]</td>
+      <td>LA</td>
+      <td>False</td>
       <td>author_defined_assembly</td>
+    </tr>
+    <tr>
+      <th>44</th>
+      <td>3hl2</td>
+      <td>4</td>
+      <td>bound</td>
+      <td>C</td>
+      <td>M</td>
+      <td>2</td>
+      <td>2</td>
+      <td>2</td>
+      <td>["2"]</td>
+      <td>["x,y,z"]</td>
+      <td>["1_555"]</td>
+      <td>MA</td>
+      <td>False</td>
       <td>author_defined_assembly</td>
+    </tr>
+    <tr>
+      <th>45</th>
+      <td>3hl2</td>
+      <td>3</td>
+      <td>bound</td>
+      <td>D</td>
+      <td>N</td>
+      <td>2</td>
+      <td>2</td>
+      <td>2</td>
+      <td>["2"]</td>
+      <td>["x,y,z"]</td>
+      <td>["1_555"]</td>
+      <td>NA</td>
+      <td>False</td>
       <td>author_defined_assembly</td>
+    </tr>
+    <tr>
+      <th>46</th>
+      <td>3hl2</td>
+      <td>5</td>
+      <td>bound</td>
+      <td>D</td>
+      <td>O</td>
+      <td>2</td>
+      <td>2</td>
+      <td>2</td>
+      <td>["2"]</td>
+      <td>["x,y,z"]</td>
+      <td>["1_555"]</td>
+      <td>OA</td>
+      <td>False</td>
       <td>author_defined_assembly</td>
-      <td>author_defined_assembly</td>
-      <td>author_defined_assembly</td>
-      <td>author_defined_assembly</td>
+    </tr>
+    <tr>
+      <th>47</th>
+      <td>3hl2</td>
+      <td>5</td>
+      <td>bound</td>
+      <td>D</td>
+      <td>P</td>
+      <td>2</td>
+      <td>2</td>
+      <td>2</td>
+      <td>["2"]</td>
+      <td>["x,y,z"]</td>
+      <td>["1_555"]</td>
+      <td>PA</td>
+      <td>False</td>
       <td>author_defined_assembly</td>
     </tr>
   </tbody>
 </table>
+
 </details>
+
 
 其中`assembly_id`为0指`asymmetric unit`。
 
@@ -1686,930 +2813,398 @@ df1
 
 <details>
 <summary>Click to view dataframe</summary>
+
 <table class="dataframe">
   <thead>
     <tr style="text-align: right;">
       <th></th>
-      <th>0</th>
-      <th>1</th>
-      <th>2</th>
-      <th>3</th>
-      <th>4</th>
-      <th>5</th>
-      <th>6</th>
-      <th>7</th>
-      <th>8</th>
-      <th>9</th>
-      <th>10</th>
-      <th>11</th>
-      <th>12</th>
-      <th>13</th>
-      <th>14</th>
+      <th>UniProt</th>
+      <th>chain_id</th>
+      <th>entity_id</th>
+      <th>identity</th>
+      <th>is_canonical</th>
+      <th>pdb_id</th>
+      <th>struct_asym_id</th>
+      <th>pdb_range</th>
+      <th>unp_range</th>
+      <th>Entry</th>
+      <th>...</th>
+      <th>resolution</th>
+      <th>experimental_method_class</th>
+      <th>experimental_method</th>
+      <th>multi_method</th>
+      <th>revision_date</th>
+      <th>deposition_date</th>
+      <th>1/resolution</th>
+      <th>id_score</th>
+      <th>select_tag</th>
+      <th>select_rank</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <th>UniProt</th>
+      <th>0</th>
       <td>P21359-2</td>
-      <td>P21359-2</td>
-      <td>P21359-2</td>
-      <td>P21359-2</td>
-      <td>P21359-2</td>
-      <td>P21359-2</td>
-      <td>P21359-2</td>
-      <td>P21359-2</td>
-      <td>P21359-2</td>
-      <td>P21359-2</td>
-      <td>P21359-2</td>
-      <td>P21359-2</td>
-      <td>P21359-2</td>
-      <td>P21359-2</td>
-      <td>P21359-2</td>
-    </tr>
-    <tr>
-      <th>chain_id</th>
       <td>A</td>
-      <td>A</td>
-      <td>B</td>
-      <td>A</td>
-      <td>B</td>
-      <td>A</td>
-      <td>B</td>
-      <td>A</td>
-      <td>B</td>
-      <td>B</td>
-      <td>D</td>
-      <td>B</td>
-      <td>D</td>
-      <td>B</td>
-      <td>B</td>
-    </tr>
-    <tr>
-      <th>entity_id</th>
       <td>1</td>
-      <td>1</td>
-      <td>1</td>
-      <td>1</td>
-      <td>1</td>
-      <td>1</td>
-      <td>1</td>
-      <td>1</td>
-      <td>1</td>
-      <td>2</td>
-      <td>2</td>
-      <td>2</td>
-      <td>2</td>
-      <td>2</td>
-      <td>2</td>
-    </tr>
-    <tr>
-      <th>identity</th>
-      <td>1</td>
-      <td>1</td>
-      <td>1</td>
-      <td>0.99</td>
-      <td>0.99</td>
-      <td>0.98</td>
-      <td>0.98</td>
-      <td>1</td>
-      <td>1</td>
-      <td>1</td>
-      <td>1</td>
-      <td>1</td>
-      <td>1</td>
-      <td>1</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <th>is_canonical</th>
+      <td>1.00</td>
       <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-    </tr>
-    <tr>
-      <th>pdb_id</th>
       <td>1nf1</td>
-      <td>2d4q</td>
-      <td>2d4q</td>
-      <td>2e2x</td>
-      <td>2e2x</td>
-      <td>3p7z</td>
-      <td>3p7z</td>
-      <td>3pg7</td>
-      <td>3pg7</td>
-      <td>6ob2</td>
-      <td>6ob2</td>
-      <td>6ob3</td>
-      <td>6ob3</td>
-      <td>6v65</td>
-      <td>6v6f</td>
-    </tr>
-    <tr>
-      <th>struct_asym_id</th>
       <td>A</td>
-      <td>A</td>
-      <td>B</td>
-      <td>A</td>
-      <td>B</td>
-      <td>A</td>
-      <td>B</td>
-      <td>A</td>
-      <td>B</td>
-      <td>B</td>
-      <td>D</td>
-      <td>B</td>
-      <td>D</td>
-      <td>B</td>
-      <td>B</td>
-    </tr>
-    <tr>
-      <th>pdb_range</th>
       <td>[[1,333]]</td>
-      <td>[[1,257]]</td>
-      <td>[[1,257]]</td>
-      <td>[[6,277]]</td>
-      <td>[[6,277]]</td>
-      <td>[[5,276]]</td>
-      <td>[[5,276]]</td>
-      <td>[[1,256]]</td>
-      <td>[[1,256]]</td>
-      <td>[[2,256]]</td>
-      <td>[[2,256]]</td>
-      <td>[[2,256]]</td>
-      <td>[[2,256]]</td>
-      <td>[[2,329]]</td>
-      <td>[[2,329]]</td>
-    </tr>
-    <tr>
-      <th>unp_range</th>
       <td>[[1198,1530]]</td>
-      <td>[[1560,1816]]</td>
-      <td>[[1560,1816]]</td>
-      <td>[[1545,1816]]</td>
-      <td>[[1545,1816]]</td>
-      <td>[[1545,1816]]</td>
-      <td>[[1545,1816]]</td>
-      <td>[[1560,1816]]</td>
-      <td>[[1560,1816]]</td>
-      <td>[[1209,1463]]</td>
-      <td>[[1209,1463]]</td>
-      <td>[[1209,1463]]</td>
-      <td>[[1209,1463]]</td>
-      <td>[[1203,1530]]</td>
-      <td>[[1203,1530]]</td>
-    </tr>
-    <tr>
-      <th>Entry</th>
       <td>P21359</td>
-      <td>P21359</td>
-      <td>P21359</td>
-      <td>P21359</td>
-      <td>P21359</td>
-      <td>P21359</td>
-      <td>P21359</td>
-      <td>P21359</td>
-      <td>P21359</td>
-      <td>P21359</td>
-      <td>P21359</td>
-      <td>P21359</td>
-      <td>P21359</td>
-      <td>P21359</td>
-      <td>P21359</td>
-    </tr>
-    <tr>
-      <th>range_diff</th>
-      <td>[0]</td>
-      <td>[0]</td>
-      <td>[0]</td>
-      <td>[0]</td>
-      <td>[0]</td>
-      <td>[0]</td>
-      <td>[0]</td>
-      <td>[1]</td>
-      <td>[1]</td>
-      <td>[0]</td>
-      <td>[0]</td>
-      <td>[0]</td>
-      <td>[0]</td>
-      <td>[0]</td>
-      <td>[0]</td>
-    </tr>
-    <tr>
-      <th>sifts_range_tag</th>
-      <td>Safe</td>
-      <td>Safe</td>
-      <td>Safe</td>
-      <td>Safe</td>
-      <td>Safe</td>
-      <td>Safe</td>
-      <td>Safe</td>
-      <td>Deletion</td>
-      <td>Deletion</td>
-      <td>Safe</td>
-      <td>Safe</td>
-      <td>Safe</td>
-      <td>Safe</td>
-      <td>Safe</td>
-      <td>Safe</td>
-    </tr>
-    <tr>
-      <th>repeated</th>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-    </tr>
-    <tr>
-      <th>reversed</th>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-    </tr>
-    <tr>
-      <th>InDel_sum</th>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>1</td>
-      <td>1</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>new_pdb_range</th>
-      <td>[[1,333]]</td>
-      <td>[[1,257]]</td>
-      <td>[[1,257]]</td>
-      <td>[[6,277]]</td>
-      <td>[[6,277]]</td>
-      <td>[[5,276]]</td>
-      <td>[[5,276]]</td>
-      <td>((1, 191), (192, 256))</td>
-      <td>((1, 191), (192, 256))</td>
-      <td>[[2,256]]</td>
-      <td>[[2,256]]</td>
-      <td>[[2,256]]</td>
-      <td>[[2,256]]</td>
-      <td>[[2,329]]</td>
-      <td>[[2,329]]</td>
-    </tr>
-    <tr>
-      <th>new_unp_range</th>
-      <td>[[1198,1530]]</td>
-      <td>[[1560,1816]]</td>
-      <td>[[1560,1816]]</td>
-      <td>[[1545,1816]]</td>
-      <td>[[1545,1816]]</td>
-      <td>[[1545,1816]]</td>
-      <td>[[1545,1816]]</td>
-      <td>((1560, 1750), (1752, 1816))</td>
-      <td>((1560, 1750), (1752, 1816))</td>
-      <td>[[1209,1463]]</td>
-      <td>[[1209,1463]]</td>
-      <td>[[1209,1463]]</td>
-      <td>[[1209,1463]]</td>
-      <td>[[1203,1530]]</td>
-      <td>[[1203,1530]]</td>
-    </tr>
-    <tr>
-      <th>conflict_pdb_index</th>
-      <td>{"216":"R"}</td>
-      <td>{}</td>
-      <td>{}</td>
-      <td>{}</td>
-      <td>{}</td>
-      <td>{"44":"I"}</td>
-      <td>{"44":"I"}</td>
-      <td>{"191":"K"}</td>
-      <td>{"191":"K"}</td>
-      <td>{}</td>
-      <td>{}</td>
-      <td>{}</td>
-      <td>{}</td>
-      <td>{}</td>
-      <td>{}</td>
-    </tr>
-    <tr>
-      <th>conflict_pdb_range</th>
-      <td>[[216,216]]</td>
-      <td>[]</td>
-      <td>[]</td>
-      <td>[]</td>
-      <td>[]</td>
-      <td>[[44,44]]</td>
-      <td>[[44,44]]</td>
-      <td>[[191,191]]</td>
-      <td>[[191,191]]</td>
-      <td>[]</td>
-      <td>[]</td>
-      <td>[]</td>
-      <td>[]</td>
-      <td>[]</td>
-      <td>[]</td>
-    </tr>
-    <tr>
-      <th>conflict_unp_range</th>
-      <td>[[1413,1413]]</td>
-      <td>[]</td>
-      <td>[]</td>
-      <td>[]</td>
-      <td>[]</td>
-      <td>[[1584,1584]]</td>
-      <td>[[1584,1584]]</td>
-      <td>[[1750,1750]]</td>
-      <td>[[1750,1750]]</td>
-      <td>[]</td>
-      <td>[]</td>
-      <td>[]</td>
-      <td>[]</td>
-      <td>[]</td>
-      <td>[]</td>
-    </tr>
-    <tr>
-      <th>unp_len</th>
-      <td>2818</td>
-      <td>2818</td>
-      <td>2818</td>
-      <td>2818</td>
-      <td>2818</td>
-      <td>2818</td>
-      <td>2818</td>
-      <td>2818</td>
-      <td>2818</td>
-      <td>2818</td>
-      <td>2818</td>
-      <td>2818</td>
-      <td>2818</td>
-      <td>2818</td>
-      <td>2818</td>
-    </tr>
-    <tr>
-      <th>BINDING_LIGAND_COUNT</th>
-      <td>0</td>
-      <td>12</td>
-      <td>11</td>
-      <td>0</td>
-      <td>0</td>
-      <td>23</td>
-      <td>16</td>
-      <td>15</td>
-      <td>17</td>
-      <td>8</td>
-      <td>0</td>
-      <td>10</td>
-      <td>7</td>
-      <td>2</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <th>BINDING_LIGAND_INDEX</th>
-      <td>[]</td>
-      <td>[[61, 61], [73, 76], [82, 82], [86, 86], [107,...</td>
-      <td>[[28, 28], [63, 63], [73, 76], [107, 107], [10...</td>
-      <td>[]</td>
-      <td>[]</td>
-      <td>[[40, 42], [47, 47], [66, 66], [70, 70], [78, ...</td>
-      <td>[[80, 80], [92, 95], [101, 102], [110, 110], [...</td>
-      <td>[[13, 13], [28, 28], [61, 61], [73, 73], [75, ...</td>
-      <td>[[61, 61], [73, 74], [76, 76], [82, 83], [91, ...</td>
-      <td>[[18, 19], [22, 22], [191, 192], [202, 202], [...</td>
-      <td>[]</td>
-      <td>[[41, 41], [51, 51], [69, 69], [129, 130], [13...</td>
-      <td>[[41, 41], [44, 44], [126, 126], [133, 133], [...</td>
-      <td>[[240, 240], [243, 243]]</td>
-      <td>[[218, 218]]</td>
-    </tr>
-    <tr>
-      <th>OBS_COUNT</th>
-      <td>260</td>
-      <td>257</td>
-      <td>255</td>
-      <td>250</td>
-      <td>250</td>
-      <td>270</td>
-      <td>270</td>
-      <td>256</td>
-      <td>256</td>
-      <td>241</td>
-      <td>245</td>
-      <td>245</td>
-      <td>247</td>
-      <td>300</td>
-      <td>301</td>
-    </tr>
-    <tr>
-      <th>OBS_INDEX</th>
-      <td>[[9, 107], [134, 206], [215, 266], [288, 306],...</td>
-      <td>[[1, 257]]</td>
-      <td>[[1, 120], [123, 257]]</td>
-      <td>[[28, 277]]</td>
-      <td>[[28, 277]]</td>
-      <td>[[7, 276]]</td>
-      <td>[[7, 276]]</td>
-      <td>[[1, 256]]</td>
-      <td>[[1, 256]]</td>
-      <td>[[12, 103], [107, 255]]</td>
-      <td>[[12, 256]]</td>
-      <td>[[12, 256]]</td>
-      <td>[[10, 256]]</td>
-      <td>[[4, 263], [277, 300], [312, 327]]</td>
-      <td>[[4, 263], [276, 300], [312, 327]]</td>
-    </tr>
-    <tr>
-      <th>OBS_RATIO_SUM</th>
-      <td>243.807</td>
-      <td>257</td>
-      <td>254.009</td>
-      <td>248.894</td>
-      <td>249.18</td>
-      <td>267.845</td>
-      <td>269.18</td>
-      <td>247.929</td>
-      <td>249.123</td>
-      <td>236.933</td>
-      <td>239.938</td>
-      <td>241.495</td>
-      <td>244.327</td>
-      <td>293.261</td>
-      <td>294.205</td>
-    </tr>
-    <tr>
-      <th>ARTIFACT_INDEX</th>
-      <td>[]</td>
-      <td>[]</td>
-      <td>[]</td>
-      <td>[[1, 5]]</td>
-      <td>[[1, 5]]</td>
-      <td>[[1, 4]]</td>
-      <td>[[1, 4]]</td>
-      <td>[]</td>
-      <td>[]</td>
-      <td>[[1, 1]]</td>
-      <td>[[1, 1]]</td>
-      <td>[[1, 1]]</td>
-      <td>[[1, 1]]</td>
-      <td>[[1, 1]]</td>
-      <td>[[1, 1]]</td>
-    </tr>
-    <tr>
-      <th>NON_COUNT</th>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>NON_INDEX</th>
-      <td>[]</td>
-      <td>[]</td>
-      <td>[]</td>
-      <td>[]</td>
-      <td>[]</td>
-      <td>[]</td>
-      <td>[]</td>
-      <td>[]</td>
-      <td>[]</td>
-      <td>[]</td>
-      <td>[]</td>
-      <td>[]</td>
-      <td>[]</td>
-      <td>[]</td>
-      <td>[]</td>
-    </tr>
-    <tr>
-      <th>SEQRES_COUNT</th>
-      <td>333</td>
-      <td>257</td>
-      <td>257</td>
-      <td>277</td>
-      <td>277</td>
-      <td>276</td>
-      <td>276</td>
-      <td>256</td>
-      <td>256</td>
-      <td>256</td>
-      <td>256</td>
-      <td>256</td>
-      <td>256</td>
-      <td>329</td>
-      <td>329</td>
-    </tr>
-    <tr>
-      <th>STD_COUNT</th>
-      <td>333</td>
-      <td>257</td>
-      <td>257</td>
-      <td>277</td>
-      <td>277</td>
-      <td>276</td>
-      <td>276</td>
-      <td>256</td>
-      <td>256</td>
-      <td>256</td>
-      <td>256</td>
-      <td>256</td>
-      <td>256</td>
-      <td>329</td>
-      <td>329</td>
-    </tr>
-    <tr>
-      <th>STD_INDEX</th>
-      <td>[[1, 333]]</td>
-      <td>[[1, 257]]</td>
-      <td>[[1, 257]]</td>
-      <td>[[1, 277]]</td>
-      <td>[[1, 277]]</td>
-      <td>[[1, 276]]</td>
-      <td>[[1, 276]]</td>
-      <td>[[1, 256]]</td>
-      <td>[[1, 256]]</td>
-      <td>[[1, 256]]</td>
-      <td>[[1, 256]]</td>
-      <td>[[1, 256]]</td>
-      <td>[[1, 256]]</td>
-      <td>[[1, 329]]</td>
-      <td>[[1, 329]]</td>
-    </tr>
-    <tr>
-      <th>UNK_COUNT</th>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>UNK_INDEX</th>
-      <td>[]</td>
-      <td>[]</td>
-      <td>[]</td>
-      <td>[]</td>
-      <td>[]</td>
-      <td>[]</td>
-      <td>[]</td>
-      <td>[]</td>
-      <td>[]</td>
-      <td>[]</td>
-      <td>[]</td>
-      <td>[]</td>
-      <td>[]</td>
-      <td>[]</td>
-      <td>[]</td>
-    </tr>
-    <tr>
-      <th>ca_p_only</th>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-    </tr>
-    <tr>
-      <th>molecule_type</th>
-      <td>polypeptide(L)</td>
-      <td>polypeptide(L)</td>
-      <td>polypeptide(L)</td>
-      <td>polypeptide(L)</td>
-      <td>polypeptide(L)</td>
-      <td>polypeptide(L)</td>
-      <td>polypeptide(L)</td>
-      <td>polypeptide(L)</td>
-      <td>polypeptide(L)</td>
-      <td>polypeptide(L)</td>
-      <td>polypeptide(L)</td>
-      <td>polypeptide(L)</td>
-      <td>polypeptide(L)</td>
-      <td>polypeptide(L)</td>
-      <td>polypeptide(L)</td>
-    </tr>
-    <tr>
-      <th>OBS_STD_INDEX</th>
-      <td>((9, 107), (134, 206), (215, 266), (288, 306),...</td>
-      <td>((1, 257),)</td>
-      <td>((1, 120), (123, 257))</td>
-      <td>((28, 277),)</td>
-      <td>((28, 277),)</td>
-      <td>((7, 276),)</td>
-      <td>((7, 276),)</td>
-      <td>((1, 256),)</td>
-      <td>((1, 256),)</td>
-      <td>((12, 103), (107, 255))</td>
-      <td>((12, 256),)</td>
-      <td>((12, 256),)</td>
-      <td>((10, 256),)</td>
-      <td>((4, 263), (277, 300), (312, 327))</td>
-      <td>((4, 263), (276, 300), (312, 327))</td>
-    </tr>
-    <tr>
-      <th>OBS_STD_COUNT</th>
-      <td>260</td>
-      <td>257</td>
-      <td>255</td>
-      <td>250</td>
-      <td>250</td>
-      <td>270</td>
-      <td>270</td>
-      <td>256</td>
-      <td>256</td>
-      <td>241</td>
-      <td>245</td>
-      <td>245</td>
-      <td>247</td>
-      <td>300</td>
-      <td>301</td>
-    </tr>
-    <tr>
-      <th>RAW_BS</th>
-      <td>0.0458754</td>
-      <td>0.0869411</td>
-      <td>0.0853153</td>
-      <td>0.0747353</td>
-      <td>0.0747353</td>
-      <td>0.0863799</td>
-      <td>0.0888639</td>
-      <td>0.0838811</td>
-      <td>0.0831713</td>
-      <td>0.0737863</td>
-      <td>0.0805865</td>
-      <td>0.0770379</td>
-      <td>0.0800831</td>
-      <td>0.0879559</td>
-      <td>0.0893011</td>
-    </tr>
-    <tr>
-      <th>RAW_BS_IG3</th>
-      <td>0.0458754</td>
-      <td>0.0911994</td>
-      <td>0.0892188</td>
-      <td>0.0747353</td>
-      <td>0.0747353</td>
-      <td>0.0945417</td>
-      <td>0.0945417</td>
-      <td>0.089204</td>
-      <td>0.089204</td>
-      <td>0.0766252</td>
-      <td>0.0805865</td>
-      <td>0.0805865</td>
-      <td>0.0825671</td>
-      <td>0.0886656</td>
-      <td>0.0896559</td>
-    </tr>
-    <tr>
-      <th>resolution</th>
-      <td>2.5</td>
-      <td>2.3</td>
-      <td>2.3</td>
-      <td>2.5</td>
-      <td>2.5</td>
-      <td>2.65</td>
-      <td>2.65</td>
-      <td>2.189</td>
-      <td>2.189</td>
-      <td>2.845</td>
-      <td>2.845</td>
-      <td>2.1</td>
-      <td>2.1</td>
-      <td>2.763</td>
-      <td>2.542</td>
-    </tr>
-    <tr>
-      <th>experimental_method_class</th>
+      <td>...</td>
+      <td>2.500</td>
       <td>x-ray</td>
-      <td>x-ray</td>
-      <td>x-ray</td>
-      <td>x-ray</td>
-      <td>x-ray</td>
-      <td>x-ray</td>
-      <td>x-ray</td>
-      <td>x-ray</td>
-      <td>x-ray</td>
-      <td>x-ray</td>
-      <td>x-ray</td>
-      <td>x-ray</td>
-      <td>x-ray</td>
-      <td>x-ray</td>
-      <td>x-ray</td>
-    </tr>
-    <tr>
-      <th>experimental_method</th>
       <td>X-ray diffraction</td>
-      <td>X-ray diffraction</td>
-      <td>X-ray diffraction</td>
-      <td>X-ray diffraction</td>
-      <td>X-ray diffraction</td>
-      <td>X-ray diffraction</td>
-      <td>X-ray diffraction</td>
-      <td>X-ray diffraction</td>
-      <td>X-ray diffraction</td>
-      <td>X-ray diffraction</td>
-      <td>X-ray diffraction</td>
-      <td>X-ray diffraction</td>
-      <td>X-ray diffraction</td>
-      <td>X-ray diffraction</td>
-      <td>X-ray diffraction</td>
-    </tr>
-    <tr>
-      <th>multi_method</th>
       <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-    </tr>
-    <tr>
-      <th>revision_date</th>
       <td>20171004</td>
-      <td>20110713</td>
-      <td>20110713</td>
-      <td>20110713</td>
-      <td>20110713</td>
-      <td>20190717</td>
-      <td>20190717</td>
-      <td>20110713</td>
-      <td>20110713</td>
-      <td>20191113</td>
-      <td>20191113</td>
-      <td>20191113</td>
-      <td>20191113</td>
-      <td>20200805</td>
-      <td>20200805</td>
-    </tr>
-    <tr>
-      <th>deposition_date</th>
       <td>19980708</td>
-      <td>20051022</td>
-      <td>20051022</td>
-      <td>20061118</td>
-      <td>20061118</td>
-      <td>20101013</td>
-      <td>20101013</td>
-      <td>20101031</td>
-      <td>20101031</td>
-      <td>20190319</td>
-      <td>20190319</td>
-      <td>20190319</td>
-      <td>20190319</td>
-      <td>20191204</td>
-      <td>20191205</td>
-    </tr>
-    <tr>
-      <th>1/resolution</th>
-      <td>0.4</td>
-      <td>0.434783</td>
-      <td>0.434783</td>
-      <td>0.4</td>
-      <td>0.4</td>
-      <td>0.377358</td>
-      <td>0.377358</td>
-      <td>0.45683</td>
-      <td>0.45683</td>
-      <td>0.351494</td>
-      <td>0.351494</td>
-      <td>0.47619</td>
-      <td>0.47619</td>
-      <td>0.361925</td>
-      <td>0.393391</td>
-    </tr>
-    <tr>
-      <th>id_score</th>
+      <td>0.400000</td>
       <td>-65</td>
-      <td>-65</td>
-      <td>-66</td>
-      <td>-65</td>
-      <td>-66</td>
-      <td>-65</td>
-      <td>-66</td>
-      <td>-65</td>
-      <td>-66</td>
-      <td>-66</td>
-      <td>-68</td>
-      <td>-66</td>
-      <td>-68</td>
-      <td>-66</td>
-      <td>-66</td>
-    </tr>
-    <tr>
-      <th>select_tag</th>
       <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>True</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>True</td>
-    </tr>
-    <tr>
-      <th>select_rank</th>
       <td>15</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>P21359-2</td>
+      <td>A</td>
+      <td>1</td>
+      <td>1.00</td>
+      <td>False</td>
+      <td>2d4q</td>
+      <td>A</td>
+      <td>[[1,257]]</td>
+      <td>[[1560,1816]]</td>
+      <td>P21359</td>
+      <td>...</td>
+      <td>2.300</td>
+      <td>x-ray</td>
+      <td>X-ray diffraction</td>
+      <td>False</td>
+      <td>20110713</td>
+      <td>20051022</td>
+      <td>0.434783</td>
+      <td>-65</td>
+      <td>False</td>
       <td>4</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>P21359-2</td>
+      <td>B</td>
+      <td>1</td>
+      <td>1.00</td>
+      <td>False</td>
+      <td>2d4q</td>
+      <td>B</td>
+      <td>[[1,257]]</td>
+      <td>[[1560,1816]]</td>
+      <td>P21359</td>
+      <td>...</td>
+      <td>2.300</td>
+      <td>x-ray</td>
+      <td>X-ray diffraction</td>
+      <td>False</td>
+      <td>20110713</td>
+      <td>20051022</td>
+      <td>0.434783</td>
+      <td>-66</td>
+      <td>False</td>
       <td>6</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>P21359-2</td>
+      <td>A</td>
+      <td>1</td>
+      <td>0.99</td>
+      <td>False</td>
+      <td>2e2x</td>
+      <td>A</td>
+      <td>[[6,277]]</td>
+      <td>[[1545,1816]]</td>
+      <td>P21359</td>
+      <td>...</td>
+      <td>2.500</td>
+      <td>x-ray</td>
+      <td>X-ray diffraction</td>
+      <td>False</td>
+      <td>20110713</td>
+      <td>20061118</td>
+      <td>0.400000</td>
+      <td>-65</td>
+      <td>False</td>
       <td>12</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>P21359-2</td>
+      <td>B</td>
+      <td>1</td>
+      <td>0.99</td>
+      <td>False</td>
+      <td>2e2x</td>
+      <td>B</td>
+      <td>[[6,277]]</td>
+      <td>[[1545,1816]]</td>
+      <td>P21359</td>
+      <td>...</td>
+      <td>2.500</td>
+      <td>x-ray</td>
+      <td>X-ray diffraction</td>
+      <td>False</td>
+      <td>20110713</td>
+      <td>20061118</td>
+      <td>0.400000</td>
+      <td>-66</td>
+      <td>False</td>
       <td>13</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>P21359-2</td>
+      <td>A</td>
+      <td>1</td>
+      <td>0.98</td>
+      <td>False</td>
+      <td>3p7z</td>
+      <td>A</td>
+      <td>[[5,276]]</td>
+      <td>[[1545,1816]]</td>
+      <td>P21359</td>
+      <td>...</td>
+      <td>2.650</td>
+      <td>x-ray</td>
+      <td>X-ray diffraction</td>
+      <td>False</td>
+      <td>20190717</td>
+      <td>20101013</td>
+      <td>0.377358</td>
+      <td>-65</td>
+      <td>False</td>
       <td>5</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>P21359-2</td>
+      <td>B</td>
+      <td>1</td>
+      <td>0.98</td>
+      <td>False</td>
+      <td>3p7z</td>
+      <td>B</td>
+      <td>[[5,276]]</td>
+      <td>[[1545,1816]]</td>
+      <td>P21359</td>
+      <td>...</td>
+      <td>2.650</td>
+      <td>x-ray</td>
+      <td>X-ray diffraction</td>
+      <td>False</td>
+      <td>20190717</td>
+      <td>20101013</td>
+      <td>0.377358</td>
+      <td>-66</td>
+      <td>True</td>
       <td>2</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>P21359-2</td>
+      <td>A</td>
+      <td>1</td>
+      <td>1.00</td>
+      <td>False</td>
+      <td>3pg7</td>
+      <td>A</td>
+      <td>[[1,256]]</td>
+      <td>[[1560,1816]]</td>
+      <td>P21359</td>
+      <td>...</td>
+      <td>2.189</td>
+      <td>x-ray</td>
+      <td>X-ray diffraction</td>
+      <td>False</td>
+      <td>20110713</td>
+      <td>20101031</td>
+      <td>0.456830</td>
+      <td>-65</td>
+      <td>False</td>
       <td>7</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>P21359-2</td>
+      <td>B</td>
+      <td>1</td>
+      <td>1.00</td>
+      <td>False</td>
+      <td>3pg7</td>
+      <td>B</td>
+      <td>[[1,256]]</td>
+      <td>[[1560,1816]]</td>
+      <td>P21359</td>
+      <td>...</td>
+      <td>2.189</td>
+      <td>x-ray</td>
+      <td>X-ray diffraction</td>
+      <td>False</td>
+      <td>20110713</td>
+      <td>20101031</td>
+      <td>0.456830</td>
+      <td>-66</td>
+      <td>False</td>
       <td>8</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>P21359-2</td>
+      <td>B</td>
+      <td>2</td>
+      <td>1.00</td>
+      <td>False</td>
+      <td>6ob2</td>
+      <td>B</td>
+      <td>[[2,256]]</td>
+      <td>[[1209,1463]]</td>
+      <td>P21359</td>
+      <td>...</td>
+      <td>2.845</td>
+      <td>x-ray</td>
+      <td>X-ray diffraction</td>
+      <td>False</td>
+      <td>20191113</td>
+      <td>20190319</td>
+      <td>0.351494</td>
+      <td>-66</td>
+      <td>False</td>
       <td>14</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>P21359-2</td>
+      <td>D</td>
+      <td>2</td>
+      <td>1.00</td>
+      <td>False</td>
+      <td>6ob2</td>
+      <td>D</td>
+      <td>[[2,256]]</td>
+      <td>[[1209,1463]]</td>
+      <td>P21359</td>
+      <td>...</td>
+      <td>2.845</td>
+      <td>x-ray</td>
+      <td>X-ray diffraction</td>
+      <td>False</td>
+      <td>20191113</td>
+      <td>20190319</td>
+      <td>0.351494</td>
+      <td>-68</td>
+      <td>False</td>
       <td>9</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>P21359-2</td>
+      <td>B</td>
+      <td>2</td>
+      <td>1.00</td>
+      <td>False</td>
+      <td>6ob3</td>
+      <td>B</td>
+      <td>[[2,256]]</td>
+      <td>[[1209,1463]]</td>
+      <td>P21359</td>
+      <td>...</td>
+      <td>2.100</td>
+      <td>x-ray</td>
+      <td>X-ray diffraction</td>
+      <td>False</td>
+      <td>20191113</td>
+      <td>20190319</td>
+      <td>0.476190</td>
+      <td>-66</td>
+      <td>False</td>
       <td>11</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>P21359-2</td>
+      <td>D</td>
+      <td>2</td>
+      <td>1.00</td>
+      <td>False</td>
+      <td>6ob3</td>
+      <td>D</td>
+      <td>[[2,256]]</td>
+      <td>[[1209,1463]]</td>
+      <td>P21359</td>
+      <td>...</td>
+      <td>2.100</td>
+      <td>x-ray</td>
+      <td>X-ray diffraction</td>
+      <td>False</td>
+      <td>20191113</td>
+      <td>20190319</td>
+      <td>0.476190</td>
+      <td>-68</td>
+      <td>False</td>
       <td>10</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>P21359-2</td>
+      <td>B</td>
+      <td>2</td>
+      <td>1.00</td>
+      <td>False</td>
+      <td>6v65</td>
+      <td>B</td>
+      <td>[[2,329]]</td>
+      <td>[[1203,1530]]</td>
+      <td>P21359</td>
+      <td>...</td>
+      <td>2.763</td>
+      <td>x-ray</td>
+      <td>X-ray diffraction</td>
+      <td>False</td>
+      <td>20200805</td>
+      <td>20191204</td>
+      <td>0.361925</td>
+      <td>-66</td>
+      <td>False</td>
       <td>3</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>P21359-2</td>
+      <td>B</td>
+      <td>2</td>
+      <td>1.00</td>
+      <td>False</td>
+      <td>6v6f</td>
+      <td>B</td>
+      <td>[[2,329]]</td>
+      <td>[[1203,1530]]</td>
+      <td>P21359</td>
+      <td>...</td>
+      <td>2.542</td>
+      <td>x-ray</td>
+      <td>X-ray diffraction</td>
+      <td>False</td>
+      <td>20200805</td>
+      <td>20191205</td>
+      <td>0.393391</td>
+      <td>-66</td>
+      <td>True</td>
       <td>1</td>
     </tr>
   </tbody>
 </table>
+
 </details>
 
 这个过程自动完成了上面提及的reformat及打分等步骤。
@@ -2623,156 +3218,1184 @@ df2
 
 <details>
 <summary>Click to view dataframe</summary>
+
 <table class="dataframe">
   <thead>
     <tr style="text-align: right;">
       <th></th>
-      <th>0</th>
-      <th>1</th>
-      <th>2</th>
-      <th>3</th>
-      <th>4</th>
-      <th>5</th>
-      <th>6</th>
-      <th>7</th>
-      <th>8</th>
+      <th>entity_id_1</th>
+      <th>chain_id_1</th>
+      <th>struct_asym_id_1</th>
+      <th>struct_asym_id_in_assembly_1</th>
+      <th>asym_id_rank_1</th>
+      <th>model_id_1</th>
+      <th>molecule_type_1</th>
+      <th>surface_range_1</th>
+      <th>interface_range_1</th>
+      <th>entity_id_2</th>
+      <th>chain_id_2</th>
+      <th>struct_asym_id_2</th>
+      <th>struct_asym_id_in_assembly_2</th>
+      <th>asym_id_rank_2</th>
+      <th>model_id_2</th>
+      <th>molecule_type_2</th>
+      <th>surface_range_2</th>
+      <th>interface_range_2</th>
+      <th>pdb_id</th>
+      <th>assembly_id</th>
+      <th>interface_id</th>
+      <th>use_au</th>
+      <th>UniProt_1</th>
+      <th>identity_1</th>
+      <th>is_canonical_1</th>
+      <th>pdb_range_1</th>
+      <th>unp_range_1</th>
+      <th>Entry_1</th>
+      <th>range_diff_1</th>
+      <th>sifts_range_tag_1</th>
+      <th>repeated_1</th>
+      <th>reversed_1</th>
+      <th>InDel_sum_1</th>
+      <th>new_pdb_range_1</th>
+      <th>new_unp_range_1</th>
+      <th>conflict_pdb_index_1</th>
+      <th>conflict_pdb_range_1</th>
+      <th>conflict_unp_range_1</th>
+      <th>unp_len_1</th>
+      <th>BINDING_LIGAND_COUNT_1</th>
+      <th>BINDING_LIGAND_INDEX_1</th>
+      <th>OBS_COUNT_1</th>
+      <th>OBS_INDEX_1</th>
+      <th>OBS_RATIO_SUM_1</th>
+      <th>ARTIFACT_INDEX_1</th>
+      <th>NON_COUNT_1</th>
+      <th>NON_INDEX_1</th>
+      <th>SEQRES_COUNT_1</th>
+      <th>STD_COUNT_1</th>
+      <th>STD_INDEX_1</th>
+      <th>UNK_COUNT_1</th>
+      <th>UNK_INDEX_1</th>
+      <th>ca_p_only_1</th>
+      <th>OBS_STD_INDEX_1</th>
+      <th>OBS_STD_COUNT_1</th>
+      <th>RAW_BS_1</th>
+      <th>RAW_BS_IG3_1</th>
+      <th>resolution</th>
+      <th>experimental_method_class</th>
+      <th>experimental_method</th>
+      <th>multi_method</th>
+      <th>revision_date</th>
+      <th>deposition_date</th>
+      <th>1/resolution</th>
+      <th>id_score_1</th>
+      <th>select_tag_1</th>
+      <th>select_rank_1</th>
+      <th>UniProt_2</th>
+      <th>identity_2</th>
+      <th>is_canonical_2</th>
+      <th>pdb_range_2</th>
+      <th>unp_range_2</th>
+      <th>Entry_2</th>
+      <th>range_diff_2</th>
+      <th>sifts_range_tag_2</th>
+      <th>repeated_2</th>
+      <th>reversed_2</th>
+      <th>InDel_sum_2</th>
+      <th>new_pdb_range_2</th>
+      <th>new_unp_range_2</th>
+      <th>conflict_pdb_index_2</th>
+      <th>conflict_pdb_range_2</th>
+      <th>conflict_unp_range_2</th>
+      <th>unp_len_2</th>
+      <th>BINDING_LIGAND_COUNT_2</th>
+      <th>BINDING_LIGAND_INDEX_2</th>
+      <th>OBS_COUNT_2</th>
+      <th>OBS_INDEX_2</th>
+      <th>OBS_RATIO_SUM_2</th>
+      <th>ARTIFACT_INDEX_2</th>
+      <th>NON_COUNT_2</th>
+      <th>NON_INDEX_2</th>
+      <th>SEQRES_COUNT_2</th>
+      <th>STD_COUNT_2</th>
+      <th>STD_INDEX_2</th>
+      <th>UNK_COUNT_2</th>
+      <th>UNK_INDEX_2</th>
+      <th>ca_p_only_2</th>
+      <th>OBS_STD_INDEX_2</th>
+      <th>OBS_STD_COUNT_2</th>
+      <th>RAW_BS_2</th>
+      <th>RAW_BS_IG3_2</th>
+      <th>id_score_2</th>
+      <th>select_tag_2</th>
+      <th>select_rank_2</th>
+      <th>in_i3d</th>
+      <th>unp_range_DSC</th>
+      <th>best_select_rank_score</th>
+      <th>second_select_rank_score</th>
+      <th>unp_interface_range_1</th>
+      <th>unp_interface_range_2</th>
+      <th>i_group</th>
+      <th>i_select_tag</th>
+      <th>i_select_rank</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <th>entity_id_1</th>
+      <th>0</th>
       <td>1</td>
-      <td>1</td>
-      <td>1</td>
-      <td>1</td>
-      <td>1</td>
-      <td>1</td>
-      <td>1</td>
-      <td>2</td>
-      <td>2</td>
-    </tr>
-    <tr>
-      <th>chain_id_1</th>
       <td>A</td>
       <td>A</td>
       <td>A</td>
-      <td>A</td>
-      <td>A</td>
-      <td>A</td>
-      <td>A</td>
+      <td>1</td>
+      <td>1</td>
+      <td>polypeptide(L)</td>
+      <td>[[1,11],[13,25],[27,28],[30,42],[44,236],[238,...</td>
+      <td>[[31,32],[34,34],[67,67],[72,72],[148,149],[15...</td>
+      <td>1</td>
       <td>B</td>
       <td>B</td>
-    </tr>
-    <tr>
-      <th>struct_asym_id_1</th>
-      <td>A</td>
-      <td>A</td>
-      <td>A</td>
-      <td>A</td>
-      <td>A</td>
-      <td>A</td>
-      <td>A</td>
       <td>B</td>
-      <td>B</td>
-    </tr>
-    <tr>
-      <th>struct_asym_id_in_assembly_1</th>
-      <td>A</td>
-      <td>A</td>
-      <td>A</td>
-      <td>A</td>
-      <td>A</td>
-      <td>A</td>
-      <td>A</td>
-      <td>B</td>
-      <td>B</td>
-    </tr>
-    <tr>
-      <th>asym_id_rank_1</th>
       <td>1</td>
       <td>1</td>
-      <td>1</td>
-      <td>1</td>
-      <td>1</td>
-      <td>1</td>
-      <td>1</td>
-      <td>1</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <th>...</th>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-    </tr>
-    <tr>
-      <th>unp_interface_range_1</th>
-      <td>((1590, 1591), (1593, 1593), (1626, 1626), (16...</td>
-      <td>((1590, 1591), (1593, 1593), (1626, 1626), (16...</td>
-      <td>((1590, 1591), (1593, 1593), (1626, 1626), (16...</td>
-      <td>((1590, 1591), (1593, 1593), (1626, 1626), (16...</td>
-      <td>((1590, 1591), (1593, 1593), (1626, 1626), (16...</td>
-      <td>((1590, 1591), (1593, 1593), (1626, 1626), (16...</td>
-      <td>((1590, 1591), (1593, 1593), (1626, 1626), (16...</td>
-      <td>((1332, 1332), (1438, 1438), (1441, 1442), (14...</td>
-      <td>((1435, 1435), (1438, 1439), (1441, 1442), (14...</td>
-    </tr>
-    <tr>
-      <th>unp_interface_range_2</th>
-      <td>((1569, 1569), (1590, 1591), (1593, 1593), (16...</td>
-      <td>((1569, 1569), (1590, 1591), (1593, 1593), (16...</td>
-      <td>((1590, 1591), (1593, 1593), (1626, 1626), (16...</td>
-      <td>((1590, 1591), (1593, 1593), (1626, 1626), (16...</td>
-      <td>((1590, 1591), (1593, 1593), (1626, 1626), (16...</td>
-      <td>((1590, 1591), (1593, 1593), (1626, 1626), (16...</td>
-      <td>((1590, 1591), (1593, 1593), (1626, 1626), (16...</td>
-      <td>((1306, 1306), (1401, 1401), (1404, 1404), (14...</td>
-      <td>((1298, 1298), (1302, 1302), (1306, 1306), (14...</td>
-    </tr>
-    <tr>
-      <th>i_group</th>
-      <td>(P21359-2, P21359-2)</td>
-      <td>(P21359-2, P21359-2)</td>
-      <td>(P21359-2, P21359-2)</td>
-      <td>(P21359-2, P21359-2)</td>
-      <td>(P21359-2, P21359-2)</td>
-      <td>(P21359-2, P21359-2)</td>
-      <td>(P21359-2, P21359-2)</td>
-      <td>(P21359-2, P21359-2)</td>
-      <td>(P21359-2, P21359-2)</td>
-    </tr>
-    <tr>
-      <th>i_select_tag</th>
-      <td>False</td>
-      <td>True</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>True</td>
-      <td>False</td>
-      <td>True</td>
-      <td>True</td>
-    </tr>
-    <tr>
-      <th>i_select_rank</th>
-      <td>4</td>
+      <td>polypeptide(L)</td>
+      <td>[[1,24],[28,28],[30,63],[65,65],[67,120],[123,...</td>
+      <td>[[10,10],[31,32],[34,34],[67,67],[72,72],[148,...</td>
+      <td>2d4q</td>
+      <td>0</td>
       <td>3</td>
+      <td>False</td>
+      <td>P21359-2</td>
+      <td>1.00</td>
+      <td>False</td>
+      <td>[[1,257]]</td>
+      <td>[[1560,1816]]</td>
+      <td>P21359</td>
+      <td>[0]</td>
+      <td>Safe</td>
+      <td>False</td>
+      <td>False</td>
+      <td>0</td>
+      <td>[[1,257]]</td>
+      <td>[[1560,1816]]</td>
+      <td>{}</td>
+      <td>[]</td>
+      <td>[]</td>
+      <td>2818</td>
+      <td>12</td>
+      <td>[[61, 61], [73, 76], [82, 82], [86, 86], [107,...</td>
+      <td>257</td>
+      <td>[[1, 257]]</td>
+      <td>257.000</td>
+      <td>[]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>257</td>
+      <td>257</td>
+      <td>[[1, 257]]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>False</td>
+      <td>((1, 257),)</td>
+      <td>257</td>
+      <td>0.086941</td>
+      <td>0.091199</td>
+      <td>2.300</td>
+      <td>x-ray</td>
+      <td>X-ray diffraction</td>
+      <td>False</td>
+      <td>20110713</td>
+      <td>20051022</td>
+      <td>0.434783</td>
+      <td>-65</td>
+      <td>False</td>
+      <td>4</td>
+      <td>P21359-2</td>
+      <td>1.00</td>
+      <td>False</td>
+      <td>[[1,257]]</td>
+      <td>[[1560,1816]]</td>
+      <td>P21359</td>
+      <td>[0]</td>
+      <td>Safe</td>
+      <td>False</td>
+      <td>False</td>
+      <td>0</td>
+      <td>[[1,257]]</td>
+      <td>[[1560,1816]]</td>
+      <td>{}</td>
+      <td>[]</td>
+      <td>[]</td>
+      <td>2818</td>
+      <td>11</td>
+      <td>[[28, 28], [63, 63], [73, 76], [107, 107], [10...</td>
+      <td>255</td>
+      <td>[[1, 120], [123, 257]]</td>
+      <td>254.009</td>
+      <td>[]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>257</td>
+      <td>257</td>
+      <td>[[1, 257]]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>False</td>
+      <td>((1, 120), (123, 257))</td>
+      <td>255</td>
+      <td>0.085315</td>
+      <td>0.089219</td>
+      <td>-66</td>
+      <td>False</td>
+      <td>6</td>
+      <td>False</td>
+      <td>1.0</td>
+      <td>0.250000</td>
+      <td>0.166667</td>
+      <td>((1590, 1591), (1593, 1593), (1626, 1626), (16...</td>
+      <td>((1569, 1569), (1590, 1591), (1593, 1593), (16...</td>
+      <td>(P21359-2, P21359-2)</td>
+      <td>False</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>1</td>
+      <td>A</td>
+      <td>A</td>
+      <td>A</td>
+      <td>1</td>
+      <td>1</td>
+      <td>polypeptide(L)</td>
+      <td>[[1,11],[13,25],[27,28],[30,42],[44,236],[238,...</td>
+      <td>[[31,32],[34,34],[67,67],[72,72],[148,149],[15...</td>
+      <td>1</td>
+      <td>B</td>
+      <td>B</td>
+      <td>B</td>
+      <td>1</td>
+      <td>1</td>
+      <td>polypeptide(L)</td>
+      <td>[[1,24],[28,28],[30,63],[65,65],[67,120],[123,...</td>
+      <td>[[10,10],[31,32],[34,34],[67,67],[72,72],[148,...</td>
+      <td>2d4q</td>
+      <td>1</td>
+      <td>3</td>
+      <td>True</td>
+      <td>P21359-2</td>
+      <td>1.00</td>
+      <td>False</td>
+      <td>[[1,257]]</td>
+      <td>[[1560,1816]]</td>
+      <td>P21359</td>
+      <td>[0]</td>
+      <td>Safe</td>
+      <td>False</td>
+      <td>False</td>
+      <td>0</td>
+      <td>[[1,257]]</td>
+      <td>[[1560,1816]]</td>
+      <td>{}</td>
+      <td>[]</td>
+      <td>[]</td>
+      <td>2818</td>
+      <td>12</td>
+      <td>[[61, 61], [73, 76], [82, 82], [86, 86], [107,...</td>
+      <td>257</td>
+      <td>[[1, 257]]</td>
+      <td>257.000</td>
+      <td>[]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>257</td>
+      <td>257</td>
+      <td>[[1, 257]]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>False</td>
+      <td>((1, 257),)</td>
+      <td>257</td>
+      <td>0.086941</td>
+      <td>0.091199</td>
+      <td>2.300</td>
+      <td>x-ray</td>
+      <td>X-ray diffraction</td>
+      <td>False</td>
+      <td>20110713</td>
+      <td>20051022</td>
+      <td>0.434783</td>
+      <td>-65</td>
+      <td>False</td>
+      <td>4</td>
+      <td>P21359-2</td>
+      <td>1.00</td>
+      <td>False</td>
+      <td>[[1,257]]</td>
+      <td>[[1560,1816]]</td>
+      <td>P21359</td>
+      <td>[0]</td>
+      <td>Safe</td>
+      <td>False</td>
+      <td>False</td>
+      <td>0</td>
+      <td>[[1,257]]</td>
+      <td>[[1560,1816]]</td>
+      <td>{}</td>
+      <td>[]</td>
+      <td>[]</td>
+      <td>2818</td>
+      <td>11</td>
+      <td>[[28, 28], [63, 63], [73, 76], [107, 107], [10...</td>
+      <td>255</td>
+      <td>[[1, 120], [123, 257]]</td>
+      <td>254.009</td>
+      <td>[]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>257</td>
+      <td>257</td>
+      <td>[[1, 257]]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>False</td>
+      <td>((1, 120), (123, 257))</td>
+      <td>255</td>
+      <td>0.085315</td>
+      <td>0.089219</td>
+      <td>-66</td>
+      <td>False</td>
+      <td>6</td>
+      <td>True</td>
+      <td>1.0</td>
+      <td>0.250000</td>
+      <td>0.166667</td>
+      <td>((1590, 1591), (1593, 1593), (1626, 1626), (16...</td>
+      <td>((1569, 1569), (1590, 1591), (1593, 1593), (16...</td>
+      <td>(P21359-2, P21359-2)</td>
+      <td>True</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>1</td>
+      <td>A</td>
+      <td>A</td>
+      <td>A</td>
+      <td>1</td>
+      <td>1</td>
+      <td>polypeptide(L)</td>
+      <td>[[28,44],[47,48],[50,52],[54,62],[64,81],[83,8...</td>
+      <td>[[51,52],[54,54],[87,87],[92,92],[168,169],[17...</td>
+      <td>1</td>
+      <td>B</td>
+      <td>B</td>
+      <td>B</td>
+      <td>1</td>
+      <td>1</td>
+      <td>polypeptide(L)</td>
+      <td>[[28,44],[48,48],[50,62],[64,81],[83,83],[85,8...</td>
+      <td>[[51,52],[54,54],[87,87],[92,92],[168,169],[17...</td>
+      <td>2e2x</td>
+      <td>0</td>
+      <td>5</td>
+      <td>False</td>
+      <td>P21359-2</td>
+      <td>0.99</td>
+      <td>False</td>
+      <td>[[6,277]]</td>
+      <td>[[1545,1816]]</td>
+      <td>P21359</td>
+      <td>[0]</td>
+      <td>Safe</td>
+      <td>False</td>
+      <td>False</td>
+      <td>0</td>
+      <td>[[6,277]]</td>
+      <td>[[1545,1816]]</td>
+      <td>{}</td>
+      <td>[]</td>
+      <td>[]</td>
+      <td>2818</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>250</td>
+      <td>[[28, 277]]</td>
+      <td>248.894</td>
+      <td>[[1, 5]]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>277</td>
+      <td>277</td>
+      <td>[[1, 277]]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>False</td>
+      <td>((28, 277),)</td>
+      <td>250</td>
+      <td>0.074735</td>
+      <td>0.074735</td>
+      <td>2.500</td>
+      <td>x-ray</td>
+      <td>X-ray diffraction</td>
+      <td>False</td>
+      <td>20110713</td>
+      <td>20061118</td>
+      <td>0.400000</td>
+      <td>-65</td>
+      <td>False</td>
+      <td>12</td>
+      <td>P21359-2</td>
+      <td>0.99</td>
+      <td>False</td>
+      <td>[[6,277]]</td>
+      <td>[[1545,1816]]</td>
+      <td>P21359</td>
+      <td>[0]</td>
+      <td>Safe</td>
+      <td>False</td>
+      <td>False</td>
+      <td>0</td>
+      <td>[[6,277]]</td>
+      <td>[[1545,1816]]</td>
+      <td>{}</td>
+      <td>[]</td>
+      <td>[]</td>
+      <td>2818</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>250</td>
+      <td>[[28, 277]]</td>
+      <td>249.180</td>
+      <td>[[1, 5]]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>277</td>
+      <td>277</td>
+      <td>[[1, 277]]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>False</td>
+      <td>((28, 277),)</td>
+      <td>250</td>
+      <td>0.074735</td>
+      <td>0.074735</td>
+      <td>-66</td>
+      <td>False</td>
+      <td>13</td>
+      <td>False</td>
+      <td>1.0</td>
+      <td>0.083333</td>
+      <td>0.076923</td>
+      <td>((1590, 1591), (1593, 1593), (1626, 1626), (16...</td>
+      <td>((1590, 1591), (1593, 1593), (1626, 1626), (16...</td>
+      <td>(P21359-2, P21359-2)</td>
+      <td>False</td>
       <td>9</td>
-      <td>8</td>
-      <td>2</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>1</td>
+      <td>A</td>
+      <td>A</td>
+      <td>A</td>
+      <td>1</td>
+      <td>1</td>
+      <td>polypeptide(L)</td>
+      <td>[[28,44],[47,48],[50,52],[54,62],[64,81],[83,8...</td>
+      <td>[[51,52],[54,54],[87,87],[92,92],[168,169],[17...</td>
+      <td>1</td>
+      <td>B</td>
+      <td>B</td>
+      <td>B</td>
+      <td>1</td>
+      <td>1</td>
+      <td>polypeptide(L)</td>
+      <td>[[28,44],[48,48],[50,62],[64,81],[83,83],[85,8...</td>
+      <td>[[51,52],[54,54],[87,87],[92,92],[168,169],[17...</td>
+      <td>2e2x</td>
       <td>1</td>
       <td>5</td>
-      <td>6</td>
+      <td>True</td>
+      <td>P21359-2</td>
+      <td>0.99</td>
+      <td>False</td>
+      <td>[[6,277]]</td>
+      <td>[[1545,1816]]</td>
+      <td>P21359</td>
+      <td>[0]</td>
+      <td>Safe</td>
+      <td>False</td>
+      <td>False</td>
+      <td>0</td>
+      <td>[[6,277]]</td>
+      <td>[[1545,1816]]</td>
+      <td>{}</td>
+      <td>[]</td>
+      <td>[]</td>
+      <td>2818</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>250</td>
+      <td>[[28, 277]]</td>
+      <td>248.894</td>
+      <td>[[1, 5]]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>277</td>
+      <td>277</td>
+      <td>[[1, 277]]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>False</td>
+      <td>((28, 277),)</td>
+      <td>250</td>
+      <td>0.074735</td>
+      <td>0.074735</td>
+      <td>2.500</td>
+      <td>x-ray</td>
+      <td>X-ray diffraction</td>
+      <td>False</td>
+      <td>20110713</td>
+      <td>20061118</td>
+      <td>0.400000</td>
+      <td>-65</td>
+      <td>False</td>
+      <td>12</td>
+      <td>P21359-2</td>
+      <td>0.99</td>
+      <td>False</td>
+      <td>[[6,277]]</td>
+      <td>[[1545,1816]]</td>
+      <td>P21359</td>
+      <td>[0]</td>
+      <td>Safe</td>
+      <td>False</td>
+      <td>False</td>
+      <td>0</td>
+      <td>[[6,277]]</td>
+      <td>[[1545,1816]]</td>
+      <td>{}</td>
+      <td>[]</td>
+      <td>[]</td>
+      <td>2818</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>250</td>
+      <td>[[28, 277]]</td>
+      <td>249.180</td>
+      <td>[[1, 5]]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>277</td>
+      <td>277</td>
+      <td>[[1, 277]]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>False</td>
+      <td>((28, 277),)</td>
+      <td>250</td>
+      <td>0.074735</td>
+      <td>0.074735</td>
+      <td>-66</td>
+      <td>False</td>
+      <td>13</td>
+      <td>True</td>
+      <td>1.0</td>
+      <td>0.083333</td>
+      <td>0.076923</td>
+      <td>((1590, 1591), (1593, 1593), (1626, 1626), (16...</td>
+      <td>((1590, 1591), (1593, 1593), (1626, 1626), (16...</td>
+      <td>(P21359-2, P21359-2)</td>
+      <td>False</td>
+      <td>8</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>1</td>
+      <td>A</td>
+      <td>A</td>
+      <td>A</td>
+      <td>1</td>
+      <td>1</td>
+      <td>polypeptide(L)</td>
+      <td>[[7,44],[46,47],[49,62],[64,82],[84,84],[86,25...</td>
+      <td>[[50,51],[53,53],[86,86],[91,91],[167,168],[17...</td>
+      <td>1</td>
+      <td>B</td>
+      <td>B</td>
+      <td>B</td>
+      <td>1</td>
+      <td>1</td>
+      <td>polypeptide(L)</td>
+      <td>[[7,43],[46,61],[63,80],[82,84],[86,157],[159,...</td>
+      <td>[[50,51],[53,53],[86,86],[91,91],[167,168],[17...</td>
+      <td>3p7z</td>
+      <td>0</td>
+      <td>5</td>
+      <td>False</td>
+      <td>P21359-2</td>
+      <td>0.98</td>
+      <td>False</td>
+      <td>[[5,276]]</td>
+      <td>[[1545,1816]]</td>
+      <td>P21359</td>
+      <td>[0]</td>
+      <td>Safe</td>
+      <td>False</td>
+      <td>False</td>
+      <td>0</td>
+      <td>[[5,276]]</td>
+      <td>[[1545,1816]]</td>
+      <td>{"44":"I"}</td>
+      <td>[[44,44]]</td>
+      <td>[[1584,1584]]</td>
+      <td>2818</td>
+      <td>23</td>
+      <td>[[40, 42], [47, 47], [66, 66], [70, 70], [78, ...</td>
+      <td>270</td>
+      <td>[[7, 276]]</td>
+      <td>267.845</td>
+      <td>[[1, 4]]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>276</td>
+      <td>276</td>
+      <td>[[1, 276]]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>False</td>
+      <td>((7, 276),)</td>
+      <td>270</td>
+      <td>0.086380</td>
+      <td>0.094542</td>
+      <td>2.650</td>
+      <td>x-ray</td>
+      <td>X-ray diffraction</td>
+      <td>False</td>
+      <td>20190717</td>
+      <td>20101013</td>
+      <td>0.377358</td>
+      <td>-65</td>
+      <td>False</td>
+      <td>5</td>
+      <td>P21359-2</td>
+      <td>0.98</td>
+      <td>False</td>
+      <td>[[5,276]]</td>
+      <td>[[1545,1816]]</td>
+      <td>P21359</td>
+      <td>[0]</td>
+      <td>Safe</td>
+      <td>False</td>
+      <td>False</td>
+      <td>0</td>
+      <td>[[5,276]]</td>
+      <td>[[1545,1816]]</td>
+      <td>{"44":"I"}</td>
+      <td>[[44,44]]</td>
+      <td>[[1584,1584]]</td>
+      <td>2818</td>
+      <td>16</td>
+      <td>[[80, 80], [92, 95], [101, 102], [110, 110], [...</td>
+      <td>270</td>
+      <td>[[7, 276]]</td>
+      <td>269.180</td>
+      <td>[[1, 4]]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>276</td>
+      <td>276</td>
+      <td>[[1, 276]]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>False</td>
+      <td>((7, 276),)</td>
+      <td>270</td>
+      <td>0.088864</td>
+      <td>0.094542</td>
+      <td>-66</td>
+      <td>True</td>
+      <td>2</td>
+      <td>False</td>
+      <td>1.0</td>
+      <td>0.500000</td>
+      <td>0.200000</td>
+      <td>((1590, 1591), (1593, 1593), (1626, 1626), (16...</td>
+      <td>((1590, 1591), (1593, 1593), (1626, 1626), (16...</td>
+      <td>(P21359-2, P21359-2)</td>
+      <td>False</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>1</td>
+      <td>A</td>
+      <td>A</td>
+      <td>A</td>
+      <td>1</td>
+      <td>1</td>
+      <td>polypeptide(L)</td>
+      <td>[[7,44],[46,47],[49,62],[64,82],[84,84],[86,25...</td>
+      <td>[[50,51],[53,53],[86,86],[91,91],[167,168],[17...</td>
+      <td>1</td>
+      <td>B</td>
+      <td>B</td>
+      <td>B</td>
+      <td>1</td>
+      <td>1</td>
+      <td>polypeptide(L)</td>
+      <td>[[7,43],[46,61],[63,80],[82,84],[86,157],[159,...</td>
+      <td>[[50,51],[53,53],[86,86],[91,91],[167,168],[17...</td>
+      <td>3p7z</td>
+      <td>1</td>
+      <td>5</td>
+      <td>True</td>
+      <td>P21359-2</td>
+      <td>0.98</td>
+      <td>False</td>
+      <td>[[5,276]]</td>
+      <td>[[1545,1816]]</td>
+      <td>P21359</td>
+      <td>[0]</td>
+      <td>Safe</td>
+      <td>False</td>
+      <td>False</td>
+      <td>0</td>
+      <td>[[5,276]]</td>
+      <td>[[1545,1816]]</td>
+      <td>{"44":"I"}</td>
+      <td>[[44,44]]</td>
+      <td>[[1584,1584]]</td>
+      <td>2818</td>
+      <td>23</td>
+      <td>[[40, 42], [47, 47], [66, 66], [70, 70], [78, ...</td>
+      <td>270</td>
+      <td>[[7, 276]]</td>
+      <td>267.845</td>
+      <td>[[1, 4]]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>276</td>
+      <td>276</td>
+      <td>[[1, 276]]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>False</td>
+      <td>((7, 276),)</td>
+      <td>270</td>
+      <td>0.086380</td>
+      <td>0.094542</td>
+      <td>2.650</td>
+      <td>x-ray</td>
+      <td>X-ray diffraction</td>
+      <td>False</td>
+      <td>20190717</td>
+      <td>20101013</td>
+      <td>0.377358</td>
+      <td>-65</td>
+      <td>False</td>
+      <td>5</td>
+      <td>P21359-2</td>
+      <td>0.98</td>
+      <td>False</td>
+      <td>[[5,276]]</td>
+      <td>[[1545,1816]]</td>
+      <td>P21359</td>
+      <td>[0]</td>
+      <td>Safe</td>
+      <td>False</td>
+      <td>False</td>
+      <td>0</td>
+      <td>[[5,276]]</td>
+      <td>[[1545,1816]]</td>
+      <td>{"44":"I"}</td>
+      <td>[[44,44]]</td>
+      <td>[[1584,1584]]</td>
+      <td>2818</td>
+      <td>16</td>
+      <td>[[80, 80], [92, 95], [101, 102], [110, 110], [...</td>
+      <td>270</td>
+      <td>[[7, 276]]</td>
+      <td>269.180</td>
+      <td>[[1, 4]]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>276</td>
+      <td>276</td>
+      <td>[[1, 276]]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>False</td>
+      <td>((7, 276),)</td>
+      <td>270</td>
+      <td>0.088864</td>
+      <td>0.094542</td>
+      <td>-66</td>
+      <td>True</td>
+      <td>2</td>
+      <td>True</td>
+      <td>1.0</td>
+      <td>0.500000</td>
+      <td>0.200000</td>
+      <td>((1590, 1591), (1593, 1593), (1626, 1626), (16...</td>
+      <td>((1590, 1591), (1593, 1593), (1626, 1626), (16...</td>
+      <td>(P21359-2, P21359-2)</td>
+      <td>True</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>1</td>
+      <td>A</td>
+      <td>A</td>
+      <td>A</td>
+      <td>1</td>
+      <td>1</td>
+      <td>polypeptide(L)</td>
+      <td>[[1,24],[28,235],[237,238],[240,256]]</td>
+      <td>[[31,32],[34,34],[67,67],[72,72],[148,149],[15...</td>
+      <td>1</td>
+      <td>B</td>
+      <td>B</td>
+      <td>B</td>
+      <td>1</td>
+      <td>1</td>
+      <td>polypeptide(L)</td>
+      <td>[[1,24],[28,28],[30,61],[63,63],[65,134],[136,...</td>
+      <td>[[31,32],[34,34],[67,67],[72,72],[148,149],[15...</td>
+      <td>3pg7</td>
+      <td>0</td>
+      <td>4</td>
+      <td>False</td>
+      <td>P21359-2</td>
+      <td>1.00</td>
+      <td>False</td>
+      <td>[[1,256]]</td>
+      <td>[[1560,1816]]</td>
+      <td>P21359</td>
+      <td>[1]</td>
+      <td>Deletion</td>
+      <td>False</td>
+      <td>False</td>
+      <td>1</td>
+      <td>((1, 191), (192, 256))</td>
+      <td>((1560, 1750), (1752, 1816))</td>
+      <td>{"191":"K"}</td>
+      <td>[[191,191]]</td>
+      <td>[[1750,1750]]</td>
+      <td>2818</td>
+      <td>15</td>
+      <td>[[13, 13], [28, 28], [61, 61], [73, 73], [75, ...</td>
+      <td>256</td>
+      <td>[[1, 256]]</td>
+      <td>247.929</td>
+      <td>[]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>256</td>
+      <td>256</td>
+      <td>[[1, 256]]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>False</td>
+      <td>((1, 256),)</td>
+      <td>256</td>
+      <td>0.083881</td>
+      <td>0.089204</td>
+      <td>2.189</td>
+      <td>x-ray</td>
+      <td>X-ray diffraction</td>
+      <td>False</td>
+      <td>20110713</td>
+      <td>20101031</td>
+      <td>0.456830</td>
+      <td>-65</td>
+      <td>False</td>
       <td>7</td>
+      <td>P21359-2</td>
+      <td>1.00</td>
+      <td>False</td>
+      <td>[[1,256]]</td>
+      <td>[[1560,1816]]</td>
+      <td>P21359</td>
+      <td>[1]</td>
+      <td>Deletion</td>
+      <td>False</td>
+      <td>False</td>
+      <td>1</td>
+      <td>((1, 191), (192, 256))</td>
+      <td>((1560, 1750), (1752, 1816))</td>
+      <td>{"191":"K"}</td>
+      <td>[[191,191]]</td>
+      <td>[[1750,1750]]</td>
+      <td>2818</td>
+      <td>17</td>
+      <td>[[61, 61], [73, 74], [76, 76], [82, 83], [91, ...</td>
+      <td>256</td>
+      <td>[[1, 256]]</td>
+      <td>249.123</td>
+      <td>[]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>256</td>
+      <td>256</td>
+      <td>[[1, 256]]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>False</td>
+      <td>((1, 256),)</td>
+      <td>256</td>
+      <td>0.083171</td>
+      <td>0.089204</td>
+      <td>-66</td>
+      <td>False</td>
+      <td>8</td>
+      <td>False</td>
+      <td>1.0</td>
+      <td>0.142857</td>
+      <td>0.125000</td>
+      <td>((1590, 1591), (1593, 1593), (1626, 1626), (16...</td>
+      <td>((1590, 1591), (1593, 1593), (1626, 1626), (16...</td>
+      <td>(P21359-2, P21359-2)</td>
+      <td>False</td>
+      <td>5</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>2</td>
+      <td>B</td>
+      <td>B</td>
+      <td>B</td>
+      <td>1</td>
+      <td>1</td>
+      <td>polypeptide(L)</td>
+      <td>[[12,48],[50,53],[55,73],[75,76],[78,80],[82,8...</td>
+      <td>[[228,228],[231,232],[234,235],[237,238],[241,...</td>
+      <td>2</td>
+      <td>D</td>
+      <td>D</td>
+      <td>D</td>
+      <td>1</td>
+      <td>1</td>
+      <td>polypeptide(L)</td>
+      <td>[[10,48],[50,53],[55,76],[79,80],[82,85],[87,9...</td>
+      <td>[[91,91],[95,95],[99,99],[194,195],[197,197],[...</td>
+      <td>6ob3</td>
+      <td>0</td>
+      <td>10</td>
+      <td>False</td>
+      <td>P21359-2</td>
+      <td>1.00</td>
+      <td>False</td>
+      <td>[[2,256]]</td>
+      <td>[[1209,1463]]</td>
+      <td>P21359</td>
+      <td>[0]</td>
+      <td>Safe</td>
+      <td>False</td>
+      <td>False</td>
+      <td>0</td>
+      <td>[[2,256]]</td>
+      <td>[[1209,1463]]</td>
+      <td>{}</td>
+      <td>[]</td>
+      <td>[]</td>
+      <td>2818</td>
+      <td>10</td>
+      <td>[[41, 41], [51, 51], [69, 69], [129, 130], [13...</td>
+      <td>245</td>
+      <td>[[12, 256]]</td>
+      <td>241.495</td>
+      <td>[[1, 1]]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>256</td>
+      <td>256</td>
+      <td>[[1, 256]]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>False</td>
+      <td>((12, 256),)</td>
+      <td>245</td>
+      <td>0.077038</td>
+      <td>0.080586</td>
+      <td>2.100</td>
+      <td>x-ray</td>
+      <td>X-ray diffraction</td>
+      <td>False</td>
+      <td>20191113</td>
+      <td>20190319</td>
+      <td>0.476190</td>
+      <td>-66</td>
+      <td>False</td>
+      <td>11</td>
+      <td>P21359-2</td>
+      <td>1.00</td>
+      <td>False</td>
+      <td>[[2,256]]</td>
+      <td>[[1209,1463]]</td>
+      <td>P21359</td>
+      <td>[0]</td>
+      <td>Safe</td>
+      <td>False</td>
+      <td>False</td>
+      <td>0</td>
+      <td>[[2,256]]</td>
+      <td>[[1209,1463]]</td>
+      <td>{}</td>
+      <td>[]</td>
+      <td>[]</td>
+      <td>2818</td>
+      <td>7</td>
+      <td>[[41, 41], [44, 44], [126, 126], [133, 133], [...</td>
+      <td>247</td>
+      <td>[[10, 256]]</td>
+      <td>244.327</td>
+      <td>[[1, 1]]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>256</td>
+      <td>256</td>
+      <td>[[1, 256]]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>False</td>
+      <td>((10, 256),)</td>
+      <td>247</td>
+      <td>0.080083</td>
+      <td>0.082567</td>
+      <td>-68</td>
+      <td>False</td>
+      <td>10</td>
+      <td>False</td>
+      <td>1.0</td>
+      <td>0.100000</td>
+      <td>0.090909</td>
+      <td>((1435, 1435), (1438, 1439), (1441, 1442), (14...</td>
+      <td>((1298, 1298), (1302, 1302), (1306, 1306), (14...</td>
+      <td>(P21359-2, P21359-2)</td>
+      <td>True</td>
+      <td>7</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>2</td>
+      <td>B</td>
+      <td>B</td>
+      <td>B</td>
+      <td>1</td>
+      <td>1</td>
+      <td>polypeptide(L)</td>
+      <td>[[12,48],[50,53],[55,76],[78,80],[82,85],[87,1...</td>
+      <td>[[125,125],[231,231],[234,235],[237,238],[241,...</td>
+      <td>2</td>
+      <td>D</td>
+      <td>D</td>
+      <td>D</td>
+      <td>1</td>
+      <td>1</td>
+      <td>polypeptide(L)</td>
+      <td>[[12,53],[55,76],[78,80],[82,85],[87,100],[102...</td>
+      <td>[[99,99],[194,194],[197,197],[199,201]]</td>
+      <td>6ob2</td>
+      <td>0</td>
+      <td>9</td>
+      <td>False</td>
+      <td>P21359-2</td>
+      <td>1.00</td>
+      <td>False</td>
+      <td>[[2,256]]</td>
+      <td>[[1209,1463]]</td>
+      <td>P21359</td>
+      <td>[0]</td>
+      <td>Safe</td>
+      <td>False</td>
+      <td>False</td>
+      <td>0</td>
+      <td>[[2,256]]</td>
+      <td>[[1209,1463]]</td>
+      <td>{}</td>
+      <td>[]</td>
+      <td>[]</td>
+      <td>2818</td>
+      <td>8</td>
+      <td>[[18, 19], [22, 22], [191, 192], [202, 202], [...</td>
+      <td>241</td>
+      <td>[[12, 103], [107, 255]]</td>
+      <td>236.933</td>
+      <td>[[1, 1]]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>256</td>
+      <td>256</td>
+      <td>[[1, 256]]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>False</td>
+      <td>((12, 103), (107, 255))</td>
+      <td>241</td>
+      <td>0.073786</td>
+      <td>0.076625</td>
+      <td>2.845</td>
+      <td>x-ray</td>
+      <td>X-ray diffraction</td>
+      <td>False</td>
+      <td>20191113</td>
+      <td>20190319</td>
+      <td>0.351494</td>
+      <td>-66</td>
+      <td>False</td>
+      <td>14</td>
+      <td>P21359-2</td>
+      <td>1.00</td>
+      <td>False</td>
+      <td>[[2,256]]</td>
+      <td>[[1209,1463]]</td>
+      <td>P21359</td>
+      <td>[0]</td>
+      <td>Safe</td>
+      <td>False</td>
+      <td>False</td>
+      <td>0</td>
+      <td>[[2,256]]</td>
+      <td>[[1209,1463]]</td>
+      <td>{}</td>
+      <td>[]</td>
+      <td>[]</td>
+      <td>2818</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>245</td>
+      <td>[[12, 256]]</td>
+      <td>239.938</td>
+      <td>[[1, 1]]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>256</td>
+      <td>256</td>
+      <td>[[1, 256]]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>False</td>
+      <td>((12, 256),)</td>
+      <td>245</td>
+      <td>0.080586</td>
+      <td>0.080586</td>
+      <td>-68</td>
+      <td>False</td>
+      <td>9</td>
+      <td>False</td>
+      <td>1.0</td>
+      <td>0.111111</td>
+      <td>0.071429</td>
+      <td>((1332, 1332), (1438, 1438), (1441, 1442), (14...</td>
+      <td>((1306, 1306), (1401, 1401), (1404, 1404), (14...</td>
+      <td>(P21359-2, P21359-2)</td>
+      <td>True</td>
+      <td>6</td>
     </tr>
   </tbody>
 </table>
+
 </details>
 
 这个过程自动完成了上面提及的reformat、打分及与PISA、Interactome3D数据资源整合等步骤，下面的`pipe_select_ho_iso,pipe_select_he`同理。
@@ -2781,346 +4404,9638 @@ df2
 
 ```python
 df3 = sifts_demo.pipe_select_ho_iso(run_as_completed=True).result()
-df3.sample(10)
+df3
 ```
 
 <details>
 <summary>Click to view dataframe</summary>
+
 <table class="dataframe">
   <thead>
     <tr style="text-align: right;">
       <th></th>
-      <th>43</th>
-      <th>42</th>
-      <th>21</th>
-      <th>4</th>
-      <th>13</th>
-      <th>45</th>
-      <th>37</th>
-      <th>38</th>
-      <th>44</th>
-      <th>30</th>
+      <th>entity_id_1</th>
+      <th>chain_id_1</th>
+      <th>struct_asym_id_1</th>
+      <th>struct_asym_id_in_assembly_1</th>
+      <th>asym_id_rank_1</th>
+      <th>model_id_1</th>
+      <th>molecule_type_1</th>
+      <th>surface_range_1</th>
+      <th>interface_range_1</th>
+      <th>entity_id_2</th>
+      <th>chain_id_2</th>
+      <th>struct_asym_id_2</th>
+      <th>struct_asym_id_in_assembly_2</th>
+      <th>asym_id_rank_2</th>
+      <th>model_id_2</th>
+      <th>molecule_type_2</th>
+      <th>surface_range_2</th>
+      <th>interface_range_2</th>
+      <th>pdb_id</th>
+      <th>assembly_id</th>
+      <th>interface_id</th>
+      <th>use_au</th>
+      <th>UniProt_1</th>
+      <th>identifier_1</th>
+      <th>identity_1</th>
+      <th>is_canonical_1</th>
+      <th>name_1</th>
+      <th>pdb_range_1</th>
+      <th>unp_range_1</th>
+      <th>Entry_1</th>
+      <th>range_diff_1</th>
+      <th>sifts_range_tag_1</th>
+      <th>repeated_1</th>
+      <th>reversed_1</th>
+      <th>InDel_sum_1</th>
+      <th>new_pdb_range_1</th>
+      <th>new_unp_range_1</th>
+      <th>conflict_pdb_index_1</th>
+      <th>conflict_pdb_range_1</th>
+      <th>conflict_unp_range_1</th>
+      <th>unp_len_1</th>
+      <th>BINDING_LIGAND_COUNT_1</th>
+      <th>BINDING_LIGAND_INDEX_1</th>
+      <th>OBS_COUNT_1</th>
+      <th>OBS_INDEX_1</th>
+      <th>OBS_RATIO_SUM_1</th>
+      <th>ARTIFACT_INDEX_1</th>
+      <th>NON_COUNT_1</th>
+      <th>NON_INDEX_1</th>
+      <th>SEQRES_COUNT_1</th>
+      <th>STD_COUNT_1</th>
+      <th>STD_INDEX_1</th>
+      <th>UNK_COUNT_1</th>
+      <th>UNK_INDEX_1</th>
+      <th>ca_p_only_1</th>
+      <th>OBS_STD_INDEX_1</th>
+      <th>OBS_STD_COUNT_1</th>
+      <th>RAW_BS_1</th>
+      <th>RAW_BS_IG3_1</th>
+      <th>resolution</th>
+      <th>experimental_method_class</th>
+      <th>experimental_method</th>
+      <th>multi_method</th>
+      <th>revision_date</th>
+      <th>deposition_date</th>
+      <th>1/resolution</th>
+      <th>id_score_1</th>
+      <th>select_tag_1</th>
+      <th>select_rank_1</th>
+      <th>UniProt_2</th>
+      <th>identifier_2</th>
+      <th>identity_2</th>
+      <th>is_canonical_2</th>
+      <th>name_2</th>
+      <th>pdb_range_2</th>
+      <th>unp_range_2</th>
+      <th>Entry_2</th>
+      <th>range_diff_2</th>
+      <th>sifts_range_tag_2</th>
+      <th>repeated_2</th>
+      <th>reversed_2</th>
+      <th>InDel_sum_2</th>
+      <th>new_pdb_range_2</th>
+      <th>new_unp_range_2</th>
+      <th>conflict_pdb_index_2</th>
+      <th>conflict_pdb_range_2</th>
+      <th>conflict_unp_range_2</th>
+      <th>unp_len_2</th>
+      <th>BINDING_LIGAND_COUNT_2</th>
+      <th>BINDING_LIGAND_INDEX_2</th>
+      <th>OBS_COUNT_2</th>
+      <th>OBS_INDEX_2</th>
+      <th>OBS_RATIO_SUM_2</th>
+      <th>ARTIFACT_INDEX_2</th>
+      <th>NON_COUNT_2</th>
+      <th>NON_INDEX_2</th>
+      <th>SEQRES_COUNT_2</th>
+      <th>STD_COUNT_2</th>
+      <th>STD_INDEX_2</th>
+      <th>UNK_COUNT_2</th>
+      <th>UNK_INDEX_2</th>
+      <th>ca_p_only_2</th>
+      <th>OBS_STD_INDEX_2</th>
+      <th>OBS_STD_COUNT_2</th>
+      <th>RAW_BS_2</th>
+      <th>RAW_BS_IG3_2</th>
+      <th>id_score_2</th>
+      <th>select_tag_2</th>
+      <th>select_rank_2</th>
+      <th>in_i3d</th>
+      <th>best_select_rank_score</th>
+      <th>second_select_rank_score</th>
+      <th>unp_interface_range_1</th>
+      <th>unp_interface_range_2</th>
+      <th>i_group</th>
+      <th>i_select_tag</th>
+      <th>i_select_rank</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <th>entity_id_1</th>
-      <td>2</td>
-      <td>2</td>
+      <th>0</th>
+      <td>1</td>
+      <td>B</td>
+      <td>B</td>
+      <td>B</td>
       <td>1</td>
       <td>1</td>
+      <td>polypeptide(L)</td>
+      <td>[[1,24],[28,28],[30,63],[65,65],[67,120],[123,...</td>
+      <td>[[10,10],[31,32],[34,34],[67,67],[72,72],[148,...</td>
       <td>1</td>
-      <td>2</td>
-      <td>2</td>
-      <td>2</td>
-      <td>2</td>
+      <td>A</td>
+      <td>A</td>
+      <td>A</td>
       <td>1</td>
+      <td>1</td>
+      <td>polypeptide(L)</td>
+      <td>[[1,11],[13,25],[27,28],[30,42],[44,236],[238,...</td>
+      <td>[[31,32],[34,34],[67,67],[72,72],[148,149],[15...</td>
+      <td>2d4q</td>
+      <td>0</td>
+      <td>3</td>
+      <td>False</td>
+      <td>P21359-2</td>
+      <td>NF1_HUMAN</td>
+      <td>1.00</td>
+      <td>False</td>
+      <td>NF1_HUMAN</td>
+      <td>[[1,257]]</td>
+      <td>[[1560,1816]]</td>
+      <td>P21359</td>
+      <td>[0]</td>
+      <td>Safe</td>
+      <td>False</td>
+      <td>False</td>
+      <td>0</td>
+      <td>[[1,257]]</td>
+      <td>[[1560,1816]]</td>
+      <td>{}</td>
+      <td>[]</td>
+      <td>[]</td>
+      <td>2818</td>
+      <td>11</td>
+      <td>[[28, 28], [63, 63], [73, 76], [107, 107], [10...</td>
+      <td>255</td>
+      <td>[[1, 120], [123, 257]]</td>
+      <td>254.009</td>
+      <td>[]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>257</td>
+      <td>257</td>
+      <td>[[1, 257]]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>False</td>
+      <td>((1, 120), (123, 257))</td>
+      <td>255</td>
+      <td>0.085315</td>
+      <td>0.089219</td>
+      <td>2.300</td>
+      <td>x-ray</td>
+      <td>X-ray diffraction</td>
+      <td>False</td>
+      <td>20110713</td>
+      <td>20051022</td>
+      <td>0.434783</td>
+      <td>-66</td>
+      <td>False</td>
+      <td>6</td>
+      <td>P21359</td>
+      <td>NF1_HUMAN</td>
+      <td>1.00</td>
+      <td>True</td>
+      <td>NF1_HUMAN</td>
+      <td>[[1,257]]</td>
+      <td>[[1581,1837]]</td>
+      <td>P21359</td>
+      <td>[0]</td>
+      <td>Safe</td>
+      <td>False</td>
+      <td>False</td>
+      <td>0</td>
+      <td>[[1,257]]</td>
+      <td>[[1581,1837]]</td>
+      <td>{}</td>
+      <td>[]</td>
+      <td>[]</td>
+      <td>2839</td>
+      <td>12</td>
+      <td>[[61, 61], [73, 76], [82, 82], [86, 86], [107,...</td>
+      <td>257</td>
+      <td>[[1, 257]]</td>
+      <td>257.000</td>
+      <td>[]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>257</td>
+      <td>257</td>
+      <td>[[1, 257]]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>False</td>
+      <td>((1, 257),)</td>
+      <td>257</td>
+      <td>0.086298</td>
+      <td>0.090525</td>
+      <td>-65</td>
+      <td>False</td>
+      <td>2</td>
+      <td>False</td>
+      <td>0.500000</td>
+      <td>0.166667</td>
+      <td>((1569, 1569), (1590, 1591), (1593, 1593), (16...</td>
+      <td>((1611, 1612), (1614, 1614), (1647, 1647), (16...</td>
+      <td>(P21359-2, P21359)</td>
+      <td>False</td>
+      <td>6</td>
     </tr>
     <tr>
-      <th>chain_id_1</th>
-      <td>B</td>
-      <td>B</td>
+      <th>1</th>
+      <td>1</td>
       <td>A</td>
-      <td>B</td>
       <td>A</td>
-      <td>D</td>
-      <td>B</td>
-      <td>D</td>
-      <td>D</td>
       <td>A</td>
+      <td>1</td>
+      <td>1</td>
+      <td>polypeptide(L)</td>
+      <td>[[1,11],[13,25],[27,28],[30,42],[44,236],[238,...</td>
+      <td>[[31,32],[34,34],[67,67],[72,72],[148,149],[15...</td>
+      <td>1</td>
+      <td>B</td>
+      <td>B</td>
+      <td>B</td>
+      <td>1</td>
+      <td>1</td>
+      <td>polypeptide(L)</td>
+      <td>[[1,24],[28,28],[30,63],[65,65],[67,120],[123,...</td>
+      <td>[[10,10],[31,32],[34,34],[67,67],[72,72],[148,...</td>
+      <td>2d4q</td>
+      <td>0</td>
+      <td>3</td>
+      <td>False</td>
+      <td>P21359-2</td>
+      <td>NF1_HUMAN</td>
+      <td>1.00</td>
+      <td>False</td>
+      <td>NF1_HUMAN</td>
+      <td>[[1,257]]</td>
+      <td>[[1560,1816]]</td>
+      <td>P21359</td>
+      <td>[0]</td>
+      <td>Safe</td>
+      <td>False</td>
+      <td>False</td>
+      <td>0</td>
+      <td>[[1,257]]</td>
+      <td>[[1560,1816]]</td>
+      <td>{}</td>
+      <td>[]</td>
+      <td>[]</td>
+      <td>2818</td>
+      <td>12</td>
+      <td>[[61, 61], [73, 76], [82, 82], [86, 86], [107,...</td>
+      <td>257</td>
+      <td>[[1, 257]]</td>
+      <td>257.000</td>
+      <td>[]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>257</td>
+      <td>257</td>
+      <td>[[1, 257]]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>False</td>
+      <td>((1, 257),)</td>
+      <td>257</td>
+      <td>0.086941</td>
+      <td>0.091199</td>
+      <td>2.300</td>
+      <td>x-ray</td>
+      <td>X-ray diffraction</td>
+      <td>False</td>
+      <td>20110713</td>
+      <td>20051022</td>
+      <td>0.434783</td>
+      <td>-65</td>
+      <td>False</td>
+      <td>4</td>
+      <td>P21359</td>
+      <td>NF1_HUMAN</td>
+      <td>1.00</td>
+      <td>True</td>
+      <td>NF1_HUMAN</td>
+      <td>[[1,257]]</td>
+      <td>[[1581,1837]]</td>
+      <td>P21359</td>
+      <td>[0]</td>
+      <td>Safe</td>
+      <td>False</td>
+      <td>False</td>
+      <td>0</td>
+      <td>[[1,257]]</td>
+      <td>[[1581,1837]]</td>
+      <td>{}</td>
+      <td>[]</td>
+      <td>[]</td>
+      <td>2839</td>
+      <td>11</td>
+      <td>[[28, 28], [63, 63], [73, 76], [107, 107], [10...</td>
+      <td>255</td>
+      <td>[[1, 120], [123, 257]]</td>
+      <td>254.009</td>
+      <td>[]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>257</td>
+      <td>257</td>
+      <td>[[1, 257]]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>False</td>
+      <td>((1, 120), (123, 257))</td>
+      <td>255</td>
+      <td>0.084684</td>
+      <td>0.088559</td>
+      <td>-66</td>
+      <td>False</td>
+      <td>4</td>
+      <td>False</td>
+      <td>0.250000</td>
+      <td>0.250000</td>
+      <td>((1590, 1591), (1593, 1593), (1626, 1626), (16...</td>
+      <td>((1590, 1590), (1611, 1612), (1614, 1614), (16...</td>
+      <td>(P21359-2, P21359)</td>
+      <td>False</td>
+      <td>2</td>
     </tr>
     <tr>
-      <th>struct_asym_id_1</th>
-      <td>B</td>
-      <td>B</td>
+      <th>2</th>
+      <td>1</td>
       <td>A</td>
-      <td>B</td>
       <td>A</td>
-      <td>D</td>
-      <td>B</td>
-      <td>D</td>
-      <td>D</td>
       <td>A</td>
+      <td>1</td>
+      <td>1</td>
+      <td>polypeptide(L)</td>
+      <td>[[1,11],[13,25],[27,28],[30,42],[44,236],[238,...</td>
+      <td>[[31,32],[34,34],[67,67],[72,72],[148,149],[15...</td>
+      <td>1</td>
+      <td>B</td>
+      <td>B</td>
+      <td>B</td>
+      <td>1</td>
+      <td>1</td>
+      <td>polypeptide(L)</td>
+      <td>[[1,24],[28,28],[30,63],[65,65],[67,120],[123,...</td>
+      <td>[[10,10],[31,32],[34,34],[67,67],[72,72],[148,...</td>
+      <td>2d4q</td>
+      <td>0</td>
+      <td>3</td>
+      <td>False</td>
+      <td>P21359-2</td>
+      <td>NF1_HUMAN</td>
+      <td>1.00</td>
+      <td>False</td>
+      <td>NF1_HUMAN</td>
+      <td>[[1,257]]</td>
+      <td>[[1560,1816]]</td>
+      <td>P21359</td>
+      <td>[0]</td>
+      <td>Safe</td>
+      <td>False</td>
+      <td>False</td>
+      <td>0</td>
+      <td>[[1,257]]</td>
+      <td>[[1560,1816]]</td>
+      <td>{}</td>
+      <td>[]</td>
+      <td>[]</td>
+      <td>2818</td>
+      <td>12</td>
+      <td>[[61, 61], [73, 76], [82, 82], [86, 86], [107,...</td>
+      <td>257</td>
+      <td>[[1, 257]]</td>
+      <td>257.000</td>
+      <td>[]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>257</td>
+      <td>257</td>
+      <td>[[1, 257]]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>False</td>
+      <td>((1, 257),)</td>
+      <td>257</td>
+      <td>0.086941</td>
+      <td>0.091199</td>
+      <td>2.300</td>
+      <td>x-ray</td>
+      <td>X-ray diffraction</td>
+      <td>False</td>
+      <td>20110713</td>
+      <td>20051022</td>
+      <td>0.434783</td>
+      <td>-65</td>
+      <td>False</td>
+      <td>4</td>
+      <td>P21359-4</td>
+      <td>NF1_HUMAN</td>
+      <td>0.91</td>
+      <td>False</td>
+      <td>NF1_HUMAN</td>
+      <td>[[1,11]]</td>
+      <td>[[1581,1591]]</td>
+      <td>P21359</td>
+      <td>[0]</td>
+      <td>Safe</td>
+      <td>False</td>
+      <td>False</td>
+      <td>0</td>
+      <td>[[1,11]]</td>
+      <td>[[1581,1591]]</td>
+      <td>{"11":"T"}</td>
+      <td>[[11,11]]</td>
+      <td>[[1591,1591]]</td>
+      <td>1598</td>
+      <td>11</td>
+      <td>[[28, 28], [63, 63], [73, 76], [107, 107], [10...</td>
+      <td>255</td>
+      <td>[[1, 120], [123, 257]]</td>
+      <td>254.009</td>
+      <td>[]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>257</td>
+      <td>257</td>
+      <td>[[1, 257]]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>False</td>
+      <td>((1, 120), (123, 257))</td>
+      <td>255</td>
+      <td>-0.150814</td>
+      <td>-0.143930</td>
+      <td>-66</td>
+      <td>False</td>
+      <td>-1</td>
+      <td>False</td>
+      <td>-1.000000</td>
+      <td>0.250000</td>
+      <td>((1590, 1591), (1593, 1593), (1626, 1626), (16...</td>
+      <td>((1590, 1590),)</td>
+      <td>(P21359-2, P21359-4)</td>
+      <td>False</td>
+      <td>-1</td>
     </tr>
     <tr>
-      <th>struct_asym_id_in_assembly_1</th>
-      <td>B</td>
-      <td>B</td>
+      <th>3</th>
+      <td>1</td>
       <td>A</td>
-      <td>B</td>
       <td>A</td>
-      <td>D</td>
-      <td>B</td>
-      <td>D</td>
-      <td>D</td>
       <td>A</td>
-    </tr>
-    <tr>
-      <th>asym_id_rank_1</th>
       <td>1</td>
       <td>1</td>
+      <td>polypeptide(L)</td>
+      <td>[[1,11],[13,25],[27,28],[30,42],[44,236],[238,...</td>
+      <td>[[31,32],[34,34],[67,67],[72,72],[148,149],[15...</td>
+      <td>1</td>
+      <td>B</td>
+      <td>B</td>
+      <td>B</td>
       <td>1</td>
       <td>1</td>
-      <td>1</td>
-      <td>1</td>
-      <td>1</td>
-      <td>1</td>
-      <td>1</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <th>...</th>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-    </tr>
-    <tr>
-      <th>unp_interface_range_1</th>
-      <td>((1435, 1435), (1438, 1439), (1441, 1442), (14...</td>
-      <td>((1435, 1435), (1438, 1439), (1441, 1442), (14...</td>
+      <td>polypeptide(L)</td>
+      <td>[[1,24],[28,28],[30,63],[65,65],[67,120],[123,...</td>
+      <td>[[10,10],[31,32],[34,34],[67,67],[72,72],[148,...</td>
+      <td>2d4q</td>
+      <td>0</td>
+      <td>3</td>
+      <td>False</td>
+      <td>P21359-2</td>
+      <td>NF1_HUMAN</td>
+      <td>1.00</td>
+      <td>False</td>
+      <td>NF1_HUMAN</td>
+      <td>[[1,257]]</td>
+      <td>[[1560,1816]]</td>
+      <td>P21359</td>
+      <td>[0]</td>
+      <td>Safe</td>
+      <td>False</td>
+      <td>False</td>
+      <td>0</td>
+      <td>[[1,257]]</td>
+      <td>[[1560,1816]]</td>
+      <td>{}</td>
+      <td>[]</td>
+      <td>[]</td>
+      <td>2818</td>
+      <td>12</td>
+      <td>[[61, 61], [73, 76], [82, 82], [86, 86], [107,...</td>
+      <td>257</td>
+      <td>[[1, 257]]</td>
+      <td>257.000</td>
+      <td>[]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>257</td>
+      <td>257</td>
+      <td>[[1, 257]]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>False</td>
+      <td>((1, 257),)</td>
+      <td>257</td>
+      <td>0.086941</td>
+      <td>0.091199</td>
+      <td>2.300</td>
+      <td>x-ray</td>
+      <td>X-ray diffraction</td>
+      <td>False</td>
+      <td>20110713</td>
+      <td>20051022</td>
+      <td>0.434783</td>
+      <td>-65</td>
+      <td>False</td>
+      <td>4</td>
+      <td>P21359-6</td>
+      <td>NF1_HUMAN</td>
+      <td>1.00</td>
+      <td>False</td>
+      <td>NF1_HUMAN</td>
+      <td>[[1,257]]</td>
+      <td>[[1560,1816]]</td>
+      <td>P21359</td>
+      <td>[0]</td>
+      <td>Safe</td>
+      <td>False</td>
+      <td>False</td>
+      <td>0</td>
+      <td>[[1,257]]</td>
+      <td>[[1560,1816]]</td>
+      <td>{}</td>
+      <td>[]</td>
+      <td>[]</td>
+      <td>2836</td>
+      <td>11</td>
+      <td>[[28, 28], [63, 63], [73, 76], [107, 107], [10...</td>
+      <td>255</td>
+      <td>[[1, 120], [123, 257]]</td>
+      <td>254.009</td>
+      <td>[]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>257</td>
+      <td>257</td>
+      <td>[[1, 257]]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>False</td>
+      <td>((1, 120), (123, 257))</td>
+      <td>255</td>
+      <td>0.084774</td>
+      <td>0.088653</td>
+      <td>-66</td>
+      <td>False</td>
+      <td>6</td>
+      <td>False</td>
+      <td>0.250000</td>
+      <td>0.166667</td>
       <td>((1590, 1591), (1593, 1593), (1626, 1626), (16...</td>
       <td>((1569, 1569), (1590, 1591), (1593, 1593), (16...</td>
-      <td>((1590, 1591), (1593, 1593), (1626, 1626), (16...</td>
-      <td>((1298, 1298), (1302, 1302), (1306, 1306), (14...</td>
-      <td>((1332, 1332), (1438, 1438), (1441, 1442), (14...</td>
-      <td>((1306, 1306), (1401, 1401), (1404, 1404), (14...</td>
-      <td>((1298, 1298), (1302, 1302), (1306, 1306), (14...</td>
-      <td>((1590, 1591), (1593, 1593), (1626, 1626), (16...</td>
+      <td>(P21359-2, P21359-6)</td>
+      <td>False</td>
+      <td>2</td>
     </tr>
     <tr>
-      <th>unp_interface_range_2</th>
-      <td>((1298, 1298), (1302, 1302), (1306, 1306), (14...</td>
-      <td>((1298, 1298), (1302, 1302), (1306, 1306), (14...</td>
-      <td>((1611, 1612), (1614, 1614), (1647, 1647), (16...</td>
+      <th>4</th>
+      <td>1</td>
+      <td>B</td>
+      <td>B</td>
+      <td>B</td>
+      <td>1</td>
+      <td>1</td>
+      <td>polypeptide(L)</td>
+      <td>[[1,24],[28,28],[30,63],[65,65],[67,120],[123,...</td>
+      <td>[[10,10],[31,32],[34,34],[67,67],[72,72],[148,...</td>
+      <td>1</td>
+      <td>A</td>
+      <td>A</td>
+      <td>A</td>
+      <td>1</td>
+      <td>1</td>
+      <td>polypeptide(L)</td>
+      <td>[[1,11],[13,25],[27,28],[30,42],[44,236],[238,...</td>
+      <td>[[31,32],[34,34],[67,67],[72,72],[148,149],[15...</td>
+      <td>2d4q</td>
+      <td>0</td>
+      <td>3</td>
+      <td>False</td>
+      <td>P21359-2</td>
+      <td>NF1_HUMAN</td>
+      <td>1.00</td>
+      <td>False</td>
+      <td>NF1_HUMAN</td>
+      <td>[[1,257]]</td>
+      <td>[[1560,1816]]</td>
+      <td>P21359</td>
+      <td>[0]</td>
+      <td>Safe</td>
+      <td>False</td>
+      <td>False</td>
+      <td>0</td>
+      <td>[[1,257]]</td>
+      <td>[[1560,1816]]</td>
+      <td>{}</td>
+      <td>[]</td>
+      <td>[]</td>
+      <td>2818</td>
+      <td>11</td>
+      <td>[[28, 28], [63, 63], [73, 76], [107, 107], [10...</td>
+      <td>255</td>
+      <td>[[1, 120], [123, 257]]</td>
+      <td>254.009</td>
+      <td>[]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>257</td>
+      <td>257</td>
+      <td>[[1, 257]]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>False</td>
+      <td>((1, 120), (123, 257))</td>
+      <td>255</td>
+      <td>0.085315</td>
+      <td>0.089219</td>
+      <td>2.300</td>
+      <td>x-ray</td>
+      <td>X-ray diffraction</td>
+      <td>False</td>
+      <td>20110713</td>
+      <td>20051022</td>
+      <td>0.434783</td>
+      <td>-66</td>
+      <td>False</td>
+      <td>6</td>
+      <td>P21359-4</td>
+      <td>NF1_HUMAN</td>
+      <td>0.91</td>
+      <td>False</td>
+      <td>NF1_HUMAN</td>
+      <td>[[1,11]]</td>
+      <td>[[1581,1591]]</td>
+      <td>P21359</td>
+      <td>[0]</td>
+      <td>Safe</td>
+      <td>False</td>
+      <td>False</td>
+      <td>0</td>
+      <td>[[1,11]]</td>
+      <td>[[1581,1591]]</td>
+      <td>{"11":"T"}</td>
+      <td>[[11,11]]</td>
+      <td>[[1591,1591]]</td>
+      <td>1598</td>
+      <td>12</td>
+      <td>[[61, 61], [73, 76], [82, 82], [86, 86], [107,...</td>
+      <td>257</td>
+      <td>[[1, 257]]</td>
+      <td>257.000</td>
+      <td>[]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>257</td>
+      <td>257</td>
+      <td>[[1, 257]]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>False</td>
+      <td>((1, 257),)</td>
+      <td>257</td>
+      <td>-0.151439</td>
+      <td>-0.143930</td>
+      <td>-65</td>
+      <td>False</td>
+      <td>-1</td>
+      <td>False</td>
+      <td>-1.000000</td>
+      <td>0.166667</td>
+      <td>((1569, 1569), (1590, 1591), (1593, 1593), (16...</td>
       <td>()</td>
+      <td>(P21359-2, P21359-4)</td>
+      <td>False</td>
+      <td>-1</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>1</td>
+      <td>B</td>
+      <td>B</td>
+      <td>B</td>
+      <td>1</td>
+      <td>1</td>
+      <td>polypeptide(L)</td>
+      <td>[[1,24],[28,28],[30,63],[65,65],[67,120],[123,...</td>
+      <td>[[10,10],[31,32],[34,34],[67,67],[72,72],[148,...</td>
+      <td>1</td>
+      <td>A</td>
+      <td>A</td>
+      <td>A</td>
+      <td>1</td>
+      <td>1</td>
+      <td>polypeptide(L)</td>
+      <td>[[1,11],[13,25],[27,28],[30,42],[44,236],[238,...</td>
+      <td>[[31,32],[34,34],[67,67],[72,72],[148,149],[15...</td>
+      <td>2d4q</td>
+      <td>0</td>
+      <td>3</td>
+      <td>False</td>
+      <td>P21359-2</td>
+      <td>NF1_HUMAN</td>
+      <td>1.00</td>
+      <td>False</td>
+      <td>NF1_HUMAN</td>
+      <td>[[1,257]]</td>
+      <td>[[1560,1816]]</td>
+      <td>P21359</td>
+      <td>[0]</td>
+      <td>Safe</td>
+      <td>False</td>
+      <td>False</td>
+      <td>0</td>
+      <td>[[1,257]]</td>
+      <td>[[1560,1816]]</td>
+      <td>{}</td>
+      <td>[]</td>
+      <td>[]</td>
+      <td>2818</td>
+      <td>11</td>
+      <td>[[28, 28], [63, 63], [73, 76], [107, 107], [10...</td>
+      <td>255</td>
+      <td>[[1, 120], [123, 257]]</td>
+      <td>254.009</td>
+      <td>[]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>257</td>
+      <td>257</td>
+      <td>[[1, 257]]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>False</td>
+      <td>((1, 120), (123, 257))</td>
+      <td>255</td>
+      <td>0.085315</td>
+      <td>0.089219</td>
+      <td>2.300</td>
+      <td>x-ray</td>
+      <td>X-ray diffraction</td>
+      <td>False</td>
+      <td>20110713</td>
+      <td>20051022</td>
+      <td>0.434783</td>
+      <td>-66</td>
+      <td>False</td>
+      <td>6</td>
+      <td>P21359-6</td>
+      <td>NF1_HUMAN</td>
+      <td>1.00</td>
+      <td>False</td>
+      <td>NF1_HUMAN</td>
+      <td>[[1,257]]</td>
+      <td>[[1560,1816]]</td>
+      <td>P21359</td>
+      <td>[0]</td>
+      <td>Safe</td>
+      <td>False</td>
+      <td>False</td>
+      <td>0</td>
+      <td>[[1,257]]</td>
+      <td>[[1560,1816]]</td>
+      <td>{}</td>
+      <td>[]</td>
+      <td>[]</td>
+      <td>2836</td>
+      <td>12</td>
+      <td>[[61, 61], [73, 76], [82, 82], [86, 86], [107,...</td>
+      <td>257</td>
+      <td>[[1, 257]]</td>
+      <td>257.000</td>
+      <td>[]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>257</td>
+      <td>257</td>
+      <td>[[1, 257]]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>False</td>
+      <td>((1, 257),)</td>
+      <td>257</td>
+      <td>0.086389</td>
+      <td>0.090621</td>
+      <td>-65</td>
+      <td>False</td>
+      <td>4</td>
+      <td>False</td>
+      <td>0.250000</td>
+      <td>0.166667</td>
+      <td>((1569, 1569), (1590, 1591), (1593, 1593), (16...</td>
+      <td>((1590, 1591), (1593, 1593), (1626, 1626), (16...</td>
+      <td>(P21359-2, P21359-6)</td>
+      <td>False</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>1</td>
+      <td>B</td>
+      <td>B</td>
+      <td>B</td>
+      <td>1</td>
+      <td>1</td>
+      <td>polypeptide(L)</td>
+      <td>[[1,24],[28,28],[30,63],[65,65],[67,120],[123,...</td>
+      <td>[[10,10],[31,32],[34,34],[67,67],[72,72],[148,...</td>
+      <td>1</td>
+      <td>A</td>
+      <td>A</td>
+      <td>A</td>
+      <td>1</td>
+      <td>1</td>
+      <td>polypeptide(L)</td>
+      <td>[[1,11],[13,25],[27,28],[30,42],[44,236],[238,...</td>
+      <td>[[31,32],[34,34],[67,67],[72,72],[148,149],[15...</td>
+      <td>2d4q</td>
+      <td>1</td>
+      <td>3</td>
+      <td>True</td>
+      <td>P21359-2</td>
+      <td>NF1_HUMAN</td>
+      <td>1.00</td>
+      <td>False</td>
+      <td>NF1_HUMAN</td>
+      <td>[[1,257]]</td>
+      <td>[[1560,1816]]</td>
+      <td>P21359</td>
+      <td>[0]</td>
+      <td>Safe</td>
+      <td>False</td>
+      <td>False</td>
+      <td>0</td>
+      <td>[[1,257]]</td>
+      <td>[[1560,1816]]</td>
+      <td>{}</td>
+      <td>[]</td>
+      <td>[]</td>
+      <td>2818</td>
+      <td>11</td>
+      <td>[[28, 28], [63, 63], [73, 76], [107, 107], [10...</td>
+      <td>255</td>
+      <td>[[1, 120], [123, 257]]</td>
+      <td>254.009</td>
+      <td>[]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>257</td>
+      <td>257</td>
+      <td>[[1, 257]]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>False</td>
+      <td>((1, 120), (123, 257))</td>
+      <td>255</td>
+      <td>0.085315</td>
+      <td>0.089219</td>
+      <td>2.300</td>
+      <td>x-ray</td>
+      <td>X-ray diffraction</td>
+      <td>False</td>
+      <td>20110713</td>
+      <td>20051022</td>
+      <td>0.434783</td>
+      <td>-66</td>
+      <td>False</td>
+      <td>6</td>
+      <td>P21359</td>
+      <td>NF1_HUMAN</td>
+      <td>1.00</td>
+      <td>True</td>
+      <td>NF1_HUMAN</td>
+      <td>[[1,257]]</td>
+      <td>[[1581,1837]]</td>
+      <td>P21359</td>
+      <td>[0]</td>
+      <td>Safe</td>
+      <td>False</td>
+      <td>False</td>
+      <td>0</td>
+      <td>[[1,257]]</td>
+      <td>[[1581,1837]]</td>
+      <td>{}</td>
+      <td>[]</td>
+      <td>[]</td>
+      <td>2839</td>
+      <td>12</td>
+      <td>[[61, 61], [73, 76], [82, 82], [86, 86], [107,...</td>
+      <td>257</td>
+      <td>[[1, 257]]</td>
+      <td>257.000</td>
+      <td>[]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>257</td>
+      <td>257</td>
+      <td>[[1, 257]]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>False</td>
+      <td>((1, 257),)</td>
+      <td>257</td>
+      <td>0.086298</td>
+      <td>0.090525</td>
+      <td>-65</td>
+      <td>False</td>
+      <td>2</td>
+      <td>True</td>
+      <td>0.500000</td>
+      <td>0.166667</td>
+      <td>((1569, 1569), (1590, 1591), (1593, 1593), (16...</td>
       <td>((1611, 1612), (1614, 1614), (1647, 1647), (16...</td>
-      <td>((1435, 1435), (1438, 1439), (1441, 1442), (14...</td>
+      <td>(P21359-2, P21359)</td>
+      <td>False</td>
+      <td>5</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>1</td>
+      <td>A</td>
+      <td>A</td>
+      <td>A</td>
+      <td>1</td>
+      <td>1</td>
+      <td>polypeptide(L)</td>
+      <td>[[1,11],[13,25],[27,28],[30,42],[44,236],[238,...</td>
+      <td>[[31,32],[34,34],[67,67],[72,72],[148,149],[15...</td>
+      <td>1</td>
+      <td>B</td>
+      <td>B</td>
+      <td>B</td>
+      <td>1</td>
+      <td>1</td>
+      <td>polypeptide(L)</td>
+      <td>[[1,24],[28,28],[30,63],[65,65],[67,120],[123,...</td>
+      <td>[[10,10],[31,32],[34,34],[67,67],[72,72],[148,...</td>
+      <td>2d4q</td>
+      <td>1</td>
+      <td>3</td>
+      <td>True</td>
+      <td>P21359-2</td>
+      <td>NF1_HUMAN</td>
+      <td>1.00</td>
+      <td>False</td>
+      <td>NF1_HUMAN</td>
+      <td>[[1,257]]</td>
+      <td>[[1560,1816]]</td>
+      <td>P21359</td>
+      <td>[0]</td>
+      <td>Safe</td>
+      <td>False</td>
+      <td>False</td>
+      <td>0</td>
+      <td>[[1,257]]</td>
+      <td>[[1560,1816]]</td>
+      <td>{}</td>
+      <td>[]</td>
+      <td>[]</td>
+      <td>2818</td>
+      <td>12</td>
+      <td>[[61, 61], [73, 76], [82, 82], [86, 86], [107,...</td>
+      <td>257</td>
+      <td>[[1, 257]]</td>
+      <td>257.000</td>
+      <td>[]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>257</td>
+      <td>257</td>
+      <td>[[1, 257]]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>False</td>
+      <td>((1, 257),)</td>
+      <td>257</td>
+      <td>0.086941</td>
+      <td>0.091199</td>
+      <td>2.300</td>
+      <td>x-ray</td>
+      <td>X-ray diffraction</td>
+      <td>False</td>
+      <td>20110713</td>
+      <td>20051022</td>
+      <td>0.434783</td>
+      <td>-65</td>
+      <td>False</td>
+      <td>4</td>
+      <td>P21359</td>
+      <td>NF1_HUMAN</td>
+      <td>1.00</td>
+      <td>True</td>
+      <td>NF1_HUMAN</td>
+      <td>[[1,257]]</td>
+      <td>[[1581,1837]]</td>
+      <td>P21359</td>
+      <td>[0]</td>
+      <td>Safe</td>
+      <td>False</td>
+      <td>False</td>
+      <td>0</td>
+      <td>[[1,257]]</td>
+      <td>[[1581,1837]]</td>
+      <td>{}</td>
+      <td>[]</td>
+      <td>[]</td>
+      <td>2839</td>
+      <td>11</td>
+      <td>[[28, 28], [63, 63], [73, 76], [107, 107], [10...</td>
+      <td>255</td>
+      <td>[[1, 120], [123, 257]]</td>
+      <td>254.009</td>
+      <td>[]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>257</td>
+      <td>257</td>
+      <td>[[1, 257]]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>False</td>
+      <td>((1, 120), (123, 257))</td>
+      <td>255</td>
+      <td>0.084684</td>
+      <td>0.088559</td>
+      <td>-66</td>
+      <td>False</td>
+      <td>4</td>
+      <td>True</td>
+      <td>0.250000</td>
+      <td>0.250000</td>
+      <td>((1590, 1591), (1593, 1593), (1626, 1626), (16...</td>
+      <td>((1590, 1590), (1611, 1612), (1614, 1614), (16...</td>
+      <td>(P21359-2, P21359)</td>
+      <td>True</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>1</td>
+      <td>A</td>
+      <td>A</td>
+      <td>A</td>
+      <td>1</td>
+      <td>1</td>
+      <td>polypeptide(L)</td>
+      <td>[[1,11],[13,25],[27,28],[30,42],[44,236],[238,...</td>
+      <td>[[31,32],[34,34],[67,67],[72,72],[148,149],[15...</td>
+      <td>1</td>
+      <td>B</td>
+      <td>B</td>
+      <td>B</td>
+      <td>1</td>
+      <td>1</td>
+      <td>polypeptide(L)</td>
+      <td>[[1,24],[28,28],[30,63],[65,65],[67,120],[123,...</td>
+      <td>[[10,10],[31,32],[34,34],[67,67],[72,72],[148,...</td>
+      <td>2d4q</td>
+      <td>1</td>
+      <td>3</td>
+      <td>True</td>
+      <td>P21359-2</td>
+      <td>NF1_HUMAN</td>
+      <td>1.00</td>
+      <td>False</td>
+      <td>NF1_HUMAN</td>
+      <td>[[1,257]]</td>
+      <td>[[1560,1816]]</td>
+      <td>P21359</td>
+      <td>[0]</td>
+      <td>Safe</td>
+      <td>False</td>
+      <td>False</td>
+      <td>0</td>
+      <td>[[1,257]]</td>
+      <td>[[1560,1816]]</td>
+      <td>{}</td>
+      <td>[]</td>
+      <td>[]</td>
+      <td>2818</td>
+      <td>12</td>
+      <td>[[61, 61], [73, 76], [82, 82], [86, 86], [107,...</td>
+      <td>257</td>
+      <td>[[1, 257]]</td>
+      <td>257.000</td>
+      <td>[]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>257</td>
+      <td>257</td>
+      <td>[[1, 257]]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>False</td>
+      <td>((1, 257),)</td>
+      <td>257</td>
+      <td>0.086941</td>
+      <td>0.091199</td>
+      <td>2.300</td>
+      <td>x-ray</td>
+      <td>X-ray diffraction</td>
+      <td>False</td>
+      <td>20110713</td>
+      <td>20051022</td>
+      <td>0.434783</td>
+      <td>-65</td>
+      <td>False</td>
+      <td>4</td>
+      <td>P21359-4</td>
+      <td>NF1_HUMAN</td>
+      <td>0.91</td>
+      <td>False</td>
+      <td>NF1_HUMAN</td>
+      <td>[[1,11]]</td>
+      <td>[[1581,1591]]</td>
+      <td>P21359</td>
+      <td>[0]</td>
+      <td>Safe</td>
+      <td>False</td>
+      <td>False</td>
+      <td>0</td>
+      <td>[[1,11]]</td>
+      <td>[[1581,1591]]</td>
+      <td>{"11":"T"}</td>
+      <td>[[11,11]]</td>
+      <td>[[1591,1591]]</td>
+      <td>1598</td>
+      <td>11</td>
+      <td>[[28, 28], [63, 63], [73, 76], [107, 107], [10...</td>
+      <td>255</td>
+      <td>[[1, 120], [123, 257]]</td>
+      <td>254.009</td>
+      <td>[]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>257</td>
+      <td>257</td>
+      <td>[[1, 257]]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>False</td>
+      <td>((1, 120), (123, 257))</td>
+      <td>255</td>
+      <td>-0.150814</td>
+      <td>-0.143930</td>
+      <td>-66</td>
+      <td>False</td>
+      <td>-1</td>
+      <td>True</td>
+      <td>-1.000000</td>
+      <td>0.250000</td>
+      <td>((1590, 1591), (1593, 1593), (1626, 1626), (16...</td>
+      <td>((1590, 1590),)</td>
+      <td>(P21359-2, P21359-4)</td>
+      <td>False</td>
+      <td>-1</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>1</td>
+      <td>A</td>
+      <td>A</td>
+      <td>A</td>
+      <td>1</td>
+      <td>1</td>
+      <td>polypeptide(L)</td>
+      <td>[[1,11],[13,25],[27,28],[30,42],[44,236],[238,...</td>
+      <td>[[31,32],[34,34],[67,67],[72,72],[148,149],[15...</td>
+      <td>1</td>
+      <td>B</td>
+      <td>B</td>
+      <td>B</td>
+      <td>1</td>
+      <td>1</td>
+      <td>polypeptide(L)</td>
+      <td>[[1,24],[28,28],[30,63],[65,65],[67,120],[123,...</td>
+      <td>[[10,10],[31,32],[34,34],[67,67],[72,72],[148,...</td>
+      <td>2d4q</td>
+      <td>1</td>
+      <td>3</td>
+      <td>True</td>
+      <td>P21359-2</td>
+      <td>NF1_HUMAN</td>
+      <td>1.00</td>
+      <td>False</td>
+      <td>NF1_HUMAN</td>
+      <td>[[1,257]]</td>
+      <td>[[1560,1816]]</td>
+      <td>P21359</td>
+      <td>[0]</td>
+      <td>Safe</td>
+      <td>False</td>
+      <td>False</td>
+      <td>0</td>
+      <td>[[1,257]]</td>
+      <td>[[1560,1816]]</td>
+      <td>{}</td>
+      <td>[]</td>
+      <td>[]</td>
+      <td>2818</td>
+      <td>12</td>
+      <td>[[61, 61], [73, 76], [82, 82], [86, 86], [107,...</td>
+      <td>257</td>
+      <td>[[1, 257]]</td>
+      <td>257.000</td>
+      <td>[]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>257</td>
+      <td>257</td>
+      <td>[[1, 257]]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>False</td>
+      <td>((1, 257),)</td>
+      <td>257</td>
+      <td>0.086941</td>
+      <td>0.091199</td>
+      <td>2.300</td>
+      <td>x-ray</td>
+      <td>X-ray diffraction</td>
+      <td>False</td>
+      <td>20110713</td>
+      <td>20051022</td>
+      <td>0.434783</td>
+      <td>-65</td>
+      <td>False</td>
+      <td>4</td>
+      <td>P21359-6</td>
+      <td>NF1_HUMAN</td>
+      <td>1.00</td>
+      <td>False</td>
+      <td>NF1_HUMAN</td>
+      <td>[[1,257]]</td>
+      <td>[[1560,1816]]</td>
+      <td>P21359</td>
+      <td>[0]</td>
+      <td>Safe</td>
+      <td>False</td>
+      <td>False</td>
+      <td>0</td>
+      <td>[[1,257]]</td>
+      <td>[[1560,1816]]</td>
+      <td>{}</td>
+      <td>[]</td>
+      <td>[]</td>
+      <td>2836</td>
+      <td>11</td>
+      <td>[[28, 28], [63, 63], [73, 76], [107, 107], [10...</td>
+      <td>255</td>
+      <td>[[1, 120], [123, 257]]</td>
+      <td>254.009</td>
+      <td>[]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>257</td>
+      <td>257</td>
+      <td>[[1, 257]]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>False</td>
+      <td>((1, 120), (123, 257))</td>
+      <td>255</td>
+      <td>0.084774</td>
+      <td>0.088653</td>
+      <td>-66</td>
+      <td>False</td>
+      <td>6</td>
+      <td>True</td>
+      <td>0.250000</td>
+      <td>0.166667</td>
+      <td>((1590, 1591), (1593, 1593), (1626, 1626), (16...</td>
+      <td>((1569, 1569), (1590, 1591), (1593, 1593), (16...</td>
+      <td>(P21359-2, P21359-6)</td>
+      <td>True</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>1</td>
+      <td>B</td>
+      <td>B</td>
+      <td>B</td>
+      <td>1</td>
+      <td>1</td>
+      <td>polypeptide(L)</td>
+      <td>[[1,24],[28,28],[30,63],[65,65],[67,120],[123,...</td>
+      <td>[[10,10],[31,32],[34,34],[67,67],[72,72],[148,...</td>
+      <td>1</td>
+      <td>A</td>
+      <td>A</td>
+      <td>A</td>
+      <td>1</td>
+      <td>1</td>
+      <td>polypeptide(L)</td>
+      <td>[[1,11],[13,25],[27,28],[30,42],[44,236],[238,...</td>
+      <td>[[31,32],[34,34],[67,67],[72,72],[148,149],[15...</td>
+      <td>2d4q</td>
+      <td>1</td>
+      <td>3</td>
+      <td>True</td>
+      <td>P21359-2</td>
+      <td>NF1_HUMAN</td>
+      <td>1.00</td>
+      <td>False</td>
+      <td>NF1_HUMAN</td>
+      <td>[[1,257]]</td>
+      <td>[[1560,1816]]</td>
+      <td>P21359</td>
+      <td>[0]</td>
+      <td>Safe</td>
+      <td>False</td>
+      <td>False</td>
+      <td>0</td>
+      <td>[[1,257]]</td>
+      <td>[[1560,1816]]</td>
+      <td>{}</td>
+      <td>[]</td>
+      <td>[]</td>
+      <td>2818</td>
+      <td>11</td>
+      <td>[[28, 28], [63, 63], [73, 76], [107, 107], [10...</td>
+      <td>255</td>
+      <td>[[1, 120], [123, 257]]</td>
+      <td>254.009</td>
+      <td>[]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>257</td>
+      <td>257</td>
+      <td>[[1, 257]]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>False</td>
+      <td>((1, 120), (123, 257))</td>
+      <td>255</td>
+      <td>0.085315</td>
+      <td>0.089219</td>
+      <td>2.300</td>
+      <td>x-ray</td>
+      <td>X-ray diffraction</td>
+      <td>False</td>
+      <td>20110713</td>
+      <td>20051022</td>
+      <td>0.434783</td>
+      <td>-66</td>
+      <td>False</td>
+      <td>6</td>
+      <td>P21359-4</td>
+      <td>NF1_HUMAN</td>
+      <td>0.91</td>
+      <td>False</td>
+      <td>NF1_HUMAN</td>
+      <td>[[1,11]]</td>
+      <td>[[1581,1591]]</td>
+      <td>P21359</td>
+      <td>[0]</td>
+      <td>Safe</td>
+      <td>False</td>
+      <td>False</td>
+      <td>0</td>
+      <td>[[1,11]]</td>
+      <td>[[1581,1591]]</td>
+      <td>{"11":"T"}</td>
+      <td>[[11,11]]</td>
+      <td>[[1591,1591]]</td>
+      <td>1598</td>
+      <td>12</td>
+      <td>[[61, 61], [73, 76], [82, 82], [86, 86], [107,...</td>
+      <td>257</td>
+      <td>[[1, 257]]</td>
+      <td>257.000</td>
+      <td>[]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>257</td>
+      <td>257</td>
+      <td>[[1, 257]]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>False</td>
+      <td>((1, 257),)</td>
+      <td>257</td>
+      <td>-0.151439</td>
+      <td>-0.143930</td>
+      <td>-65</td>
+      <td>False</td>
+      <td>-1</td>
+      <td>True</td>
+      <td>-1.000000</td>
+      <td>0.166667</td>
+      <td>((1569, 1569), (1590, 1591), (1593, 1593), (16...</td>
+      <td>()</td>
+      <td>(P21359-2, P21359-4)</td>
+      <td>False</td>
+      <td>-1</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>1</td>
+      <td>B</td>
+      <td>B</td>
+      <td>B</td>
+      <td>1</td>
+      <td>1</td>
+      <td>polypeptide(L)</td>
+      <td>[[1,24],[28,28],[30,63],[65,65],[67,120],[123,...</td>
+      <td>[[10,10],[31,32],[34,34],[67,67],[72,72],[148,...</td>
+      <td>1</td>
+      <td>A</td>
+      <td>A</td>
+      <td>A</td>
+      <td>1</td>
+      <td>1</td>
+      <td>polypeptide(L)</td>
+      <td>[[1,11],[13,25],[27,28],[30,42],[44,236],[238,...</td>
+      <td>[[31,32],[34,34],[67,67],[72,72],[148,149],[15...</td>
+      <td>2d4q</td>
+      <td>1</td>
+      <td>3</td>
+      <td>True</td>
+      <td>P21359-2</td>
+      <td>NF1_HUMAN</td>
+      <td>1.00</td>
+      <td>False</td>
+      <td>NF1_HUMAN</td>
+      <td>[[1,257]]</td>
+      <td>[[1560,1816]]</td>
+      <td>P21359</td>
+      <td>[0]</td>
+      <td>Safe</td>
+      <td>False</td>
+      <td>False</td>
+      <td>0</td>
+      <td>[[1,257]]</td>
+      <td>[[1560,1816]]</td>
+      <td>{}</td>
+      <td>[]</td>
+      <td>[]</td>
+      <td>2818</td>
+      <td>11</td>
+      <td>[[28, 28], [63, 63], [73, 76], [107, 107], [10...</td>
+      <td>255</td>
+      <td>[[1, 120], [123, 257]]</td>
+      <td>254.009</td>
+      <td>[]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>257</td>
+      <td>257</td>
+      <td>[[1, 257]]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>False</td>
+      <td>((1, 120), (123, 257))</td>
+      <td>255</td>
+      <td>0.085315</td>
+      <td>0.089219</td>
+      <td>2.300</td>
+      <td>x-ray</td>
+      <td>X-ray diffraction</td>
+      <td>False</td>
+      <td>20110713</td>
+      <td>20051022</td>
+      <td>0.434783</td>
+      <td>-66</td>
+      <td>False</td>
+      <td>6</td>
+      <td>P21359-6</td>
+      <td>NF1_HUMAN</td>
+      <td>1.00</td>
+      <td>False</td>
+      <td>NF1_HUMAN</td>
+      <td>[[1,257]]</td>
+      <td>[[1560,1816]]</td>
+      <td>P21359</td>
+      <td>[0]</td>
+      <td>Safe</td>
+      <td>False</td>
+      <td>False</td>
+      <td>0</td>
+      <td>[[1,257]]</td>
+      <td>[[1560,1816]]</td>
+      <td>{}</td>
+      <td>[]</td>
+      <td>[]</td>
+      <td>2836</td>
+      <td>12</td>
+      <td>[[61, 61], [73, 76], [82, 82], [86, 86], [107,...</td>
+      <td>257</td>
+      <td>[[1, 257]]</td>
+      <td>257.000</td>
+      <td>[]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>257</td>
+      <td>257</td>
+      <td>[[1, 257]]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>False</td>
+      <td>((1, 257),)</td>
+      <td>257</td>
+      <td>0.086389</td>
+      <td>0.090621</td>
+      <td>-65</td>
+      <td>False</td>
+      <td>4</td>
+      <td>True</td>
+      <td>0.250000</td>
+      <td>0.166667</td>
+      <td>((1569, 1569), (1590, 1591), (1593, 1593), (16...</td>
+      <td>((1590, 1591), (1593, 1593), (1626, 1626), (16...</td>
+      <td>(P21359-2, P21359-6)</td>
+      <td>False</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>1</td>
+      <td>B</td>
+      <td>B</td>
+      <td>B</td>
+      <td>1</td>
+      <td>1</td>
+      <td>polypeptide(L)</td>
+      <td>[[28,44],[48,48],[50,62],[64,81],[83,83],[85,8...</td>
+      <td>[[51,52],[54,54],[87,87],[92,92],[168,169],[17...</td>
+      <td>1</td>
+      <td>A</td>
+      <td>A</td>
+      <td>A</td>
+      <td>1</td>
+      <td>1</td>
+      <td>polypeptide(L)</td>
+      <td>[[28,44],[47,48],[50,52],[54,62],[64,81],[83,8...</td>
+      <td>[[51,52],[54,54],[87,87],[92,92],[168,169],[17...</td>
+      <td>2e2x</td>
+      <td>0</td>
+      <td>5</td>
+      <td>False</td>
+      <td>P21359-2</td>
+      <td>NF1_HUMAN</td>
+      <td>0.99</td>
+      <td>False</td>
+      <td>NF1_HUMAN</td>
+      <td>[[6,277]]</td>
+      <td>[[1545,1816]]</td>
+      <td>P21359</td>
+      <td>[0]</td>
+      <td>Safe</td>
+      <td>False</td>
+      <td>False</td>
+      <td>0</td>
+      <td>[[6,277]]</td>
+      <td>[[1545,1816]]</td>
+      <td>{}</td>
+      <td>[]</td>
+      <td>[]</td>
+      <td>2818</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>250</td>
+      <td>[[28, 277]]</td>
+      <td>249.180</td>
+      <td>[[1, 5]]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>277</td>
+      <td>277</td>
+      <td>[[1, 277]]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>False</td>
+      <td>((28, 277),)</td>
+      <td>250</td>
+      <td>0.074735</td>
+      <td>0.074735</td>
+      <td>2.500</td>
+      <td>x-ray</td>
+      <td>X-ray diffraction</td>
+      <td>False</td>
+      <td>20110713</td>
+      <td>20061118</td>
+      <td>0.400000</td>
+      <td>-66</td>
+      <td>False</td>
+      <td>13</td>
+      <td>P21359</td>
+      <td>NF1_HUMAN</td>
+      <td>0.99</td>
+      <td>True</td>
+      <td>NF1_HUMAN</td>
+      <td>[[6,277]]</td>
+      <td>[[1566,1837]]</td>
+      <td>P21359</td>
+      <td>[0]</td>
+      <td>Safe</td>
+      <td>False</td>
+      <td>False</td>
+      <td>0</td>
+      <td>[[6,277]]</td>
+      <td>[[1566,1837]]</td>
+      <td>{}</td>
+      <td>[]</td>
+      <td>[]</td>
+      <td>2839</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>250</td>
+      <td>[[28, 277]]</td>
+      <td>248.894</td>
+      <td>[[1, 5]]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>277</td>
+      <td>277</td>
+      <td>[[1, 277]]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>False</td>
+      <td>((28, 277),)</td>
+      <td>250</td>
+      <td>0.074182</td>
+      <td>0.074182</td>
+      <td>-65</td>
+      <td>False</td>
+      <td>7</td>
+      <td>False</td>
+      <td>0.142857</td>
+      <td>0.076923</td>
+      <td>((1590, 1591), (1593, 1593), (1626, 1626), (16...</td>
+      <td>((1611, 1612), (1614, 1614), (1647, 1647), (16...</td>
+      <td>(P21359-2, P21359)</td>
+      <td>False</td>
+      <td>15</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>1</td>
+      <td>A</td>
+      <td>A</td>
+      <td>A</td>
+      <td>1</td>
+      <td>1</td>
+      <td>polypeptide(L)</td>
+      <td>[[28,44],[47,48],[50,52],[54,62],[64,81],[83,8...</td>
+      <td>[[51,52],[54,54],[87,87],[92,92],[168,169],[17...</td>
+      <td>1</td>
+      <td>B</td>
+      <td>B</td>
+      <td>B</td>
+      <td>1</td>
+      <td>1</td>
+      <td>polypeptide(L)</td>
+      <td>[[28,44],[48,48],[50,62],[64,81],[83,83],[85,8...</td>
+      <td>[[51,52],[54,54],[87,87],[92,92],[168,169],[17...</td>
+      <td>2e2x</td>
+      <td>0</td>
+      <td>5</td>
+      <td>False</td>
+      <td>P21359-2</td>
+      <td>NF1_HUMAN</td>
+      <td>0.99</td>
+      <td>False</td>
+      <td>NF1_HUMAN</td>
+      <td>[[6,277]]</td>
+      <td>[[1545,1816]]</td>
+      <td>P21359</td>
+      <td>[0]</td>
+      <td>Safe</td>
+      <td>False</td>
+      <td>False</td>
+      <td>0</td>
+      <td>[[6,277]]</td>
+      <td>[[1545,1816]]</td>
+      <td>{}</td>
+      <td>[]</td>
+      <td>[]</td>
+      <td>2818</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>250</td>
+      <td>[[28, 277]]</td>
+      <td>248.894</td>
+      <td>[[1, 5]]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>277</td>
+      <td>277</td>
+      <td>[[1, 277]]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>False</td>
+      <td>((28, 277),)</td>
+      <td>250</td>
+      <td>0.074735</td>
+      <td>0.074735</td>
+      <td>2.500</td>
+      <td>x-ray</td>
+      <td>X-ray diffraction</td>
+      <td>False</td>
+      <td>20110713</td>
+      <td>20061118</td>
+      <td>0.400000</td>
+      <td>-65</td>
+      <td>False</td>
+      <td>12</td>
+      <td>P21359</td>
+      <td>NF1_HUMAN</td>
+      <td>0.99</td>
+      <td>True</td>
+      <td>NF1_HUMAN</td>
+      <td>[[6,277]]</td>
+      <td>[[1566,1837]]</td>
+      <td>P21359</td>
+      <td>[0]</td>
+      <td>Safe</td>
+      <td>False</td>
+      <td>False</td>
+      <td>0</td>
+      <td>[[6,277]]</td>
+      <td>[[1566,1837]]</td>
+      <td>{}</td>
+      <td>[]</td>
+      <td>[]</td>
+      <td>2839</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>250</td>
+      <td>[[28, 277]]</td>
+      <td>249.180</td>
+      <td>[[1, 5]]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>277</td>
+      <td>277</td>
+      <td>[[1, 277]]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>False</td>
+      <td>((28, 277),)</td>
+      <td>250</td>
+      <td>0.074182</td>
+      <td>0.074182</td>
+      <td>-66</td>
+      <td>False</td>
+      <td>8</td>
+      <td>False</td>
+      <td>0.125000</td>
+      <td>0.083333</td>
+      <td>((1590, 1591), (1593, 1593), (1626, 1626), (16...</td>
+      <td>((1611, 1612), (1614, 1614), (1647, 1647), (16...</td>
+      <td>(P21359-2, P21359)</td>
+      <td>False</td>
+      <td>13</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>1</td>
+      <td>A</td>
+      <td>A</td>
+      <td>A</td>
+      <td>1</td>
+      <td>1</td>
+      <td>polypeptide(L)</td>
+      <td>[[28,44],[47,48],[50,52],[54,62],[64,81],[83,8...</td>
+      <td>[[51,52],[54,54],[87,87],[92,92],[168,169],[17...</td>
+      <td>1</td>
+      <td>B</td>
+      <td>B</td>
+      <td>B</td>
+      <td>1</td>
+      <td>1</td>
+      <td>polypeptide(L)</td>
+      <td>[[28,44],[48,48],[50,62],[64,81],[83,83],[85,8...</td>
+      <td>[[51,52],[54,54],[87,87],[92,92],[168,169],[17...</td>
+      <td>2e2x</td>
+      <td>0</td>
+      <td>5</td>
+      <td>False</td>
+      <td>P21359-2</td>
+      <td>NF1_HUMAN</td>
+      <td>0.99</td>
+      <td>False</td>
+      <td>NF1_HUMAN</td>
+      <td>[[6,277]]</td>
+      <td>[[1545,1816]]</td>
+      <td>P21359</td>
+      <td>[0]</td>
+      <td>Safe</td>
+      <td>False</td>
+      <td>False</td>
+      <td>0</td>
+      <td>[[6,277]]</td>
+      <td>[[1545,1816]]</td>
+      <td>{}</td>
+      <td>[]</td>
+      <td>[]</td>
+      <td>2818</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>250</td>
+      <td>[[28, 277]]</td>
+      <td>248.894</td>
+      <td>[[1, 5]]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>277</td>
+      <td>277</td>
+      <td>[[1, 277]]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>False</td>
+      <td>((28, 277),)</td>
+      <td>250</td>
+      <td>0.074735</td>
+      <td>0.074735</td>
+      <td>2.500</td>
+      <td>x-ray</td>
+      <td>X-ray diffraction</td>
+      <td>False</td>
+      <td>20110713</td>
+      <td>20061118</td>
+      <td>0.400000</td>
+      <td>-65</td>
+      <td>False</td>
+      <td>12</td>
+      <td>P21359-6</td>
+      <td>NF1_HUMAN</td>
+      <td>0.99</td>
+      <td>False</td>
+      <td>NF1_HUMAN</td>
+      <td>[[6,277]]</td>
+      <td>[[1545,1816]]</td>
+      <td>P21359</td>
+      <td>[0]</td>
+      <td>Safe</td>
+      <td>False</td>
+      <td>False</td>
+      <td>0</td>
+      <td>[[6,277]]</td>
+      <td>[[1545,1816]]</td>
+      <td>{}</td>
+      <td>[]</td>
+      <td>[]</td>
+      <td>2836</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>250</td>
+      <td>[[28, 277]]</td>
+      <td>249.180</td>
+      <td>[[1, 5]]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>277</td>
+      <td>277</td>
+      <td>[[1, 277]]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>False</td>
+      <td>((28, 277),)</td>
+      <td>250</td>
+      <td>0.074261</td>
+      <td>0.074261</td>
+      <td>-66</td>
+      <td>False</td>
+      <td>13</td>
+      <td>False</td>
+      <td>0.083333</td>
+      <td>0.076923</td>
+      <td>((1590, 1591), (1593, 1593), (1626, 1626), (16...</td>
+      <td>((1590, 1591), (1593, 1593), (1626, 1626), (16...</td>
+      <td>(P21359-2, P21359-6)</td>
+      <td>False</td>
+      <td>14</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>1</td>
+      <td>B</td>
+      <td>B</td>
+      <td>B</td>
+      <td>1</td>
+      <td>1</td>
+      <td>polypeptide(L)</td>
+      <td>[[28,44],[48,48],[50,62],[64,81],[83,83],[85,8...</td>
+      <td>[[51,52],[54,54],[87,87],[92,92],[168,169],[17...</td>
+      <td>1</td>
+      <td>A</td>
+      <td>A</td>
+      <td>A</td>
+      <td>1</td>
+      <td>1</td>
+      <td>polypeptide(L)</td>
+      <td>[[28,44],[47,48],[50,52],[54,62],[64,81],[83,8...</td>
+      <td>[[51,52],[54,54],[87,87],[92,92],[168,169],[17...</td>
+      <td>2e2x</td>
+      <td>0</td>
+      <td>5</td>
+      <td>False</td>
+      <td>P21359-2</td>
+      <td>NF1_HUMAN</td>
+      <td>0.99</td>
+      <td>False</td>
+      <td>NF1_HUMAN</td>
+      <td>[[6,277]]</td>
+      <td>[[1545,1816]]</td>
+      <td>P21359</td>
+      <td>[0]</td>
+      <td>Safe</td>
+      <td>False</td>
+      <td>False</td>
+      <td>0</td>
+      <td>[[6,277]]</td>
+      <td>[[1545,1816]]</td>
+      <td>{}</td>
+      <td>[]</td>
+      <td>[]</td>
+      <td>2818</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>250</td>
+      <td>[[28, 277]]</td>
+      <td>249.180</td>
+      <td>[[1, 5]]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>277</td>
+      <td>277</td>
+      <td>[[1, 277]]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>False</td>
+      <td>((28, 277),)</td>
+      <td>250</td>
+      <td>0.074735</td>
+      <td>0.074735</td>
+      <td>2.500</td>
+      <td>x-ray</td>
+      <td>X-ray diffraction</td>
+      <td>False</td>
+      <td>20110713</td>
+      <td>20061118</td>
+      <td>0.400000</td>
+      <td>-66</td>
+      <td>False</td>
+      <td>13</td>
+      <td>P21359-6</td>
+      <td>NF1_HUMAN</td>
+      <td>0.99</td>
+      <td>False</td>
+      <td>NF1_HUMAN</td>
+      <td>[[6,277]]</td>
+      <td>[[1545,1816]]</td>
+      <td>P21359</td>
+      <td>[0]</td>
+      <td>Safe</td>
+      <td>False</td>
+      <td>False</td>
+      <td>0</td>
+      <td>[[6,277]]</td>
+      <td>[[1545,1816]]</td>
+      <td>{}</td>
+      <td>[]</td>
+      <td>[]</td>
+      <td>2836</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>250</td>
+      <td>[[28, 277]]</td>
+      <td>248.894</td>
+      <td>[[1, 5]]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>277</td>
+      <td>277</td>
+      <td>[[1, 277]]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>False</td>
+      <td>((28, 277),)</td>
+      <td>250</td>
+      <td>0.074261</td>
+      <td>0.074261</td>
+      <td>-65</td>
+      <td>False</td>
+      <td>12</td>
+      <td>False</td>
+      <td>0.083333</td>
+      <td>0.076923</td>
+      <td>((1590, 1591), (1593, 1593), (1626, 1626), (16...</td>
+      <td>((1590, 1591), (1593, 1593), (1626, 1626), (16...</td>
+      <td>(P21359-2, P21359-6)</td>
+      <td>False</td>
+      <td>16</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>1</td>
+      <td>B</td>
+      <td>B</td>
+      <td>B</td>
+      <td>1</td>
+      <td>1</td>
+      <td>polypeptide(L)</td>
+      <td>[[28,44],[48,48],[50,62],[64,81],[83,83],[85,8...</td>
+      <td>[[51,52],[54,54],[87,87],[92,92],[168,169],[17...</td>
+      <td>1</td>
+      <td>A</td>
+      <td>A</td>
+      <td>A</td>
+      <td>1</td>
+      <td>1</td>
+      <td>polypeptide(L)</td>
+      <td>[[28,44],[47,48],[50,52],[54,62],[64,81],[83,8...</td>
+      <td>[[51,52],[54,54],[87,87],[92,92],[168,169],[17...</td>
+      <td>2e2x</td>
+      <td>1</td>
+      <td>5</td>
+      <td>True</td>
+      <td>P21359-2</td>
+      <td>NF1_HUMAN</td>
+      <td>0.99</td>
+      <td>False</td>
+      <td>NF1_HUMAN</td>
+      <td>[[6,277]]</td>
+      <td>[[1545,1816]]</td>
+      <td>P21359</td>
+      <td>[0]</td>
+      <td>Safe</td>
+      <td>False</td>
+      <td>False</td>
+      <td>0</td>
+      <td>[[6,277]]</td>
+      <td>[[1545,1816]]</td>
+      <td>{}</td>
+      <td>[]</td>
+      <td>[]</td>
+      <td>2818</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>250</td>
+      <td>[[28, 277]]</td>
+      <td>249.180</td>
+      <td>[[1, 5]]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>277</td>
+      <td>277</td>
+      <td>[[1, 277]]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>False</td>
+      <td>((28, 277),)</td>
+      <td>250</td>
+      <td>0.074735</td>
+      <td>0.074735</td>
+      <td>2.500</td>
+      <td>x-ray</td>
+      <td>X-ray diffraction</td>
+      <td>False</td>
+      <td>20110713</td>
+      <td>20061118</td>
+      <td>0.400000</td>
+      <td>-66</td>
+      <td>False</td>
+      <td>13</td>
+      <td>P21359</td>
+      <td>NF1_HUMAN</td>
+      <td>0.99</td>
+      <td>True</td>
+      <td>NF1_HUMAN</td>
+      <td>[[6,277]]</td>
+      <td>[[1566,1837]]</td>
+      <td>P21359</td>
+      <td>[0]</td>
+      <td>Safe</td>
+      <td>False</td>
+      <td>False</td>
+      <td>0</td>
+      <td>[[6,277]]</td>
+      <td>[[1566,1837]]</td>
+      <td>{}</td>
+      <td>[]</td>
+      <td>[]</td>
+      <td>2839</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>250</td>
+      <td>[[28, 277]]</td>
+      <td>248.894</td>
+      <td>[[1, 5]]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>277</td>
+      <td>277</td>
+      <td>[[1, 277]]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>False</td>
+      <td>((28, 277),)</td>
+      <td>250</td>
+      <td>0.074182</td>
+      <td>0.074182</td>
+      <td>-65</td>
+      <td>False</td>
+      <td>7</td>
+      <td>True</td>
+      <td>0.142857</td>
+      <td>0.076923</td>
+      <td>((1590, 1591), (1593, 1593), (1626, 1626), (16...</td>
+      <td>((1611, 1612), (1614, 1614), (1647, 1647), (16...</td>
+      <td>(P21359-2, P21359)</td>
+      <td>False</td>
+      <td>14</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>1</td>
+      <td>A</td>
+      <td>A</td>
+      <td>A</td>
+      <td>1</td>
+      <td>1</td>
+      <td>polypeptide(L)</td>
+      <td>[[28,44],[47,48],[50,52],[54,62],[64,81],[83,8...</td>
+      <td>[[51,52],[54,54],[87,87],[92,92],[168,169],[17...</td>
+      <td>1</td>
+      <td>B</td>
+      <td>B</td>
+      <td>B</td>
+      <td>1</td>
+      <td>1</td>
+      <td>polypeptide(L)</td>
+      <td>[[28,44],[48,48],[50,62],[64,81],[83,83],[85,8...</td>
+      <td>[[51,52],[54,54],[87,87],[92,92],[168,169],[17...</td>
+      <td>2e2x</td>
+      <td>1</td>
+      <td>5</td>
+      <td>True</td>
+      <td>P21359-2</td>
+      <td>NF1_HUMAN</td>
+      <td>0.99</td>
+      <td>False</td>
+      <td>NF1_HUMAN</td>
+      <td>[[6,277]]</td>
+      <td>[[1545,1816]]</td>
+      <td>P21359</td>
+      <td>[0]</td>
+      <td>Safe</td>
+      <td>False</td>
+      <td>False</td>
+      <td>0</td>
+      <td>[[6,277]]</td>
+      <td>[[1545,1816]]</td>
+      <td>{}</td>
+      <td>[]</td>
+      <td>[]</td>
+      <td>2818</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>250</td>
+      <td>[[28, 277]]</td>
+      <td>248.894</td>
+      <td>[[1, 5]]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>277</td>
+      <td>277</td>
+      <td>[[1, 277]]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>False</td>
+      <td>((28, 277),)</td>
+      <td>250</td>
+      <td>0.074735</td>
+      <td>0.074735</td>
+      <td>2.500</td>
+      <td>x-ray</td>
+      <td>X-ray diffraction</td>
+      <td>False</td>
+      <td>20110713</td>
+      <td>20061118</td>
+      <td>0.400000</td>
+      <td>-65</td>
+      <td>False</td>
+      <td>12</td>
+      <td>P21359</td>
+      <td>NF1_HUMAN</td>
+      <td>0.99</td>
+      <td>True</td>
+      <td>NF1_HUMAN</td>
+      <td>[[6,277]]</td>
+      <td>[[1566,1837]]</td>
+      <td>P21359</td>
+      <td>[0]</td>
+      <td>Safe</td>
+      <td>False</td>
+      <td>False</td>
+      <td>0</td>
+      <td>[[6,277]]</td>
+      <td>[[1566,1837]]</td>
+      <td>{}</td>
+      <td>[]</td>
+      <td>[]</td>
+      <td>2839</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>250</td>
+      <td>[[28, 277]]</td>
+      <td>249.180</td>
+      <td>[[1, 5]]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>277</td>
+      <td>277</td>
+      <td>[[1, 277]]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>False</td>
+      <td>((28, 277),)</td>
+      <td>250</td>
+      <td>0.074182</td>
+      <td>0.074182</td>
+      <td>-66</td>
+      <td>False</td>
+      <td>8</td>
+      <td>True</td>
+      <td>0.125000</td>
+      <td>0.083333</td>
+      <td>((1590, 1591), (1593, 1593), (1626, 1626), (16...</td>
+      <td>((1611, 1612), (1614, 1614), (1647, 1647), (16...</td>
+      <td>(P21359-2, P21359)</td>
+      <td>False</td>
+      <td>12</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>1</td>
+      <td>A</td>
+      <td>A</td>
+      <td>A</td>
+      <td>1</td>
+      <td>1</td>
+      <td>polypeptide(L)</td>
+      <td>[[28,44],[47,48],[50,52],[54,62],[64,81],[83,8...</td>
+      <td>[[51,52],[54,54],[87,87],[92,92],[168,169],[17...</td>
+      <td>1</td>
+      <td>B</td>
+      <td>B</td>
+      <td>B</td>
+      <td>1</td>
+      <td>1</td>
+      <td>polypeptide(L)</td>
+      <td>[[28,44],[48,48],[50,62],[64,81],[83,83],[85,8...</td>
+      <td>[[51,52],[54,54],[87,87],[92,92],[168,169],[17...</td>
+      <td>2e2x</td>
+      <td>1</td>
+      <td>5</td>
+      <td>True</td>
+      <td>P21359-2</td>
+      <td>NF1_HUMAN</td>
+      <td>0.99</td>
+      <td>False</td>
+      <td>NF1_HUMAN</td>
+      <td>[[6,277]]</td>
+      <td>[[1545,1816]]</td>
+      <td>P21359</td>
+      <td>[0]</td>
+      <td>Safe</td>
+      <td>False</td>
+      <td>False</td>
+      <td>0</td>
+      <td>[[6,277]]</td>
+      <td>[[1545,1816]]</td>
+      <td>{}</td>
+      <td>[]</td>
+      <td>[]</td>
+      <td>2818</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>250</td>
+      <td>[[28, 277]]</td>
+      <td>248.894</td>
+      <td>[[1, 5]]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>277</td>
+      <td>277</td>
+      <td>[[1, 277]]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>False</td>
+      <td>((28, 277),)</td>
+      <td>250</td>
+      <td>0.074735</td>
+      <td>0.074735</td>
+      <td>2.500</td>
+      <td>x-ray</td>
+      <td>X-ray diffraction</td>
+      <td>False</td>
+      <td>20110713</td>
+      <td>20061118</td>
+      <td>0.400000</td>
+      <td>-65</td>
+      <td>False</td>
+      <td>12</td>
+      <td>P21359-6</td>
+      <td>NF1_HUMAN</td>
+      <td>0.99</td>
+      <td>False</td>
+      <td>NF1_HUMAN</td>
+      <td>[[6,277]]</td>
+      <td>[[1545,1816]]</td>
+      <td>P21359</td>
+      <td>[0]</td>
+      <td>Safe</td>
+      <td>False</td>
+      <td>False</td>
+      <td>0</td>
+      <td>[[6,277]]</td>
+      <td>[[1545,1816]]</td>
+      <td>{}</td>
+      <td>[]</td>
+      <td>[]</td>
+      <td>2836</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>250</td>
+      <td>[[28, 277]]</td>
+      <td>249.180</td>
+      <td>[[1, 5]]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>277</td>
+      <td>277</td>
+      <td>[[1, 277]]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>False</td>
+      <td>((28, 277),)</td>
+      <td>250</td>
+      <td>0.074261</td>
+      <td>0.074261</td>
+      <td>-66</td>
+      <td>False</td>
+      <td>13</td>
+      <td>True</td>
+      <td>0.083333</td>
+      <td>0.076923</td>
+      <td>((1590, 1591), (1593, 1593), (1626, 1626), (16...</td>
+      <td>((1590, 1591), (1593, 1593), (1626, 1626), (16...</td>
+      <td>(P21359-2, P21359-6)</td>
+      <td>False</td>
+      <td>13</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>1</td>
+      <td>B</td>
+      <td>B</td>
+      <td>B</td>
+      <td>1</td>
+      <td>1</td>
+      <td>polypeptide(L)</td>
+      <td>[[28,44],[48,48],[50,62],[64,81],[83,83],[85,8...</td>
+      <td>[[51,52],[54,54],[87,87],[92,92],[168,169],[17...</td>
+      <td>1</td>
+      <td>A</td>
+      <td>A</td>
+      <td>A</td>
+      <td>1</td>
+      <td>1</td>
+      <td>polypeptide(L)</td>
+      <td>[[28,44],[47,48],[50,52],[54,62],[64,81],[83,8...</td>
+      <td>[[51,52],[54,54],[87,87],[92,92],[168,169],[17...</td>
+      <td>2e2x</td>
+      <td>1</td>
+      <td>5</td>
+      <td>True</td>
+      <td>P21359-2</td>
+      <td>NF1_HUMAN</td>
+      <td>0.99</td>
+      <td>False</td>
+      <td>NF1_HUMAN</td>
+      <td>[[6,277]]</td>
+      <td>[[1545,1816]]</td>
+      <td>P21359</td>
+      <td>[0]</td>
+      <td>Safe</td>
+      <td>False</td>
+      <td>False</td>
+      <td>0</td>
+      <td>[[6,277]]</td>
+      <td>[[1545,1816]]</td>
+      <td>{}</td>
+      <td>[]</td>
+      <td>[]</td>
+      <td>2818</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>250</td>
+      <td>[[28, 277]]</td>
+      <td>249.180</td>
+      <td>[[1, 5]]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>277</td>
+      <td>277</td>
+      <td>[[1, 277]]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>False</td>
+      <td>((28, 277),)</td>
+      <td>250</td>
+      <td>0.074735</td>
+      <td>0.074735</td>
+      <td>2.500</td>
+      <td>x-ray</td>
+      <td>X-ray diffraction</td>
+      <td>False</td>
+      <td>20110713</td>
+      <td>20061118</td>
+      <td>0.400000</td>
+      <td>-66</td>
+      <td>False</td>
+      <td>13</td>
+      <td>P21359-6</td>
+      <td>NF1_HUMAN</td>
+      <td>0.99</td>
+      <td>False</td>
+      <td>NF1_HUMAN</td>
+      <td>[[6,277]]</td>
+      <td>[[1545,1816]]</td>
+      <td>P21359</td>
+      <td>[0]</td>
+      <td>Safe</td>
+      <td>False</td>
+      <td>False</td>
+      <td>0</td>
+      <td>[[6,277]]</td>
+      <td>[[1545,1816]]</td>
+      <td>{}</td>
+      <td>[]</td>
+      <td>[]</td>
+      <td>2836</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>250</td>
+      <td>[[28, 277]]</td>
+      <td>248.894</td>
+      <td>[[1, 5]]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>277</td>
+      <td>277</td>
+      <td>[[1, 277]]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>False</td>
+      <td>((28, 277),)</td>
+      <td>250</td>
+      <td>0.074261</td>
+      <td>0.074261</td>
+      <td>-65</td>
+      <td>False</td>
+      <td>12</td>
+      <td>True</td>
+      <td>0.083333</td>
+      <td>0.076923</td>
+      <td>((1590, 1591), (1593, 1593), (1626, 1626), (16...</td>
+      <td>((1590, 1591), (1593, 1593), (1626, 1626), (16...</td>
+      <td>(P21359-2, P21359-6)</td>
+      <td>False</td>
+      <td>15</td>
+    </tr>
+    <tr>
+      <th>20</th>
+      <td>1</td>
+      <td>B</td>
+      <td>B</td>
+      <td>B</td>
+      <td>1</td>
+      <td>1</td>
+      <td>polypeptide(L)</td>
+      <td>[[7,43],[46,61],[63,80],[82,84],[86,157],[159,...</td>
+      <td>[[50,51],[53,53],[86,86],[91,91],[167,168],[17...</td>
+      <td>1</td>
+      <td>A</td>
+      <td>A</td>
+      <td>A</td>
+      <td>1</td>
+      <td>1</td>
+      <td>polypeptide(L)</td>
+      <td>[[7,44],[46,47],[49,62],[64,82],[84,84],[86,25...</td>
+      <td>[[50,51],[53,53],[86,86],[91,91],[167,168],[17...</td>
+      <td>3p7z</td>
+      <td>0</td>
+      <td>5</td>
+      <td>False</td>
+      <td>P21359-2</td>
+      <td>NF1_HUMAN</td>
+      <td>0.98</td>
+      <td>False</td>
+      <td>NF1_HUMAN</td>
+      <td>[[5,276]]</td>
+      <td>[[1545,1816]]</td>
+      <td>P21359</td>
+      <td>[0]</td>
+      <td>Safe</td>
+      <td>False</td>
+      <td>False</td>
+      <td>0</td>
+      <td>[[5,276]]</td>
+      <td>[[1545,1816]]</td>
+      <td>{"44":"I"}</td>
+      <td>[[44,44]]</td>
+      <td>[[1584,1584]]</td>
+      <td>2818</td>
+      <td>16</td>
+      <td>[[80, 80], [92, 95], [101, 102], [110, 110], [...</td>
+      <td>270</td>
+      <td>[[7, 276]]</td>
+      <td>269.180</td>
+      <td>[[1, 4]]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>276</td>
+      <td>276</td>
+      <td>[[1, 276]]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>False</td>
+      <td>((7, 276),)</td>
+      <td>270</td>
+      <td>0.088864</td>
+      <td>0.094542</td>
+      <td>2.650</td>
+      <td>x-ray</td>
+      <td>X-ray diffraction</td>
+      <td>False</td>
+      <td>20190717</td>
+      <td>20101013</td>
+      <td>0.377358</td>
+      <td>-66</td>
+      <td>True</td>
+      <td>2</td>
+      <td>P21359</td>
+      <td>NF1_HUMAN</td>
+      <td>0.98</td>
+      <td>True</td>
+      <td>NF1_HUMAN</td>
+      <td>[[5,276]]</td>
+      <td>[[1566,1837]]</td>
+      <td>P21359</td>
+      <td>[0]</td>
+      <td>Safe</td>
+      <td>False</td>
+      <td>False</td>
+      <td>0</td>
+      <td>[[5,276]]</td>
+      <td>[[1566,1837]]</td>
+      <td>{"44":"I"}</td>
+      <td>[[44,44]]</td>
+      <td>[[1605,1605]]</td>
+      <td>2839</td>
+      <td>23</td>
+      <td>[[40, 42], [47, 47], [66, 66], [70, 70], [78, ...</td>
+      <td>270</td>
+      <td>[[7, 276]]</td>
+      <td>267.845</td>
+      <td>[[1, 4]]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>276</td>
+      <td>276</td>
+      <td>[[1, 276]]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>False</td>
+      <td>((7, 276),)</td>
+      <td>270</td>
+      <td>0.085741</td>
+      <td>0.093842</td>
+      <td>-65</td>
+      <td>False</td>
+      <td>3</td>
+      <td>False</td>
+      <td>0.500000</td>
+      <td>0.333333</td>
+      <td>((1590, 1591), (1593, 1593), (1626, 1626), (16...</td>
+      <td>((1611, 1612), (1614, 1614), (1647, 1647), (16...</td>
+      <td>(P21359-2, P21359)</td>
+      <td>False</td>
+      <td>8</td>
+    </tr>
+    <tr>
+      <th>21</th>
+      <td>1</td>
+      <td>A</td>
+      <td>A</td>
+      <td>A</td>
+      <td>1</td>
+      <td>1</td>
+      <td>polypeptide(L)</td>
+      <td>[[7,44],[46,47],[49,62],[64,82],[84,84],[86,25...</td>
+      <td>[[50,51],[53,53],[86,86],[91,91],[167,168],[17...</td>
+      <td>1</td>
+      <td>B</td>
+      <td>B</td>
+      <td>B</td>
+      <td>1</td>
+      <td>1</td>
+      <td>polypeptide(L)</td>
+      <td>[[7,43],[46,61],[63,80],[82,84],[86,157],[159,...</td>
+      <td>[[50,51],[53,53],[86,86],[91,91],[167,168],[17...</td>
+      <td>3p7z</td>
+      <td>0</td>
+      <td>5</td>
+      <td>False</td>
+      <td>P21359-2</td>
+      <td>NF1_HUMAN</td>
+      <td>0.98</td>
+      <td>False</td>
+      <td>NF1_HUMAN</td>
+      <td>[[5,276]]</td>
+      <td>[[1545,1816]]</td>
+      <td>P21359</td>
+      <td>[0]</td>
+      <td>Safe</td>
+      <td>False</td>
+      <td>False</td>
+      <td>0</td>
+      <td>[[5,276]]</td>
+      <td>[[1545,1816]]</td>
+      <td>{"44":"I"}</td>
+      <td>[[44,44]]</td>
+      <td>[[1584,1584]]</td>
+      <td>2818</td>
+      <td>23</td>
+      <td>[[40, 42], [47, 47], [66, 66], [70, 70], [78, ...</td>
+      <td>270</td>
+      <td>[[7, 276]]</td>
+      <td>267.845</td>
+      <td>[[1, 4]]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>276</td>
+      <td>276</td>
+      <td>[[1, 276]]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>False</td>
+      <td>((7, 276),)</td>
+      <td>270</td>
+      <td>0.086380</td>
+      <td>0.094542</td>
+      <td>2.650</td>
+      <td>x-ray</td>
+      <td>X-ray diffraction</td>
+      <td>False</td>
+      <td>20190717</td>
+      <td>20101013</td>
+      <td>0.377358</td>
+      <td>-65</td>
+      <td>False</td>
+      <td>5</td>
+      <td>P21359</td>
+      <td>NF1_HUMAN</td>
+      <td>0.98</td>
+      <td>True</td>
+      <td>NF1_HUMAN</td>
+      <td>[[5,276]]</td>
+      <td>[[1566,1837]]</td>
+      <td>P21359</td>
+      <td>[0]</td>
+      <td>Safe</td>
+      <td>False</td>
+      <td>False</td>
+      <td>0</td>
+      <td>[[5,276]]</td>
+      <td>[[1566,1837]]</td>
+      <td>{"44":"I"}</td>
+      <td>[[44,44]]</td>
+      <td>[[1605,1605]]</td>
+      <td>2839</td>
+      <td>16</td>
+      <td>[[80, 80], [92, 95], [101, 102], [110, 110], [...</td>
+      <td>270</td>
+      <td>[[7, 276]]</td>
+      <td>269.180</td>
+      <td>[[1, 4]]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>276</td>
+      <td>276</td>
+      <td>[[1, 276]]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>False</td>
+      <td>((7, 276),)</td>
+      <td>270</td>
+      <td>0.088207</td>
+      <td>0.093842</td>
+      <td>-66</td>
+      <td>True</td>
+      <td>1</td>
+      <td>False</td>
+      <td>1.000000</td>
+      <td>0.200000</td>
+      <td>((1590, 1591), (1593, 1593), (1626, 1626), (16...</td>
+      <td>((1611, 1612), (1614, 1614), (1647, 1647), (16...</td>
+      <td>(P21359-2, P21359)</td>
+      <td>False</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <th>22</th>
+      <td>1</td>
+      <td>A</td>
+      <td>A</td>
+      <td>A</td>
+      <td>1</td>
+      <td>1</td>
+      <td>polypeptide(L)</td>
+      <td>[[7,44],[46,47],[49,62],[64,82],[84,84],[86,25...</td>
+      <td>[[50,51],[53,53],[86,86],[91,91],[167,168],[17...</td>
+      <td>1</td>
+      <td>B</td>
+      <td>B</td>
+      <td>B</td>
+      <td>1</td>
+      <td>1</td>
+      <td>polypeptide(L)</td>
+      <td>[[7,43],[46,61],[63,80],[82,84],[86,157],[159,...</td>
+      <td>[[50,51],[53,53],[86,86],[91,91],[167,168],[17...</td>
+      <td>3p7z</td>
+      <td>0</td>
+      <td>5</td>
+      <td>False</td>
+      <td>P21359-2</td>
+      <td>NF1_HUMAN</td>
+      <td>0.98</td>
+      <td>False</td>
+      <td>NF1_HUMAN</td>
+      <td>[[5,276]]</td>
+      <td>[[1545,1816]]</td>
+      <td>P21359</td>
+      <td>[0]</td>
+      <td>Safe</td>
+      <td>False</td>
+      <td>False</td>
+      <td>0</td>
+      <td>[[5,276]]</td>
+      <td>[[1545,1816]]</td>
+      <td>{"44":"I"}</td>
+      <td>[[44,44]]</td>
+      <td>[[1584,1584]]</td>
+      <td>2818</td>
+      <td>23</td>
+      <td>[[40, 42], [47, 47], [66, 66], [70, 70], [78, ...</td>
+      <td>270</td>
+      <td>[[7, 276]]</td>
+      <td>267.845</td>
+      <td>[[1, 4]]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>276</td>
+      <td>276</td>
+      <td>[[1, 276]]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>False</td>
+      <td>((7, 276),)</td>
+      <td>270</td>
+      <td>0.086380</td>
+      <td>0.094542</td>
+      <td>2.650</td>
+      <td>x-ray</td>
+      <td>X-ray diffraction</td>
+      <td>False</td>
+      <td>20190717</td>
+      <td>20101013</td>
+      <td>0.377358</td>
+      <td>-65</td>
+      <td>False</td>
+      <td>5</td>
+      <td>P21359-6</td>
+      <td>NF1_HUMAN</td>
+      <td>0.98</td>
+      <td>False</td>
+      <td>NF1_HUMAN</td>
+      <td>[[5,276]]</td>
+      <td>[[1545,1816]]</td>
+      <td>P21359</td>
+      <td>[0]</td>
+      <td>Safe</td>
+      <td>False</td>
+      <td>False</td>
+      <td>0</td>
+      <td>[[5,276]]</td>
+      <td>[[1545,1816]]</td>
+      <td>{"44":"I"}</td>
+      <td>[[44,44]]</td>
+      <td>[[1584,1584]]</td>
+      <td>2836</td>
+      <td>16</td>
+      <td>[[80, 80], [92, 95], [101, 102], [110, 110], [...</td>
+      <td>270</td>
+      <td>[[7, 276]]</td>
+      <td>269.180</td>
+      <td>[[1, 4]]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>276</td>
+      <td>276</td>
+      <td>[[1, 276]]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>False</td>
+      <td>((7, 276),)</td>
+      <td>270</td>
+      <td>0.088300</td>
+      <td>0.093942</td>
+      <td>-66</td>
+      <td>True</td>
+      <td>2</td>
+      <td>False</td>
+      <td>0.500000</td>
+      <td>0.200000</td>
+      <td>((1590, 1591), (1593, 1593), (1626, 1626), (16...</td>
+      <td>((1590, 1591), (1593, 1593), (1626, 1626), (16...</td>
+      <td>(P21359-2, P21359-6)</td>
+      <td>False</td>
+      <td>6</td>
+    </tr>
+    <tr>
+      <th>23</th>
+      <td>1</td>
+      <td>B</td>
+      <td>B</td>
+      <td>B</td>
+      <td>1</td>
+      <td>1</td>
+      <td>polypeptide(L)</td>
+      <td>[[7,43],[46,61],[63,80],[82,84],[86,157],[159,...</td>
+      <td>[[50,51],[53,53],[86,86],[91,91],[167,168],[17...</td>
+      <td>1</td>
+      <td>A</td>
+      <td>A</td>
+      <td>A</td>
+      <td>1</td>
+      <td>1</td>
+      <td>polypeptide(L)</td>
+      <td>[[7,44],[46,47],[49,62],[64,82],[84,84],[86,25...</td>
+      <td>[[50,51],[53,53],[86,86],[91,91],[167,168],[17...</td>
+      <td>3p7z</td>
+      <td>0</td>
+      <td>5</td>
+      <td>False</td>
+      <td>P21359-2</td>
+      <td>NF1_HUMAN</td>
+      <td>0.98</td>
+      <td>False</td>
+      <td>NF1_HUMAN</td>
+      <td>[[5,276]]</td>
+      <td>[[1545,1816]]</td>
+      <td>P21359</td>
+      <td>[0]</td>
+      <td>Safe</td>
+      <td>False</td>
+      <td>False</td>
+      <td>0</td>
+      <td>[[5,276]]</td>
+      <td>[[1545,1816]]</td>
+      <td>{"44":"I"}</td>
+      <td>[[44,44]]</td>
+      <td>[[1584,1584]]</td>
+      <td>2818</td>
+      <td>16</td>
+      <td>[[80, 80], [92, 95], [101, 102], [110, 110], [...</td>
+      <td>270</td>
+      <td>[[7, 276]]</td>
+      <td>269.180</td>
+      <td>[[1, 4]]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>276</td>
+      <td>276</td>
+      <td>[[1, 276]]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>False</td>
+      <td>((7, 276),)</td>
+      <td>270</td>
+      <td>0.088864</td>
+      <td>0.094542</td>
+      <td>2.650</td>
+      <td>x-ray</td>
+      <td>X-ray diffraction</td>
+      <td>False</td>
+      <td>20190717</td>
+      <td>20101013</td>
+      <td>0.377358</td>
+      <td>-66</td>
+      <td>True</td>
+      <td>2</td>
+      <td>P21359-6</td>
+      <td>NF1_HUMAN</td>
+      <td>0.98</td>
+      <td>False</td>
+      <td>NF1_HUMAN</td>
+      <td>[[5,276]]</td>
+      <td>[[1545,1816]]</td>
+      <td>P21359</td>
+      <td>[0]</td>
+      <td>Safe</td>
+      <td>False</td>
+      <td>False</td>
+      <td>0</td>
+      <td>[[5,276]]</td>
+      <td>[[1545,1816]]</td>
+      <td>{"44":"I"}</td>
+      <td>[[44,44]]</td>
+      <td>[[1584,1584]]</td>
+      <td>2836</td>
+      <td>23</td>
+      <td>[[40, 42], [47, 47], [66, 66], [70, 70], [78, ...</td>
+      <td>270</td>
+      <td>[[7, 276]]</td>
+      <td>267.845</td>
+      <td>[[1, 4]]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>276</td>
+      <td>276</td>
+      <td>[[1, 276]]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>False</td>
+      <td>((7, 276),)</td>
+      <td>270</td>
+      <td>0.085832</td>
+      <td>0.093942</td>
+      <td>-65</td>
+      <td>False</td>
+      <td>5</td>
+      <td>False</td>
+      <td>0.500000</td>
+      <td>0.200000</td>
+      <td>((1590, 1591), (1593, 1593), (1626, 1626), (16...</td>
+      <td>((1590, 1591), (1593, 1593), (1626, 1626), (16...</td>
+      <td>(P21359-2, P21359-6)</td>
+      <td>False</td>
+      <td>8</td>
+    </tr>
+    <tr>
+      <th>24</th>
+      <td>1</td>
+      <td>B</td>
+      <td>B</td>
+      <td>B</td>
+      <td>1</td>
+      <td>1</td>
+      <td>polypeptide(L)</td>
+      <td>[[7,43],[46,61],[63,80],[82,84],[86,157],[159,...</td>
+      <td>[[50,51],[53,53],[86,86],[91,91],[167,168],[17...</td>
+      <td>1</td>
+      <td>A</td>
+      <td>A</td>
+      <td>A</td>
+      <td>1</td>
+      <td>1</td>
+      <td>polypeptide(L)</td>
+      <td>[[7,44],[46,47],[49,62],[64,82],[84,84],[86,25...</td>
+      <td>[[50,51],[53,53],[86,86],[91,91],[167,168],[17...</td>
+      <td>3p7z</td>
+      <td>1</td>
+      <td>5</td>
+      <td>True</td>
+      <td>P21359-2</td>
+      <td>NF1_HUMAN</td>
+      <td>0.98</td>
+      <td>False</td>
+      <td>NF1_HUMAN</td>
+      <td>[[5,276]]</td>
+      <td>[[1545,1816]]</td>
+      <td>P21359</td>
+      <td>[0]</td>
+      <td>Safe</td>
+      <td>False</td>
+      <td>False</td>
+      <td>0</td>
+      <td>[[5,276]]</td>
+      <td>[[1545,1816]]</td>
+      <td>{"44":"I"}</td>
+      <td>[[44,44]]</td>
+      <td>[[1584,1584]]</td>
+      <td>2818</td>
+      <td>16</td>
+      <td>[[80, 80], [92, 95], [101, 102], [110, 110], [...</td>
+      <td>270</td>
+      <td>[[7, 276]]</td>
+      <td>269.180</td>
+      <td>[[1, 4]]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>276</td>
+      <td>276</td>
+      <td>[[1, 276]]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>False</td>
+      <td>((7, 276),)</td>
+      <td>270</td>
+      <td>0.088864</td>
+      <td>0.094542</td>
+      <td>2.650</td>
+      <td>x-ray</td>
+      <td>X-ray diffraction</td>
+      <td>False</td>
+      <td>20190717</td>
+      <td>20101013</td>
+      <td>0.377358</td>
+      <td>-66</td>
+      <td>True</td>
+      <td>2</td>
+      <td>P21359</td>
+      <td>NF1_HUMAN</td>
+      <td>0.98</td>
+      <td>True</td>
+      <td>NF1_HUMAN</td>
+      <td>[[5,276]]</td>
+      <td>[[1566,1837]]</td>
+      <td>P21359</td>
+      <td>[0]</td>
+      <td>Safe</td>
+      <td>False</td>
+      <td>False</td>
+      <td>0</td>
+      <td>[[5,276]]</td>
+      <td>[[1566,1837]]</td>
+      <td>{"44":"I"}</td>
+      <td>[[44,44]]</td>
+      <td>[[1605,1605]]</td>
+      <td>2839</td>
+      <td>23</td>
+      <td>[[40, 42], [47, 47], [66, 66], [70, 70], [78, ...</td>
+      <td>270</td>
+      <td>[[7, 276]]</td>
+      <td>267.845</td>
+      <td>[[1, 4]]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>276</td>
+      <td>276</td>
+      <td>[[1, 276]]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>False</td>
+      <td>((7, 276),)</td>
+      <td>270</td>
+      <td>0.085741</td>
+      <td>0.093842</td>
+      <td>-65</td>
+      <td>False</td>
+      <td>3</td>
+      <td>True</td>
+      <td>0.500000</td>
+      <td>0.333333</td>
+      <td>((1590, 1591), (1593, 1593), (1626, 1626), (16...</td>
+      <td>((1611, 1612), (1614, 1614), (1647, 1647), (16...</td>
+      <td>(P21359-2, P21359)</td>
+      <td>False</td>
+      <td>7</td>
+    </tr>
+    <tr>
+      <th>25</th>
+      <td>1</td>
+      <td>A</td>
+      <td>A</td>
+      <td>A</td>
+      <td>1</td>
+      <td>1</td>
+      <td>polypeptide(L)</td>
+      <td>[[7,44],[46,47],[49,62],[64,82],[84,84],[86,25...</td>
+      <td>[[50,51],[53,53],[86,86],[91,91],[167,168],[17...</td>
+      <td>1</td>
+      <td>B</td>
+      <td>B</td>
+      <td>B</td>
+      <td>1</td>
+      <td>1</td>
+      <td>polypeptide(L)</td>
+      <td>[[7,43],[46,61],[63,80],[82,84],[86,157],[159,...</td>
+      <td>[[50,51],[53,53],[86,86],[91,91],[167,168],[17...</td>
+      <td>3p7z</td>
+      <td>1</td>
+      <td>5</td>
+      <td>True</td>
+      <td>P21359-2</td>
+      <td>NF1_HUMAN</td>
+      <td>0.98</td>
+      <td>False</td>
+      <td>NF1_HUMAN</td>
+      <td>[[5,276]]</td>
+      <td>[[1545,1816]]</td>
+      <td>P21359</td>
+      <td>[0]</td>
+      <td>Safe</td>
+      <td>False</td>
+      <td>False</td>
+      <td>0</td>
+      <td>[[5,276]]</td>
+      <td>[[1545,1816]]</td>
+      <td>{"44":"I"}</td>
+      <td>[[44,44]]</td>
+      <td>[[1584,1584]]</td>
+      <td>2818</td>
+      <td>23</td>
+      <td>[[40, 42], [47, 47], [66, 66], [70, 70], [78, ...</td>
+      <td>270</td>
+      <td>[[7, 276]]</td>
+      <td>267.845</td>
+      <td>[[1, 4]]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>276</td>
+      <td>276</td>
+      <td>[[1, 276]]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>False</td>
+      <td>((7, 276),)</td>
+      <td>270</td>
+      <td>0.086380</td>
+      <td>0.094542</td>
+      <td>2.650</td>
+      <td>x-ray</td>
+      <td>X-ray diffraction</td>
+      <td>False</td>
+      <td>20190717</td>
+      <td>20101013</td>
+      <td>0.377358</td>
+      <td>-65</td>
+      <td>False</td>
+      <td>5</td>
+      <td>P21359</td>
+      <td>NF1_HUMAN</td>
+      <td>0.98</td>
+      <td>True</td>
+      <td>NF1_HUMAN</td>
+      <td>[[5,276]]</td>
+      <td>[[1566,1837]]</td>
+      <td>P21359</td>
+      <td>[0]</td>
+      <td>Safe</td>
+      <td>False</td>
+      <td>False</td>
+      <td>0</td>
+      <td>[[5,276]]</td>
+      <td>[[1566,1837]]</td>
+      <td>{"44":"I"}</td>
+      <td>[[44,44]]</td>
+      <td>[[1605,1605]]</td>
+      <td>2839</td>
+      <td>16</td>
+      <td>[[80, 80], [92, 95], [101, 102], [110, 110], [...</td>
+      <td>270</td>
+      <td>[[7, 276]]</td>
+      <td>269.180</td>
+      <td>[[1, 4]]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>276</td>
+      <td>276</td>
+      <td>[[1, 276]]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>False</td>
+      <td>((7, 276),)</td>
+      <td>270</td>
+      <td>0.088207</td>
+      <td>0.093842</td>
+      <td>-66</td>
+      <td>True</td>
+      <td>1</td>
+      <td>True</td>
+      <td>1.000000</td>
+      <td>0.200000</td>
+      <td>((1590, 1591), (1593, 1593), (1626, 1626), (16...</td>
+      <td>((1611, 1612), (1614, 1614), (1647, 1647), (16...</td>
+      <td>(P21359-2, P21359)</td>
+      <td>False</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <th>26</th>
+      <td>1</td>
+      <td>A</td>
+      <td>A</td>
+      <td>A</td>
+      <td>1</td>
+      <td>1</td>
+      <td>polypeptide(L)</td>
+      <td>[[7,44],[46,47],[49,62],[64,82],[84,84],[86,25...</td>
+      <td>[[50,51],[53,53],[86,86],[91,91],[167,168],[17...</td>
+      <td>1</td>
+      <td>B</td>
+      <td>B</td>
+      <td>B</td>
+      <td>1</td>
+      <td>1</td>
+      <td>polypeptide(L)</td>
+      <td>[[7,43],[46,61],[63,80],[82,84],[86,157],[159,...</td>
+      <td>[[50,51],[53,53],[86,86],[91,91],[167,168],[17...</td>
+      <td>3p7z</td>
+      <td>1</td>
+      <td>5</td>
+      <td>True</td>
+      <td>P21359-2</td>
+      <td>NF1_HUMAN</td>
+      <td>0.98</td>
+      <td>False</td>
+      <td>NF1_HUMAN</td>
+      <td>[[5,276]]</td>
+      <td>[[1545,1816]]</td>
+      <td>P21359</td>
+      <td>[0]</td>
+      <td>Safe</td>
+      <td>False</td>
+      <td>False</td>
+      <td>0</td>
+      <td>[[5,276]]</td>
+      <td>[[1545,1816]]</td>
+      <td>{"44":"I"}</td>
+      <td>[[44,44]]</td>
+      <td>[[1584,1584]]</td>
+      <td>2818</td>
+      <td>23</td>
+      <td>[[40, 42], [47, 47], [66, 66], [70, 70], [78, ...</td>
+      <td>270</td>
+      <td>[[7, 276]]</td>
+      <td>267.845</td>
+      <td>[[1, 4]]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>276</td>
+      <td>276</td>
+      <td>[[1, 276]]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>False</td>
+      <td>((7, 276),)</td>
+      <td>270</td>
+      <td>0.086380</td>
+      <td>0.094542</td>
+      <td>2.650</td>
+      <td>x-ray</td>
+      <td>X-ray diffraction</td>
+      <td>False</td>
+      <td>20190717</td>
+      <td>20101013</td>
+      <td>0.377358</td>
+      <td>-65</td>
+      <td>False</td>
+      <td>5</td>
+      <td>P21359-6</td>
+      <td>NF1_HUMAN</td>
+      <td>0.98</td>
+      <td>False</td>
+      <td>NF1_HUMAN</td>
+      <td>[[5,276]]</td>
+      <td>[[1545,1816]]</td>
+      <td>P21359</td>
+      <td>[0]</td>
+      <td>Safe</td>
+      <td>False</td>
+      <td>False</td>
+      <td>0</td>
+      <td>[[5,276]]</td>
+      <td>[[1545,1816]]</td>
+      <td>{"44":"I"}</td>
+      <td>[[44,44]]</td>
+      <td>[[1584,1584]]</td>
+      <td>2836</td>
+      <td>16</td>
+      <td>[[80, 80], [92, 95], [101, 102], [110, 110], [...</td>
+      <td>270</td>
+      <td>[[7, 276]]</td>
+      <td>269.180</td>
+      <td>[[1, 4]]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>276</td>
+      <td>276</td>
+      <td>[[1, 276]]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>False</td>
+      <td>((7, 276),)</td>
+      <td>270</td>
+      <td>0.088300</td>
+      <td>0.093942</td>
+      <td>-66</td>
+      <td>True</td>
+      <td>2</td>
+      <td>True</td>
+      <td>0.500000</td>
+      <td>0.200000</td>
+      <td>((1590, 1591), (1593, 1593), (1626, 1626), (16...</td>
+      <td>((1590, 1591), (1593, 1593), (1626, 1626), (16...</td>
+      <td>(P21359-2, P21359-6)</td>
+      <td>False</td>
+      <td>5</td>
+    </tr>
+    <tr>
+      <th>27</th>
+      <td>1</td>
+      <td>B</td>
+      <td>B</td>
+      <td>B</td>
+      <td>1</td>
+      <td>1</td>
+      <td>polypeptide(L)</td>
+      <td>[[7,43],[46,61],[63,80],[82,84],[86,157],[159,...</td>
+      <td>[[50,51],[53,53],[86,86],[91,91],[167,168],[17...</td>
+      <td>1</td>
+      <td>A</td>
+      <td>A</td>
+      <td>A</td>
+      <td>1</td>
+      <td>1</td>
+      <td>polypeptide(L)</td>
+      <td>[[7,44],[46,47],[49,62],[64,82],[84,84],[86,25...</td>
+      <td>[[50,51],[53,53],[86,86],[91,91],[167,168],[17...</td>
+      <td>3p7z</td>
+      <td>1</td>
+      <td>5</td>
+      <td>True</td>
+      <td>P21359-2</td>
+      <td>NF1_HUMAN</td>
+      <td>0.98</td>
+      <td>False</td>
+      <td>NF1_HUMAN</td>
+      <td>[[5,276]]</td>
+      <td>[[1545,1816]]</td>
+      <td>P21359</td>
+      <td>[0]</td>
+      <td>Safe</td>
+      <td>False</td>
+      <td>False</td>
+      <td>0</td>
+      <td>[[5,276]]</td>
+      <td>[[1545,1816]]</td>
+      <td>{"44":"I"}</td>
+      <td>[[44,44]]</td>
+      <td>[[1584,1584]]</td>
+      <td>2818</td>
+      <td>16</td>
+      <td>[[80, 80], [92, 95], [101, 102], [110, 110], [...</td>
+      <td>270</td>
+      <td>[[7, 276]]</td>
+      <td>269.180</td>
+      <td>[[1, 4]]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>276</td>
+      <td>276</td>
+      <td>[[1, 276]]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>False</td>
+      <td>((7, 276),)</td>
+      <td>270</td>
+      <td>0.088864</td>
+      <td>0.094542</td>
+      <td>2.650</td>
+      <td>x-ray</td>
+      <td>X-ray diffraction</td>
+      <td>False</td>
+      <td>20190717</td>
+      <td>20101013</td>
+      <td>0.377358</td>
+      <td>-66</td>
+      <td>True</td>
+      <td>2</td>
+      <td>P21359-6</td>
+      <td>NF1_HUMAN</td>
+      <td>0.98</td>
+      <td>False</td>
+      <td>NF1_HUMAN</td>
+      <td>[[5,276]]</td>
+      <td>[[1545,1816]]</td>
+      <td>P21359</td>
+      <td>[0]</td>
+      <td>Safe</td>
+      <td>False</td>
+      <td>False</td>
+      <td>0</td>
+      <td>[[5,276]]</td>
+      <td>[[1545,1816]]</td>
+      <td>{"44":"I"}</td>
+      <td>[[44,44]]</td>
+      <td>[[1584,1584]]</td>
+      <td>2836</td>
+      <td>23</td>
+      <td>[[40, 42], [47, 47], [66, 66], [70, 70], [78, ...</td>
+      <td>270</td>
+      <td>[[7, 276]]</td>
+      <td>267.845</td>
+      <td>[[1, 4]]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>276</td>
+      <td>276</td>
+      <td>[[1, 276]]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>False</td>
+      <td>((7, 276),)</td>
+      <td>270</td>
+      <td>0.085832</td>
+      <td>0.093942</td>
+      <td>-65</td>
+      <td>False</td>
+      <td>5</td>
+      <td>True</td>
+      <td>0.500000</td>
+      <td>0.200000</td>
+      <td>((1590, 1591), (1593, 1593), (1626, 1626), (16...</td>
+      <td>((1590, 1591), (1593, 1593), (1626, 1626), (16...</td>
+      <td>(P21359-2, P21359-6)</td>
+      <td>False</td>
+      <td>7</td>
+    </tr>
+    <tr>
+      <th>28</th>
+      <td>1</td>
+      <td>B</td>
+      <td>B</td>
+      <td>B</td>
+      <td>1</td>
+      <td>1</td>
+      <td>polypeptide(L)</td>
+      <td>[[1,24],[28,28],[30,61],[63,63],[65,134],[136,...</td>
+      <td>[[31,32],[34,34],[67,67],[72,72],[148,149],[15...</td>
+      <td>1</td>
+      <td>A</td>
+      <td>A</td>
+      <td>A</td>
+      <td>1</td>
+      <td>1</td>
+      <td>polypeptide(L)</td>
+      <td>[[1,24],[28,235],[237,238],[240,256]]</td>
+      <td>[[31,32],[34,34],[67,67],[72,72],[148,149],[15...</td>
+      <td>3pg7</td>
+      <td>0</td>
+      <td>4</td>
+      <td>False</td>
+      <td>P21359-2</td>
+      <td>NF1_HUMAN</td>
+      <td>1.00</td>
+      <td>False</td>
+      <td>NF1_HUMAN</td>
+      <td>[[1,256]]</td>
+      <td>[[1560,1816]]</td>
+      <td>P21359</td>
+      <td>[1]</td>
+      <td>Deletion</td>
+      <td>False</td>
+      <td>False</td>
+      <td>1</td>
+      <td>((1, 191), (192, 256))</td>
+      <td>((1560, 1750), (1752, 1816))</td>
+      <td>{"191":"K"}</td>
+      <td>[[191,191]]</td>
+      <td>[[1750,1750]]</td>
+      <td>2818</td>
+      <td>17</td>
+      <td>[[61, 61], [73, 74], [76, 76], [82, 83], [91, ...</td>
+      <td>256</td>
+      <td>[[1, 256]]</td>
+      <td>249.123</td>
+      <td>[]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>256</td>
+      <td>256</td>
+      <td>[[1, 256]]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>False</td>
+      <td>((1, 256),)</td>
+      <td>256</td>
+      <td>0.083171</td>
+      <td>0.089204</td>
+      <td>2.189</td>
+      <td>x-ray</td>
+      <td>X-ray diffraction</td>
+      <td>False</td>
+      <td>20110713</td>
+      <td>20101031</td>
+      <td>0.456830</td>
+      <td>-66</td>
+      <td>False</td>
+      <td>8</td>
+      <td>P21359</td>
+      <td>NF1_HUMAN</td>
+      <td>1.00</td>
+      <td>True</td>
+      <td>NF1_HUMAN</td>
+      <td>[[1,256]]</td>
+      <td>[[1581,1837]]</td>
+      <td>P21359</td>
+      <td>[1]</td>
+      <td>Deletion</td>
+      <td>False</td>
+      <td>False</td>
+      <td>1</td>
+      <td>((1, 191), (192, 256))</td>
+      <td>((1581, 1771), (1773, 1837))</td>
+      <td>{"191":"K"}</td>
+      <td>[[191,191]]</td>
+      <td>[[1771,1771]]</td>
+      <td>2839</td>
+      <td>15</td>
+      <td>[[13, 13], [28, 28], [61, 61], [73, 73], [75, ...</td>
+      <td>256</td>
+      <td>[[1, 256]]</td>
+      <td>247.929</td>
+      <td>[]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>256</td>
+      <td>256</td>
+      <td>[[1, 256]]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>False</td>
+      <td>((1, 256),)</td>
+      <td>256</td>
+      <td>0.083261</td>
+      <td>0.088544</td>
+      <td>-65</td>
+      <td>False</td>
+      <td>5</td>
+      <td>False</td>
+      <td>0.200000</td>
+      <td>0.125000</td>
+      <td>((1590, 1591), (1593, 1593), (1626, 1626), (16...</td>
+      <td>((1611, 1612), (1614, 1614), (1647, 1647), (16...</td>
+      <td>(P21359-2, P21359)</td>
+      <td>False</td>
+      <td>10</td>
+    </tr>
+    <tr>
+      <th>29</th>
+      <td>1</td>
+      <td>A</td>
+      <td>A</td>
+      <td>A</td>
+      <td>1</td>
+      <td>1</td>
+      <td>polypeptide(L)</td>
+      <td>[[1,24],[28,235],[237,238],[240,256]]</td>
+      <td>[[31,32],[34,34],[67,67],[72,72],[148,149],[15...</td>
+      <td>1</td>
+      <td>B</td>
+      <td>B</td>
+      <td>B</td>
+      <td>1</td>
+      <td>1</td>
+      <td>polypeptide(L)</td>
+      <td>[[1,24],[28,28],[30,61],[63,63],[65,134],[136,...</td>
+      <td>[[31,32],[34,34],[67,67],[72,72],[148,149],[15...</td>
+      <td>3pg7</td>
+      <td>0</td>
+      <td>4</td>
+      <td>False</td>
+      <td>P21359-2</td>
+      <td>NF1_HUMAN</td>
+      <td>1.00</td>
+      <td>False</td>
+      <td>NF1_HUMAN</td>
+      <td>[[1,256]]</td>
+      <td>[[1560,1816]]</td>
+      <td>P21359</td>
+      <td>[1]</td>
+      <td>Deletion</td>
+      <td>False</td>
+      <td>False</td>
+      <td>1</td>
+      <td>((1, 191), (192, 256))</td>
+      <td>((1560, 1750), (1752, 1816))</td>
+      <td>{"191":"K"}</td>
+      <td>[[191,191]]</td>
+      <td>[[1750,1750]]</td>
+      <td>2818</td>
+      <td>15</td>
+      <td>[[13, 13], [28, 28], [61, 61], [73, 73], [75, ...</td>
+      <td>256</td>
+      <td>[[1, 256]]</td>
+      <td>247.929</td>
+      <td>[]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>256</td>
+      <td>256</td>
+      <td>[[1, 256]]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>False</td>
+      <td>((1, 256),)</td>
+      <td>256</td>
+      <td>0.083881</td>
+      <td>0.089204</td>
+      <td>2.189</td>
+      <td>x-ray</td>
+      <td>X-ray diffraction</td>
+      <td>False</td>
+      <td>20110713</td>
+      <td>20101031</td>
+      <td>0.456830</td>
+      <td>-65</td>
+      <td>False</td>
+      <td>7</td>
+      <td>P21359</td>
+      <td>NF1_HUMAN</td>
+      <td>1.00</td>
+      <td>True</td>
+      <td>NF1_HUMAN</td>
+      <td>[[1,256]]</td>
+      <td>[[1581,1837]]</td>
+      <td>P21359</td>
+      <td>[1]</td>
+      <td>Deletion</td>
+      <td>False</td>
+      <td>False</td>
+      <td>1</td>
+      <td>((1, 191), (192, 256))</td>
+      <td>((1581, 1771), (1773, 1837))</td>
+      <td>{"191":"K"}</td>
+      <td>[[191,191]]</td>
+      <td>[[1771,1771]]</td>
+      <td>2839</td>
+      <td>17</td>
+      <td>[[61, 61], [73, 74], [76, 76], [82, 83], [91, ...</td>
+      <td>256</td>
+      <td>[[1, 256]]</td>
+      <td>249.123</td>
+      <td>[]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>256</td>
+      <td>256</td>
+      <td>[[1, 256]]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>False</td>
+      <td>((1, 256),)</td>
+      <td>256</td>
+      <td>0.082556</td>
+      <td>0.088544</td>
+      <td>-66</td>
+      <td>False</td>
+      <td>6</td>
+      <td>False</td>
+      <td>0.166667</td>
+      <td>0.142857</td>
+      <td>((1590, 1591), (1593, 1593), (1626, 1626), (16...</td>
+      <td>((1611, 1612), (1614, 1614), (1647, 1647), (16...</td>
+      <td>(P21359-2, P21359)</td>
+      <td>False</td>
+      <td>9</td>
+    </tr>
+    <tr>
+      <th>30</th>
+      <td>1</td>
+      <td>A</td>
+      <td>A</td>
+      <td>A</td>
+      <td>1</td>
+      <td>1</td>
+      <td>polypeptide(L)</td>
+      <td>[[1,24],[28,235],[237,238],[240,256]]</td>
+      <td>[[31,32],[34,34],[67,67],[72,72],[148,149],[15...</td>
+      <td>1</td>
+      <td>B</td>
+      <td>B</td>
+      <td>B</td>
+      <td>1</td>
+      <td>1</td>
+      <td>polypeptide(L)</td>
+      <td>[[1,24],[28,28],[30,61],[63,63],[65,134],[136,...</td>
+      <td>[[31,32],[34,34],[67,67],[72,72],[148,149],[15...</td>
+      <td>3pg7</td>
+      <td>0</td>
+      <td>4</td>
+      <td>False</td>
+      <td>P21359-2</td>
+      <td>NF1_HUMAN</td>
+      <td>1.00</td>
+      <td>False</td>
+      <td>NF1_HUMAN</td>
+      <td>[[1,256]]</td>
+      <td>[[1560,1816]]</td>
+      <td>P21359</td>
+      <td>[1]</td>
+      <td>Deletion</td>
+      <td>False</td>
+      <td>False</td>
+      <td>1</td>
+      <td>((1, 191), (192, 256))</td>
+      <td>((1560, 1750), (1752, 1816))</td>
+      <td>{"191":"K"}</td>
+      <td>[[191,191]]</td>
+      <td>[[1750,1750]]</td>
+      <td>2818</td>
+      <td>15</td>
+      <td>[[13, 13], [28, 28], [61, 61], [73, 73], [75, ...</td>
+      <td>256</td>
+      <td>[[1, 256]]</td>
+      <td>247.929</td>
+      <td>[]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>256</td>
+      <td>256</td>
+      <td>[[1, 256]]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>False</td>
+      <td>((1, 256),)</td>
+      <td>256</td>
+      <td>0.083881</td>
+      <td>0.089204</td>
+      <td>2.189</td>
+      <td>x-ray</td>
+      <td>X-ray diffraction</td>
+      <td>False</td>
+      <td>20110713</td>
+      <td>20101031</td>
+      <td>0.456830</td>
+      <td>-65</td>
+      <td>False</td>
+      <td>7</td>
+      <td>P21359-4</td>
+      <td>NF1_HUMAN</td>
+      <td>0.91</td>
+      <td>False</td>
+      <td>NF1_HUMAN</td>
+      <td>[[1,11]]</td>
+      <td>[[1581,1591]]</td>
+      <td>P21359</td>
+      <td>[0]</td>
+      <td>Safe</td>
+      <td>False</td>
+      <td>False</td>
+      <td>0</td>
+      <td>[[1,11]]</td>
+      <td>[[1581,1591]]</td>
+      <td>{"11":"T"}</td>
+      <td>[[11,11]]</td>
+      <td>[[1591,1591]]</td>
+      <td>1598</td>
+      <td>17</td>
+      <td>[[61, 61], [73, 74], [76, 76], [82, 83], [91, ...</td>
+      <td>256</td>
+      <td>[[1, 256]]</td>
+      <td>249.123</td>
+      <td>[]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>256</td>
+      <td>256</td>
+      <td>[[1, 256]]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>False</td>
+      <td>((1, 256),)</td>
+      <td>256</td>
+      <td>-0.153942</td>
+      <td>-0.143304</td>
+      <td>-66</td>
+      <td>False</td>
+      <td>-1</td>
+      <td>False</td>
+      <td>-1.000000</td>
+      <td>0.142857</td>
+      <td>((1590, 1591), (1593, 1593), (1626, 1626), (16...</td>
+      <td>()</td>
+      <td>(P21359-2, P21359-4)</td>
+      <td>False</td>
+      <td>-1</td>
+    </tr>
+    <tr>
+      <th>31</th>
+      <td>1</td>
+      <td>A</td>
+      <td>A</td>
+      <td>A</td>
+      <td>1</td>
+      <td>1</td>
+      <td>polypeptide(L)</td>
+      <td>[[1,24],[28,235],[237,238],[240,256]]</td>
+      <td>[[31,32],[34,34],[67,67],[72,72],[148,149],[15...</td>
+      <td>1</td>
+      <td>B</td>
+      <td>B</td>
+      <td>B</td>
+      <td>1</td>
+      <td>1</td>
+      <td>polypeptide(L)</td>
+      <td>[[1,24],[28,28],[30,61],[63,63],[65,134],[136,...</td>
+      <td>[[31,32],[34,34],[67,67],[72,72],[148,149],[15...</td>
+      <td>3pg7</td>
+      <td>0</td>
+      <td>4</td>
+      <td>False</td>
+      <td>P21359-2</td>
+      <td>NF1_HUMAN</td>
+      <td>1.00</td>
+      <td>False</td>
+      <td>NF1_HUMAN</td>
+      <td>[[1,256]]</td>
+      <td>[[1560,1816]]</td>
+      <td>P21359</td>
+      <td>[1]</td>
+      <td>Deletion</td>
+      <td>False</td>
+      <td>False</td>
+      <td>1</td>
+      <td>((1, 191), (192, 256))</td>
+      <td>((1560, 1750), (1752, 1816))</td>
+      <td>{"191":"K"}</td>
+      <td>[[191,191]]</td>
+      <td>[[1750,1750]]</td>
+      <td>2818</td>
+      <td>15</td>
+      <td>[[13, 13], [28, 28], [61, 61], [73, 73], [75, ...</td>
+      <td>256</td>
+      <td>[[1, 256]]</td>
+      <td>247.929</td>
+      <td>[]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>256</td>
+      <td>256</td>
+      <td>[[1, 256]]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>False</td>
+      <td>((1, 256),)</td>
+      <td>256</td>
+      <td>0.083881</td>
+      <td>0.089204</td>
+      <td>2.189</td>
+      <td>x-ray</td>
+      <td>X-ray diffraction</td>
+      <td>False</td>
+      <td>20110713</td>
+      <td>20101031</td>
+      <td>0.456830</td>
+      <td>-65</td>
+      <td>False</td>
+      <td>7</td>
+      <td>P21359-6</td>
+      <td>NF1_HUMAN</td>
+      <td>1.00</td>
+      <td>False</td>
+      <td>NF1_HUMAN</td>
+      <td>[[1,256]]</td>
+      <td>[[1560,1816]]</td>
+      <td>P21359</td>
+      <td>[1]</td>
+      <td>Deletion</td>
+      <td>False</td>
+      <td>False</td>
+      <td>1</td>
+      <td>((1, 191), (192, 256))</td>
+      <td>((1560, 1750), (1752, 1816))</td>
+      <td>{"191":"K"}</td>
+      <td>[[191,191]]</td>
+      <td>[[1750,1750]]</td>
+      <td>2836</td>
+      <td>17</td>
+      <td>[[61, 61], [73, 74], [76, 76], [82, 83], [91, ...</td>
+      <td>256</td>
+      <td>[[1, 256]]</td>
+      <td>249.123</td>
+      <td>[]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>256</td>
+      <td>256</td>
+      <td>[[1, 256]]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>False</td>
+      <td>((1, 256),)</td>
+      <td>256</td>
+      <td>0.082643</td>
+      <td>0.088638</td>
+      <td>-66</td>
+      <td>False</td>
+      <td>8</td>
+      <td>False</td>
+      <td>0.142857</td>
+      <td>0.125000</td>
+      <td>((1590, 1591), (1593, 1593), (1626, 1626), (16...</td>
+      <td>((1590, 1591), (1593, 1593), (1626, 1626), (16...</td>
+      <td>(P21359-2, P21359-6)</td>
+      <td>False</td>
+      <td>9</td>
+    </tr>
+    <tr>
+      <th>32</th>
+      <td>1</td>
+      <td>B</td>
+      <td>B</td>
+      <td>B</td>
+      <td>1</td>
+      <td>1</td>
+      <td>polypeptide(L)</td>
+      <td>[[1,24],[28,28],[30,61],[63,63],[65,134],[136,...</td>
+      <td>[[31,32],[34,34],[67,67],[72,72],[148,149],[15...</td>
+      <td>1</td>
+      <td>A</td>
+      <td>A</td>
+      <td>A</td>
+      <td>1</td>
+      <td>1</td>
+      <td>polypeptide(L)</td>
+      <td>[[1,24],[28,235],[237,238],[240,256]]</td>
+      <td>[[31,32],[34,34],[67,67],[72,72],[148,149],[15...</td>
+      <td>3pg7</td>
+      <td>0</td>
+      <td>4</td>
+      <td>False</td>
+      <td>P21359-2</td>
+      <td>NF1_HUMAN</td>
+      <td>1.00</td>
+      <td>False</td>
+      <td>NF1_HUMAN</td>
+      <td>[[1,256]]</td>
+      <td>[[1560,1816]]</td>
+      <td>P21359</td>
+      <td>[1]</td>
+      <td>Deletion</td>
+      <td>False</td>
+      <td>False</td>
+      <td>1</td>
+      <td>((1, 191), (192, 256))</td>
+      <td>((1560, 1750), (1752, 1816))</td>
+      <td>{"191":"K"}</td>
+      <td>[[191,191]]</td>
+      <td>[[1750,1750]]</td>
+      <td>2818</td>
+      <td>17</td>
+      <td>[[61, 61], [73, 74], [76, 76], [82, 83], [91, ...</td>
+      <td>256</td>
+      <td>[[1, 256]]</td>
+      <td>249.123</td>
+      <td>[]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>256</td>
+      <td>256</td>
+      <td>[[1, 256]]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>False</td>
+      <td>((1, 256),)</td>
+      <td>256</td>
+      <td>0.083171</td>
+      <td>0.089204</td>
+      <td>2.189</td>
+      <td>x-ray</td>
+      <td>X-ray diffraction</td>
+      <td>False</td>
+      <td>20110713</td>
+      <td>20101031</td>
+      <td>0.456830</td>
+      <td>-66</td>
+      <td>False</td>
+      <td>8</td>
+      <td>P21359-4</td>
+      <td>NF1_HUMAN</td>
+      <td>0.91</td>
+      <td>False</td>
+      <td>NF1_HUMAN</td>
+      <td>[[1,11]]</td>
+      <td>[[1581,1591]]</td>
+      <td>P21359</td>
+      <td>[0]</td>
+      <td>Safe</td>
+      <td>False</td>
+      <td>False</td>
+      <td>0</td>
+      <td>[[1,11]]</td>
+      <td>[[1581,1591]]</td>
+      <td>{"11":"T"}</td>
+      <td>[[11,11]]</td>
+      <td>[[1591,1591]]</td>
+      <td>1598</td>
+      <td>15</td>
+      <td>[[13, 13], [28, 28], [61, 61], [73, 73], [75, ...</td>
+      <td>256</td>
+      <td>[[1, 256]]</td>
+      <td>247.929</td>
+      <td>[]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>256</td>
+      <td>256</td>
+      <td>[[1, 256]]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>False</td>
+      <td>((1, 256),)</td>
+      <td>256</td>
+      <td>-0.152691</td>
+      <td>-0.143304</td>
+      <td>-65</td>
+      <td>False</td>
+      <td>-1</td>
+      <td>False</td>
+      <td>-1.000000</td>
+      <td>0.125000</td>
+      <td>((1590, 1591), (1593, 1593), (1626, 1626), (16...</td>
+      <td>()</td>
+      <td>(P21359-2, P21359-4)</td>
+      <td>False</td>
+      <td>-1</td>
+    </tr>
+    <tr>
+      <th>33</th>
+      <td>1</td>
+      <td>B</td>
+      <td>B</td>
+      <td>B</td>
+      <td>1</td>
+      <td>1</td>
+      <td>polypeptide(L)</td>
+      <td>[[1,24],[28,28],[30,61],[63,63],[65,134],[136,...</td>
+      <td>[[31,32],[34,34],[67,67],[72,72],[148,149],[15...</td>
+      <td>1</td>
+      <td>A</td>
+      <td>A</td>
+      <td>A</td>
+      <td>1</td>
+      <td>1</td>
+      <td>polypeptide(L)</td>
+      <td>[[1,24],[28,235],[237,238],[240,256]]</td>
+      <td>[[31,32],[34,34],[67,67],[72,72],[148,149],[15...</td>
+      <td>3pg7</td>
+      <td>0</td>
+      <td>4</td>
+      <td>False</td>
+      <td>P21359-2</td>
+      <td>NF1_HUMAN</td>
+      <td>1.00</td>
+      <td>False</td>
+      <td>NF1_HUMAN</td>
+      <td>[[1,256]]</td>
+      <td>[[1560,1816]]</td>
+      <td>P21359</td>
+      <td>[1]</td>
+      <td>Deletion</td>
+      <td>False</td>
+      <td>False</td>
+      <td>1</td>
+      <td>((1, 191), (192, 256))</td>
+      <td>((1560, 1750), (1752, 1816))</td>
+      <td>{"191":"K"}</td>
+      <td>[[191,191]]</td>
+      <td>[[1750,1750]]</td>
+      <td>2818</td>
+      <td>17</td>
+      <td>[[61, 61], [73, 74], [76, 76], [82, 83], [91, ...</td>
+      <td>256</td>
+      <td>[[1, 256]]</td>
+      <td>249.123</td>
+      <td>[]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>256</td>
+      <td>256</td>
+      <td>[[1, 256]]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>False</td>
+      <td>((1, 256),)</td>
+      <td>256</td>
+      <td>0.083171</td>
+      <td>0.089204</td>
+      <td>2.189</td>
+      <td>x-ray</td>
+      <td>X-ray diffraction</td>
+      <td>False</td>
+      <td>20110713</td>
+      <td>20101031</td>
+      <td>0.456830</td>
+      <td>-66</td>
+      <td>False</td>
+      <td>8</td>
+      <td>P21359-6</td>
+      <td>NF1_HUMAN</td>
+      <td>1.00</td>
+      <td>False</td>
+      <td>NF1_HUMAN</td>
+      <td>[[1,256]]</td>
+      <td>[[1560,1816]]</td>
+      <td>P21359</td>
+      <td>[1]</td>
+      <td>Deletion</td>
+      <td>False</td>
+      <td>False</td>
+      <td>1</td>
+      <td>((1, 191), (192, 256))</td>
+      <td>((1560, 1750), (1752, 1816))</td>
+      <td>{"191":"K"}</td>
+      <td>[[191,191]]</td>
+      <td>[[1750,1750]]</td>
+      <td>2836</td>
+      <td>15</td>
+      <td>[[13, 13], [28, 28], [61, 61], [73, 73], [75, ...</td>
+      <td>256</td>
+      <td>[[1, 256]]</td>
+      <td>247.929</td>
+      <td>[]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>256</td>
+      <td>256</td>
+      <td>[[1, 256]]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>False</td>
+      <td>((1, 256),)</td>
+      <td>256</td>
+      <td>0.083349</td>
+      <td>0.088638</td>
+      <td>-65</td>
+      <td>False</td>
+      <td>7</td>
+      <td>False</td>
+      <td>0.142857</td>
+      <td>0.125000</td>
+      <td>((1590, 1591), (1593, 1593), (1626, 1626), (16...</td>
+      <td>((1590, 1591), (1593, 1593), (1626, 1626), (16...</td>
+      <td>(P21359-2, P21359-6)</td>
+      <td>False</td>
+      <td>10</td>
+    </tr>
+    <tr>
+      <th>34</th>
+      <td>2</td>
+      <td>D</td>
+      <td>D</td>
+      <td>D</td>
+      <td>1</td>
+      <td>1</td>
+      <td>polypeptide(L)</td>
+      <td>[[12,53],[55,76],[78,80],[82,85],[87,100],[102...</td>
+      <td>[[99,99],[194,194],[197,197],[199,201]]</td>
+      <td>2</td>
+      <td>B</td>
+      <td>B</td>
+      <td>B</td>
+      <td>1</td>
+      <td>1</td>
+      <td>polypeptide(L)</td>
+      <td>[[12,48],[50,53],[55,76],[78,80],[82,85],[87,1...</td>
+      <td>[[125,125],[231,231],[234,235],[237,238],[241,...</td>
+      <td>6ob2</td>
+      <td>0</td>
+      <td>9</td>
+      <td>False</td>
+      <td>P21359-2</td>
+      <td>NF1_HUMAN</td>
+      <td>1.00</td>
+      <td>False</td>
+      <td>NF1_HUMAN</td>
+      <td>[[2,256]]</td>
+      <td>[[1209,1463]]</td>
+      <td>P21359</td>
+      <td>[0]</td>
+      <td>Safe</td>
+      <td>False</td>
+      <td>False</td>
+      <td>0</td>
+      <td>[[2,256]]</td>
+      <td>[[1209,1463]]</td>
+      <td>{}</td>
+      <td>[]</td>
+      <td>[]</td>
+      <td>2818</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>245</td>
+      <td>[[12, 256]]</td>
+      <td>239.938</td>
+      <td>[[1, 1]]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>256</td>
+      <td>256</td>
+      <td>[[1, 256]]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>False</td>
+      <td>((12, 256),)</td>
+      <td>245</td>
+      <td>0.080586</td>
+      <td>0.080586</td>
+      <td>2.845</td>
+      <td>x-ray</td>
+      <td>X-ray diffraction</td>
+      <td>False</td>
+      <td>20191113</td>
+      <td>20190319</td>
+      <td>0.351494</td>
+      <td>-68</td>
+      <td>False</td>
+      <td>9</td>
+      <td>P21359</td>
+      <td>NF1_HUMAN</td>
+      <td>0.92</td>
+      <td>True</td>
+      <td>NF1_HUMAN</td>
+      <td>[[2,256]]</td>
+      <td>[[1209,1484]]</td>
+      <td>P21359</td>
+      <td>[21]</td>
+      <td>Deletion</td>
+      <td>False</td>
+      <td>False</td>
+      <td>21</td>
+      <td>((2, 164), (165, 256))</td>
+      <td>((1209, 1371), (1393, 1484))</td>
+      <td>{"164":"A"}</td>
+      <td>[[164,164]]</td>
+      <td>[[1371,1371]]</td>
+      <td>2839</td>
+      <td>8</td>
+      <td>[[18, 19], [22, 22], [191, 192], [202, 202], [...</td>
+      <td>241</td>
+      <td>[[12, 103], [107, 255]]</td>
+      <td>236.933</td>
+      <td>[[1, 1]]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>256</td>
+      <td>256</td>
+      <td>[[1, 256]]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>False</td>
+      <td>((12, 103), (107, 255))</td>
+      <td>241</td>
+      <td>0.039043</td>
+      <td>0.041861</td>
+      <td>-66</td>
+      <td>False</td>
+      <td>14</td>
+      <td>False</td>
+      <td>0.111111</td>
+      <td>0.071429</td>
       <td>((1306, 1306), (1401, 1401), (1404, 1404), (14...</td>
       <td>((1332, 1332), (1459, 1459), (1462, 1463), (14...</td>
-      <td>((1456, 1456), (1459, 1460), (1462, 1463), (14...</td>
-      <td>()</td>
-    </tr>
-    <tr>
-      <th>i_group</th>
-      <td>(P21359-2, P21359-6)</td>
-      <td>(P21359-2, P21359-4)</td>
       <td>(P21359-2, P21359)</td>
-      <td>(P21359-2, P21359-4)</td>
-      <td>(P21359-2, P21359)</td>
-      <td>(P21359-2, P21359-6)</td>
-      <td>(P21359-2, P21359-6)</td>
-      <td>(P21359-2, P21359-4)</td>
-      <td>(P21359-2, P21359-4)</td>
-      <td>(P21359-2, P21359-4)</td>
+      <td>False</td>
+      <td>18</td>
     </tr>
     <tr>
-      <th>i_select_tag</th>
-      <td>True</td>
-      <td>True</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>True</td>
-      <td>False</td>
-      <td>False</td>
-      <td>True</td>
-      <td>False</td>
-    </tr>
-    <tr>
-      <th>i_select_rank</th>
-      <td>11</td>
-      <td>1</td>
-      <td>4</td>
-      <td>-1</td>
-      <td>13</td>
-      <td>12</td>
-      <td>17</td>
-      <td>4</td>
+      <th>35</th>
       <td>2</td>
-      <td>-1</td>
+      <td>B</td>
+      <td>B</td>
+      <td>B</td>
+      <td>1</td>
+      <td>1</td>
+      <td>polypeptide(L)</td>
+      <td>[[12,48],[50,53],[55,76],[78,80],[82,85],[87,1...</td>
+      <td>[[125,125],[231,231],[234,235],[237,238],[241,...</td>
+      <td>2</td>
+      <td>D</td>
+      <td>D</td>
+      <td>D</td>
+      <td>1</td>
+      <td>1</td>
+      <td>polypeptide(L)</td>
+      <td>[[12,53],[55,76],[78,80],[82,85],[87,100],[102...</td>
+      <td>[[99,99],[194,194],[197,197],[199,201]]</td>
+      <td>6ob2</td>
+      <td>0</td>
+      <td>9</td>
+      <td>False</td>
+      <td>P21359-2</td>
+      <td>NF1_HUMAN</td>
+      <td>1.00</td>
+      <td>False</td>
+      <td>NF1_HUMAN</td>
+      <td>[[2,256]]</td>
+      <td>[[1209,1463]]</td>
+      <td>P21359</td>
+      <td>[0]</td>
+      <td>Safe</td>
+      <td>False</td>
+      <td>False</td>
+      <td>0</td>
+      <td>[[2,256]]</td>
+      <td>[[1209,1463]]</td>
+      <td>{}</td>
+      <td>[]</td>
+      <td>[]</td>
+      <td>2818</td>
+      <td>8</td>
+      <td>[[18, 19], [22, 22], [191, 192], [202, 202], [...</td>
+      <td>241</td>
+      <td>[[12, 103], [107, 255]]</td>
+      <td>236.933</td>
+      <td>[[1, 1]]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>256</td>
+      <td>256</td>
+      <td>[[1, 256]]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>False</td>
+      <td>((12, 103), (107, 255))</td>
+      <td>241</td>
+      <td>0.073786</td>
+      <td>0.076625</td>
+      <td>2.845</td>
+      <td>x-ray</td>
+      <td>X-ray diffraction</td>
+      <td>False</td>
+      <td>20191113</td>
+      <td>20190319</td>
+      <td>0.351494</td>
+      <td>-66</td>
+      <td>False</td>
+      <td>14</td>
+      <td>P21359</td>
+      <td>NF1_HUMAN</td>
+      <td>0.92</td>
+      <td>True</td>
+      <td>NF1_HUMAN</td>
+      <td>[[2,256]]</td>
+      <td>[[1209,1484]]</td>
+      <td>P21359</td>
+      <td>[21]</td>
+      <td>Deletion</td>
+      <td>False</td>
+      <td>False</td>
+      <td>21</td>
+      <td>((2, 164), (165, 256))</td>
+      <td>((1209, 1371), (1393, 1484))</td>
+      <td>{"164":"A"}</td>
+      <td>[[164,164]]</td>
+      <td>[[1371,1371]]</td>
+      <td>2839</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>245</td>
+      <td>[[12, 256]]</td>
+      <td>239.938</td>
+      <td>[[1, 1]]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>256</td>
+      <td>256</td>
+      <td>[[1, 256]]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>False</td>
+      <td>((12, 256),)</td>
+      <td>245</td>
+      <td>0.045793</td>
+      <td>0.045793</td>
+      <td>-68</td>
+      <td>False</td>
+      <td>11</td>
+      <td>False</td>
+      <td>0.090909</td>
+      <td>0.071429</td>
+      <td>((1332, 1332), (1438, 1438), (1441, 1442), (14...</td>
+      <td>((1306, 1306), (1422, 1422), (1425, 1425), (14...</td>
+      <td>(P21359-2, P21359)</td>
+      <td>False</td>
+      <td>16</td>
+    </tr>
+    <tr>
+      <th>36</th>
+      <td>2</td>
+      <td>B</td>
+      <td>B</td>
+      <td>B</td>
+      <td>1</td>
+      <td>1</td>
+      <td>polypeptide(L)</td>
+      <td>[[12,48],[50,53],[55,76],[78,80],[82,85],[87,1...</td>
+      <td>[[125,125],[231,231],[234,235],[237,238],[241,...</td>
+      <td>2</td>
+      <td>D</td>
+      <td>D</td>
+      <td>D</td>
+      <td>1</td>
+      <td>1</td>
+      <td>polypeptide(L)</td>
+      <td>[[12,53],[55,76],[78,80],[82,85],[87,100],[102...</td>
+      <td>[[99,99],[194,194],[197,197],[199,201]]</td>
+      <td>6ob2</td>
+      <td>0</td>
+      <td>9</td>
+      <td>False</td>
+      <td>P21359-2</td>
+      <td>NF1_HUMAN</td>
+      <td>1.00</td>
+      <td>False</td>
+      <td>NF1_HUMAN</td>
+      <td>[[2,256]]</td>
+      <td>[[1209,1463]]</td>
+      <td>P21359</td>
+      <td>[0]</td>
+      <td>Safe</td>
+      <td>False</td>
+      <td>False</td>
+      <td>0</td>
+      <td>[[2,256]]</td>
+      <td>[[1209,1463]]</td>
+      <td>{}</td>
+      <td>[]</td>
+      <td>[]</td>
+      <td>2818</td>
+      <td>8</td>
+      <td>[[18, 19], [22, 22], [191, 192], [202, 202], [...</td>
+      <td>241</td>
+      <td>[[12, 103], [107, 255]]</td>
+      <td>236.933</td>
+      <td>[[1, 1]]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>256</td>
+      <td>256</td>
+      <td>[[1, 256]]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>False</td>
+      <td>((12, 103), (107, 255))</td>
+      <td>241</td>
+      <td>0.073786</td>
+      <td>0.076625</td>
+      <td>2.845</td>
+      <td>x-ray</td>
+      <td>X-ray diffraction</td>
+      <td>False</td>
+      <td>20191113</td>
+      <td>20190319</td>
+      <td>0.351494</td>
+      <td>-66</td>
+      <td>False</td>
+      <td>14</td>
+      <td>P21359-4</td>
+      <td>NF1_HUMAN</td>
+      <td>0.92</td>
+      <td>False</td>
+      <td>NF1_HUMAN</td>
+      <td>[[2,256]]</td>
+      <td>[[1209,1484]]</td>
+      <td>P21359</td>
+      <td>[21]</td>
+      <td>Deletion</td>
+      <td>False</td>
+      <td>False</td>
+      <td>21</td>
+      <td>((2, 164), (165, 256))</td>
+      <td>((1209, 1371), (1393, 1484))</td>
+      <td>{"164":"A"}</td>
+      <td>[[164,164]]</td>
+      <td>[[1371,1371]]</td>
+      <td>1598</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>245</td>
+      <td>[[12, 256]]</td>
+      <td>239.938</td>
+      <td>[[1, 1]]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>256</td>
+      <td>256</td>
+      <td>[[1, 256]]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>False</td>
+      <td>((12, 256),)</td>
+      <td>245</td>
+      <td>0.081355</td>
+      <td>0.081355</td>
+      <td>-68</td>
+      <td>False</td>
+      <td>3</td>
+      <td>False</td>
+      <td>0.333333</td>
+      <td>0.071429</td>
+      <td>((1332, 1332), (1438, 1438), (1441, 1442), (14...</td>
+      <td>((1306, 1306), (1422, 1422), (1425, 1425), (14...</td>
+      <td>(P21359-2, P21359-4)</td>
+      <td>False</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <th>37</th>
+      <td>2</td>
+      <td>B</td>
+      <td>B</td>
+      <td>B</td>
+      <td>1</td>
+      <td>1</td>
+      <td>polypeptide(L)</td>
+      <td>[[12,48],[50,53],[55,76],[78,80],[82,85],[87,1...</td>
+      <td>[[125,125],[231,231],[234,235],[237,238],[241,...</td>
+      <td>2</td>
+      <td>D</td>
+      <td>D</td>
+      <td>D</td>
+      <td>1</td>
+      <td>1</td>
+      <td>polypeptide(L)</td>
+      <td>[[12,53],[55,76],[78,80],[82,85],[87,100],[102...</td>
+      <td>[[99,99],[194,194],[197,197],[199,201]]</td>
+      <td>6ob2</td>
+      <td>0</td>
+      <td>9</td>
+      <td>False</td>
+      <td>P21359-2</td>
+      <td>NF1_HUMAN</td>
+      <td>1.00</td>
+      <td>False</td>
+      <td>NF1_HUMAN</td>
+      <td>[[2,256]]</td>
+      <td>[[1209,1463]]</td>
+      <td>P21359</td>
+      <td>[0]</td>
+      <td>Safe</td>
+      <td>False</td>
+      <td>False</td>
+      <td>0</td>
+      <td>[[2,256]]</td>
+      <td>[[1209,1463]]</td>
+      <td>{}</td>
+      <td>[]</td>
+      <td>[]</td>
+      <td>2818</td>
+      <td>8</td>
+      <td>[[18, 19], [22, 22], [191, 192], [202, 202], [...</td>
+      <td>241</td>
+      <td>[[12, 103], [107, 255]]</td>
+      <td>236.933</td>
+      <td>[[1, 1]]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>256</td>
+      <td>256</td>
+      <td>[[1, 256]]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>False</td>
+      <td>((12, 103), (107, 255))</td>
+      <td>241</td>
+      <td>0.073786</td>
+      <td>0.076625</td>
+      <td>2.845</td>
+      <td>x-ray</td>
+      <td>X-ray diffraction</td>
+      <td>False</td>
+      <td>20191113</td>
+      <td>20190319</td>
+      <td>0.351494</td>
+      <td>-66</td>
+      <td>False</td>
+      <td>14</td>
+      <td>P21359-6</td>
+      <td>NF1_HUMAN</td>
+      <td>1.00</td>
+      <td>False</td>
+      <td>NF1_HUMAN</td>
+      <td>[[2,256]]</td>
+      <td>[[1209,1463]]</td>
+      <td>P21359</td>
+      <td>[0]</td>
+      <td>Safe</td>
+      <td>False</td>
+      <td>False</td>
+      <td>0</td>
+      <td>[[2,256]]</td>
+      <td>[[1209,1463]]</td>
+      <td>{}</td>
+      <td>[]</td>
+      <td>[]</td>
+      <td>2836</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>245</td>
+      <td>[[12, 256]]</td>
+      <td>239.938</td>
+      <td>[[1, 1]]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>256</td>
+      <td>256</td>
+      <td>[[1, 256]]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>False</td>
+      <td>((12, 256),)</td>
+      <td>245</td>
+      <td>0.080075</td>
+      <td>0.080075</td>
+      <td>-68</td>
+      <td>False</td>
+      <td>9</td>
+      <td>False</td>
+      <td>0.111111</td>
+      <td>0.071429</td>
+      <td>((1332, 1332), (1438, 1438), (1441, 1442), (14...</td>
+      <td>((1306, 1306), (1401, 1401), (1404, 1404), (14...</td>
+      <td>(P21359-2, P21359-6)</td>
+      <td>False</td>
+      <td>17</td>
+    </tr>
+    <tr>
+      <th>38</th>
+      <td>2</td>
+      <td>D</td>
+      <td>D</td>
+      <td>D</td>
+      <td>1</td>
+      <td>1</td>
+      <td>polypeptide(L)</td>
+      <td>[[12,53],[55,76],[78,80],[82,85],[87,100],[102...</td>
+      <td>[[99,99],[194,194],[197,197],[199,201]]</td>
+      <td>2</td>
+      <td>B</td>
+      <td>B</td>
+      <td>B</td>
+      <td>1</td>
+      <td>1</td>
+      <td>polypeptide(L)</td>
+      <td>[[12,48],[50,53],[55,76],[78,80],[82,85],[87,1...</td>
+      <td>[[125,125],[231,231],[234,235],[237,238],[241,...</td>
+      <td>6ob2</td>
+      <td>0</td>
+      <td>9</td>
+      <td>False</td>
+      <td>P21359-2</td>
+      <td>NF1_HUMAN</td>
+      <td>1.00</td>
+      <td>False</td>
+      <td>NF1_HUMAN</td>
+      <td>[[2,256]]</td>
+      <td>[[1209,1463]]</td>
+      <td>P21359</td>
+      <td>[0]</td>
+      <td>Safe</td>
+      <td>False</td>
+      <td>False</td>
+      <td>0</td>
+      <td>[[2,256]]</td>
+      <td>[[1209,1463]]</td>
+      <td>{}</td>
+      <td>[]</td>
+      <td>[]</td>
+      <td>2818</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>245</td>
+      <td>[[12, 256]]</td>
+      <td>239.938</td>
+      <td>[[1, 1]]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>256</td>
+      <td>256</td>
+      <td>[[1, 256]]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>False</td>
+      <td>((12, 256),)</td>
+      <td>245</td>
+      <td>0.080586</td>
+      <td>0.080586</td>
+      <td>2.845</td>
+      <td>x-ray</td>
+      <td>X-ray diffraction</td>
+      <td>False</td>
+      <td>20191113</td>
+      <td>20190319</td>
+      <td>0.351494</td>
+      <td>-68</td>
+      <td>False</td>
+      <td>9</td>
+      <td>P21359-4</td>
+      <td>NF1_HUMAN</td>
+      <td>0.92</td>
+      <td>False</td>
+      <td>NF1_HUMAN</td>
+      <td>[[2,256]]</td>
+      <td>[[1209,1484]]</td>
+      <td>P21359</td>
+      <td>[21]</td>
+      <td>Deletion</td>
+      <td>False</td>
+      <td>False</td>
+      <td>21</td>
+      <td>((2, 164), (165, 256))</td>
+      <td>((1209, 1371), (1393, 1484))</td>
+      <td>{"164":"A"}</td>
+      <td>[[164,164]]</td>
+      <td>[[1371,1371]]</td>
+      <td>1598</td>
+      <td>8</td>
+      <td>[[18, 19], [22, 22], [191, 192], [202, 202], [...</td>
+      <td>241</td>
+      <td>[[12, 103], [107, 255]]</td>
+      <td>236.933</td>
+      <td>[[1, 1]]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>256</td>
+      <td>256</td>
+      <td>[[1, 256]]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>False</td>
+      <td>((12, 103), (107, 255))</td>
+      <td>241</td>
+      <td>0.069364</td>
+      <td>0.074370</td>
+      <td>-66</td>
+      <td>False</td>
+      <td>6</td>
+      <td>False</td>
+      <td>0.166667</td>
+      <td>0.111111</td>
+      <td>((1306, 1306), (1401, 1401), (1404, 1404), (14...</td>
+      <td>((1332, 1332), (1459, 1459), (1462, 1463), (14...</td>
+      <td>(P21359-2, P21359-4)</td>
+      <td>False</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <th>39</th>
+      <td>2</td>
+      <td>D</td>
+      <td>D</td>
+      <td>D</td>
+      <td>1</td>
+      <td>1</td>
+      <td>polypeptide(L)</td>
+      <td>[[12,53],[55,76],[78,80],[82,85],[87,100],[102...</td>
+      <td>[[99,99],[194,194],[197,197],[199,201]]</td>
+      <td>2</td>
+      <td>B</td>
+      <td>B</td>
+      <td>B</td>
+      <td>1</td>
+      <td>1</td>
+      <td>polypeptide(L)</td>
+      <td>[[12,48],[50,53],[55,76],[78,80],[82,85],[87,1...</td>
+      <td>[[125,125],[231,231],[234,235],[237,238],[241,...</td>
+      <td>6ob2</td>
+      <td>0</td>
+      <td>9</td>
+      <td>False</td>
+      <td>P21359-2</td>
+      <td>NF1_HUMAN</td>
+      <td>1.00</td>
+      <td>False</td>
+      <td>NF1_HUMAN</td>
+      <td>[[2,256]]</td>
+      <td>[[1209,1463]]</td>
+      <td>P21359</td>
+      <td>[0]</td>
+      <td>Safe</td>
+      <td>False</td>
+      <td>False</td>
+      <td>0</td>
+      <td>[[2,256]]</td>
+      <td>[[1209,1463]]</td>
+      <td>{}</td>
+      <td>[]</td>
+      <td>[]</td>
+      <td>2818</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>245</td>
+      <td>[[12, 256]]</td>
+      <td>239.938</td>
+      <td>[[1, 1]]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>256</td>
+      <td>256</td>
+      <td>[[1, 256]]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>False</td>
+      <td>((12, 256),)</td>
+      <td>245</td>
+      <td>0.080586</td>
+      <td>0.080586</td>
+      <td>2.845</td>
+      <td>x-ray</td>
+      <td>X-ray diffraction</td>
+      <td>False</td>
+      <td>20191113</td>
+      <td>20190319</td>
+      <td>0.351494</td>
+      <td>-68</td>
+      <td>False</td>
+      <td>9</td>
+      <td>P21359-6</td>
+      <td>NF1_HUMAN</td>
+      <td>1.00</td>
+      <td>False</td>
+      <td>NF1_HUMAN</td>
+      <td>[[2,256]]</td>
+      <td>[[1209,1463]]</td>
+      <td>P21359</td>
+      <td>[0]</td>
+      <td>Safe</td>
+      <td>False</td>
+      <td>False</td>
+      <td>0</td>
+      <td>[[2,256]]</td>
+      <td>[[1209,1463]]</td>
+      <td>{}</td>
+      <td>[]</td>
+      <td>[]</td>
+      <td>2836</td>
+      <td>8</td>
+      <td>[[18, 19], [22, 22], [191, 192], [202, 202], [...</td>
+      <td>241</td>
+      <td>[[12, 103], [107, 255]]</td>
+      <td>236.933</td>
+      <td>[[1, 1]]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>256</td>
+      <td>256</td>
+      <td>[[1, 256]]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>False</td>
+      <td>((12, 103), (107, 255))</td>
+      <td>241</td>
+      <td>0.073318</td>
+      <td>0.076139</td>
+      <td>-66</td>
+      <td>False</td>
+      <td>14</td>
+      <td>False</td>
+      <td>0.111111</td>
+      <td>0.071429</td>
+      <td>((1306, 1306), (1401, 1401), (1404, 1404), (14...</td>
+      <td>((1332, 1332), (1438, 1438), (1441, 1442), (14...</td>
+      <td>(P21359-2, P21359-6)</td>
+      <td>False</td>
+      <td>18</td>
+    </tr>
+    <tr>
+      <th>40</th>
+      <td>2</td>
+      <td>D</td>
+      <td>D</td>
+      <td>D</td>
+      <td>1</td>
+      <td>1</td>
+      <td>polypeptide(L)</td>
+      <td>[[10,48],[50,53],[55,76],[79,80],[82,85],[87,9...</td>
+      <td>[[91,91],[95,95],[99,99],[194,195],[197,197],[...</td>
+      <td>2</td>
+      <td>B</td>
+      <td>B</td>
+      <td>B</td>
+      <td>1</td>
+      <td>1</td>
+      <td>polypeptide(L)</td>
+      <td>[[12,48],[50,53],[55,73],[75,76],[78,80],[82,8...</td>
+      <td>[[228,228],[231,232],[234,235],[237,238],[241,...</td>
+      <td>6ob3</td>
+      <td>0</td>
+      <td>10</td>
+      <td>False</td>
+      <td>P21359-2</td>
+      <td>NF1_HUMAN</td>
+      <td>1.00</td>
+      <td>False</td>
+      <td>NF1_HUMAN</td>
+      <td>[[2,256]]</td>
+      <td>[[1209,1463]]</td>
+      <td>P21359</td>
+      <td>[0]</td>
+      <td>Safe</td>
+      <td>False</td>
+      <td>False</td>
+      <td>0</td>
+      <td>[[2,256]]</td>
+      <td>[[1209,1463]]</td>
+      <td>{}</td>
+      <td>[]</td>
+      <td>[]</td>
+      <td>2818</td>
+      <td>7</td>
+      <td>[[41, 41], [44, 44], [126, 126], [133, 133], [...</td>
+      <td>247</td>
+      <td>[[10, 256]]</td>
+      <td>244.327</td>
+      <td>[[1, 1]]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>256</td>
+      <td>256</td>
+      <td>[[1, 256]]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>False</td>
+      <td>((10, 256),)</td>
+      <td>247</td>
+      <td>0.080083</td>
+      <td>0.082567</td>
+      <td>2.100</td>
+      <td>x-ray</td>
+      <td>X-ray diffraction</td>
+      <td>False</td>
+      <td>20191113</td>
+      <td>20190319</td>
+      <td>0.476190</td>
+      <td>-68</td>
+      <td>False</td>
+      <td>10</td>
+      <td>P21359</td>
+      <td>NF1_HUMAN</td>
+      <td>0.92</td>
+      <td>True</td>
+      <td>NF1_HUMAN</td>
+      <td>[[2,256]]</td>
+      <td>[[1209,1484]]</td>
+      <td>P21359</td>
+      <td>[21]</td>
+      <td>Deletion</td>
+      <td>False</td>
+      <td>False</td>
+      <td>21</td>
+      <td>((2, 164), (165, 256))</td>
+      <td>((1209, 1371), (1393, 1484))</td>
+      <td>{"164":"A"}</td>
+      <td>[[164,164]]</td>
+      <td>[[1371,1371]]</td>
+      <td>2839</td>
+      <td>10</td>
+      <td>[[41, 41], [51, 51], [69, 69], [129, 130], [13...</td>
+      <td>245</td>
+      <td>[[12, 256]]</td>
+      <td>241.495</td>
+      <td>[[1, 1]]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>256</td>
+      <td>256</td>
+      <td>[[1, 256]]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>False</td>
+      <td>((12, 256),)</td>
+      <td>245</td>
+      <td>0.042271</td>
+      <td>0.045793</td>
+      <td>-66</td>
+      <td>False</td>
+      <td>13</td>
+      <td>False</td>
+      <td>0.100000</td>
+      <td>0.076923</td>
+      <td>((1298, 1298), (1302, 1302), (1306, 1306), (14...</td>
+      <td>((1456, 1456), (1459, 1460), (1462, 1463), (14...</td>
+      <td>(P21359-2, P21359)</td>
+      <td>True</td>
+      <td>17</td>
+    </tr>
+    <tr>
+      <th>41</th>
+      <td>2</td>
+      <td>B</td>
+      <td>B</td>
+      <td>B</td>
+      <td>1</td>
+      <td>1</td>
+      <td>polypeptide(L)</td>
+      <td>[[12,48],[50,53],[55,73],[75,76],[78,80],[82,8...</td>
+      <td>[[228,228],[231,232],[234,235],[237,238],[241,...</td>
+      <td>2</td>
+      <td>D</td>
+      <td>D</td>
+      <td>D</td>
+      <td>1</td>
+      <td>1</td>
+      <td>polypeptide(L)</td>
+      <td>[[10,48],[50,53],[55,76],[79,80],[82,85],[87,9...</td>
+      <td>[[91,91],[95,95],[99,99],[194,195],[197,197],[...</td>
+      <td>6ob3</td>
+      <td>0</td>
+      <td>10</td>
+      <td>False</td>
+      <td>P21359-2</td>
+      <td>NF1_HUMAN</td>
+      <td>1.00</td>
+      <td>False</td>
+      <td>NF1_HUMAN</td>
+      <td>[[2,256]]</td>
+      <td>[[1209,1463]]</td>
+      <td>P21359</td>
+      <td>[0]</td>
+      <td>Safe</td>
+      <td>False</td>
+      <td>False</td>
+      <td>0</td>
+      <td>[[2,256]]</td>
+      <td>[[1209,1463]]</td>
+      <td>{}</td>
+      <td>[]</td>
+      <td>[]</td>
+      <td>2818</td>
+      <td>10</td>
+      <td>[[41, 41], [51, 51], [69, 69], [129, 130], [13...</td>
+      <td>245</td>
+      <td>[[12, 256]]</td>
+      <td>241.495</td>
+      <td>[[1, 1]]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>256</td>
+      <td>256</td>
+      <td>[[1, 256]]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>False</td>
+      <td>((12, 256),)</td>
+      <td>245</td>
+      <td>0.077038</td>
+      <td>0.080586</td>
+      <td>2.100</td>
+      <td>x-ray</td>
+      <td>X-ray diffraction</td>
+      <td>False</td>
+      <td>20191113</td>
+      <td>20190319</td>
+      <td>0.476190</td>
+      <td>-66</td>
+      <td>False</td>
+      <td>11</td>
+      <td>P21359</td>
+      <td>NF1_HUMAN</td>
+      <td>0.92</td>
+      <td>True</td>
+      <td>NF1_HUMAN</td>
+      <td>[[2,256]]</td>
+      <td>[[1209,1484]]</td>
+      <td>P21359</td>
+      <td>[21]</td>
+      <td>Deletion</td>
+      <td>False</td>
+      <td>False</td>
+      <td>21</td>
+      <td>((2, 164), (165, 256))</td>
+      <td>((1209, 1371), (1393, 1484))</td>
+      <td>{"164":"A"}</td>
+      <td>[[164,164]]</td>
+      <td>[[1371,1371]]</td>
+      <td>2839</td>
+      <td>7</td>
+      <td>[[41, 41], [44, 44], [126, 126], [133, 133], [...</td>
+      <td>247</td>
+      <td>[[10, 256]]</td>
+      <td>244.327</td>
+      <td>[[1, 1]]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>256</td>
+      <td>256</td>
+      <td>[[1, 256]]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>False</td>
+      <td>((10, 256),)</td>
+      <td>247</td>
+      <td>0.045293</td>
+      <td>0.047759</td>
+      <td>-68</td>
+      <td>False</td>
+      <td>12</td>
+      <td>False</td>
+      <td>0.090909</td>
+      <td>0.083333</td>
+      <td>((1435, 1435), (1438, 1439), (1441, 1442), (14...</td>
+      <td>((1298, 1298), (1302, 1302), (1306, 1306), (14...</td>
+      <td>(P21359-2, P21359)</td>
+      <td>True</td>
+      <td>11</td>
+    </tr>
+    <tr>
+      <th>42</th>
+      <td>2</td>
+      <td>B</td>
+      <td>B</td>
+      <td>B</td>
+      <td>1</td>
+      <td>1</td>
+      <td>polypeptide(L)</td>
+      <td>[[12,48],[50,53],[55,73],[75,76],[78,80],[82,8...</td>
+      <td>[[228,228],[231,232],[234,235],[237,238],[241,...</td>
+      <td>2</td>
+      <td>D</td>
+      <td>D</td>
+      <td>D</td>
+      <td>1</td>
+      <td>1</td>
+      <td>polypeptide(L)</td>
+      <td>[[10,48],[50,53],[55,76],[79,80],[82,85],[87,9...</td>
+      <td>[[91,91],[95,95],[99,99],[194,195],[197,197],[...</td>
+      <td>6ob3</td>
+      <td>0</td>
+      <td>10</td>
+      <td>False</td>
+      <td>P21359-2</td>
+      <td>NF1_HUMAN</td>
+      <td>1.00</td>
+      <td>False</td>
+      <td>NF1_HUMAN</td>
+      <td>[[2,256]]</td>
+      <td>[[1209,1463]]</td>
+      <td>P21359</td>
+      <td>[0]</td>
+      <td>Safe</td>
+      <td>False</td>
+      <td>False</td>
+      <td>0</td>
+      <td>[[2,256]]</td>
+      <td>[[1209,1463]]</td>
+      <td>{}</td>
+      <td>[]</td>
+      <td>[]</td>
+      <td>2818</td>
+      <td>10</td>
+      <td>[[41, 41], [51, 51], [69, 69], [129, 130], [13...</td>
+      <td>245</td>
+      <td>[[12, 256]]</td>
+      <td>241.495</td>
+      <td>[[1, 1]]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>256</td>
+      <td>256</td>
+      <td>[[1, 256]]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>False</td>
+      <td>((12, 256),)</td>
+      <td>245</td>
+      <td>0.077038</td>
+      <td>0.080586</td>
+      <td>2.100</td>
+      <td>x-ray</td>
+      <td>X-ray diffraction</td>
+      <td>False</td>
+      <td>20191113</td>
+      <td>20190319</td>
+      <td>0.476190</td>
+      <td>-66</td>
+      <td>False</td>
+      <td>11</td>
+      <td>P21359-4</td>
+      <td>NF1_HUMAN</td>
+      <td>0.92</td>
+      <td>False</td>
+      <td>NF1_HUMAN</td>
+      <td>[[2,256]]</td>
+      <td>[[1209,1484]]</td>
+      <td>P21359</td>
+      <td>[21]</td>
+      <td>Deletion</td>
+      <td>False</td>
+      <td>False</td>
+      <td>21</td>
+      <td>((2, 164), (165, 256))</td>
+      <td>((1209, 1371), (1393, 1484))</td>
+      <td>{"164":"A"}</td>
+      <td>[[164,164]]</td>
+      <td>[[1371,1371]]</td>
+      <td>1598</td>
+      <td>7</td>
+      <td>[[41, 41], [44, 44], [126, 126], [133, 133], [...</td>
+      <td>247</td>
+      <td>[[10, 256]]</td>
+      <td>244.327</td>
+      <td>[[1, 1]]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>256</td>
+      <td>256</td>
+      <td>[[1, 256]]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>False</td>
+      <td>((10, 256),)</td>
+      <td>247</td>
+      <td>0.080468</td>
+      <td>0.084848</td>
+      <td>-68</td>
+      <td>False</td>
+      <td>4</td>
+      <td>False</td>
+      <td>0.250000</td>
+      <td>0.090909</td>
+      <td>((1435, 1435), (1438, 1439), (1441, 1442), (14...</td>
+      <td>((1298, 1298), (1302, 1302), (1306, 1306), (14...</td>
+      <td>(P21359-2, P21359-4)</td>
+      <td>True</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>43</th>
+      <td>2</td>
+      <td>B</td>
+      <td>B</td>
+      <td>B</td>
+      <td>1</td>
+      <td>1</td>
+      <td>polypeptide(L)</td>
+      <td>[[12,48],[50,53],[55,73],[75,76],[78,80],[82,8...</td>
+      <td>[[228,228],[231,232],[234,235],[237,238],[241,...</td>
+      <td>2</td>
+      <td>D</td>
+      <td>D</td>
+      <td>D</td>
+      <td>1</td>
+      <td>1</td>
+      <td>polypeptide(L)</td>
+      <td>[[10,48],[50,53],[55,76],[79,80],[82,85],[87,9...</td>
+      <td>[[91,91],[95,95],[99,99],[194,195],[197,197],[...</td>
+      <td>6ob3</td>
+      <td>0</td>
+      <td>10</td>
+      <td>False</td>
+      <td>P21359-2</td>
+      <td>NF1_HUMAN</td>
+      <td>1.00</td>
+      <td>False</td>
+      <td>NF1_HUMAN</td>
+      <td>[[2,256]]</td>
+      <td>[[1209,1463]]</td>
+      <td>P21359</td>
+      <td>[0]</td>
+      <td>Safe</td>
+      <td>False</td>
+      <td>False</td>
+      <td>0</td>
+      <td>[[2,256]]</td>
+      <td>[[1209,1463]]</td>
+      <td>{}</td>
+      <td>[]</td>
+      <td>[]</td>
+      <td>2818</td>
+      <td>10</td>
+      <td>[[41, 41], [51, 51], [69, 69], [129, 130], [13...</td>
+      <td>245</td>
+      <td>[[12, 256]]</td>
+      <td>241.495</td>
+      <td>[[1, 1]]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>256</td>
+      <td>256</td>
+      <td>[[1, 256]]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>False</td>
+      <td>((12, 256),)</td>
+      <td>245</td>
+      <td>0.077038</td>
+      <td>0.080586</td>
+      <td>2.100</td>
+      <td>x-ray</td>
+      <td>X-ray diffraction</td>
+      <td>False</td>
+      <td>20191113</td>
+      <td>20190319</td>
+      <td>0.476190</td>
+      <td>-66</td>
+      <td>False</td>
+      <td>11</td>
+      <td>P21359-6</td>
+      <td>NF1_HUMAN</td>
+      <td>1.00</td>
+      <td>False</td>
+      <td>NF1_HUMAN</td>
+      <td>[[2,256]]</td>
+      <td>[[1209,1463]]</td>
+      <td>P21359</td>
+      <td>[0]</td>
+      <td>Safe</td>
+      <td>False</td>
+      <td>False</td>
+      <td>0</td>
+      <td>[[2,256]]</td>
+      <td>[[1209,1463]]</td>
+      <td>{}</td>
+      <td>[]</td>
+      <td>[]</td>
+      <td>2836</td>
+      <td>7</td>
+      <td>[[41, 41], [44, 44], [126, 126], [133, 133], [...</td>
+      <td>247</td>
+      <td>[[10, 256]]</td>
+      <td>244.327</td>
+      <td>[[1, 1]]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>256</td>
+      <td>256</td>
+      <td>[[1, 256]]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>False</td>
+      <td>((10, 256),)</td>
+      <td>247</td>
+      <td>0.079575</td>
+      <td>0.082043</td>
+      <td>-68</td>
+      <td>False</td>
+      <td>10</td>
+      <td>False</td>
+      <td>0.100000</td>
+      <td>0.090909</td>
+      <td>((1435, 1435), (1438, 1439), (1441, 1442), (14...</td>
+      <td>((1298, 1298), (1302, 1302), (1306, 1306), (14...</td>
+      <td>(P21359-2, P21359-6)</td>
+      <td>True</td>
+      <td>11</td>
+    </tr>
+    <tr>
+      <th>44</th>
+      <td>2</td>
+      <td>D</td>
+      <td>D</td>
+      <td>D</td>
+      <td>1</td>
+      <td>1</td>
+      <td>polypeptide(L)</td>
+      <td>[[10,48],[50,53],[55,76],[79,80],[82,85],[87,9...</td>
+      <td>[[91,91],[95,95],[99,99],[194,195],[197,197],[...</td>
+      <td>2</td>
+      <td>B</td>
+      <td>B</td>
+      <td>B</td>
+      <td>1</td>
+      <td>1</td>
+      <td>polypeptide(L)</td>
+      <td>[[12,48],[50,53],[55,73],[75,76],[78,80],[82,8...</td>
+      <td>[[228,228],[231,232],[234,235],[237,238],[241,...</td>
+      <td>6ob3</td>
+      <td>0</td>
+      <td>10</td>
+      <td>False</td>
+      <td>P21359-2</td>
+      <td>NF1_HUMAN</td>
+      <td>1.00</td>
+      <td>False</td>
+      <td>NF1_HUMAN</td>
+      <td>[[2,256]]</td>
+      <td>[[1209,1463]]</td>
+      <td>P21359</td>
+      <td>[0]</td>
+      <td>Safe</td>
+      <td>False</td>
+      <td>False</td>
+      <td>0</td>
+      <td>[[2,256]]</td>
+      <td>[[1209,1463]]</td>
+      <td>{}</td>
+      <td>[]</td>
+      <td>[]</td>
+      <td>2818</td>
+      <td>7</td>
+      <td>[[41, 41], [44, 44], [126, 126], [133, 133], [...</td>
+      <td>247</td>
+      <td>[[10, 256]]</td>
+      <td>244.327</td>
+      <td>[[1, 1]]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>256</td>
+      <td>256</td>
+      <td>[[1, 256]]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>False</td>
+      <td>((10, 256),)</td>
+      <td>247</td>
+      <td>0.080083</td>
+      <td>0.082567</td>
+      <td>2.100</td>
+      <td>x-ray</td>
+      <td>X-ray diffraction</td>
+      <td>False</td>
+      <td>20191113</td>
+      <td>20190319</td>
+      <td>0.476190</td>
+      <td>-68</td>
+      <td>False</td>
+      <td>10</td>
+      <td>P21359-4</td>
+      <td>NF1_HUMAN</td>
+      <td>0.92</td>
+      <td>False</td>
+      <td>NF1_HUMAN</td>
+      <td>[[2,256]]</td>
+      <td>[[1209,1484]]</td>
+      <td>P21359</td>
+      <td>[21]</td>
+      <td>Deletion</td>
+      <td>False</td>
+      <td>False</td>
+      <td>21</td>
+      <td>((2, 164), (165, 256))</td>
+      <td>((1209, 1371), (1393, 1484))</td>
+      <td>{"164":"A"}</td>
+      <td>[[164,164]]</td>
+      <td>[[1371,1371]]</td>
+      <td>1598</td>
+      <td>10</td>
+      <td>[[41, 41], [51, 51], [69, 69], [129, 130], [13...</td>
+      <td>245</td>
+      <td>[[12, 256]]</td>
+      <td>241.495</td>
+      <td>[[1, 1]]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>256</td>
+      <td>256</td>
+      <td>[[1, 256]]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>False</td>
+      <td>((12, 256),)</td>
+      <td>245</td>
+      <td>0.075098</td>
+      <td>0.081355</td>
+      <td>-66</td>
+      <td>False</td>
+      <td>5</td>
+      <td>False</td>
+      <td>0.200000</td>
+      <td>0.100000</td>
+      <td>((1298, 1298), (1302, 1302), (1306, 1306), (14...</td>
+      <td>((1456, 1456), (1459, 1460), (1462, 1463), (14...</td>
+      <td>(P21359-2, P21359-4)</td>
+      <td>True</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>45</th>
+      <td>2</td>
+      <td>D</td>
+      <td>D</td>
+      <td>D</td>
+      <td>1</td>
+      <td>1</td>
+      <td>polypeptide(L)</td>
+      <td>[[10,48],[50,53],[55,76],[79,80],[82,85],[87,9...</td>
+      <td>[[91,91],[95,95],[99,99],[194,195],[197,197],[...</td>
+      <td>2</td>
+      <td>B</td>
+      <td>B</td>
+      <td>B</td>
+      <td>1</td>
+      <td>1</td>
+      <td>polypeptide(L)</td>
+      <td>[[12,48],[50,53],[55,73],[75,76],[78,80],[82,8...</td>
+      <td>[[228,228],[231,232],[234,235],[237,238],[241,...</td>
+      <td>6ob3</td>
+      <td>0</td>
+      <td>10</td>
+      <td>False</td>
+      <td>P21359-2</td>
+      <td>NF1_HUMAN</td>
+      <td>1.00</td>
+      <td>False</td>
+      <td>NF1_HUMAN</td>
+      <td>[[2,256]]</td>
+      <td>[[1209,1463]]</td>
+      <td>P21359</td>
+      <td>[0]</td>
+      <td>Safe</td>
+      <td>False</td>
+      <td>False</td>
+      <td>0</td>
+      <td>[[2,256]]</td>
+      <td>[[1209,1463]]</td>
+      <td>{}</td>
+      <td>[]</td>
+      <td>[]</td>
+      <td>2818</td>
+      <td>7</td>
+      <td>[[41, 41], [44, 44], [126, 126], [133, 133], [...</td>
+      <td>247</td>
+      <td>[[10, 256]]</td>
+      <td>244.327</td>
+      <td>[[1, 1]]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>256</td>
+      <td>256</td>
+      <td>[[1, 256]]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>False</td>
+      <td>((10, 256),)</td>
+      <td>247</td>
+      <td>0.080083</td>
+      <td>0.082567</td>
+      <td>2.100</td>
+      <td>x-ray</td>
+      <td>X-ray diffraction</td>
+      <td>False</td>
+      <td>20191113</td>
+      <td>20190319</td>
+      <td>0.476190</td>
+      <td>-68</td>
+      <td>False</td>
+      <td>10</td>
+      <td>P21359-6</td>
+      <td>NF1_HUMAN</td>
+      <td>1.00</td>
+      <td>False</td>
+      <td>NF1_HUMAN</td>
+      <td>[[2,256]]</td>
+      <td>[[1209,1463]]</td>
+      <td>P21359</td>
+      <td>[0]</td>
+      <td>Safe</td>
+      <td>False</td>
+      <td>False</td>
+      <td>0</td>
+      <td>[[2,256]]</td>
+      <td>[[1209,1463]]</td>
+      <td>{}</td>
+      <td>[]</td>
+      <td>[]</td>
+      <td>2836</td>
+      <td>10</td>
+      <td>[[41, 41], [51, 51], [69, 69], [129, 130], [13...</td>
+      <td>245</td>
+      <td>[[12, 256]]</td>
+      <td>241.495</td>
+      <td>[[1, 1]]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>256</td>
+      <td>256</td>
+      <td>[[1, 256]]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>False</td>
+      <td>((12, 256),)</td>
+      <td>245</td>
+      <td>0.076549</td>
+      <td>0.080075</td>
+      <td>-66</td>
+      <td>False</td>
+      <td>11</td>
+      <td>False</td>
+      <td>0.100000</td>
+      <td>0.090909</td>
+      <td>((1298, 1298), (1302, 1302), (1306, 1306), (14...</td>
+      <td>((1435, 1435), (1438, 1439), (1441, 1442), (14...</td>
+      <td>(P21359-2, P21359-6)</td>
+      <td>True</td>
+      <td>12</td>
     </tr>
   </tbody>
 </table>
+
 </details>
 
 ## 异聚体代表集结构选择
 
 ```python
 df4 = sifts_demo.pipe_select_he(run_as_completed=True).result()
-df4.sample(10)
+df4
 ```
 
 <details>
 <summary>Click to view dataframe</summary>
+
 <table class="dataframe">
   <thead>
     <tr style="text-align: right;">
       <th></th>
-      <th>11</th>
-      <th>3</th>
-      <th>6</th>
-      <th>15</th>
-      <th>29</th>
-      <th>22</th>
-      <th>31</th>
-      <th>5</th>
-      <th>18</th>
-      <th>26</th>
+      <th>entity_id_1</th>
+      <th>chain_id_1</th>
+      <th>struct_asym_id_1</th>
+      <th>struct_asym_id_in_assembly_1</th>
+      <th>asym_id_rank_1</th>
+      <th>model_id_1</th>
+      <th>molecule_type_1</th>
+      <th>surface_range_1</th>
+      <th>interface_range_1</th>
+      <th>entity_id_2</th>
+      <th>chain_id_2</th>
+      <th>struct_asym_id_2</th>
+      <th>struct_asym_id_in_assembly_2</th>
+      <th>asym_id_rank_2</th>
+      <th>model_id_2</th>
+      <th>molecule_type_2</th>
+      <th>surface_range_2</th>
+      <th>interface_range_2</th>
+      <th>pdb_id</th>
+      <th>assembly_id</th>
+      <th>interface_id</th>
+      <th>use_au</th>
+      <th>UniProt_1</th>
+      <th>identifier_1</th>
+      <th>identity_1</th>
+      <th>is_canonical_1</th>
+      <th>name_1</th>
+      <th>pdb_range_1</th>
+      <th>unp_range_1</th>
+      <th>Entry_1</th>
+      <th>range_diff_1</th>
+      <th>sifts_range_tag_1</th>
+      <th>repeated_1</th>
+      <th>reversed_1</th>
+      <th>InDel_sum_1</th>
+      <th>new_pdb_range_1</th>
+      <th>new_unp_range_1</th>
+      <th>conflict_pdb_index_1</th>
+      <th>conflict_pdb_range_1</th>
+      <th>conflict_unp_range_1</th>
+      <th>unp_len_1</th>
+      <th>BINDING_LIGAND_COUNT_1</th>
+      <th>BINDING_LIGAND_INDEX_1</th>
+      <th>OBS_COUNT_1</th>
+      <th>OBS_INDEX_1</th>
+      <th>OBS_RATIO_SUM_1</th>
+      <th>ARTIFACT_INDEX_1</th>
+      <th>NON_COUNT_1</th>
+      <th>NON_INDEX_1</th>
+      <th>SEQRES_COUNT_1</th>
+      <th>STD_COUNT_1</th>
+      <th>STD_INDEX_1</th>
+      <th>UNK_COUNT_1</th>
+      <th>UNK_INDEX_1</th>
+      <th>ca_p_only_1</th>
+      <th>OBS_STD_INDEX_1</th>
+      <th>OBS_STD_COUNT_1</th>
+      <th>RAW_BS_1</th>
+      <th>RAW_BS_IG3_1</th>
+      <th>resolution</th>
+      <th>experimental_method_class</th>
+      <th>experimental_method</th>
+      <th>multi_method</th>
+      <th>revision_date</th>
+      <th>deposition_date</th>
+      <th>1/resolution</th>
+      <th>id_score_1</th>
+      <th>select_tag_1</th>
+      <th>select_rank_1</th>
+      <th>UniProt_2</th>
+      <th>identifier_2</th>
+      <th>identity_2</th>
+      <th>is_canonical_2</th>
+      <th>name_2</th>
+      <th>pdb_range_2</th>
+      <th>unp_range_2</th>
+      <th>Entry_2</th>
+      <th>range_diff_2</th>
+      <th>sifts_range_tag_2</th>
+      <th>repeated_2</th>
+      <th>reversed_2</th>
+      <th>InDel_sum_2</th>
+      <th>new_pdb_range_2</th>
+      <th>new_unp_range_2</th>
+      <th>conflict_pdb_index_2</th>
+      <th>conflict_pdb_range_2</th>
+      <th>conflict_unp_range_2</th>
+      <th>unp_len_2</th>
+      <th>BINDING_LIGAND_COUNT_2</th>
+      <th>BINDING_LIGAND_INDEX_2</th>
+      <th>OBS_COUNT_2</th>
+      <th>OBS_INDEX_2</th>
+      <th>OBS_RATIO_SUM_2</th>
+      <th>ARTIFACT_INDEX_2</th>
+      <th>NON_COUNT_2</th>
+      <th>NON_INDEX_2</th>
+      <th>SEQRES_COUNT_2</th>
+      <th>STD_COUNT_2</th>
+      <th>STD_INDEX_2</th>
+      <th>UNK_COUNT_2</th>
+      <th>UNK_INDEX_2</th>
+      <th>ca_p_only_2</th>
+      <th>OBS_STD_INDEX_2</th>
+      <th>OBS_STD_COUNT_2</th>
+      <th>RAW_BS_2</th>
+      <th>RAW_BS_IG3_2</th>
+      <th>id_score_2</th>
+      <th>select_tag_2</th>
+      <th>select_rank_2</th>
+      <th>in_i3d</th>
+      <th>best_select_rank_score</th>
+      <th>second_select_rank_score</th>
+      <th>unp_interface_range_1</th>
+      <th>unp_interface_range_2</th>
+      <th>i_group</th>
+      <th>i_select_tag</th>
+      <th>i_select_rank</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <th>entity_id_1</th>
+      <th>0</th>
       <td>2</td>
-      <td>2</td>
-      <td>2</td>
-      <td>2</td>
-      <td>2</td>
-      <td>2</td>
-      <td>2</td>
-      <td>2</td>
-      <td>2</td>
-      <td>2</td>
-    </tr>
-    <tr>
-      <th>chain_id_1</th>
       <td>B</td>
       <td>B</td>
       <td>B</td>
-      <td>B</td>
-      <td>D</td>
-      <td>B</td>
-      <td>D</td>
-      <td>B</td>
-      <td>D</td>
-      <td>D</td>
-    </tr>
-    <tr>
-      <th>struct_asym_id_1</th>
-      <td>B</td>
-      <td>B</td>
-      <td>B</td>
-      <td>B</td>
-      <td>D</td>
-      <td>B</td>
-      <td>D</td>
-      <td>B</td>
-      <td>D</td>
-      <td>D</td>
-    </tr>
-    <tr>
-      <th>struct_asym_id_in_assembly_1</th>
-      <td>B</td>
-      <td>B</td>
-      <td>B</td>
-      <td>B</td>
-      <td>D</td>
-      <td>B</td>
-      <td>D</td>
-      <td>B</td>
-      <td>D</td>
-      <td>D</td>
-    </tr>
-    <tr>
-      <th>asym_id_rank_1</th>
       <td>1</td>
       <td>1</td>
-      <td>1</td>
-      <td>1</td>
-      <td>1</td>
-      <td>1</td>
-      <td>1</td>
-      <td>1</td>
-      <td>1</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <th>...</th>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-    </tr>
-    <tr>
-      <th>unp_interface_range_1</th>
-      <td>((1369, 1369), (1378, 1379), (1430, 1432), (14...</td>
-      <td>((1233, 1234), (1236, 1236), (1272, 1273), (12...</td>
-      <td>((1233, 1234), (1237, 1237), (1272, 1273), (12...</td>
-      <td>((1233, 1234), (1236, 1237), (1272, 1273), (12...</td>
-      <td>((1233, 1234), (1236, 1237), (1272, 1278), (12...</td>
-      <td>((1232, 1234), (1237, 1237), (1271, 1278), (12...</td>
-      <td>((1233, 1234), (1236, 1237), (1272, 1278), (12...</td>
-      <td>((1378, 1379), (1430, 1432), (1451, 1452), (14...</td>
-      <td>((1233, 1233), (1272, 1273), (1276, 1278), (12...</td>
-      <td>((1235, 1235), (1238, 1238), (1241, 1242), (12...</td>
-    </tr>
-    <tr>
-      <th>unp_interface_range_2</th>
-      <td>((47, 51), (55, 57), (75, 75), (77, 78), (96, ...</td>
-      <td>((12, 12), (17, 17), (21, 21), (25, 25), (29, ...</td>
-      <td>((11, 12), (17, 17), (21, 21), (25, 25), (29, ...</td>
-      <td>((12, 12), (17, 17), (21, 21), (25, 25), (29, ...</td>
-      <td>((11, 13), (17, 17), (21, 21), (25, 25), (27, ...</td>
-      <td>((12, 13), (17, 17), (21, 21), (24, 25), (30, ...</td>
-      <td>((11, 13), (17, 17), (21, 21), (25, 25), (27, ...</td>
-      <td>((47, 50), (52, 52), (55, 57), (75, 75), (78, ...</td>
-      <td>((11, 12), (17, 17), (21, 21), (29, 41), (54, ...</td>
-      <td>((23, 23), (25, 27), (42, 45), (50, 50), (148,...</td>
-    </tr>
-    <tr>
-      <th>i_group</th>
-      <td>(P21359-2, Q7Z699)</td>
-      <td>(P21359-2, P01116-2)</td>
-      <td>(P21359-2, P01116)</td>
-      <td>(P21359-2, P01116-2)</td>
-      <td>(P21359-2, P01116-2)</td>
-      <td>(P21359-2, P01116)</td>
-      <td>(P21359-2, P01116-2)</td>
-      <td>(P21359-2, Q7Z699)</td>
-      <td>(P21359-2, P01116)</td>
-      <td>(P21359-2, P01116)</td>
-    </tr>
-    <tr>
-      <th>i_select_tag</th>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>True</td>
-      <td>False</td>
-      <td>True</td>
-    </tr>
-    <tr>
-      <th>i_select_rank</th>
-      <td>4</td>
-      <td>14</td>
-      <td>11</td>
-      <td>5</td>
-      <td>8</td>
+      <td>polypeptide(L)</td>
+      <td>[[4,22],[24,54],[56,59],[61,82],[84,86],[88,91...</td>
+      <td>[[32,33],[36,36],[71,72],[75,77],[82,82],[85,8...</td>
       <td>3</td>
-      <td>7</td>
-      <td>2</td>
-      <td>10</td>
+      <td>C</td>
+      <td>C</td>
+      <td>C</td>
       <td>1</td>
+      <td>1</td>
+      <td>polypeptide(L)</td>
+      <td>[[2,9],[11,51],[53,53],[55,55],[57,72],[74,77]...</td>
+      <td>[[12,13],[18,18],[22,22],[26,26],[30,30],[32,4...</td>
+      <td>6v6f</td>
+      <td>0</td>
+      <td>1</td>
+      <td>False</td>
+      <td>P21359-2</td>
+      <td>NF1_HUMAN</td>
+      <td>1.0</td>
+      <td>False</td>
+      <td>NF1_HUMAN</td>
+      <td>[[2,329]]</td>
+      <td>[[1203,1530]]</td>
+      <td>P21359</td>
+      <td>[0]</td>
+      <td>Safe</td>
+      <td>False</td>
+      <td>False</td>
+      <td>0</td>
+      <td>[[2,329]]</td>
+      <td>[[1203,1530]]</td>
+      <td>{}</td>
+      <td>[]</td>
+      <td>[]</td>
+      <td>2818</td>
+      <td>1</td>
+      <td>[[218, 218]]</td>
+      <td>301</td>
+      <td>[[4, 263], [276, 300], [312, 327]]</td>
+      <td>294.205</td>
+      <td>[[1, 1]]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>329</td>
+      <td>329</td>
+      <td>[[1, 329]]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>False</td>
+      <td>((4, 263), (276, 300), (312, 327))</td>
+      <td>301</td>
+      <td>0.089301</td>
+      <td>0.089656</td>
+      <td>2.542</td>
+      <td>x-ray</td>
+      <td>X-ray diffraction</td>
+      <td>False</td>
+      <td>20200805</td>
+      <td>20191205</td>
+      <td>0.393391</td>
+      <td>-66</td>
+      <td>True</td>
+      <td>1</td>
+      <td>P01116</td>
+      <td>RASK_HUMAN</td>
+      <td>0.96</td>
+      <td>True</td>
+      <td>RASK_HUMAN</td>
+      <td>[[2,170]]</td>
+      <td>[[1,169]]</td>
+      <td>P01116</td>
+      <td>[0]</td>
+      <td>Safe</td>
+      <td>False</td>
+      <td>False</td>
+      <td>0</td>
+      <td>[[2,170]]</td>
+      <td>[[1,169]]</td>
+      <td>{"62":"Q","152":"R","154":"E","166":"Q","167":...</td>
+      <td>[[62,62],[152,152],[154,154],[166,169]]</td>
+      <td>[[61,61],[151,151],[153,153],[165,168]]</td>
+      <td>189</td>
+      <td>24</td>
+      <td>[[14, 19], [29, 33], [35, 36], [58, 58], [61, ...</td>
+      <td>168</td>
+      <td>[[2, 169]]</td>
+      <td>166.665</td>
+      <td>[[1, 1]]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>170</td>
+      <td>170</td>
+      <td>[[1, 170]]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>False</td>
+      <td>((2, 169),)</td>
+      <td>168</td>
+      <td>0.752430</td>
+      <td>0.879414</td>
+      <td>-67</td>
+      <td>False</td>
+      <td>4</td>
+      <td>False</td>
+      <td>1.000000</td>
+      <td>0.250000</td>
+      <td>((1233, 1234), (1237, 1237), (1272, 1273), (12...</td>
+      <td>((11, 12), (17, 17), (21, 21), (25, 25), (29, ...</td>
+      <td>(P21359-2, P01116)</td>
+      <td>False</td>
+      <td>11</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2</td>
+      <td>B</td>
+      <td>B</td>
+      <td>B</td>
+      <td>1</td>
+      <td>1</td>
+      <td>polypeptide(L)</td>
+      <td>[[4,22],[24,54],[56,59],[61,82],[84,86],[88,91...</td>
+      <td>[[32,33],[36,36],[71,72],[75,77],[82,82],[85,8...</td>
+      <td>3</td>
+      <td>C</td>
+      <td>C</td>
+      <td>C</td>
+      <td>1</td>
+      <td>1</td>
+      <td>polypeptide(L)</td>
+      <td>[[2,9],[11,51],[53,53],[55,55],[57,72],[74,77]...</td>
+      <td>[[12,13],[18,18],[22,22],[26,26],[30,30],[32,4...</td>
+      <td>6v6f</td>
+      <td>0</td>
+      <td>1</td>
+      <td>False</td>
+      <td>P21359-2</td>
+      <td>NF1_HUMAN</td>
+      <td>1.0</td>
+      <td>False</td>
+      <td>NF1_HUMAN</td>
+      <td>[[2,329]]</td>
+      <td>[[1203,1530]]</td>
+      <td>P21359</td>
+      <td>[0]</td>
+      <td>Safe</td>
+      <td>False</td>
+      <td>False</td>
+      <td>0</td>
+      <td>[[2,329]]</td>
+      <td>[[1203,1530]]</td>
+      <td>{}</td>
+      <td>[]</td>
+      <td>[]</td>
+      <td>2818</td>
+      <td>1</td>
+      <td>[[218, 218]]</td>
+      <td>301</td>
+      <td>[[4, 263], [276, 300], [312, 327]]</td>
+      <td>294.205</td>
+      <td>[[1, 1]]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>329</td>
+      <td>329</td>
+      <td>[[1, 329]]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>False</td>
+      <td>((4, 263), (276, 300), (312, 327))</td>
+      <td>301</td>
+      <td>0.089301</td>
+      <td>0.089656</td>
+      <td>2.542</td>
+      <td>x-ray</td>
+      <td>X-ray diffraction</td>
+      <td>False</td>
+      <td>20200805</td>
+      <td>20191205</td>
+      <td>0.393391</td>
+      <td>-66</td>
+      <td>True</td>
+      <td>1</td>
+      <td>P01116-2</td>
+      <td>RASK_HUMAN</td>
+      <td>0.99</td>
+      <td>False</td>
+      <td>RASK_HUMAN</td>
+      <td>[[2,170]]</td>
+      <td>[[1,169]]</td>
+      <td>P01116</td>
+      <td>[0]</td>
+      <td>Safe</td>
+      <td>False</td>
+      <td>False</td>
+      <td>0</td>
+      <td>[[2,170]]</td>
+      <td>[[1,169]]</td>
+      <td>{"62":"Q"}</td>
+      <td>[[62,62]]</td>
+      <td>[[61,61]]</td>
+      <td>188</td>
+      <td>24</td>
+      <td>[[14, 19], [29, 33], [35, 36], [58, 58], [61, ...</td>
+      <td>168</td>
+      <td>[[2, 169]]</td>
+      <td>166.665</td>
+      <td>[[1, 1]]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>170</td>
+      <td>170</td>
+      <td>[[1, 170]]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>False</td>
+      <td>((2, 169),)</td>
+      <td>168</td>
+      <td>0.756432</td>
+      <td>0.884092</td>
+      <td>-67</td>
+      <td>False</td>
+      <td>4</td>
+      <td>False</td>
+      <td>1.000000</td>
+      <td>0.250000</td>
+      <td>((1233, 1234), (1237, 1237), (1272, 1273), (12...</td>
+      <td>((11, 12), (17, 17), (21, 21), (25, 25), (29, ...</td>
+      <td>(P21359-2, P01116-2)</td>
+      <td>False</td>
+      <td>11</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2</td>
+      <td>B</td>
+      <td>B</td>
+      <td>B</td>
+      <td>1</td>
+      <td>1</td>
+      <td>polypeptide(L)</td>
+      <td>[[4,22],[24,54],[56,59],[61,82],[84,86],[88,91...</td>
+      <td>[[32,33],[36,36],[71,72],[75,77],[82,82],[85,8...</td>
+      <td>3</td>
+      <td>C</td>
+      <td>C</td>
+      <td>C</td>
+      <td>1</td>
+      <td>1</td>
+      <td>polypeptide(L)</td>
+      <td>[[2,9],[11,51],[53,53],[55,55],[57,72],[74,77]...</td>
+      <td>[[12,13],[18,18],[22,22],[26,26],[30,30],[32,4...</td>
+      <td>6v6f</td>
+      <td>1</td>
+      <td>3</td>
+      <td>False</td>
+      <td>P21359-2</td>
+      <td>NF1_HUMAN</td>
+      <td>1.0</td>
+      <td>False</td>
+      <td>NF1_HUMAN</td>
+      <td>[[2,329]]</td>
+      <td>[[1203,1530]]</td>
+      <td>P21359</td>
+      <td>[0]</td>
+      <td>Safe</td>
+      <td>False</td>
+      <td>False</td>
+      <td>0</td>
+      <td>[[2,329]]</td>
+      <td>[[1203,1530]]</td>
+      <td>{}</td>
+      <td>[]</td>
+      <td>[]</td>
+      <td>2818</td>
+      <td>1</td>
+      <td>[[218, 218]]</td>
+      <td>301</td>
+      <td>[[4, 263], [276, 300], [312, 327]]</td>
+      <td>294.205</td>
+      <td>[[1, 1]]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>329</td>
+      <td>329</td>
+      <td>[[1, 329]]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>False</td>
+      <td>((4, 263), (276, 300), (312, 327))</td>
+      <td>301</td>
+      <td>0.089301</td>
+      <td>0.089656</td>
+      <td>2.542</td>
+      <td>x-ray</td>
+      <td>X-ray diffraction</td>
+      <td>False</td>
+      <td>20200805</td>
+      <td>20191205</td>
+      <td>0.393391</td>
+      <td>-66</td>
+      <td>True</td>
+      <td>1</td>
+      <td>P01116</td>
+      <td>RASK_HUMAN</td>
+      <td>0.96</td>
+      <td>True</td>
+      <td>RASK_HUMAN</td>
+      <td>[[2,170]]</td>
+      <td>[[1,169]]</td>
+      <td>P01116</td>
+      <td>[0]</td>
+      <td>Safe</td>
+      <td>False</td>
+      <td>False</td>
+      <td>0</td>
+      <td>[[2,170]]</td>
+      <td>[[1,169]]</td>
+      <td>{"62":"Q","152":"R","154":"E","166":"Q","167":...</td>
+      <td>[[62,62],[152,152],[154,154],[166,169]]</td>
+      <td>[[61,61],[151,151],[153,153],[165,168]]</td>
+      <td>189</td>
+      <td>24</td>
+      <td>[[14, 19], [29, 33], [35, 36], [58, 58], [61, ...</td>
+      <td>168</td>
+      <td>[[2, 169]]</td>
+      <td>166.665</td>
+      <td>[[1, 1]]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>170</td>
+      <td>170</td>
+      <td>[[1, 170]]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>False</td>
+      <td>((2, 169),)</td>
+      <td>168</td>
+      <td>0.752430</td>
+      <td>0.879414</td>
+      <td>-67</td>
+      <td>False</td>
+      <td>4</td>
+      <td>False</td>
+      <td>1.000000</td>
+      <td>0.250000</td>
+      <td>((1233, 1234), (1237, 1237), (1272, 1273), (12...</td>
+      <td>((11, 12), (17, 17), (21, 21), (25, 25), (29, ...</td>
+      <td>(P21359-2, P01116)</td>
+      <td>False</td>
+      <td>12</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>2</td>
+      <td>B</td>
+      <td>B</td>
+      <td>B</td>
+      <td>1</td>
+      <td>1</td>
+      <td>polypeptide(L)</td>
+      <td>[[4,22],[24,54],[56,59],[61,82],[84,86],[88,91...</td>
+      <td>[[32,33],[36,36],[71,72],[75,77],[82,82],[85,8...</td>
+      <td>3</td>
+      <td>C</td>
+      <td>C</td>
+      <td>C</td>
+      <td>1</td>
+      <td>1</td>
+      <td>polypeptide(L)</td>
+      <td>[[2,9],[11,51],[53,53],[55,55],[57,72],[74,77]...</td>
+      <td>[[12,13],[18,18],[22,22],[26,26],[30,30],[32,4...</td>
+      <td>6v6f</td>
+      <td>1</td>
+      <td>3</td>
+      <td>False</td>
+      <td>P21359-2</td>
+      <td>NF1_HUMAN</td>
+      <td>1.0</td>
+      <td>False</td>
+      <td>NF1_HUMAN</td>
+      <td>[[2,329]]</td>
+      <td>[[1203,1530]]</td>
+      <td>P21359</td>
+      <td>[0]</td>
+      <td>Safe</td>
+      <td>False</td>
+      <td>False</td>
+      <td>0</td>
+      <td>[[2,329]]</td>
+      <td>[[1203,1530]]</td>
+      <td>{}</td>
+      <td>[]</td>
+      <td>[]</td>
+      <td>2818</td>
+      <td>1</td>
+      <td>[[218, 218]]</td>
+      <td>301</td>
+      <td>[[4, 263], [276, 300], [312, 327]]</td>
+      <td>294.205</td>
+      <td>[[1, 1]]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>329</td>
+      <td>329</td>
+      <td>[[1, 329]]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>False</td>
+      <td>((4, 263), (276, 300), (312, 327))</td>
+      <td>301</td>
+      <td>0.089301</td>
+      <td>0.089656</td>
+      <td>2.542</td>
+      <td>x-ray</td>
+      <td>X-ray diffraction</td>
+      <td>False</td>
+      <td>20200805</td>
+      <td>20191205</td>
+      <td>0.393391</td>
+      <td>-66</td>
+      <td>True</td>
+      <td>1</td>
+      <td>P01116-2</td>
+      <td>RASK_HUMAN</td>
+      <td>0.99</td>
+      <td>False</td>
+      <td>RASK_HUMAN</td>
+      <td>[[2,170]]</td>
+      <td>[[1,169]]</td>
+      <td>P01116</td>
+      <td>[0]</td>
+      <td>Safe</td>
+      <td>False</td>
+      <td>False</td>
+      <td>0</td>
+      <td>[[2,170]]</td>
+      <td>[[1,169]]</td>
+      <td>{"62":"Q"}</td>
+      <td>[[62,62]]</td>
+      <td>[[61,61]]</td>
+      <td>188</td>
+      <td>24</td>
+      <td>[[14, 19], [29, 33], [35, 36], [58, 58], [61, ...</td>
+      <td>168</td>
+      <td>[[2, 169]]</td>
+      <td>166.665</td>
+      <td>[[1, 1]]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>170</td>
+      <td>170</td>
+      <td>[[1, 170]]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>False</td>
+      <td>((2, 169),)</td>
+      <td>168</td>
+      <td>0.756432</td>
+      <td>0.884092</td>
+      <td>-67</td>
+      <td>False</td>
+      <td>4</td>
+      <td>False</td>
+      <td>1.000000</td>
+      <td>0.250000</td>
+      <td>((1233, 1234), (1237, 1237), (1272, 1273), (12...</td>
+      <td>((11, 12), (17, 17), (21, 21), (25, 25), (29, ...</td>
+      <td>(P21359-2, P01116-2)</td>
+      <td>False</td>
+      <td>12</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>2</td>
+      <td>B</td>
+      <td>B</td>
+      <td>B</td>
+      <td>1</td>
+      <td>1</td>
+      <td>polypeptide(L)</td>
+      <td>[[4,22],[24,54],[56,59],[61,82],[84,86],[88,91...</td>
+      <td>[[10,10],[12,19],[21,21],[49,51],[53,54],[57,5...</td>
+      <td>1</td>
+      <td>A</td>
+      <td>A</td>
+      <td>A</td>
+      <td>1</td>
+      <td>1</td>
+      <td>polypeptide(L)</td>
+      <td>[[1,22],[25,47],[49,87],[89,99],[101,112]]</td>
+      <td>[[8,8],[10,10],[12,21],[25,25],[27,27],[73,77]...</td>
+      <td>6v6f</td>
+      <td>0</td>
+      <td>2</td>
+      <td>False</td>
+      <td>P21359-2</td>
+      <td>NF1_HUMAN</td>
+      <td>1.0</td>
+      <td>False</td>
+      <td>NF1_HUMAN</td>
+      <td>[[2,329]]</td>
+      <td>[[1203,1530]]</td>
+      <td>P21359</td>
+      <td>[0]</td>
+      <td>Safe</td>
+      <td>False</td>
+      <td>False</td>
+      <td>0</td>
+      <td>[[2,329]]</td>
+      <td>[[1203,1530]]</td>
+      <td>{}</td>
+      <td>[]</td>
+      <td>[]</td>
+      <td>2818</td>
+      <td>1</td>
+      <td>[[218, 218]]</td>
+      <td>301</td>
+      <td>[[4, 263], [276, 300], [312, 327]]</td>
+      <td>294.205</td>
+      <td>[[1, 1]]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>329</td>
+      <td>329</td>
+      <td>[[1, 329]]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>False</td>
+      <td>((4, 263), (276, 300), (312, 327))</td>
+      <td>301</td>
+      <td>0.089301</td>
+      <td>0.089656</td>
+      <td>2.542</td>
+      <td>x-ray</td>
+      <td>X-ray diffraction</td>
+      <td>False</td>
+      <td>20200805</td>
+      <td>20191205</td>
+      <td>0.393391</td>
+      <td>-66</td>
+      <td>True</td>
+      <td>1</td>
+      <td>Q7Z699</td>
+      <td>SPRE1_HUMAN</td>
+      <td>1.00</td>
+      <td>True</td>
+      <td>SPRE1_HUMAN</td>
+      <td>[[1,113]]</td>
+      <td>[[13,125]]</td>
+      <td>Q7Z699</td>
+      <td>[0]</td>
+      <td>Safe</td>
+      <td>False</td>
+      <td>False</td>
+      <td>0</td>
+      <td>[[1,113]]</td>
+      <td>[[13,125]]</td>
+      <td>{}</td>
+      <td>[]</td>
+      <td>[]</td>
+      <td>444</td>
+      <td>3</td>
+      <td>[[37, 37], [43, 43], [98, 98]]</td>
+      <td>110</td>
+      <td>[[1, 22], [25, 112]]</td>
+      <td>108.533</td>
+      <td>[]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>113</td>
+      <td>113</td>
+      <td>[[1, 113]]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>False</td>
+      <td>((1, 22), (25, 112))</td>
+      <td>110</td>
+      <td>0.228891</td>
+      <td>0.235648</td>
+      <td>-65</td>
+      <td>False</td>
+      <td>2</td>
+      <td>False</td>
+      <td>1.000000</td>
+      <td>0.500000</td>
+      <td>((1211, 1211), (1213, 1220), (1222, 1222), (12...</td>
+      <td>((20, 20), (22, 22), (24, 33), (37, 37), (39, ...</td>
+      <td>(P21359-2, Q7Z699)</td>
+      <td>False</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>2</td>
+      <td>B</td>
+      <td>B</td>
+      <td>B</td>
+      <td>1</td>
+      <td>1</td>
+      <td>polypeptide(L)</td>
+      <td>[[4,22],[24,54],[56,59],[61,82],[84,86],[88,91...</td>
+      <td>[[168,168],[177,178],[229,231],[247,247],[250,...</td>
+      <td>1</td>
+      <td>A</td>
+      <td>A</td>
+      <td>A</td>
+      <td>1</td>
+      <td>2</td>
+      <td>polypeptide(L)</td>
+      <td>[[1,22],[25,31],[33,47],[49,87],[89,99],[101,1...</td>
+      <td>[[35,39],[43,45],[63,63],[65,66],[84,84],[111,...</td>
+      <td>6v6f</td>
+      <td>1</td>
+      <td>8</td>
+      <td>False</td>
+      <td>P21359-2</td>
+      <td>NF1_HUMAN</td>
+      <td>1.0</td>
+      <td>False</td>
+      <td>NF1_HUMAN</td>
+      <td>[[2,329]]</td>
+      <td>[[1203,1530]]</td>
+      <td>P21359</td>
+      <td>[0]</td>
+      <td>Safe</td>
+      <td>False</td>
+      <td>False</td>
+      <td>0</td>
+      <td>[[2,329]]</td>
+      <td>[[1203,1530]]</td>
+      <td>{}</td>
+      <td>[]</td>
+      <td>[]</td>
+      <td>2818</td>
+      <td>1</td>
+      <td>[[218, 218]]</td>
+      <td>301</td>
+      <td>[[4, 263], [276, 300], [312, 327]]</td>
+      <td>294.205</td>
+      <td>[[1, 1]]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>329</td>
+      <td>329</td>
+      <td>[[1, 329]]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>False</td>
+      <td>((4, 263), (276, 300), (312, 327))</td>
+      <td>301</td>
+      <td>0.089301</td>
+      <td>0.089656</td>
+      <td>2.542</td>
+      <td>x-ray</td>
+      <td>X-ray diffraction</td>
+      <td>False</td>
+      <td>20200805</td>
+      <td>20191205</td>
+      <td>0.393391</td>
+      <td>-66</td>
+      <td>True</td>
+      <td>1</td>
+      <td>Q7Z699</td>
+      <td>SPRE1_HUMAN</td>
+      <td>1.00</td>
+      <td>True</td>
+      <td>SPRE1_HUMAN</td>
+      <td>[[1,113]]</td>
+      <td>[[13,125]]</td>
+      <td>Q7Z699</td>
+      <td>[0]</td>
+      <td>Safe</td>
+      <td>False</td>
+      <td>False</td>
+      <td>0</td>
+      <td>[[1,113]]</td>
+      <td>[[13,125]]</td>
+      <td>{}</td>
+      <td>[]</td>
+      <td>[]</td>
+      <td>444</td>
+      <td>3</td>
+      <td>[[37, 37], [43, 43], [98, 98]]</td>
+      <td>110</td>
+      <td>[[1, 22], [25, 112]]</td>
+      <td>108.533</td>
+      <td>[]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>113</td>
+      <td>113</td>
+      <td>[[1, 113]]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>False</td>
+      <td>((1, 22), (25, 112))</td>
+      <td>110</td>
+      <td>0.228891</td>
+      <td>0.235648</td>
+      <td>-65</td>
+      <td>False</td>
+      <td>2</td>
+      <td>False</td>
+      <td>1.000000</td>
+      <td>0.500000</td>
+      <td>((1369, 1369), (1378, 1379), (1430, 1432), (14...</td>
+      <td>((47, 51), (55, 57), (75, 75), (77, 78), (96, ...</td>
+      <td>(P21359-2, Q7Z699)</td>
+      <td>False</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>2</td>
+      <td>B</td>
+      <td>B</td>
+      <td>B</td>
+      <td>1</td>
+      <td>1</td>
+      <td>polypeptide(L)</td>
+      <td>[[4,59],[61,83],[85,86],[88,91],[93,137],[139,...</td>
+      <td>[[32,33],[35,35],[71,72],[75,77],[81,82],[85,8...</td>
+      <td>3</td>
+      <td>C</td>
+      <td>C</td>
+      <td>C</td>
+      <td>1</td>
+      <td>1</td>
+      <td>polypeptide(L)</td>
+      <td>[[2,9],[11,51],[53,55],[57,72],[74,77],[80,81]...</td>
+      <td>[[13,13],[18,18],[22,22],[26,26],[30,42],[55,5...</td>
+      <td>6v65</td>
+      <td>0</td>
+      <td>1</td>
+      <td>False</td>
+      <td>P21359-2</td>
+      <td>NF1_HUMAN</td>
+      <td>1.0</td>
+      <td>False</td>
+      <td>NF1_HUMAN</td>
+      <td>[[2,329]]</td>
+      <td>[[1203,1530]]</td>
+      <td>P21359</td>
+      <td>[0]</td>
+      <td>Safe</td>
+      <td>False</td>
+      <td>False</td>
+      <td>0</td>
+      <td>[[2,329]]</td>
+      <td>[[1203,1530]]</td>
+      <td>{}</td>
+      <td>[]</td>
+      <td>[]</td>
+      <td>2818</td>
+      <td>2</td>
+      <td>[[240, 240], [243, 243]]</td>
+      <td>300</td>
+      <td>[[4, 263], [277, 300], [312, 327]]</td>
+      <td>293.261</td>
+      <td>[[1, 1]]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>329</td>
+      <td>329</td>
+      <td>[[1, 329]]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>False</td>
+      <td>((4, 263), (277, 300), (312, 327))</td>
+      <td>300</td>
+      <td>0.087956</td>
+      <td>0.088666</td>
+      <td>2.763</td>
+      <td>x-ray</td>
+      <td>X-ray diffraction</td>
+      <td>False</td>
+      <td>20200805</td>
+      <td>20191204</td>
+      <td>0.361925</td>
+      <td>-66</td>
+      <td>False</td>
+      <td>3</td>
+      <td>P01116</td>
+      <td>RASK_HUMAN</td>
+      <td>0.96</td>
+      <td>True</td>
+      <td>RASK_HUMAN</td>
+      <td>[[2,170]]</td>
+      <td>[[1,169]]</td>
+      <td>P01116</td>
+      <td>[0]</td>
+      <td>Safe</td>
+      <td>False</td>
+      <td>False</td>
+      <td>0</td>
+      <td>[[2,170]]</td>
+      <td>[[1,169]]</td>
+      <td>{"152":"R","154":"E","166":"Q","167":"Y","168"...</td>
+      <td>[[152,152],[154,154],[166,169]]</td>
+      <td>[[151,151],[153,153],[165,168]]</td>
+      <td>189</td>
+      <td>20</td>
+      <td>[[14, 14], [16, 19], [29, 32], [35, 36], [58, ...</td>
+      <td>168</td>
+      <td>[[2, 169]]</td>
+      <td>166.776</td>
+      <td>[[1, 1]]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>170</td>
+      <td>170</td>
+      <td>[[1, 170]]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>False</td>
+      <td>((2, 169),)</td>
+      <td>168</td>
+      <td>0.773594</td>
+      <td>0.879414</td>
+      <td>-67</td>
+      <td>False</td>
+      <td>2</td>
+      <td>False</td>
+      <td>0.500000</td>
+      <td>0.333333</td>
+      <td>((1233, 1234), (1236, 1236), (1272, 1273), (12...</td>
+      <td>((12, 12), (17, 17), (21, 21), (25, 25), (29, ...</td>
+      <td>(P21359-2, P01116)</td>
+      <td>False</td>
+      <td>13</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>2</td>
+      <td>B</td>
+      <td>B</td>
+      <td>B</td>
+      <td>1</td>
+      <td>1</td>
+      <td>polypeptide(L)</td>
+      <td>[[4,59],[61,83],[85,86],[88,91],[93,137],[139,...</td>
+      <td>[[32,33],[35,35],[71,72],[75,77],[81,82],[85,8...</td>
+      <td>3</td>
+      <td>C</td>
+      <td>C</td>
+      <td>C</td>
+      <td>1</td>
+      <td>1</td>
+      <td>polypeptide(L)</td>
+      <td>[[2,9],[11,51],[53,55],[57,72],[74,77],[80,81]...</td>
+      <td>[[13,13],[18,18],[22,22],[26,26],[30,42],[55,5...</td>
+      <td>6v65</td>
+      <td>0</td>
+      <td>1</td>
+      <td>False</td>
+      <td>P21359-2</td>
+      <td>NF1_HUMAN</td>
+      <td>1.0</td>
+      <td>False</td>
+      <td>NF1_HUMAN</td>
+      <td>[[2,329]]</td>
+      <td>[[1203,1530]]</td>
+      <td>P21359</td>
+      <td>[0]</td>
+      <td>Safe</td>
+      <td>False</td>
+      <td>False</td>
+      <td>0</td>
+      <td>[[2,329]]</td>
+      <td>[[1203,1530]]</td>
+      <td>{}</td>
+      <td>[]</td>
+      <td>[]</td>
+      <td>2818</td>
+      <td>2</td>
+      <td>[[240, 240], [243, 243]]</td>
+      <td>300</td>
+      <td>[[4, 263], [277, 300], [312, 327]]</td>
+      <td>293.261</td>
+      <td>[[1, 1]]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>329</td>
+      <td>329</td>
+      <td>[[1, 329]]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>False</td>
+      <td>((4, 263), (277, 300), (312, 327))</td>
+      <td>300</td>
+      <td>0.087956</td>
+      <td>0.088666</td>
+      <td>2.763</td>
+      <td>x-ray</td>
+      <td>X-ray diffraction</td>
+      <td>False</td>
+      <td>20200805</td>
+      <td>20191204</td>
+      <td>0.361925</td>
+      <td>-66</td>
+      <td>False</td>
+      <td>3</td>
+      <td>P01116-2</td>
+      <td>RASK_HUMAN</td>
+      <td>1.00</td>
+      <td>False</td>
+      <td>RASK_HUMAN</td>
+      <td>[[2,170]]</td>
+      <td>[[1,169]]</td>
+      <td>P01116</td>
+      <td>[0]</td>
+      <td>Safe</td>
+      <td>False</td>
+      <td>False</td>
+      <td>0</td>
+      <td>[[2,170]]</td>
+      <td>[[1,169]]</td>
+      <td>{}</td>
+      <td>[]</td>
+      <td>[]</td>
+      <td>188</td>
+      <td>20</td>
+      <td>[[14, 14], [16, 19], [29, 32], [35, 36], [58, ...</td>
+      <td>168</td>
+      <td>[[2, 169]]</td>
+      <td>166.776</td>
+      <td>[[1, 1]]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>170</td>
+      <td>170</td>
+      <td>[[1, 170]]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>False</td>
+      <td>((2, 169),)</td>
+      <td>168</td>
+      <td>0.777709</td>
+      <td>0.884092</td>
+      <td>-67</td>
+      <td>False</td>
+      <td>2</td>
+      <td>False</td>
+      <td>0.500000</td>
+      <td>0.333333</td>
+      <td>((1233, 1234), (1236, 1236), (1272, 1273), (12...</td>
+      <td>((12, 12), (17, 17), (21, 21), (25, 25), (29, ...</td>
+      <td>(P21359-2, P01116-2)</td>
+      <td>False</td>
+      <td>13</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>2</td>
+      <td>B</td>
+      <td>B</td>
+      <td>B</td>
+      <td>1</td>
+      <td>1</td>
+      <td>polypeptide(L)</td>
+      <td>[[4,59],[61,83],[85,86],[88,91],[93,137],[139,...</td>
+      <td>[[32,33],[35,35],[71,72],[75,77],[81,82],[85,8...</td>
+      <td>3</td>
+      <td>C</td>
+      <td>C</td>
+      <td>C</td>
+      <td>1</td>
+      <td>1</td>
+      <td>polypeptide(L)</td>
+      <td>[[2,9],[11,51],[53,55],[57,72],[74,77],[80,81]...</td>
+      <td>[[13,13],[18,18],[22,22],[26,26],[30,42],[55,5...</td>
+      <td>6v65</td>
+      <td>1</td>
+      <td>3</td>
+      <td>False</td>
+      <td>P21359-2</td>
+      <td>NF1_HUMAN</td>
+      <td>1.0</td>
+      <td>False</td>
+      <td>NF1_HUMAN</td>
+      <td>[[2,329]]</td>
+      <td>[[1203,1530]]</td>
+      <td>P21359</td>
+      <td>[0]</td>
+      <td>Safe</td>
+      <td>False</td>
+      <td>False</td>
+      <td>0</td>
+      <td>[[2,329]]</td>
+      <td>[[1203,1530]]</td>
+      <td>{}</td>
+      <td>[]</td>
+      <td>[]</td>
+      <td>2818</td>
+      <td>2</td>
+      <td>[[240, 240], [243, 243]]</td>
+      <td>300</td>
+      <td>[[4, 263], [277, 300], [312, 327]]</td>
+      <td>293.261</td>
+      <td>[[1, 1]]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>329</td>
+      <td>329</td>
+      <td>[[1, 329]]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>False</td>
+      <td>((4, 263), (277, 300), (312, 327))</td>
+      <td>300</td>
+      <td>0.087956</td>
+      <td>0.088666</td>
+      <td>2.763</td>
+      <td>x-ray</td>
+      <td>X-ray diffraction</td>
+      <td>False</td>
+      <td>20200805</td>
+      <td>20191204</td>
+      <td>0.361925</td>
+      <td>-66</td>
+      <td>False</td>
+      <td>3</td>
+      <td>P01116</td>
+      <td>RASK_HUMAN</td>
+      <td>0.96</td>
+      <td>True</td>
+      <td>RASK_HUMAN</td>
+      <td>[[2,170]]</td>
+      <td>[[1,169]]</td>
+      <td>P01116</td>
+      <td>[0]</td>
+      <td>Safe</td>
+      <td>False</td>
+      <td>False</td>
+      <td>0</td>
+      <td>[[2,170]]</td>
+      <td>[[1,169]]</td>
+      <td>{"152":"R","154":"E","166":"Q","167":"Y","168"...</td>
+      <td>[[152,152],[154,154],[166,169]]</td>
+      <td>[[151,151],[153,153],[165,168]]</td>
+      <td>189</td>
+      <td>20</td>
+      <td>[[14, 14], [16, 19], [29, 32], [35, 36], [58, ...</td>
+      <td>168</td>
+      <td>[[2, 169]]</td>
+      <td>166.776</td>
+      <td>[[1, 1]]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>170</td>
+      <td>170</td>
+      <td>[[1, 170]]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>False</td>
+      <td>((2, 169),)</td>
+      <td>168</td>
+      <td>0.773594</td>
+      <td>0.879414</td>
+      <td>-67</td>
+      <td>False</td>
+      <td>2</td>
+      <td>False</td>
+      <td>0.500000</td>
+      <td>0.333333</td>
+      <td>((1233, 1234), (1236, 1236), (1272, 1273), (12...</td>
+      <td>((12, 12), (17, 17), (21, 21), (25, 25), (29, ...</td>
+      <td>(P21359-2, P01116)</td>
+      <td>False</td>
+      <td>14</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>2</td>
+      <td>B</td>
+      <td>B</td>
+      <td>B</td>
+      <td>1</td>
+      <td>1</td>
+      <td>polypeptide(L)</td>
+      <td>[[4,59],[61,83],[85,86],[88,91],[93,137],[139,...</td>
+      <td>[[32,33],[35,35],[71,72],[75,77],[81,82],[85,8...</td>
+      <td>3</td>
+      <td>C</td>
+      <td>C</td>
+      <td>C</td>
+      <td>1</td>
+      <td>1</td>
+      <td>polypeptide(L)</td>
+      <td>[[2,9],[11,51],[53,55],[57,72],[74,77],[80,81]...</td>
+      <td>[[13,13],[18,18],[22,22],[26,26],[30,42],[55,5...</td>
+      <td>6v65</td>
+      <td>1</td>
+      <td>3</td>
+      <td>False</td>
+      <td>P21359-2</td>
+      <td>NF1_HUMAN</td>
+      <td>1.0</td>
+      <td>False</td>
+      <td>NF1_HUMAN</td>
+      <td>[[2,329]]</td>
+      <td>[[1203,1530]]</td>
+      <td>P21359</td>
+      <td>[0]</td>
+      <td>Safe</td>
+      <td>False</td>
+      <td>False</td>
+      <td>0</td>
+      <td>[[2,329]]</td>
+      <td>[[1203,1530]]</td>
+      <td>{}</td>
+      <td>[]</td>
+      <td>[]</td>
+      <td>2818</td>
+      <td>2</td>
+      <td>[[240, 240], [243, 243]]</td>
+      <td>300</td>
+      <td>[[4, 263], [277, 300], [312, 327]]</td>
+      <td>293.261</td>
+      <td>[[1, 1]]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>329</td>
+      <td>329</td>
+      <td>[[1, 329]]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>False</td>
+      <td>((4, 263), (277, 300), (312, 327))</td>
+      <td>300</td>
+      <td>0.087956</td>
+      <td>0.088666</td>
+      <td>2.763</td>
+      <td>x-ray</td>
+      <td>X-ray diffraction</td>
+      <td>False</td>
+      <td>20200805</td>
+      <td>20191204</td>
+      <td>0.361925</td>
+      <td>-66</td>
+      <td>False</td>
+      <td>3</td>
+      <td>P01116-2</td>
+      <td>RASK_HUMAN</td>
+      <td>1.00</td>
+      <td>False</td>
+      <td>RASK_HUMAN</td>
+      <td>[[2,170]]</td>
+      <td>[[1,169]]</td>
+      <td>P01116</td>
+      <td>[0]</td>
+      <td>Safe</td>
+      <td>False</td>
+      <td>False</td>
+      <td>0</td>
+      <td>[[2,170]]</td>
+      <td>[[1,169]]</td>
+      <td>{}</td>
+      <td>[]</td>
+      <td>[]</td>
+      <td>188</td>
+      <td>20</td>
+      <td>[[14, 14], [16, 19], [29, 32], [35, 36], [58, ...</td>
+      <td>168</td>
+      <td>[[2, 169]]</td>
+      <td>166.776</td>
+      <td>[[1, 1]]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>170</td>
+      <td>170</td>
+      <td>[[1, 170]]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>False</td>
+      <td>((2, 169),)</td>
+      <td>168</td>
+      <td>0.777709</td>
+      <td>0.884092</td>
+      <td>-67</td>
+      <td>False</td>
+      <td>2</td>
+      <td>False</td>
+      <td>0.500000</td>
+      <td>0.333333</td>
+      <td>((1233, 1234), (1236, 1236), (1272, 1273), (12...</td>
+      <td>((12, 12), (17, 17), (21, 21), (25, 25), (29, ...</td>
+      <td>(P21359-2, P01116-2)</td>
+      <td>False</td>
+      <td>14</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>2</td>
+      <td>B</td>
+      <td>B</td>
+      <td>B</td>
+      <td>1</td>
+      <td>1</td>
+      <td>polypeptide(L)</td>
+      <td>[[4,59],[61,83],[85,86],[88,91],[93,137],[139,...</td>
+      <td>[[9,10],[12,18],[49,51],[53,54],[57,58],[162,1...</td>
+      <td>1</td>
+      <td>A</td>
+      <td>A</td>
+      <td>A</td>
+      <td>1</td>
+      <td>1</td>
+      <td>polypeptide(L)</td>
+      <td>[[1,22],[25,31],[33,87],[89,99],[101,106],[108...</td>
+      <td>[[8,8],[10,10],[12,12],[14,21],[25,25],[27,27]...</td>
+      <td>6v65</td>
+      <td>0</td>
+      <td>2</td>
+      <td>False</td>
+      <td>P21359-2</td>
+      <td>NF1_HUMAN</td>
+      <td>1.0</td>
+      <td>False</td>
+      <td>NF1_HUMAN</td>
+      <td>[[2,329]]</td>
+      <td>[[1203,1530]]</td>
+      <td>P21359</td>
+      <td>[0]</td>
+      <td>Safe</td>
+      <td>False</td>
+      <td>False</td>
+      <td>0</td>
+      <td>[[2,329]]</td>
+      <td>[[1203,1530]]</td>
+      <td>{}</td>
+      <td>[]</td>
+      <td>[]</td>
+      <td>2818</td>
+      <td>2</td>
+      <td>[[240, 240], [243, 243]]</td>
+      <td>300</td>
+      <td>[[4, 263], [277, 300], [312, 327]]</td>
+      <td>293.261</td>
+      <td>[[1, 1]]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>329</td>
+      <td>329</td>
+      <td>[[1, 329]]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>False</td>
+      <td>((4, 263), (277, 300), (312, 327))</td>
+      <td>300</td>
+      <td>0.087956</td>
+      <td>0.088666</td>
+      <td>2.763</td>
+      <td>x-ray</td>
+      <td>X-ray diffraction</td>
+      <td>False</td>
+      <td>20200805</td>
+      <td>20191204</td>
+      <td>0.361925</td>
+      <td>-66</td>
+      <td>False</td>
+      <td>3</td>
+      <td>Q7Z699</td>
+      <td>SPRE1_HUMAN</td>
+      <td>1.00</td>
+      <td>True</td>
+      <td>SPRE1_HUMAN</td>
+      <td>[[1,113]]</td>
+      <td>[[13,125]]</td>
+      <td>Q7Z699</td>
+      <td>[0]</td>
+      <td>Safe</td>
+      <td>False</td>
+      <td>False</td>
+      <td>0</td>
+      <td>[[1,113]]</td>
+      <td>[[13,125]]</td>
+      <td>{}</td>
+      <td>[]</td>
+      <td>[]</td>
+      <td>444</td>
+      <td>2</td>
+      <td>[[37, 37], [43, 43]]</td>
+      <td>110</td>
+      <td>[[1, 22], [25, 112]]</td>
+      <td>108.199</td>
+      <td>[]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>113</td>
+      <td>113</td>
+      <td>[[1, 113]]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>False</td>
+      <td>((1, 22), (25, 112))</td>
+      <td>110</td>
+      <td>0.231144</td>
+      <td>0.235648</td>
+      <td>-65</td>
+      <td>True</td>
+      <td>1</td>
+      <td>False</td>
+      <td>1.000000</td>
+      <td>0.333333</td>
+      <td>((1210, 1211), (1213, 1219), (1250, 1252), (12...</td>
+      <td>((20, 20), (22, 22), (24, 24), (26, 33), (37, ...</td>
+      <td>(P21359-2, Q7Z699)</td>
+      <td>True</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>2</td>
+      <td>B</td>
+      <td>B</td>
+      <td>B</td>
+      <td>1</td>
+      <td>1</td>
+      <td>polypeptide(L)</td>
+      <td>[[4,59],[61,83],[85,86],[88,91],[93,137],[139,...</td>
+      <td>[[177,178],[229,231],[250,251],[254,255],[258,...</td>
+      <td>1</td>
+      <td>A</td>
+      <td>A</td>
+      <td>A</td>
+      <td>1</td>
+      <td>2</td>
+      <td>polypeptide(L)</td>
+      <td>[[1,22],[25,31],[33,87],[89,99],[101,106],[108...</td>
+      <td>[[35,38],[40,40],[43,45],[63,63],[66,66],[111,...</td>
+      <td>6v65</td>
+      <td>1</td>
+      <td>8</td>
+      <td>False</td>
+      <td>P21359-2</td>
+      <td>NF1_HUMAN</td>
+      <td>1.0</td>
+      <td>False</td>
+      <td>NF1_HUMAN</td>
+      <td>[[2,329]]</td>
+      <td>[[1203,1530]]</td>
+      <td>P21359</td>
+      <td>[0]</td>
+      <td>Safe</td>
+      <td>False</td>
+      <td>False</td>
+      <td>0</td>
+      <td>[[2,329]]</td>
+      <td>[[1203,1530]]</td>
+      <td>{}</td>
+      <td>[]</td>
+      <td>[]</td>
+      <td>2818</td>
+      <td>2</td>
+      <td>[[240, 240], [243, 243]]</td>
+      <td>300</td>
+      <td>[[4, 263], [277, 300], [312, 327]]</td>
+      <td>293.261</td>
+      <td>[[1, 1]]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>329</td>
+      <td>329</td>
+      <td>[[1, 329]]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>False</td>
+      <td>((4, 263), (277, 300), (312, 327))</td>
+      <td>300</td>
+      <td>0.087956</td>
+      <td>0.088666</td>
+      <td>2.763</td>
+      <td>x-ray</td>
+      <td>X-ray diffraction</td>
+      <td>False</td>
+      <td>20200805</td>
+      <td>20191204</td>
+      <td>0.361925</td>
+      <td>-66</td>
+      <td>False</td>
+      <td>3</td>
+      <td>Q7Z699</td>
+      <td>SPRE1_HUMAN</td>
+      <td>1.00</td>
+      <td>True</td>
+      <td>SPRE1_HUMAN</td>
+      <td>[[1,113]]</td>
+      <td>[[13,125]]</td>
+      <td>Q7Z699</td>
+      <td>[0]</td>
+      <td>Safe</td>
+      <td>False</td>
+      <td>False</td>
+      <td>0</td>
+      <td>[[1,113]]</td>
+      <td>[[13,125]]</td>
+      <td>{}</td>
+      <td>[]</td>
+      <td>[]</td>
+      <td>444</td>
+      <td>2</td>
+      <td>[[37, 37], [43, 43]]</td>
+      <td>110</td>
+      <td>[[1, 22], [25, 112]]</td>
+      <td>108.199</td>
+      <td>[]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>113</td>
+      <td>113</td>
+      <td>[[1, 113]]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>False</td>
+      <td>((1, 22), (25, 112))</td>
+      <td>110</td>
+      <td>0.231144</td>
+      <td>0.235648</td>
+      <td>-65</td>
+      <td>True</td>
+      <td>1</td>
+      <td>False</td>
+      <td>1.000000</td>
+      <td>0.333333</td>
+      <td>((1378, 1379), (1430, 1432), (1451, 1452), (14...</td>
+      <td>((47, 50), (52, 52), (55, 57), (75, 75), (78, ...</td>
+      <td>(P21359-2, Q7Z699)</td>
+      <td>True</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>2</td>
+      <td>B</td>
+      <td>B</td>
+      <td>B</td>
+      <td>1</td>
+      <td>1</td>
+      <td>polypeptide(L)</td>
+      <td>[[12,48],[50,53],[55,73],[75,76],[78,80],[82,8...</td>
+      <td>[[25,27],[30,30],[64,71],[76,76],[79,79],[115,...</td>
+      <td>1</td>
+      <td>A</td>
+      <td>A</td>
+      <td>A</td>
+      <td>1</td>
+      <td>1</td>
+      <td>polypeptide(L)</td>
+      <td>[[1,8],[11,20],[22,53],[55,55],[57,72],[74,77]...</td>
+      <td>[[13,14],[18,18],[22,22],[25,26],[31,42],[55,5...</td>
+      <td>6ob3</td>
+      <td>0</td>
+      <td>1</td>
+      <td>False</td>
+      <td>P21359-2</td>
+      <td>NF1_HUMAN</td>
+      <td>1.0</td>
+      <td>False</td>
+      <td>NF1_HUMAN</td>
+      <td>[[2,256]]</td>
+      <td>[[1209,1463]]</td>
+      <td>P21359</td>
+      <td>[0]</td>
+      <td>Safe</td>
+      <td>False</td>
+      <td>False</td>
+      <td>0</td>
+      <td>[[2,256]]</td>
+      <td>[[1209,1463]]</td>
+      <td>{}</td>
+      <td>[]</td>
+      <td>[]</td>
+      <td>2818</td>
+      <td>10</td>
+      <td>[[41, 41], [51, 51], [69, 69], [129, 130], [13...</td>
+      <td>245</td>
+      <td>[[12, 256]]</td>
+      <td>241.495</td>
+      <td>[[1, 1]]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>256</td>
+      <td>256</td>
+      <td>[[1, 256]]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>False</td>
+      <td>((12, 256),)</td>
+      <td>245</td>
+      <td>0.077038</td>
+      <td>0.080586</td>
+      <td>2.100</td>
+      <td>x-ray</td>
+      <td>X-ray diffraction</td>
+      <td>False</td>
+      <td>20191113</td>
+      <td>20190319</td>
+      <td>0.476190</td>
+      <td>-66</td>
+      <td>False</td>
+      <td>11</td>
+      <td>P01116</td>
+      <td>RASK_HUMAN</td>
+      <td>0.96</td>
+      <td>True</td>
+      <td>RASK_HUMAN</td>
+      <td>[[2,170]]</td>
+      <td>[[1,169]]</td>
+      <td>P01116</td>
+      <td>[0]</td>
+      <td>Safe</td>
+      <td>False</td>
+      <td>False</td>
+      <td>0</td>
+      <td>[[2,170]]</td>
+      <td>[[1,169]]</td>
+      <td>{"14":"G","152":"R","154":"E","166":"Q","167":...</td>
+      <td>[[14,14],[152,152],[154,154],[166,169]]</td>
+      <td>[[13,13],[151,151],[153,153],[165,168]]</td>
+      <td>189</td>
+      <td>22</td>
+      <td>[[13, 19], [23, 23], [29, 31], [35, 36], [61, ...</td>
+      <td>170</td>
+      <td>[[1, 170]]</td>
+      <td>169.566</td>
+      <td>[[1, 1]]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>170</td>
+      <td>170</td>
+      <td>[[1, 170]]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>False</td>
+      <td>((1, 170),)</td>
+      <td>170</td>
+      <td>0.777778</td>
+      <td>0.894180</td>
+      <td>-65</td>
+      <td>True</td>
+      <td>1</td>
+      <td>False</td>
+      <td>1.000000</td>
+      <td>0.090909</td>
+      <td>((1232, 1234), (1237, 1237), (1271, 1278), (12...</td>
+      <td>((12, 13), (17, 17), (21, 21), (24, 25), (30, ...</td>
+      <td>(P21359-2, P01116)</td>
+      <td>False</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>2</td>
+      <td>B</td>
+      <td>B</td>
+      <td>B</td>
+      <td>1</td>
+      <td>1</td>
+      <td>polypeptide(L)</td>
+      <td>[[12,48],[50,53],[55,73],[75,76],[78,80],[82,8...</td>
+      <td>[[25,27],[30,30],[64,71],[76,76],[79,79],[115,...</td>
+      <td>1</td>
+      <td>A</td>
+      <td>A</td>
+      <td>A</td>
+      <td>1</td>
+      <td>1</td>
+      <td>polypeptide(L)</td>
+      <td>[[1,8],[11,20],[22,53],[55,55],[57,72],[74,77]...</td>
+      <td>[[13,14],[18,18],[22,22],[25,26],[31,42],[55,5...</td>
+      <td>6ob3</td>
+      <td>0</td>
+      <td>1</td>
+      <td>False</td>
+      <td>P21359-2</td>
+      <td>NF1_HUMAN</td>
+      <td>1.0</td>
+      <td>False</td>
+      <td>NF1_HUMAN</td>
+      <td>[[2,256]]</td>
+      <td>[[1209,1463]]</td>
+      <td>P21359</td>
+      <td>[0]</td>
+      <td>Safe</td>
+      <td>False</td>
+      <td>False</td>
+      <td>0</td>
+      <td>[[2,256]]</td>
+      <td>[[1209,1463]]</td>
+      <td>{}</td>
+      <td>[]</td>
+      <td>[]</td>
+      <td>2818</td>
+      <td>10</td>
+      <td>[[41, 41], [51, 51], [69, 69], [129, 130], [13...</td>
+      <td>245</td>
+      <td>[[12, 256]]</td>
+      <td>241.495</td>
+      <td>[[1, 1]]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>256</td>
+      <td>256</td>
+      <td>[[1, 256]]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>False</td>
+      <td>((12, 256),)</td>
+      <td>245</td>
+      <td>0.077038</td>
+      <td>0.080586</td>
+      <td>2.100</td>
+      <td>x-ray</td>
+      <td>X-ray diffraction</td>
+      <td>False</td>
+      <td>20191113</td>
+      <td>20190319</td>
+      <td>0.476190</td>
+      <td>-66</td>
+      <td>False</td>
+      <td>11</td>
+      <td>P01116-2</td>
+      <td>RASK_HUMAN</td>
+      <td>0.99</td>
+      <td>False</td>
+      <td>RASK_HUMAN</td>
+      <td>[[2,170]]</td>
+      <td>[[1,169]]</td>
+      <td>P01116</td>
+      <td>[0]</td>
+      <td>Safe</td>
+      <td>False</td>
+      <td>False</td>
+      <td>0</td>
+      <td>[[2,170]]</td>
+      <td>[[1,169]]</td>
+      <td>{"14":"G"}</td>
+      <td>[[14,14]]</td>
+      <td>[[13,13]]</td>
+      <td>188</td>
+      <td>22</td>
+      <td>[[13, 19], [23, 23], [29, 31], [35, 36], [61, ...</td>
+      <td>170</td>
+      <td>[[1, 170]]</td>
+      <td>169.566</td>
+      <td>[[1, 1]]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>170</td>
+      <td>170</td>
+      <td>[[1, 170]]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>False</td>
+      <td>((1, 170),)</td>
+      <td>170</td>
+      <td>0.781915</td>
+      <td>0.898936</td>
+      <td>-65</td>
+      <td>True</td>
+      <td>1</td>
+      <td>False</td>
+      <td>1.000000</td>
+      <td>0.090909</td>
+      <td>((1232, 1234), (1237, 1237), (1271, 1278), (12...</td>
+      <td>((12, 13), (17, 17), (21, 21), (24, 25), (30, ...</td>
+      <td>(P21359-2, P01116-2)</td>
+      <td>False</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>2</td>
+      <td>B</td>
+      <td>B</td>
+      <td>B</td>
+      <td>1</td>
+      <td>1</td>
+      <td>polypeptide(L)</td>
+      <td>[[12,48],[50,53],[55,73],[75,76],[78,80],[82,8...</td>
+      <td>[[25,27],[30,30],[64,71],[76,76],[79,79],[115,...</td>
+      <td>1</td>
+      <td>A</td>
+      <td>A</td>
+      <td>A</td>
+      <td>1</td>
+      <td>1</td>
+      <td>polypeptide(L)</td>
+      <td>[[1,8],[11,20],[22,53],[55,55],[57,72],[74,77]...</td>
+      <td>[[13,14],[18,18],[22,22],[25,26],[31,42],[55,5...</td>
+      <td>6ob3</td>
+      <td>1</td>
+      <td>1</td>
+      <td>True</td>
+      <td>P21359-2</td>
+      <td>NF1_HUMAN</td>
+      <td>1.0</td>
+      <td>False</td>
+      <td>NF1_HUMAN</td>
+      <td>[[2,256]]</td>
+      <td>[[1209,1463]]</td>
+      <td>P21359</td>
+      <td>[0]</td>
+      <td>Safe</td>
+      <td>False</td>
+      <td>False</td>
+      <td>0</td>
+      <td>[[2,256]]</td>
+      <td>[[1209,1463]]</td>
+      <td>{}</td>
+      <td>[]</td>
+      <td>[]</td>
+      <td>2818</td>
+      <td>10</td>
+      <td>[[41, 41], [51, 51], [69, 69], [129, 130], [13...</td>
+      <td>245</td>
+      <td>[[12, 256]]</td>
+      <td>241.495</td>
+      <td>[[1, 1]]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>256</td>
+      <td>256</td>
+      <td>[[1, 256]]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>False</td>
+      <td>((12, 256),)</td>
+      <td>245</td>
+      <td>0.077038</td>
+      <td>0.080586</td>
+      <td>2.100</td>
+      <td>x-ray</td>
+      <td>X-ray diffraction</td>
+      <td>False</td>
+      <td>20191113</td>
+      <td>20190319</td>
+      <td>0.476190</td>
+      <td>-66</td>
+      <td>False</td>
+      <td>11</td>
+      <td>P01116</td>
+      <td>RASK_HUMAN</td>
+      <td>0.96</td>
+      <td>True</td>
+      <td>RASK_HUMAN</td>
+      <td>[[2,170]]</td>
+      <td>[[1,169]]</td>
+      <td>P01116</td>
+      <td>[0]</td>
+      <td>Safe</td>
+      <td>False</td>
+      <td>False</td>
+      <td>0</td>
+      <td>[[2,170]]</td>
+      <td>[[1,169]]</td>
+      <td>{"14":"G","152":"R","154":"E","166":"Q","167":...</td>
+      <td>[[14,14],[152,152],[154,154],[166,169]]</td>
+      <td>[[13,13],[151,151],[153,153],[165,168]]</td>
+      <td>189</td>
+      <td>22</td>
+      <td>[[13, 19], [23, 23], [29, 31], [35, 36], [61, ...</td>
+      <td>170</td>
+      <td>[[1, 170]]</td>
+      <td>169.566</td>
+      <td>[[1, 1]]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>170</td>
+      <td>170</td>
+      <td>[[1, 170]]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>False</td>
+      <td>((1, 170),)</td>
+      <td>170</td>
+      <td>0.777778</td>
+      <td>0.894180</td>
+      <td>-65</td>
+      <td>True</td>
+      <td>1</td>
+      <td>True</td>
+      <td>1.000000</td>
+      <td>0.090909</td>
+      <td>((1232, 1234), (1237, 1237), (1271, 1278), (12...</td>
+      <td>((12, 13), (17, 17), (21, 21), (24, 25), (30, ...</td>
+      <td>(P21359-2, P01116)</td>
+      <td>True</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>2</td>
+      <td>B</td>
+      <td>B</td>
+      <td>B</td>
+      <td>1</td>
+      <td>1</td>
+      <td>polypeptide(L)</td>
+      <td>[[12,48],[50,53],[55,73],[75,76],[78,80],[82,8...</td>
+      <td>[[25,27],[30,30],[64,71],[76,76],[79,79],[115,...</td>
+      <td>1</td>
+      <td>A</td>
+      <td>A</td>
+      <td>A</td>
+      <td>1</td>
+      <td>1</td>
+      <td>polypeptide(L)</td>
+      <td>[[1,8],[11,20],[22,53],[55,55],[57,72],[74,77]...</td>
+      <td>[[13,14],[18,18],[22,22],[25,26],[31,42],[55,5...</td>
+      <td>6ob3</td>
+      <td>1</td>
+      <td>1</td>
+      <td>True</td>
+      <td>P21359-2</td>
+      <td>NF1_HUMAN</td>
+      <td>1.0</td>
+      <td>False</td>
+      <td>NF1_HUMAN</td>
+      <td>[[2,256]]</td>
+      <td>[[1209,1463]]</td>
+      <td>P21359</td>
+      <td>[0]</td>
+      <td>Safe</td>
+      <td>False</td>
+      <td>False</td>
+      <td>0</td>
+      <td>[[2,256]]</td>
+      <td>[[1209,1463]]</td>
+      <td>{}</td>
+      <td>[]</td>
+      <td>[]</td>
+      <td>2818</td>
+      <td>10</td>
+      <td>[[41, 41], [51, 51], [69, 69], [129, 130], [13...</td>
+      <td>245</td>
+      <td>[[12, 256]]</td>
+      <td>241.495</td>
+      <td>[[1, 1]]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>256</td>
+      <td>256</td>
+      <td>[[1, 256]]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>False</td>
+      <td>((12, 256),)</td>
+      <td>245</td>
+      <td>0.077038</td>
+      <td>0.080586</td>
+      <td>2.100</td>
+      <td>x-ray</td>
+      <td>X-ray diffraction</td>
+      <td>False</td>
+      <td>20191113</td>
+      <td>20190319</td>
+      <td>0.476190</td>
+      <td>-66</td>
+      <td>False</td>
+      <td>11</td>
+      <td>P01116-2</td>
+      <td>RASK_HUMAN</td>
+      <td>0.99</td>
+      <td>False</td>
+      <td>RASK_HUMAN</td>
+      <td>[[2,170]]</td>
+      <td>[[1,169]]</td>
+      <td>P01116</td>
+      <td>[0]</td>
+      <td>Safe</td>
+      <td>False</td>
+      <td>False</td>
+      <td>0</td>
+      <td>[[2,170]]</td>
+      <td>[[1,169]]</td>
+      <td>{"14":"G"}</td>
+      <td>[[14,14]]</td>
+      <td>[[13,13]]</td>
+      <td>188</td>
+      <td>22</td>
+      <td>[[13, 19], [23, 23], [29, 31], [35, 36], [61, ...</td>
+      <td>170</td>
+      <td>[[1, 170]]</td>
+      <td>169.566</td>
+      <td>[[1, 1]]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>170</td>
+      <td>170</td>
+      <td>[[1, 170]]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>False</td>
+      <td>((1, 170),)</td>
+      <td>170</td>
+      <td>0.781915</td>
+      <td>0.898936</td>
+      <td>-65</td>
+      <td>True</td>
+      <td>1</td>
+      <td>True</td>
+      <td>1.000000</td>
+      <td>0.090909</td>
+      <td>((1232, 1234), (1237, 1237), (1271, 1278), (12...</td>
+      <td>((12, 13), (17, 17), (21, 21), (24, 25), (30, ...</td>
+      <td>(P21359-2, P01116-2)</td>
+      <td>True</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>2</td>
+      <td>D</td>
+      <td>D</td>
+      <td>D</td>
+      <td>1</td>
+      <td>1</td>
+      <td>polypeptide(L)</td>
+      <td>[[10,48],[50,53],[55,76],[79,80],[82,85],[87,9...</td>
+      <td>[[28,28],[31,31],[34,35],[38,38],[42,42],[80,8...</td>
+      <td>1</td>
+      <td>A</td>
+      <td>A</td>
+      <td>A</td>
+      <td>1</td>
+      <td>1</td>
+      <td>polypeptide(L)</td>
+      <td>[[1,8],[11,20],[22,53],[55,55],[57,72],[74,77]...</td>
+      <td>[[24,24],[26,28],[43,46],[51,51],[149,150],[15...</td>
+      <td>6ob3</td>
+      <td>0</td>
+      <td>9</td>
+      <td>False</td>
+      <td>P21359-2</td>
+      <td>NF1_HUMAN</td>
+      <td>1.0</td>
+      <td>False</td>
+      <td>NF1_HUMAN</td>
+      <td>[[2,256]]</td>
+      <td>[[1209,1463]]</td>
+      <td>P21359</td>
+      <td>[0]</td>
+      <td>Safe</td>
+      <td>False</td>
+      <td>False</td>
+      <td>0</td>
+      <td>[[2,256]]</td>
+      <td>[[1209,1463]]</td>
+      <td>{}</td>
+      <td>[]</td>
+      <td>[]</td>
+      <td>2818</td>
+      <td>7</td>
+      <td>[[41, 41], [44, 44], [126, 126], [133, 133], [...</td>
+      <td>247</td>
+      <td>[[10, 256]]</td>
+      <td>244.327</td>
+      <td>[[1, 1]]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>256</td>
+      <td>256</td>
+      <td>[[1, 256]]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>False</td>
+      <td>((10, 256),)</td>
+      <td>247</td>
+      <td>0.080083</td>
+      <td>0.082567</td>
+      <td>2.100</td>
+      <td>x-ray</td>
+      <td>X-ray diffraction</td>
+      <td>False</td>
+      <td>20191113</td>
+      <td>20190319</td>
+      <td>0.476190</td>
+      <td>-68</td>
+      <td>False</td>
+      <td>10</td>
+      <td>P01116</td>
+      <td>RASK_HUMAN</td>
+      <td>0.96</td>
+      <td>True</td>
+      <td>RASK_HUMAN</td>
+      <td>[[2,170]]</td>
+      <td>[[1,169]]</td>
+      <td>P01116</td>
+      <td>[0]</td>
+      <td>Safe</td>
+      <td>False</td>
+      <td>False</td>
+      <td>0</td>
+      <td>[[2,170]]</td>
+      <td>[[1,169]]</td>
+      <td>{"14":"G","152":"R","154":"E","166":"Q","167":...</td>
+      <td>[[14,14],[152,152],[154,154],[166,169]]</td>
+      <td>[[13,13],[151,151],[153,153],[165,168]]</td>
+      <td>189</td>
+      <td>22</td>
+      <td>[[13, 19], [23, 23], [29, 31], [35, 36], [61, ...</td>
+      <td>170</td>
+      <td>[[1, 170]]</td>
+      <td>169.566</td>
+      <td>[[1, 1]]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>170</td>
+      <td>170</td>
+      <td>[[1, 170]]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>False</td>
+      <td>((1, 170),)</td>
+      <td>170</td>
+      <td>0.777778</td>
+      <td>0.894180</td>
+      <td>-65</td>
+      <td>True</td>
+      <td>1</td>
+      <td>False</td>
+      <td>1.000000</td>
+      <td>0.100000</td>
+      <td>((1235, 1235), (1238, 1238), (1241, 1242), (12...</td>
+      <td>((23, 23), (25, 27), (42, 45), (50, 50), (148,...</td>
+      <td>(P21359-2, P01116)</td>
+      <td>True</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>2</td>
+      <td>D</td>
+      <td>D</td>
+      <td>D</td>
+      <td>1</td>
+      <td>1</td>
+      <td>polypeptide(L)</td>
+      <td>[[10,48],[50,53],[55,76],[79,80],[82,85],[87,9...</td>
+      <td>[[28,28],[31,31],[34,35],[38,38],[42,42],[80,8...</td>
+      <td>1</td>
+      <td>A</td>
+      <td>A</td>
+      <td>A</td>
+      <td>1</td>
+      <td>1</td>
+      <td>polypeptide(L)</td>
+      <td>[[1,8],[11,20],[22,53],[55,55],[57,72],[74,77]...</td>
+      <td>[[24,24],[26,28],[43,46],[51,51],[149,150],[15...</td>
+      <td>6ob3</td>
+      <td>0</td>
+      <td>9</td>
+      <td>False</td>
+      <td>P21359-2</td>
+      <td>NF1_HUMAN</td>
+      <td>1.0</td>
+      <td>False</td>
+      <td>NF1_HUMAN</td>
+      <td>[[2,256]]</td>
+      <td>[[1209,1463]]</td>
+      <td>P21359</td>
+      <td>[0]</td>
+      <td>Safe</td>
+      <td>False</td>
+      <td>False</td>
+      <td>0</td>
+      <td>[[2,256]]</td>
+      <td>[[1209,1463]]</td>
+      <td>{}</td>
+      <td>[]</td>
+      <td>[]</td>
+      <td>2818</td>
+      <td>7</td>
+      <td>[[41, 41], [44, 44], [126, 126], [133, 133], [...</td>
+      <td>247</td>
+      <td>[[10, 256]]</td>
+      <td>244.327</td>
+      <td>[[1, 1]]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>256</td>
+      <td>256</td>
+      <td>[[1, 256]]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>False</td>
+      <td>((10, 256),)</td>
+      <td>247</td>
+      <td>0.080083</td>
+      <td>0.082567</td>
+      <td>2.100</td>
+      <td>x-ray</td>
+      <td>X-ray diffraction</td>
+      <td>False</td>
+      <td>20191113</td>
+      <td>20190319</td>
+      <td>0.476190</td>
+      <td>-68</td>
+      <td>False</td>
+      <td>10</td>
+      <td>P01116-2</td>
+      <td>RASK_HUMAN</td>
+      <td>0.99</td>
+      <td>False</td>
+      <td>RASK_HUMAN</td>
+      <td>[[2,170]]</td>
+      <td>[[1,169]]</td>
+      <td>P01116</td>
+      <td>[0]</td>
+      <td>Safe</td>
+      <td>False</td>
+      <td>False</td>
+      <td>0</td>
+      <td>[[2,170]]</td>
+      <td>[[1,169]]</td>
+      <td>{"14":"G"}</td>
+      <td>[[14,14]]</td>
+      <td>[[13,13]]</td>
+      <td>188</td>
+      <td>22</td>
+      <td>[[13, 19], [23, 23], [29, 31], [35, 36], [61, ...</td>
+      <td>170</td>
+      <td>[[1, 170]]</td>
+      <td>169.566</td>
+      <td>[[1, 1]]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>170</td>
+      <td>170</td>
+      <td>[[1, 170]]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>False</td>
+      <td>((1, 170),)</td>
+      <td>170</td>
+      <td>0.781915</td>
+      <td>0.898936</td>
+      <td>-65</td>
+      <td>True</td>
+      <td>1</td>
+      <td>False</td>
+      <td>1.000000</td>
+      <td>0.100000</td>
+      <td>((1235, 1235), (1238, 1238), (1241, 1242), (12...</td>
+      <td>((23, 23), (25, 27), (42, 45), (50, 50), (148,...</td>
+      <td>(P21359-2, P01116-2)</td>
+      <td>True</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>2</td>
+      <td>D</td>
+      <td>D</td>
+      <td>D</td>
+      <td>1</td>
+      <td>1</td>
+      <td>polypeptide(L)</td>
+      <td>[[10,48],[50,53],[55,76],[79,80],[82,85],[87,9...</td>
+      <td>[[26,27],[29,30],[65,71],[75,76],[79,79],[83,8...</td>
+      <td>1</td>
+      <td>C</td>
+      <td>C</td>
+      <td>C</td>
+      <td>1</td>
+      <td>1</td>
+      <td>polypeptide(L)</td>
+      <td>[[2,20],[22,23],[25,51],[53,53],[55,55],[57,72...</td>
+      <td>[[12,14],[18,18],[22,22],[26,26],[28,28],[30,3...</td>
+      <td>6ob3</td>
+      <td>0</td>
+      <td>2</td>
+      <td>False</td>
+      <td>P21359-2</td>
+      <td>NF1_HUMAN</td>
+      <td>1.0</td>
+      <td>False</td>
+      <td>NF1_HUMAN</td>
+      <td>[[2,256]]</td>
+      <td>[[1209,1463]]</td>
+      <td>P21359</td>
+      <td>[0]</td>
+      <td>Safe</td>
+      <td>False</td>
+      <td>False</td>
+      <td>0</td>
+      <td>[[2,256]]</td>
+      <td>[[1209,1463]]</td>
+      <td>{}</td>
+      <td>[]</td>
+      <td>[]</td>
+      <td>2818</td>
+      <td>7</td>
+      <td>[[41, 41], [44, 44], [126, 126], [133, 133], [...</td>
+      <td>247</td>
+      <td>[[10, 256]]</td>
+      <td>244.327</td>
+      <td>[[1, 1]]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>256</td>
+      <td>256</td>
+      <td>[[1, 256]]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>False</td>
+      <td>((10, 256),)</td>
+      <td>247</td>
+      <td>0.080083</td>
+      <td>0.082567</td>
+      <td>2.100</td>
+      <td>x-ray</td>
+      <td>X-ray diffraction</td>
+      <td>False</td>
+      <td>20191113</td>
+      <td>20190319</td>
+      <td>0.476190</td>
+      <td>-68</td>
+      <td>False</td>
+      <td>10</td>
+      <td>P01116</td>
+      <td>RASK_HUMAN</td>
+      <td>0.96</td>
+      <td>True</td>
+      <td>RASK_HUMAN</td>
+      <td>[[2,170]]</td>
+      <td>[[1,169]]</td>
+      <td>P01116</td>
+      <td>[0]</td>
+      <td>Safe</td>
+      <td>False</td>
+      <td>False</td>
+      <td>0</td>
+      <td>[[2,170]]</td>
+      <td>[[1,169]]</td>
+      <td>{"14":"G","152":"R","154":"E","166":"Q","167":...</td>
+      <td>[[14,14],[152,152],[154,154],[166,169]]</td>
+      <td>[[13,13],[151,151],[153,153],[165,168]]</td>
+      <td>189</td>
+      <td>21</td>
+      <td>[[13, 19], [29, 31], [35, 36], [61, 61], [69, ...</td>
+      <td>166</td>
+      <td>[[2, 167]]</td>
+      <td>164.220</td>
+      <td>[[1, 1]]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>170</td>
+      <td>170</td>
+      <td>[[1, 170]]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>False</td>
+      <td>((2, 167),)</td>
+      <td>166</td>
+      <td>0.738772</td>
+      <td>0.849883</td>
+      <td>-67</td>
+      <td>False</td>
+      <td>5</td>
+      <td>False</td>
+      <td>0.200000</td>
+      <td>0.100000</td>
+      <td>((1233, 1234), (1236, 1237), (1272, 1278), (12...</td>
+      <td>((11, 13), (17, 17), (21, 21), (25, 25), (27, ...</td>
+      <td>(P21359-2, P01116)</td>
+      <td>False</td>
+      <td>8</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>2</td>
+      <td>D</td>
+      <td>D</td>
+      <td>D</td>
+      <td>1</td>
+      <td>1</td>
+      <td>polypeptide(L)</td>
+      <td>[[10,48],[50,53],[55,76],[79,80],[82,85],[87,9...</td>
+      <td>[[26,27],[29,30],[65,71],[75,76],[79,79],[83,8...</td>
+      <td>1</td>
+      <td>C</td>
+      <td>C</td>
+      <td>C</td>
+      <td>1</td>
+      <td>1</td>
+      <td>polypeptide(L)</td>
+      <td>[[2,20],[22,23],[25,51],[53,53],[55,55],[57,72...</td>
+      <td>[[12,14],[18,18],[22,22],[26,26],[28,28],[30,3...</td>
+      <td>6ob3</td>
+      <td>0</td>
+      <td>2</td>
+      <td>False</td>
+      <td>P21359-2</td>
+      <td>NF1_HUMAN</td>
+      <td>1.0</td>
+      <td>False</td>
+      <td>NF1_HUMAN</td>
+      <td>[[2,256]]</td>
+      <td>[[1209,1463]]</td>
+      <td>P21359</td>
+      <td>[0]</td>
+      <td>Safe</td>
+      <td>False</td>
+      <td>False</td>
+      <td>0</td>
+      <td>[[2,256]]</td>
+      <td>[[1209,1463]]</td>
+      <td>{}</td>
+      <td>[]</td>
+      <td>[]</td>
+      <td>2818</td>
+      <td>7</td>
+      <td>[[41, 41], [44, 44], [126, 126], [133, 133], [...</td>
+      <td>247</td>
+      <td>[[10, 256]]</td>
+      <td>244.327</td>
+      <td>[[1, 1]]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>256</td>
+      <td>256</td>
+      <td>[[1, 256]]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>False</td>
+      <td>((10, 256),)</td>
+      <td>247</td>
+      <td>0.080083</td>
+      <td>0.082567</td>
+      <td>2.100</td>
+      <td>x-ray</td>
+      <td>X-ray diffraction</td>
+      <td>False</td>
+      <td>20191113</td>
+      <td>20190319</td>
+      <td>0.476190</td>
+      <td>-68</td>
+      <td>False</td>
+      <td>10</td>
+      <td>P01116-2</td>
+      <td>RASK_HUMAN</td>
+      <td>0.99</td>
+      <td>False</td>
+      <td>RASK_HUMAN</td>
+      <td>[[2,170]]</td>
+      <td>[[1,169]]</td>
+      <td>P01116</td>
+      <td>[0]</td>
+      <td>Safe</td>
+      <td>False</td>
+      <td>False</td>
+      <td>0</td>
+      <td>[[2,170]]</td>
+      <td>[[1,169]]</td>
+      <td>{"14":"G"}</td>
+      <td>[[14,14]]</td>
+      <td>[[13,13]]</td>
+      <td>188</td>
+      <td>21</td>
+      <td>[[13, 19], [29, 31], [35, 36], [61, 61], [69, ...</td>
+      <td>166</td>
+      <td>[[2, 167]]</td>
+      <td>164.220</td>
+      <td>[[1, 1]]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>170</td>
+      <td>170</td>
+      <td>[[1, 170]]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>False</td>
+      <td>((2, 167),)</td>
+      <td>166</td>
+      <td>0.742701</td>
+      <td>0.854403</td>
+      <td>-67</td>
+      <td>False</td>
+      <td>5</td>
+      <td>False</td>
+      <td>0.200000</td>
+      <td>0.100000</td>
+      <td>((1233, 1234), (1236, 1237), (1272, 1278), (12...</td>
+      <td>((11, 13), (17, 17), (21, 21), (25, 25), (27, ...</td>
+      <td>(P21359-2, P01116-2)</td>
+      <td>False</td>
+      <td>8</td>
+    </tr>
+    <tr>
+      <th>20</th>
+      <td>2</td>
+      <td>D</td>
+      <td>D</td>
+      <td>D</td>
+      <td>1</td>
+      <td>1</td>
+      <td>polypeptide(L)</td>
+      <td>[[10,48],[50,53],[55,76],[79,80],[82,85],[87,9...</td>
+      <td>[[26,27],[29,30],[65,71],[75,76],[79,79],[83,8...</td>
+      <td>1</td>
+      <td>C</td>
+      <td>C</td>
+      <td>C</td>
+      <td>1</td>
+      <td>1</td>
+      <td>polypeptide(L)</td>
+      <td>[[2,20],[22,23],[25,51],[53,53],[55,55],[57,72...</td>
+      <td>[[12,14],[18,18],[22,22],[26,26],[28,28],[30,3...</td>
+      <td>6ob3</td>
+      <td>2</td>
+      <td>2</td>
+      <td>True</td>
+      <td>P21359-2</td>
+      <td>NF1_HUMAN</td>
+      <td>1.0</td>
+      <td>False</td>
+      <td>NF1_HUMAN</td>
+      <td>[[2,256]]</td>
+      <td>[[1209,1463]]</td>
+      <td>P21359</td>
+      <td>[0]</td>
+      <td>Safe</td>
+      <td>False</td>
+      <td>False</td>
+      <td>0</td>
+      <td>[[2,256]]</td>
+      <td>[[1209,1463]]</td>
+      <td>{}</td>
+      <td>[]</td>
+      <td>[]</td>
+      <td>2818</td>
+      <td>7</td>
+      <td>[[41, 41], [44, 44], [126, 126], [133, 133], [...</td>
+      <td>247</td>
+      <td>[[10, 256]]</td>
+      <td>244.327</td>
+      <td>[[1, 1]]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>256</td>
+      <td>256</td>
+      <td>[[1, 256]]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>False</td>
+      <td>((10, 256),)</td>
+      <td>247</td>
+      <td>0.080083</td>
+      <td>0.082567</td>
+      <td>2.100</td>
+      <td>x-ray</td>
+      <td>X-ray diffraction</td>
+      <td>False</td>
+      <td>20191113</td>
+      <td>20190319</td>
+      <td>0.476190</td>
+      <td>-68</td>
+      <td>False</td>
+      <td>10</td>
+      <td>P01116</td>
+      <td>RASK_HUMAN</td>
+      <td>0.96</td>
+      <td>True</td>
+      <td>RASK_HUMAN</td>
+      <td>[[2,170]]</td>
+      <td>[[1,169]]</td>
+      <td>P01116</td>
+      <td>[0]</td>
+      <td>Safe</td>
+      <td>False</td>
+      <td>False</td>
+      <td>0</td>
+      <td>[[2,170]]</td>
+      <td>[[1,169]]</td>
+      <td>{"14":"G","152":"R","154":"E","166":"Q","167":...</td>
+      <td>[[14,14],[152,152],[154,154],[166,169]]</td>
+      <td>[[13,13],[151,151],[153,153],[165,168]]</td>
+      <td>189</td>
+      <td>21</td>
+      <td>[[13, 19], [29, 31], [35, 36], [61, 61], [69, ...</td>
+      <td>166</td>
+      <td>[[2, 167]]</td>
+      <td>164.220</td>
+      <td>[[1, 1]]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>170</td>
+      <td>170</td>
+      <td>[[1, 170]]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>False</td>
+      <td>((2, 167),)</td>
+      <td>166</td>
+      <td>0.738772</td>
+      <td>0.849883</td>
+      <td>-67</td>
+      <td>False</td>
+      <td>5</td>
+      <td>True</td>
+      <td>0.200000</td>
+      <td>0.100000</td>
+      <td>((1233, 1234), (1236, 1237), (1272, 1278), (12...</td>
+      <td>((11, 13), (17, 17), (21, 21), (25, 25), (27, ...</td>
+      <td>(P21359-2, P01116)</td>
+      <td>False</td>
+      <td>7</td>
+    </tr>
+    <tr>
+      <th>21</th>
+      <td>2</td>
+      <td>D</td>
+      <td>D</td>
+      <td>D</td>
+      <td>1</td>
+      <td>1</td>
+      <td>polypeptide(L)</td>
+      <td>[[10,48],[50,53],[55,76],[79,80],[82,85],[87,9...</td>
+      <td>[[26,27],[29,30],[65,71],[75,76],[79,79],[83,8...</td>
+      <td>1</td>
+      <td>C</td>
+      <td>C</td>
+      <td>C</td>
+      <td>1</td>
+      <td>1</td>
+      <td>polypeptide(L)</td>
+      <td>[[2,20],[22,23],[25,51],[53,53],[55,55],[57,72...</td>
+      <td>[[12,14],[18,18],[22,22],[26,26],[28,28],[30,3...</td>
+      <td>6ob3</td>
+      <td>2</td>
+      <td>2</td>
+      <td>True</td>
+      <td>P21359-2</td>
+      <td>NF1_HUMAN</td>
+      <td>1.0</td>
+      <td>False</td>
+      <td>NF1_HUMAN</td>
+      <td>[[2,256]]</td>
+      <td>[[1209,1463]]</td>
+      <td>P21359</td>
+      <td>[0]</td>
+      <td>Safe</td>
+      <td>False</td>
+      <td>False</td>
+      <td>0</td>
+      <td>[[2,256]]</td>
+      <td>[[1209,1463]]</td>
+      <td>{}</td>
+      <td>[]</td>
+      <td>[]</td>
+      <td>2818</td>
+      <td>7</td>
+      <td>[[41, 41], [44, 44], [126, 126], [133, 133], [...</td>
+      <td>247</td>
+      <td>[[10, 256]]</td>
+      <td>244.327</td>
+      <td>[[1, 1]]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>256</td>
+      <td>256</td>
+      <td>[[1, 256]]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>False</td>
+      <td>((10, 256),)</td>
+      <td>247</td>
+      <td>0.080083</td>
+      <td>0.082567</td>
+      <td>2.100</td>
+      <td>x-ray</td>
+      <td>X-ray diffraction</td>
+      <td>False</td>
+      <td>20191113</td>
+      <td>20190319</td>
+      <td>0.476190</td>
+      <td>-68</td>
+      <td>False</td>
+      <td>10</td>
+      <td>P01116-2</td>
+      <td>RASK_HUMAN</td>
+      <td>0.99</td>
+      <td>False</td>
+      <td>RASK_HUMAN</td>
+      <td>[[2,170]]</td>
+      <td>[[1,169]]</td>
+      <td>P01116</td>
+      <td>[0]</td>
+      <td>Safe</td>
+      <td>False</td>
+      <td>False</td>
+      <td>0</td>
+      <td>[[2,170]]</td>
+      <td>[[1,169]]</td>
+      <td>{"14":"G"}</td>
+      <td>[[14,14]]</td>
+      <td>[[13,13]]</td>
+      <td>188</td>
+      <td>21</td>
+      <td>[[13, 19], [29, 31], [35, 36], [61, 61], [69, ...</td>
+      <td>166</td>
+      <td>[[2, 167]]</td>
+      <td>164.220</td>
+      <td>[[1, 1]]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>170</td>
+      <td>170</td>
+      <td>[[1, 170]]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>False</td>
+      <td>((2, 167),)</td>
+      <td>166</td>
+      <td>0.742701</td>
+      <td>0.854403</td>
+      <td>-67</td>
+      <td>False</td>
+      <td>5</td>
+      <td>True</td>
+      <td>0.200000</td>
+      <td>0.100000</td>
+      <td>((1233, 1234), (1236, 1237), (1272, 1278), (12...</td>
+      <td>((11, 13), (17, 17), (21, 21), (25, 25), (27, ...</td>
+      <td>(P21359-2, P01116-2)</td>
+      <td>False</td>
+      <td>7</td>
+    </tr>
+    <tr>
+      <th>22</th>
+      <td>2</td>
+      <td>B</td>
+      <td>B</td>
+      <td>B</td>
+      <td>1</td>
+      <td>1</td>
+      <td>polypeptide(L)</td>
+      <td>[[12,48],[50,53],[55,76],[78,80],[82,85],[87,1...</td>
+      <td>[[26,27],[29,30],[65,66],[69,71],[76,76],[79,7...</td>
+      <td>1</td>
+      <td>A</td>
+      <td>A</td>
+      <td>A</td>
+      <td>1</td>
+      <td>1</td>
+      <td>polypeptide(L)</td>
+      <td>[[2,8],[10,51],[53,55],[57,77],[80,112],[114,1...</td>
+      <td>[[13,13],[18,18],[22,22],[26,26],[30,42],[58,5...</td>
+      <td>6ob2</td>
+      <td>0</td>
+      <td>1</td>
+      <td>False</td>
+      <td>P21359-2</td>
+      <td>NF1_HUMAN</td>
+      <td>1.0</td>
+      <td>False</td>
+      <td>NF1_HUMAN</td>
+      <td>[[2,256]]</td>
+      <td>[[1209,1463]]</td>
+      <td>P21359</td>
+      <td>[0]</td>
+      <td>Safe</td>
+      <td>False</td>
+      <td>False</td>
+      <td>0</td>
+      <td>[[2,256]]</td>
+      <td>[[1209,1463]]</td>
+      <td>{}</td>
+      <td>[]</td>
+      <td>[]</td>
+      <td>2818</td>
+      <td>8</td>
+      <td>[[18, 19], [22, 22], [191, 192], [202, 202], [...</td>
+      <td>241</td>
+      <td>[[12, 103], [107, 255]]</td>
+      <td>236.933</td>
+      <td>[[1, 1]]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>256</td>
+      <td>256</td>
+      <td>[[1, 256]]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>False</td>
+      <td>((12, 103), (107, 255))</td>
+      <td>241</td>
+      <td>0.073786</td>
+      <td>0.076625</td>
+      <td>2.845</td>
+      <td>x-ray</td>
+      <td>X-ray diffraction</td>
+      <td>False</td>
+      <td>20191113</td>
+      <td>20190319</td>
+      <td>0.351494</td>
+      <td>-66</td>
+      <td>False</td>
+      <td>14</td>
+      <td>P01116</td>
+      <td>RASK_HUMAN</td>
+      <td>0.96</td>
+      <td>True</td>
+      <td>RASK_HUMAN</td>
+      <td>[[2,170]]</td>
+      <td>[[1,169]]</td>
+      <td>P01116</td>
+      <td>[0]</td>
+      <td>Safe</td>
+      <td>False</td>
+      <td>False</td>
+      <td>0</td>
+      <td>[[2,170]]</td>
+      <td>[[1,169]]</td>
+      <td>{"152":"R","154":"E","166":"Q","167":"Y","168"...</td>
+      <td>[[152,152],[154,154],[166,169]]</td>
+      <td>[[151,151],[153,153],[165,168]]</td>
+      <td>189</td>
+      <td>25</td>
+      <td>[[13, 19], [29, 32], [35, 36], [61, 61], [68, ...</td>
+      <td>169</td>
+      <td>[[2, 170]]</td>
+      <td>166.890</td>
+      <td>[[1, 1]]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>170</td>
+      <td>170</td>
+      <td>[[1, 170]]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>False</td>
+      <td>((2, 170),)</td>
+      <td>169</td>
+      <td>0.761905</td>
+      <td>0.894180</td>
+      <td>-65</td>
+      <td>False</td>
+      <td>3</td>
+      <td>False</td>
+      <td>0.333333</td>
+      <td>0.071429</td>
+      <td>((1233, 1234), (1236, 1237), (1272, 1273), (12...</td>
+      <td>((12, 12), (17, 17), (21, 21), (25, 25), (29, ...</td>
+      <td>(P21359-2, P01116)</td>
+      <td>False</td>
+      <td>6</td>
+    </tr>
+    <tr>
+      <th>23</th>
+      <td>2</td>
+      <td>B</td>
+      <td>B</td>
+      <td>B</td>
+      <td>1</td>
+      <td>1</td>
+      <td>polypeptide(L)</td>
+      <td>[[12,48],[50,53],[55,76],[78,80],[82,85],[87,1...</td>
+      <td>[[26,27],[29,30],[65,66],[69,71],[76,76],[79,7...</td>
+      <td>1</td>
+      <td>A</td>
+      <td>A</td>
+      <td>A</td>
+      <td>1</td>
+      <td>1</td>
+      <td>polypeptide(L)</td>
+      <td>[[2,8],[10,51],[53,55],[57,77],[80,112],[114,1...</td>
+      <td>[[13,13],[18,18],[22,22],[26,26],[30,42],[58,5...</td>
+      <td>6ob2</td>
+      <td>0</td>
+      <td>1</td>
+      <td>False</td>
+      <td>P21359-2</td>
+      <td>NF1_HUMAN</td>
+      <td>1.0</td>
+      <td>False</td>
+      <td>NF1_HUMAN</td>
+      <td>[[2,256]]</td>
+      <td>[[1209,1463]]</td>
+      <td>P21359</td>
+      <td>[0]</td>
+      <td>Safe</td>
+      <td>False</td>
+      <td>False</td>
+      <td>0</td>
+      <td>[[2,256]]</td>
+      <td>[[1209,1463]]</td>
+      <td>{}</td>
+      <td>[]</td>
+      <td>[]</td>
+      <td>2818</td>
+      <td>8</td>
+      <td>[[18, 19], [22, 22], [191, 192], [202, 202], [...</td>
+      <td>241</td>
+      <td>[[12, 103], [107, 255]]</td>
+      <td>236.933</td>
+      <td>[[1, 1]]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>256</td>
+      <td>256</td>
+      <td>[[1, 256]]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>False</td>
+      <td>((12, 103), (107, 255))</td>
+      <td>241</td>
+      <td>0.073786</td>
+      <td>0.076625</td>
+      <td>2.845</td>
+      <td>x-ray</td>
+      <td>X-ray diffraction</td>
+      <td>False</td>
+      <td>20191113</td>
+      <td>20190319</td>
+      <td>0.351494</td>
+      <td>-66</td>
+      <td>False</td>
+      <td>14</td>
+      <td>P01116-2</td>
+      <td>RASK_HUMAN</td>
+      <td>1.00</td>
+      <td>False</td>
+      <td>RASK_HUMAN</td>
+      <td>[[2,170]]</td>
+      <td>[[1,169]]</td>
+      <td>P01116</td>
+      <td>[0]</td>
+      <td>Safe</td>
+      <td>False</td>
+      <td>False</td>
+      <td>0</td>
+      <td>[[2,170]]</td>
+      <td>[[1,169]]</td>
+      <td>{}</td>
+      <td>[]</td>
+      <td>[]</td>
+      <td>188</td>
+      <td>25</td>
+      <td>[[13, 19], [29, 32], [35, 36], [61, 61], [68, ...</td>
+      <td>169</td>
+      <td>[[2, 170]]</td>
+      <td>166.890</td>
+      <td>[[1, 1]]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>170</td>
+      <td>170</td>
+      <td>[[1, 170]]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>False</td>
+      <td>((2, 170),)</td>
+      <td>169</td>
+      <td>0.765957</td>
+      <td>0.898936</td>
+      <td>-65</td>
+      <td>False</td>
+      <td>3</td>
+      <td>False</td>
+      <td>0.333333</td>
+      <td>0.071429</td>
+      <td>((1233, 1234), (1236, 1237), (1272, 1273), (12...</td>
+      <td>((12, 12), (17, 17), (21, 21), (25, 25), (29, ...</td>
+      <td>(P21359-2, P01116-2)</td>
+      <td>False</td>
+      <td>6</td>
+    </tr>
+    <tr>
+      <th>24</th>
+      <td>2</td>
+      <td>B</td>
+      <td>B</td>
+      <td>B</td>
+      <td>1</td>
+      <td>1</td>
+      <td>polypeptide(L)</td>
+      <td>[[12,48],[50,53],[55,76],[78,80],[82,85],[87,1...</td>
+      <td>[[26,27],[29,30],[65,66],[69,71],[76,76],[79,7...</td>
+      <td>1</td>
+      <td>A</td>
+      <td>A</td>
+      <td>A</td>
+      <td>1</td>
+      <td>1</td>
+      <td>polypeptide(L)</td>
+      <td>[[2,8],[10,51],[53,55],[57,77],[80,112],[114,1...</td>
+      <td>[[13,13],[18,18],[22,22],[26,26],[30,42],[58,5...</td>
+      <td>6ob2</td>
+      <td>1</td>
+      <td>1</td>
+      <td>True</td>
+      <td>P21359-2</td>
+      <td>NF1_HUMAN</td>
+      <td>1.0</td>
+      <td>False</td>
+      <td>NF1_HUMAN</td>
+      <td>[[2,256]]</td>
+      <td>[[1209,1463]]</td>
+      <td>P21359</td>
+      <td>[0]</td>
+      <td>Safe</td>
+      <td>False</td>
+      <td>False</td>
+      <td>0</td>
+      <td>[[2,256]]</td>
+      <td>[[1209,1463]]</td>
+      <td>{}</td>
+      <td>[]</td>
+      <td>[]</td>
+      <td>2818</td>
+      <td>8</td>
+      <td>[[18, 19], [22, 22], [191, 192], [202, 202], [...</td>
+      <td>241</td>
+      <td>[[12, 103], [107, 255]]</td>
+      <td>236.933</td>
+      <td>[[1, 1]]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>256</td>
+      <td>256</td>
+      <td>[[1, 256]]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>False</td>
+      <td>((12, 103), (107, 255))</td>
+      <td>241</td>
+      <td>0.073786</td>
+      <td>0.076625</td>
+      <td>2.845</td>
+      <td>x-ray</td>
+      <td>X-ray diffraction</td>
+      <td>False</td>
+      <td>20191113</td>
+      <td>20190319</td>
+      <td>0.351494</td>
+      <td>-66</td>
+      <td>False</td>
+      <td>14</td>
+      <td>P01116</td>
+      <td>RASK_HUMAN</td>
+      <td>0.96</td>
+      <td>True</td>
+      <td>RASK_HUMAN</td>
+      <td>[[2,170]]</td>
+      <td>[[1,169]]</td>
+      <td>P01116</td>
+      <td>[0]</td>
+      <td>Safe</td>
+      <td>False</td>
+      <td>False</td>
+      <td>0</td>
+      <td>[[2,170]]</td>
+      <td>[[1,169]]</td>
+      <td>{"152":"R","154":"E","166":"Q","167":"Y","168"...</td>
+      <td>[[152,152],[154,154],[166,169]]</td>
+      <td>[[151,151],[153,153],[165,168]]</td>
+      <td>189</td>
+      <td>25</td>
+      <td>[[13, 19], [29, 32], [35, 36], [61, 61], [68, ...</td>
+      <td>169</td>
+      <td>[[2, 170]]</td>
+      <td>166.890</td>
+      <td>[[1, 1]]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>170</td>
+      <td>170</td>
+      <td>[[1, 170]]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>False</td>
+      <td>((2, 170),)</td>
+      <td>169</td>
+      <td>0.761905</td>
+      <td>0.894180</td>
+      <td>-65</td>
+      <td>False</td>
+      <td>3</td>
+      <td>True</td>
+      <td>0.333333</td>
+      <td>0.071429</td>
+      <td>((1233, 1234), (1236, 1237), (1272, 1273), (12...</td>
+      <td>((12, 12), (17, 17), (21, 21), (25, 25), (29, ...</td>
+      <td>(P21359-2, P01116)</td>
+      <td>False</td>
+      <td>5</td>
+    </tr>
+    <tr>
+      <th>25</th>
+      <td>2</td>
+      <td>B</td>
+      <td>B</td>
+      <td>B</td>
+      <td>1</td>
+      <td>1</td>
+      <td>polypeptide(L)</td>
+      <td>[[12,48],[50,53],[55,76],[78,80],[82,85],[87,1...</td>
+      <td>[[26,27],[29,30],[65,66],[69,71],[76,76],[79,7...</td>
+      <td>1</td>
+      <td>A</td>
+      <td>A</td>
+      <td>A</td>
+      <td>1</td>
+      <td>1</td>
+      <td>polypeptide(L)</td>
+      <td>[[2,8],[10,51],[53,55],[57,77],[80,112],[114,1...</td>
+      <td>[[13,13],[18,18],[22,22],[26,26],[30,42],[58,5...</td>
+      <td>6ob2</td>
+      <td>1</td>
+      <td>1</td>
+      <td>True</td>
+      <td>P21359-2</td>
+      <td>NF1_HUMAN</td>
+      <td>1.0</td>
+      <td>False</td>
+      <td>NF1_HUMAN</td>
+      <td>[[2,256]]</td>
+      <td>[[1209,1463]]</td>
+      <td>P21359</td>
+      <td>[0]</td>
+      <td>Safe</td>
+      <td>False</td>
+      <td>False</td>
+      <td>0</td>
+      <td>[[2,256]]</td>
+      <td>[[1209,1463]]</td>
+      <td>{}</td>
+      <td>[]</td>
+      <td>[]</td>
+      <td>2818</td>
+      <td>8</td>
+      <td>[[18, 19], [22, 22], [191, 192], [202, 202], [...</td>
+      <td>241</td>
+      <td>[[12, 103], [107, 255]]</td>
+      <td>236.933</td>
+      <td>[[1, 1]]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>256</td>
+      <td>256</td>
+      <td>[[1, 256]]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>False</td>
+      <td>((12, 103), (107, 255))</td>
+      <td>241</td>
+      <td>0.073786</td>
+      <td>0.076625</td>
+      <td>2.845</td>
+      <td>x-ray</td>
+      <td>X-ray diffraction</td>
+      <td>False</td>
+      <td>20191113</td>
+      <td>20190319</td>
+      <td>0.351494</td>
+      <td>-66</td>
+      <td>False</td>
+      <td>14</td>
+      <td>P01116-2</td>
+      <td>RASK_HUMAN</td>
+      <td>1.00</td>
+      <td>False</td>
+      <td>RASK_HUMAN</td>
+      <td>[[2,170]]</td>
+      <td>[[1,169]]</td>
+      <td>P01116</td>
+      <td>[0]</td>
+      <td>Safe</td>
+      <td>False</td>
+      <td>False</td>
+      <td>0</td>
+      <td>[[2,170]]</td>
+      <td>[[1,169]]</td>
+      <td>{}</td>
+      <td>[]</td>
+      <td>[]</td>
+      <td>188</td>
+      <td>25</td>
+      <td>[[13, 19], [29, 32], [35, 36], [61, 61], [68, ...</td>
+      <td>169</td>
+      <td>[[2, 170]]</td>
+      <td>166.890</td>
+      <td>[[1, 1]]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>170</td>
+      <td>170</td>
+      <td>[[1, 170]]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>False</td>
+      <td>((2, 170),)</td>
+      <td>169</td>
+      <td>0.765957</td>
+      <td>0.898936</td>
+      <td>-65</td>
+      <td>False</td>
+      <td>3</td>
+      <td>True</td>
+      <td>0.333333</td>
+      <td>0.071429</td>
+      <td>((1233, 1234), (1236, 1237), (1272, 1273), (12...</td>
+      <td>((12, 12), (17, 17), (21, 21), (25, 25), (29, ...</td>
+      <td>(P21359-2, P01116-2)</td>
+      <td>False</td>
+      <td>5</td>
+    </tr>
+    <tr>
+      <th>26</th>
+      <td>2</td>
+      <td>D</td>
+      <td>D</td>
+      <td>D</td>
+      <td>1</td>
+      <td>1</td>
+      <td>polypeptide(L)</td>
+      <td>[[12,53],[55,76],[78,80],[82,85],[87,100],[102...</td>
+      <td>[[28,28],[31,31],[34,35],[38,38],[42,42],[80,8...</td>
+      <td>1</td>
+      <td>A</td>
+      <td>A</td>
+      <td>A</td>
+      <td>1</td>
+      <td>1</td>
+      <td>polypeptide(L)</td>
+      <td>[[2,8],[10,51],[53,55],[57,77],[80,112],[114,1...</td>
+      <td>[[24,24],[26,28],[43,46],[49,49],[51,51],[149,...</td>
+      <td>6ob2</td>
+      <td>0</td>
+      <td>7</td>
+      <td>False</td>
+      <td>P21359-2</td>
+      <td>NF1_HUMAN</td>
+      <td>1.0</td>
+      <td>False</td>
+      <td>NF1_HUMAN</td>
+      <td>[[2,256]]</td>
+      <td>[[1209,1463]]</td>
+      <td>P21359</td>
+      <td>[0]</td>
+      <td>Safe</td>
+      <td>False</td>
+      <td>False</td>
+      <td>0</td>
+      <td>[[2,256]]</td>
+      <td>[[1209,1463]]</td>
+      <td>{}</td>
+      <td>[]</td>
+      <td>[]</td>
+      <td>2818</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>245</td>
+      <td>[[12, 256]]</td>
+      <td>239.938</td>
+      <td>[[1, 1]]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>256</td>
+      <td>256</td>
+      <td>[[1, 256]]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>False</td>
+      <td>((12, 256),)</td>
+      <td>245</td>
+      <td>0.080586</td>
+      <td>0.080586</td>
+      <td>2.845</td>
+      <td>x-ray</td>
+      <td>X-ray diffraction</td>
+      <td>False</td>
+      <td>20191113</td>
+      <td>20190319</td>
+      <td>0.351494</td>
+      <td>-68</td>
+      <td>False</td>
+      <td>9</td>
+      <td>P01116</td>
+      <td>RASK_HUMAN</td>
+      <td>0.96</td>
+      <td>True</td>
+      <td>RASK_HUMAN</td>
+      <td>[[2,170]]</td>
+      <td>[[1,169]]</td>
+      <td>P01116</td>
+      <td>[0]</td>
+      <td>Safe</td>
+      <td>False</td>
+      <td>False</td>
+      <td>0</td>
+      <td>[[2,170]]</td>
+      <td>[[1,169]]</td>
+      <td>{"152":"R","154":"E","166":"Q","167":"Y","168"...</td>
+      <td>[[152,152],[154,154],[166,169]]</td>
+      <td>[[151,151],[153,153],[165,168]]</td>
+      <td>189</td>
+      <td>25</td>
+      <td>[[13, 19], [29, 32], [35, 36], [61, 61], [68, ...</td>
+      <td>169</td>
+      <td>[[2, 170]]</td>
+      <td>166.890</td>
+      <td>[[1, 1]]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>170</td>
+      <td>170</td>
+      <td>[[1, 170]]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>False</td>
+      <td>((2, 170),)</td>
+      <td>169</td>
+      <td>0.761905</td>
+      <td>0.894180</td>
+      <td>-65</td>
+      <td>False</td>
+      <td>3</td>
+      <td>False</td>
+      <td>0.333333</td>
+      <td>0.111111</td>
+      <td>((1235, 1235), (1238, 1238), (1241, 1242), (12...</td>
+      <td>((23, 23), (25, 27), (42, 45), (48, 48), (50, ...</td>
+      <td>(P21359-2, P01116)</td>
+      <td>False</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <th>27</th>
+      <td>2</td>
+      <td>D</td>
+      <td>D</td>
+      <td>D</td>
+      <td>1</td>
+      <td>1</td>
+      <td>polypeptide(L)</td>
+      <td>[[12,53],[55,76],[78,80],[82,85],[87,100],[102...</td>
+      <td>[[28,28],[31,31],[34,35],[38,38],[42,42],[80,8...</td>
+      <td>1</td>
+      <td>A</td>
+      <td>A</td>
+      <td>A</td>
+      <td>1</td>
+      <td>1</td>
+      <td>polypeptide(L)</td>
+      <td>[[2,8],[10,51],[53,55],[57,77],[80,112],[114,1...</td>
+      <td>[[24,24],[26,28],[43,46],[49,49],[51,51],[149,...</td>
+      <td>6ob2</td>
+      <td>0</td>
+      <td>7</td>
+      <td>False</td>
+      <td>P21359-2</td>
+      <td>NF1_HUMAN</td>
+      <td>1.0</td>
+      <td>False</td>
+      <td>NF1_HUMAN</td>
+      <td>[[2,256]]</td>
+      <td>[[1209,1463]]</td>
+      <td>P21359</td>
+      <td>[0]</td>
+      <td>Safe</td>
+      <td>False</td>
+      <td>False</td>
+      <td>0</td>
+      <td>[[2,256]]</td>
+      <td>[[1209,1463]]</td>
+      <td>{}</td>
+      <td>[]</td>
+      <td>[]</td>
+      <td>2818</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>245</td>
+      <td>[[12, 256]]</td>
+      <td>239.938</td>
+      <td>[[1, 1]]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>256</td>
+      <td>256</td>
+      <td>[[1, 256]]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>False</td>
+      <td>((12, 256),)</td>
+      <td>245</td>
+      <td>0.080586</td>
+      <td>0.080586</td>
+      <td>2.845</td>
+      <td>x-ray</td>
+      <td>X-ray diffraction</td>
+      <td>False</td>
+      <td>20191113</td>
+      <td>20190319</td>
+      <td>0.351494</td>
+      <td>-68</td>
+      <td>False</td>
+      <td>9</td>
+      <td>P01116-2</td>
+      <td>RASK_HUMAN</td>
+      <td>1.00</td>
+      <td>False</td>
+      <td>RASK_HUMAN</td>
+      <td>[[2,170]]</td>
+      <td>[[1,169]]</td>
+      <td>P01116</td>
+      <td>[0]</td>
+      <td>Safe</td>
+      <td>False</td>
+      <td>False</td>
+      <td>0</td>
+      <td>[[2,170]]</td>
+      <td>[[1,169]]</td>
+      <td>{}</td>
+      <td>[]</td>
+      <td>[]</td>
+      <td>188</td>
+      <td>25</td>
+      <td>[[13, 19], [29, 32], [35, 36], [61, 61], [68, ...</td>
+      <td>169</td>
+      <td>[[2, 170]]</td>
+      <td>166.890</td>
+      <td>[[1, 1]]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>170</td>
+      <td>170</td>
+      <td>[[1, 170]]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>False</td>
+      <td>((2, 170),)</td>
+      <td>169</td>
+      <td>0.765957</td>
+      <td>0.898936</td>
+      <td>-65</td>
+      <td>False</td>
+      <td>3</td>
+      <td>False</td>
+      <td>0.333333</td>
+      <td>0.111111</td>
+      <td>((1235, 1235), (1238, 1238), (1241, 1242), (12...</td>
+      <td>((23, 23), (25, 27), (42, 45), (48, 48), (50, ...</td>
+      <td>(P21359-2, P01116-2)</td>
+      <td>False</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <th>28</th>
+      <td>2</td>
+      <td>D</td>
+      <td>D</td>
+      <td>D</td>
+      <td>1</td>
+      <td>1</td>
+      <td>polypeptide(L)</td>
+      <td>[[12,53],[55,76],[78,80],[82,85],[87,100],[102...</td>
+      <td>[[26,26],[65,66],[69,71],[76,76],[79,79],[83,8...</td>
+      <td>1</td>
+      <td>C</td>
+      <td>C</td>
+      <td>C</td>
+      <td>1</td>
+      <td>1</td>
+      <td>polypeptide(L)</td>
+      <td>[[2,20],[22,166]]</td>
+      <td>[[12,13],[18,18],[22,22],[30,42],[55,55],[57,5...</td>
+      <td>6ob2</td>
+      <td>0</td>
+      <td>2</td>
+      <td>False</td>
+      <td>P21359-2</td>
+      <td>NF1_HUMAN</td>
+      <td>1.0</td>
+      <td>False</td>
+      <td>NF1_HUMAN</td>
+      <td>[[2,256]]</td>
+      <td>[[1209,1463]]</td>
+      <td>P21359</td>
+      <td>[0]</td>
+      <td>Safe</td>
+      <td>False</td>
+      <td>False</td>
+      <td>0</td>
+      <td>[[2,256]]</td>
+      <td>[[1209,1463]]</td>
+      <td>{}</td>
+      <td>[]</td>
+      <td>[]</td>
+      <td>2818</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>245</td>
+      <td>[[12, 256]]</td>
+      <td>239.938</td>
+      <td>[[1, 1]]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>256</td>
+      <td>256</td>
+      <td>[[1, 256]]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>False</td>
+      <td>((12, 256),)</td>
+      <td>245</td>
+      <td>0.080586</td>
+      <td>0.080586</td>
+      <td>2.845</td>
+      <td>x-ray</td>
+      <td>X-ray diffraction</td>
+      <td>False</td>
+      <td>20191113</td>
+      <td>20190319</td>
+      <td>0.351494</td>
+      <td>-68</td>
+      <td>False</td>
+      <td>9</td>
+      <td>P01116</td>
+      <td>RASK_HUMAN</td>
+      <td>0.96</td>
+      <td>True</td>
+      <td>RASK_HUMAN</td>
+      <td>[[2,170]]</td>
+      <td>[[1,169]]</td>
+      <td>P01116</td>
+      <td>[0]</td>
+      <td>Safe</td>
+      <td>False</td>
+      <td>False</td>
+      <td>0</td>
+      <td>[[2,170]]</td>
+      <td>[[1,169]]</td>
+      <td>{"152":"R","154":"E","166":"Q","167":"Y","168"...</td>
+      <td>[[152,152],[154,154],[166,169]]</td>
+      <td>[[151,151],[153,153],[165,168]]</td>
+      <td>189</td>
+      <td>19</td>
+      <td>[[13, 19], [29, 31], [35, 36], [61, 61], [117,...</td>
+      <td>165</td>
+      <td>[[2, 166]]</td>
+      <td>143.555</td>
+      <td>[[1, 1]]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>170</td>
+      <td>170</td>
+      <td>[[1, 170]]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>False</td>
+      <td>((2, 166),)</td>
+      <td>165</td>
+      <td>0.734588</td>
+      <td>0.835117</td>
+      <td>-67</td>
+      <td>False</td>
+      <td>6</td>
+      <td>False</td>
+      <td>0.166667</td>
+      <td>0.111111</td>
+      <td>((1233, 1233), (1272, 1273), (1276, 1278), (12...</td>
+      <td>((11, 12), (17, 17), (21, 21), (29, 41), (54, ...</td>
+      <td>(P21359-2, P01116)</td>
+      <td>False</td>
+      <td>10</td>
+    </tr>
+    <tr>
+      <th>29</th>
+      <td>2</td>
+      <td>D</td>
+      <td>D</td>
+      <td>D</td>
+      <td>1</td>
+      <td>1</td>
+      <td>polypeptide(L)</td>
+      <td>[[12,53],[55,76],[78,80],[82,85],[87,100],[102...</td>
+      <td>[[26,26],[65,66],[69,71],[76,76],[79,79],[83,8...</td>
+      <td>1</td>
+      <td>C</td>
+      <td>C</td>
+      <td>C</td>
+      <td>1</td>
+      <td>1</td>
+      <td>polypeptide(L)</td>
+      <td>[[2,20],[22,166]]</td>
+      <td>[[12,13],[18,18],[22,22],[30,42],[55,55],[57,5...</td>
+      <td>6ob2</td>
+      <td>0</td>
+      <td>2</td>
+      <td>False</td>
+      <td>P21359-2</td>
+      <td>NF1_HUMAN</td>
+      <td>1.0</td>
+      <td>False</td>
+      <td>NF1_HUMAN</td>
+      <td>[[2,256]]</td>
+      <td>[[1209,1463]]</td>
+      <td>P21359</td>
+      <td>[0]</td>
+      <td>Safe</td>
+      <td>False</td>
+      <td>False</td>
+      <td>0</td>
+      <td>[[2,256]]</td>
+      <td>[[1209,1463]]</td>
+      <td>{}</td>
+      <td>[]</td>
+      <td>[]</td>
+      <td>2818</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>245</td>
+      <td>[[12, 256]]</td>
+      <td>239.938</td>
+      <td>[[1, 1]]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>256</td>
+      <td>256</td>
+      <td>[[1, 256]]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>False</td>
+      <td>((12, 256),)</td>
+      <td>245</td>
+      <td>0.080586</td>
+      <td>0.080586</td>
+      <td>2.845</td>
+      <td>x-ray</td>
+      <td>X-ray diffraction</td>
+      <td>False</td>
+      <td>20191113</td>
+      <td>20190319</td>
+      <td>0.351494</td>
+      <td>-68</td>
+      <td>False</td>
+      <td>9</td>
+      <td>P01116-2</td>
+      <td>RASK_HUMAN</td>
+      <td>1.00</td>
+      <td>False</td>
+      <td>RASK_HUMAN</td>
+      <td>[[2,170]]</td>
+      <td>[[1,169]]</td>
+      <td>P01116</td>
+      <td>[0]</td>
+      <td>Safe</td>
+      <td>False</td>
+      <td>False</td>
+      <td>0</td>
+      <td>[[2,170]]</td>
+      <td>[[1,169]]</td>
+      <td>{}</td>
+      <td>[]</td>
+      <td>[]</td>
+      <td>188</td>
+      <td>19</td>
+      <td>[[13, 19], [29, 31], [35, 36], [61, 61], [117,...</td>
+      <td>165</td>
+      <td>[[2, 166]]</td>
+      <td>143.555</td>
+      <td>[[1, 1]]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>170</td>
+      <td>170</td>
+      <td>[[1, 170]]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>False</td>
+      <td>((2, 166),)</td>
+      <td>165</td>
+      <td>0.738495</td>
+      <td>0.839559</td>
+      <td>-67</td>
+      <td>False</td>
+      <td>6</td>
+      <td>False</td>
+      <td>0.166667</td>
+      <td>0.111111</td>
+      <td>((1233, 1233), (1272, 1273), (1276, 1278), (12...</td>
+      <td>((11, 12), (17, 17), (21, 21), (29, 41), (54, ...</td>
+      <td>(P21359-2, P01116-2)</td>
+      <td>False</td>
+      <td>10</td>
+    </tr>
+    <tr>
+      <th>30</th>
+      <td>2</td>
+      <td>D</td>
+      <td>D</td>
+      <td>D</td>
+      <td>1</td>
+      <td>1</td>
+      <td>polypeptide(L)</td>
+      <td>[[12,53],[55,76],[78,80],[82,85],[87,100],[102...</td>
+      <td>[[26,26],[65,66],[69,71],[76,76],[79,79],[83,8...</td>
+      <td>1</td>
+      <td>C</td>
+      <td>C</td>
+      <td>C</td>
+      <td>1</td>
+      <td>1</td>
+      <td>polypeptide(L)</td>
+      <td>[[2,20],[22,166]]</td>
+      <td>[[12,13],[18,18],[22,22],[30,42],[55,55],[57,5...</td>
+      <td>6ob2</td>
+      <td>2</td>
+      <td>2</td>
+      <td>True</td>
+      <td>P21359-2</td>
+      <td>NF1_HUMAN</td>
+      <td>1.0</td>
+      <td>False</td>
+      <td>NF1_HUMAN</td>
+      <td>[[2,256]]</td>
+      <td>[[1209,1463]]</td>
+      <td>P21359</td>
+      <td>[0]</td>
+      <td>Safe</td>
+      <td>False</td>
+      <td>False</td>
+      <td>0</td>
+      <td>[[2,256]]</td>
+      <td>[[1209,1463]]</td>
+      <td>{}</td>
+      <td>[]</td>
+      <td>[]</td>
+      <td>2818</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>245</td>
+      <td>[[12, 256]]</td>
+      <td>239.938</td>
+      <td>[[1, 1]]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>256</td>
+      <td>256</td>
+      <td>[[1, 256]]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>False</td>
+      <td>((12, 256),)</td>
+      <td>245</td>
+      <td>0.080586</td>
+      <td>0.080586</td>
+      <td>2.845</td>
+      <td>x-ray</td>
+      <td>X-ray diffraction</td>
+      <td>False</td>
+      <td>20191113</td>
+      <td>20190319</td>
+      <td>0.351494</td>
+      <td>-68</td>
+      <td>False</td>
+      <td>9</td>
+      <td>P01116</td>
+      <td>RASK_HUMAN</td>
+      <td>0.96</td>
+      <td>True</td>
+      <td>RASK_HUMAN</td>
+      <td>[[2,170]]</td>
+      <td>[[1,169]]</td>
+      <td>P01116</td>
+      <td>[0]</td>
+      <td>Safe</td>
+      <td>False</td>
+      <td>False</td>
+      <td>0</td>
+      <td>[[2,170]]</td>
+      <td>[[1,169]]</td>
+      <td>{"152":"R","154":"E","166":"Q","167":"Y","168"...</td>
+      <td>[[152,152],[154,154],[166,169]]</td>
+      <td>[[151,151],[153,153],[165,168]]</td>
+      <td>189</td>
+      <td>19</td>
+      <td>[[13, 19], [29, 31], [35, 36], [61, 61], [117,...</td>
+      <td>165</td>
+      <td>[[2, 166]]</td>
+      <td>143.555</td>
+      <td>[[1, 1]]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>170</td>
+      <td>170</td>
+      <td>[[1, 170]]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>False</td>
+      <td>((2, 166),)</td>
+      <td>165</td>
+      <td>0.734588</td>
+      <td>0.835117</td>
+      <td>-67</td>
+      <td>False</td>
+      <td>6</td>
+      <td>True</td>
+      <td>0.166667</td>
+      <td>0.111111</td>
+      <td>((1233, 1233), (1272, 1273), (1276, 1278), (12...</td>
+      <td>((11, 12), (17, 17), (21, 21), (29, 41), (54, ...</td>
+      <td>(P21359-2, P01116)</td>
+      <td>False</td>
+      <td>9</td>
+    </tr>
+    <tr>
+      <th>31</th>
+      <td>2</td>
+      <td>D</td>
+      <td>D</td>
+      <td>D</td>
+      <td>1</td>
+      <td>1</td>
+      <td>polypeptide(L)</td>
+      <td>[[12,53],[55,76],[78,80],[82,85],[87,100],[102...</td>
+      <td>[[26,26],[65,66],[69,71],[76,76],[79,79],[83,8...</td>
+      <td>1</td>
+      <td>C</td>
+      <td>C</td>
+      <td>C</td>
+      <td>1</td>
+      <td>1</td>
+      <td>polypeptide(L)</td>
+      <td>[[2,20],[22,166]]</td>
+      <td>[[12,13],[18,18],[22,22],[30,42],[55,55],[57,5...</td>
+      <td>6ob2</td>
+      <td>2</td>
+      <td>2</td>
+      <td>True</td>
+      <td>P21359-2</td>
+      <td>NF1_HUMAN</td>
+      <td>1.0</td>
+      <td>False</td>
+      <td>NF1_HUMAN</td>
+      <td>[[2,256]]</td>
+      <td>[[1209,1463]]</td>
+      <td>P21359</td>
+      <td>[0]</td>
+      <td>Safe</td>
+      <td>False</td>
+      <td>False</td>
+      <td>0</td>
+      <td>[[2,256]]</td>
+      <td>[[1209,1463]]</td>
+      <td>{}</td>
+      <td>[]</td>
+      <td>[]</td>
+      <td>2818</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>245</td>
+      <td>[[12, 256]]</td>
+      <td>239.938</td>
+      <td>[[1, 1]]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>256</td>
+      <td>256</td>
+      <td>[[1, 256]]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>False</td>
+      <td>((12, 256),)</td>
+      <td>245</td>
+      <td>0.080586</td>
+      <td>0.080586</td>
+      <td>2.845</td>
+      <td>x-ray</td>
+      <td>X-ray diffraction</td>
+      <td>False</td>
+      <td>20191113</td>
+      <td>20190319</td>
+      <td>0.351494</td>
+      <td>-68</td>
+      <td>False</td>
+      <td>9</td>
+      <td>P01116-2</td>
+      <td>RASK_HUMAN</td>
+      <td>1.00</td>
+      <td>False</td>
+      <td>RASK_HUMAN</td>
+      <td>[[2,170]]</td>
+      <td>[[1,169]]</td>
+      <td>P01116</td>
+      <td>[0]</td>
+      <td>Safe</td>
+      <td>False</td>
+      <td>False</td>
+      <td>0</td>
+      <td>[[2,170]]</td>
+      <td>[[1,169]]</td>
+      <td>{}</td>
+      <td>[]</td>
+      <td>[]</td>
+      <td>188</td>
+      <td>19</td>
+      <td>[[13, 19], [29, 31], [35, 36], [61, 61], [117,...</td>
+      <td>165</td>
+      <td>[[2, 166]]</td>
+      <td>143.555</td>
+      <td>[[1, 1]]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>170</td>
+      <td>170</td>
+      <td>[[1, 170]]</td>
+      <td>0</td>
+      <td>[]</td>
+      <td>False</td>
+      <td>((2, 166),)</td>
+      <td>165</td>
+      <td>0.738495</td>
+      <td>0.839559</td>
+      <td>-67</td>
+      <td>False</td>
+      <td>6</td>
+      <td>True</td>
+      <td>0.166667</td>
+      <td>0.111111</td>
+      <td>((1233, 1233), (1272, 1273), (1276, 1278), (12...</td>
+      <td>((11, 12), (17, 17), (21, 21), (29, 41), (54, ...</td>
+      <td>(P21359-2, P01116-2)</td>
+      <td>False</td>
+      <td>9</td>
     </tr>
   </tbody>
 </table>
+
 </details>
 
 ## SWISS-MODEL资源的加入
@@ -3136,368 +14051,303 @@ df5
   <thead>
     <tr style="text-align: right;">
       <th></th>
-      <th>0</th>
-      <th>1</th>
-      <th>2</th>
-      <th>3</th>
-      <th>4</th>
-      <th>5</th>
+      <th>UniProt</th>
+      <th>chains</th>
+      <th>coordinates</th>
+      <th>coverage</th>
+      <th>created_date</th>
+      <th>found_by</th>
+      <th>gmqe</th>
+      <th>identifier</th>
+      <th>identity</th>
+      <th>isoid</th>
+      <th>ligand_chains</th>
+      <th>md5</th>
+      <th>method</th>
+      <th>oligo-state</th>
+      <th>provider</th>
+      <th>unp_len</th>
+      <th>similarity</th>
+      <th>template</th>
+      <th>unp_range</th>
+      <th>acc_agreement_norm_score</th>
+      <th>acc_agreement_z_score</th>
+      <th>avg_local_score</th>
+      <th>avg_local_score_error</th>
+      <th>cbeta_norm_score</th>
+      <th>cbeta_z_score</th>
+      <th>interaction_norm_score</th>
+      <th>interaction_z_score</th>
+      <th>packing_norm_score</th>
+      <th>packing_z_score</th>
+      <th>qmean4_norm_score</th>
+      <th>qmean4_z_score</th>
+      <th>qmean6_norm_score</th>
+      <th>qmean6_z_score</th>
+      <th>ss_agreement_norm_score</th>
+      <th>ss_agreement_z_score</th>
+      <th>torsion_norm_score</th>
+      <th>torsion_z_score</th>
+      <th>select_rank</th>
+      <th>select_tag</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <th>UniProt</th>
+      <th>0</th>
       <td>P21359-2</td>
-      <td>P21359-2</td>
-      <td>P21359-2</td>
-      <td>P21359-2</td>
-      <td>P21359-2</td>
-      <td>P21359-2</td>
-    </tr>
-    <tr>
-      <th>chains</th>
       <td>[{"id":"A","segments":[{"smtl":{"aligned_seque...</td>
-      <td>[{"id":"A","segments":[{"smtl":{"aligned_seque...</td>
-      <td>[{"id":"A","segments":[{"smtl":{"aligned_seque...</td>
-      <td>[{"id":"A","segments":[{"smtl":{"aligned_seque...</td>
-      <td>[{"id":"L","segments":[{"smtl":{"aligned_seque...</td>
-      <td>[{"id":"A","segments":[{"smtl":{"aligned_seque...</td>
-    </tr>
-    <tr>
-      <th>coordinates</th>
       <td>https://swissmodel.expasy.org/repository/unipr...</td>
-      <td>https://swissmodel.expasy.org/repository/unipr...</td>
-      <td>https://swissmodel.expasy.org/repository/unipr...</td>
-      <td>https://swissmodel.expasy.org/repository/unipr...</td>
-      <td>https://swissmodel.expasy.org/repository/unipr...</td>
-      <td>https://swissmodel.expasy.org/repository/unipr...</td>
-    </tr>
-    <tr>
-      <th>coverage</th>
-      <td>0.0958126</td>
-      <td>0.114975</td>
-      <td>0.0489709</td>
-      <td>0.0468417</td>
-      <td>0.0493258</td>
-      <td>0.0532292</td>
-    </tr>
-    <tr>
-      <th>created_date</th>
+      <td>0.095813</td>
       <td>2020-11-01T18:53:29.485000+00:00</td>
-      <td>2020-11-01T18:53:29.436000+00:00</td>
-      <td>2020-11-01T18:53:29.457000+00:00</td>
-      <td>2020-11-01T18:53:29.405000+00:00</td>
-      <td>2020-11-01T18:53:29.362000+00:00</td>
-      <td>2020-11-01T18:53:29.384000+00:00</td>
-    </tr>
-    <tr>
-      <th>found_by</th>
       <td>BLAST</td>
-      <td>HHblits</td>
-      <td>HHblits</td>
-      <td>HHblits</td>
-      <td>HHblits</td>
-      <td>HHblits</td>
-    </tr>
-    <tr>
-      <th>gmqe</th>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>identifier</th>
+      <td>0.0</td>
       <td>NF1_HUMAN</td>
-      <td>NF1_HUMAN</td>
-      <td>NF1_HUMAN</td>
-      <td>NF1_HUMAN</td>
-      <td>NF1_HUMAN</td>
-      <td>NF1_HUMAN</td>
-    </tr>
-    <tr>
-      <th>identity</th>
       <td>0.996324</td>
-      <td>1</td>
-      <td>0.15942</td>
-      <td>0.10687</td>
-      <td>0.214815</td>
-      <td>0.11194</td>
-    </tr>
-    <tr>
-      <th>isoid</th>
       <td>2</td>
-      <td>2</td>
-      <td>2</td>
-      <td>2</td>
-      <td>2</td>
-      <td>2</td>
-    </tr>
-    <tr>
-      <th>ligand_chains</th>
       <td>[{"count":1,"ligands":[{"description":"(1S)-2-...</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>md5</th>
       <td>fc83f587346226e60cc701448008f89f</td>
-      <td>fc83f587346226e60cc701448008f89f</td>
-      <td>fc83f587346226e60cc701448008f89f</td>
-      <td>fc83f587346226e60cc701448008f89f</td>
-      <td>fc83f587346226e60cc701448008f89f</td>
-      <td>fc83f587346226e60cc701448008f89f</td>
-    </tr>
-    <tr>
-      <th>method</th>
       <td>HOMOLOGY MODELLING</td>
-      <td>HOMOLOGY MODELLING</td>
-      <td>HOMOLOGY MODELLING</td>
-      <td>HOMOLOGY MODELLING</td>
-      <td>HOMOLOGY MODELLING</td>
-      <td>HOMOLOGY MODELLING</td>
-    </tr>
-    <tr>
-      <th>oligo-state</th>
       <td>monomer</td>
-      <td>monomer</td>
-      <td>monomer</td>
-      <td>monomer</td>
-      <td>monomer</td>
-      <td>monomer</td>
-    </tr>
-    <tr>
-      <th>provider</th>
       <td>SWISSMODEL</td>
-      <td>SWISSMODEL</td>
-      <td>SWISSMODEL</td>
-      <td>SWISSMODEL</td>
-      <td>SWISSMODEL</td>
-      <td>SWISSMODEL</td>
-    </tr>
-    <tr>
-      <th>unp_len</th>
       <td>2818</td>
-      <td>2818</td>
-      <td>2818</td>
-      <td>2818</td>
-      <td>2818</td>
-      <td>2818</td>
-    </tr>
-    <tr>
-      <th>similarity</th>
       <td>0.615442</td>
-      <td>0.612197</td>
-      <td>0.284541</td>
-      <td>0.254453</td>
-      <td>0.299259</td>
-      <td>0.260199</td>
-    </tr>
-    <tr>
-      <th>template</th>
       <td>3p7z.1.A</td>
-      <td>6v6f.1.A</td>
-      <td>5owu.1.A</td>
-      <td>3woy.1.A</td>
-      <td>6ltj.1.L</td>
-      <td>1h2t.1.A</td>
-    </tr>
-    <tr>
-      <th>unp_range</th>
       <td>[[1547,1816]]</td>
-      <td>[[1205,1528]]</td>
-      <td>[[2221,2358]]</td>
-      <td>[[2268,2399]]</td>
-      <td>[[1074,1212]]</td>
-      <td>[[1986,2135]]</td>
-    </tr>
-    <tr>
-      <th>acc_agreement_norm_score</th>
       <td>NaN</td>
       <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>acc_agreement_z_score</th>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>avg_local_score</th>
       <td>0.716453</td>
-      <td>0.725275</td>
-      <td>0.508763</td>
-      <td>0.423608</td>
-      <td>0.414444</td>
-      <td>0.409797</td>
-    </tr>
-    <tr>
-      <th>avg_local_score_error</th>
       <td>0.051</td>
-      <td>0.052</td>
-      <td>0.071</td>
-      <td>0.072</td>
-      <td>0.071</td>
-      <td>0.067</td>
-    </tr>
-    <tr>
-      <th>cbeta_norm_score</th>
-      <td>-0.0111416</td>
-      <td>-0.0120866</td>
-      <td>0.00738831</td>
-      <td>0.0114884</td>
-      <td>-0.00335261</td>
-      <td>0.00871135</td>
-    </tr>
-    <tr>
-      <th>cbeta_z_score</th>
+      <td>-0.011142</td>
       <td>-0.509795</td>
-      <td>-0.252126</td>
-      <td>-3.78703</td>
-      <td>-4.45243</td>
-      <td>-1.86066</td>
-      <td>-4.26843</td>
-    </tr>
-    <tr>
-      <th>interaction_norm_score</th>
-      <td>-0.0201178</td>
-      <td>-0.0230367</td>
-      <td>-0.0165123</td>
-      <td>-0.0141633</td>
-      <td>-0.016426</td>
-      <td>-0.0122362</td>
-    </tr>
-    <tr>
-      <th>interaction_z_score</th>
+      <td>-0.020118</td>
       <td>-0.777705</td>
-      <td>0.00858758</td>
-      <td>-1.40313</td>
-      <td>-1.7064</td>
-      <td>-1.42372</td>
-      <td>-2.12794</td>
-    </tr>
-    <tr>
-      <th>packing_norm_score</th>
       <td>-0.389243</td>
-      <td>-0.400769</td>
-      <td>-0.270749</td>
-      <td>-0.299886</td>
-      <td>-0.34727</td>
-      <td>-0.346139</td>
-    </tr>
-    <tr>
-      <th>packing_z_score</th>
       <td>0.302031</td>
-      <td>0.585791</td>
-      <td>-1.33267</td>
-      <td>-0.922307</td>
-      <td>-0.361593</td>
-      <td>-0.413069</td>
-    </tr>
-    <tr>
-      <th>qmean4_norm_score</th>
-      <td>0.76744</td>
-      <td>0.708347</td>
-      <td>0.591839</td>
-      <td>0.589486</td>
-      <td>0.588397</td>
-      <td>0.582163</td>
-    </tr>
-    <tr>
-      <th>qmean4_z_score</th>
+      <td>0.767440</td>
       <td>-0.164094</td>
-      <td>-1.88541</td>
-      <td>-3.58124</td>
-      <td>-3.59226</td>
-      <td>-3.62587</td>
-      <td>-4.04823</td>
-    </tr>
-    <tr>
-      <th>qmean6_norm_score</th>
       <td>NaN</td>
       <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>qmean6_z_score</th>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>ss_agreement_norm_score</th>
       <td>0.597907</td>
-      <td>0.590228</td>
-      <td>0.338587</td>
-      <td>0.23634</td>
-      <td>0.129832</td>
-      <td>0.350606</td>
-    </tr>
-    <tr>
-      <th>ss_agreement_z_score</th>
       <td>-0.394816</td>
-      <td>-0.466057</td>
-      <td>-2.29499</td>
-      <td>-2.87268</td>
-      <td>-3.59137</td>
-      <td>-2.1998</td>
-    </tr>
-    <tr>
-      <th>torsion_norm_score</th>
       <td>-0.304895</td>
-      <td>-0.112651</td>
-      <td>0.0274821</td>
-      <td>0.0282064</td>
-      <td>0.151137</td>
-      <td>0.0952523</td>
-    </tr>
-    <tr>
-      <th>torsion_z_score</th>
       <td>-0.147987</td>
-      <td>-2.13314</td>
-      <td>-2.45158</td>
-      <td>-2.44197</td>
-      <td>-3.25616</td>
-      <td>-3.05407</td>
-    </tr>
-    <tr>
-      <th>select_rank</th>
       <td>1</td>
-      <td>2</td>
-      <td>3</td>
-      <td>4</td>
-      <td>5</td>
-      <td>6</td>
+      <td>False</td>
     </tr>
     <tr>
-      <th>select_tag</th>
+      <th>1</th>
+      <td>P21359-2</td>
+      <td>[{"id":"A","segments":[{"smtl":{"aligned_seque...</td>
+      <td>https://swissmodel.expasy.org/repository/unipr...</td>
+      <td>0.114975</td>
+      <td>2020-11-01T18:53:29.436000+00:00</td>
+      <td>HHblits</td>
+      <td>0.0</td>
+      <td>NF1_HUMAN</td>
+      <td>1.000000</td>
+      <td>2</td>
+      <td>NaN</td>
+      <td>fc83f587346226e60cc701448008f89f</td>
+      <td>HOMOLOGY MODELLING</td>
+      <td>monomer</td>
+      <td>SWISSMODEL</td>
+      <td>2818</td>
+      <td>0.612197</td>
+      <td>6v6f.1.A</td>
+      <td>[[1205,1528]]</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>0.725275</td>
+      <td>0.052</td>
+      <td>-0.012087</td>
+      <td>-0.252126</td>
+      <td>-0.023037</td>
+      <td>0.008588</td>
+      <td>-0.400769</td>
+      <td>0.585791</td>
+      <td>0.708347</td>
+      <td>-1.885406</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>0.590228</td>
+      <td>-0.466057</td>
+      <td>-0.112651</td>
+      <td>-2.133139</td>
+      <td>2</td>
       <td>False</td>
-      <td>False</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>P21359-2</td>
+      <td>[{"id":"A","segments":[{"smtl":{"aligned_seque...</td>
+      <td>https://swissmodel.expasy.org/repository/unipr...</td>
+      <td>0.048971</td>
+      <td>2020-11-01T18:53:29.457000+00:00</td>
+      <td>HHblits</td>
+      <td>0.0</td>
+      <td>NF1_HUMAN</td>
+      <td>0.159420</td>
+      <td>2</td>
+      <td>NaN</td>
+      <td>fc83f587346226e60cc701448008f89f</td>
+      <td>HOMOLOGY MODELLING</td>
+      <td>monomer</td>
+      <td>SWISSMODEL</td>
+      <td>2818</td>
+      <td>0.284541</td>
+      <td>5owu.1.A</td>
+      <td>[[2221,2358]]</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>0.508763</td>
+      <td>0.071</td>
+      <td>0.007388</td>
+      <td>-3.787026</td>
+      <td>-0.016512</td>
+      <td>-1.403135</td>
+      <td>-0.270749</td>
+      <td>-1.332674</td>
+      <td>0.591839</td>
+      <td>-3.581241</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>0.338587</td>
+      <td>-2.294993</td>
+      <td>0.027482</td>
+      <td>-2.451582</td>
+      <td>3</td>
       <td>True</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>P21359-2</td>
+      <td>[{"id":"A","segments":[{"smtl":{"aligned_seque...</td>
+      <td>https://swissmodel.expasy.org/repository/unipr...</td>
+      <td>0.046842</td>
+      <td>2020-11-01T18:53:29.405000+00:00</td>
+      <td>HHblits</td>
+      <td>0.0</td>
+      <td>NF1_HUMAN</td>
+      <td>0.106870</td>
+      <td>2</td>
+      <td>NaN</td>
+      <td>fc83f587346226e60cc701448008f89f</td>
+      <td>HOMOLOGY MODELLING</td>
+      <td>monomer</td>
+      <td>SWISSMODEL</td>
+      <td>2818</td>
+      <td>0.254453</td>
+      <td>3woy.1.A</td>
+      <td>[[2268,2399]]</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>0.423608</td>
+      <td>0.072</td>
+      <td>0.011488</td>
+      <td>-4.452434</td>
+      <td>-0.014163</td>
+      <td>-1.706403</td>
+      <td>-0.299886</td>
+      <td>-0.922307</td>
+      <td>0.589486</td>
+      <td>-3.592260</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>0.236340</td>
+      <td>-2.872675</td>
+      <td>0.028206</td>
+      <td>-2.441966</td>
+      <td>4</td>
       <td>False</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>P21359-2</td>
+      <td>[{"id":"L","segments":[{"smtl":{"aligned_seque...</td>
+      <td>https://swissmodel.expasy.org/repository/unipr...</td>
+      <td>0.049326</td>
+      <td>2020-11-01T18:53:29.362000+00:00</td>
+      <td>HHblits</td>
+      <td>0.0</td>
+      <td>NF1_HUMAN</td>
+      <td>0.214815</td>
+      <td>2</td>
+      <td>NaN</td>
+      <td>fc83f587346226e60cc701448008f89f</td>
+      <td>HOMOLOGY MODELLING</td>
+      <td>monomer</td>
+      <td>SWISSMODEL</td>
+      <td>2818</td>
+      <td>0.299259</td>
+      <td>6ltj.1.L</td>
+      <td>[[1074,1212]]</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>0.414444</td>
+      <td>0.071</td>
+      <td>-0.003353</td>
+      <td>-1.860656</td>
+      <td>-0.016426</td>
+      <td>-1.423716</td>
+      <td>-0.347270</td>
+      <td>-0.361593</td>
+      <td>0.588397</td>
+      <td>-3.625870</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>0.129832</td>
+      <td>-3.591374</td>
+      <td>0.151137</td>
+      <td>-3.256164</td>
+      <td>5</td>
       <td>True</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>P21359-2</td>
+      <td>[{"id":"A","segments":[{"smtl":{"aligned_seque...</td>
+      <td>https://swissmodel.expasy.org/repository/unipr...</td>
+      <td>0.053229</td>
+      <td>2020-11-01T18:53:29.384000+00:00</td>
+      <td>HHblits</td>
+      <td>0.0</td>
+      <td>NF1_HUMAN</td>
+      <td>0.111940</td>
+      <td>2</td>
+      <td>NaN</td>
+      <td>fc83f587346226e60cc701448008f89f</td>
+      <td>HOMOLOGY MODELLING</td>
+      <td>monomer</td>
+      <td>SWISSMODEL</td>
+      <td>2818</td>
+      <td>0.260199</td>
+      <td>1h2t.1.A</td>
+      <td>[[1986,2135]]</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>0.409797</td>
+      <td>0.067</td>
+      <td>0.008711</td>
+      <td>-4.268426</td>
+      <td>-0.012236</td>
+      <td>-2.127937</td>
+      <td>-0.346139</td>
+      <td>-0.413069</td>
+      <td>0.582163</td>
+      <td>-4.048233</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>0.350606</td>
+      <td>-2.199805</td>
+      <td>0.095252</td>
+      <td>-3.054075</td>
+      <td>6</td>
       <td>True</td>
     </tr>
   </tbody>
 </table>
+
 </details>
 
 `pipe_select_smr_mo`会根据传入的SIFTS单体选择结果结合SMR提供的model的覆盖范围来判断可用选择哪些模型结构作为补充。
