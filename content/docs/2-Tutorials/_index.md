@@ -2620,7 +2620,7 @@ pdb_assembly_object.assemble_summary
 
 > 整合PDBe PISA API 资源
 
-对于PISA资源中定义的Interface，`pdb-profiling`也提供了Assembly的相应类`PDBInterface`，可通过如下方式获取到PDBAssemble的相关Interface:
+对于PISA资源中定义的Interface，`pdb-profiling`也提供了Interface的相应类`PDBInterface`，可通过如下方式获取到PDBAssemble的相关Interface:
 
 ```python
 pdb_assembly_object = assemblies[1]
