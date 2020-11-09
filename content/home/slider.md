@@ -16,7 +16,7 @@ height = ""
 # Slides.
 # Duplicate an `[[item]]` block to add more slides.
 [[item]]
-  title = "Want to perform batch retrieval of metadata from PDBe RESTful API??"
+  title = "Want to perform batch retrieval of metadata from PDBe RESTful API?"
   content = "The **P**rotein **D**ata**B**ank is regarded as one of the most valuable resources in bioinformatics researches but requires huge storage to scan through a large amount of PDB entries. The [RESTful services](https://www.ebi.ac.uk/pdbe/pdbe-rest-api) provided by EBI saves users' life by providing different API calls that focus on a different aspect of relevant information like data scheme, experimental details, and so on."
   align = "center"  # Choose `center`, `left`, or `right`.
 
@@ -51,5 +51,14 @@ height = ""
   overlay_color = "#333"  # An HTML color value.
   overlay_img = "au_bu.png"  # Image path relative to your `static/media/` folder.
   overlay_filter = 0.25  # Darken the image. Value in range 0-1.
- 
+
+[[item]]
+  title = "Want to perform the bidirectional mapping from or to `PDBResidues`?"
+  content = "There exists a logical correspondence from the trinucleotide codon to the amino acids in the polypeptide chain and then to the residues in the protein tertiary structure. This correspondence is based on the sequential property of nucleic acid sequences and the derived polypeptide chain."
+  align = "center"
+
+  overlay_color = "#333"  # An HTML color value.
+  overlay_img = "genome2pdb.svg"  # Image path relative to your `static/media/` folder.
+  overlay_filter = 0.45  # Darken the image. Value in range 0-1.
+
 +++
