@@ -24,7 +24,7 @@ height = ""
   #   Deactivate an option by commenting out the line, prefixing it with `#`.
   overlay_color = "#333"  # An HTML color value.
   overlay_img = "api_webinars_promo.png"  # Image path relative to your `static/media/` folder.
-  overlay_filter = 0.5  # Darken the image. Value in range 0-1.
+  overlay_filter = 0.8  # Darken the image. Value in range 0-1.
 
   # Call to action button (optional).
   #   Activate the button by specifying a URL and button label below.
@@ -41,7 +41,7 @@ height = ""
 
   overlay_color = "#333"  # An HTML color value.
   overlay_img = "sele_paper.png"  # Image path relative to your `static/media/` folder.
-  overlay_filter = 0.5  # Darken the image. Value in range 0-1. 
+  overlay_filter = 0.8  # Darken the image. Value in range 0-1. 
 
 [[item]]
   title = "Want to study in an interactional level?"
@@ -49,7 +49,7 @@ height = ""
   align = "center"
 
   overlay_color = "#333"  # An HTML color value.
-  overlay_img = "au_bu.jpg"  # Image path relative to your `static/media/` folder.
-  overlay_filter = 0.5  # Darken the image. Value in range 0-1.
+  overlay_img = "au_bu.png"  # Image path relative to your `static/media/` folder.
+  overlay_filter = 0.8  # Darken the image. Value in range 0-1.
  
 +++
