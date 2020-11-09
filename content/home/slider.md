@@ -18,7 +18,7 @@ height = ""
 [[item]]
   title = "Want to perform batch retrieve of metadata from PDBe RESTful API?"
   content = "The **P**rotein **D**ata**B**ank </br>is regarded as one of the most valuable resources in bioinformatics researches but requires huge storage to scan through a large amount of PDB Entry. The [RESTful services provided by EBI](https://www.ebi.ac.uk/pdbe/pdbe-rest-api) saves users' life by providing different API calls that focus on a different aspect of relevant information like data scheme, experimental details, and so on."
-  align = "left"  # Choose `center`, `left`, or `right`.
+  align = "center"  # Choose `center`, `left`, or `right`.
 
   # Overlay a color or image (optional).
   #   Deactivate an option by commenting out the line, prefixing it with `#`.
@@ -37,7 +37,7 @@ height = ""
 [[item]]
   title = "What is the representative set of my target proteins?"
   content = "The demand for defining a non-redundant set of protein tertiary structures in Monomeric or Homomeric or Heteromeric state is long-standing. With the required information and the user-defined criteria, the greedy algorithm plus the metric used to measure the degree of similarity between sets can be implemented to achieve this goal."
-  align = "right"
+  align = "center"
 
   overlay_color = "#333"  # An HTML color value.
   overlay_img = "sele_paper.png"  # Image path relative to your `static/media/` folder.
@@ -50,6 +50,6 @@ height = ""
 
   overlay_color = "#333"  # An HTML color value.
   overlay_img = "au_bu.png"  # Image path relative to your `static/media/` folder.
-  overlay_filter = 0.8  # Darken the image. Value in range 0-1.
+  overlay_filter = 0.25  # Darken the image. Value in range 0-1.
  
 +++
