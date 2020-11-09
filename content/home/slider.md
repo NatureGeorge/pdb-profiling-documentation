@@ -7,7 +7,7 @@ weight = 15  # Order that this section will appear.
 
 # Slide interval.
 # Use `false` to disable animation or enter a time in ms, e.g. `5000` (5s).
-interval = 5000
+interval = 10000
 
 # Slide height (optional).
 # E.g. `500px` for 500 pixels or `calc(100vh - 70px)` for full screen.
@@ -17,7 +17,7 @@ height = ""
 # Duplicate an `[[item]]` block to add more slides.
 [[item]]
   title = "Want to perform batch retrieval of metadata from PDBe RESTful API?"
-  content = "The **P**rotein **D**ata**B**ank is regarded as one of the most valuable resources in bioinformatics researches but requires huge storage to scan through a large amount of PDB entries. The [RESTful services](https://www.ebi.ac.uk/pdbe/pdbe-rest-api) provided by EBI saves users' life by providing different API calls that focus on a different aspect of relevant information like data scheme, experimental details, and so on."
+  content = "The **P**rotein **D**ata**B**ank is regarded as one of the most valuable resources in bioinformatics researches but requires huge storage to scan through a large amount of PDB entries. The [RESTful services](https://www.ebi.ac.uk/pdbe/pdbe-rest-api) provided by EBI save users' life by providing different API calls that focus on a different aspect of relevant information like data scheme, experimental details, and so on."
   align = "center"  # Choose `center`, `left`, or `right`.
 
   # Overlay a color or image (optional).
