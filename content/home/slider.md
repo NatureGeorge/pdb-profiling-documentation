@@ -16,8 +16,8 @@ height = ""
 # Slides.
 # Duplicate an `[[item]]` block to add more slides.
 [[item]]
-  title = "Want to perform batch retrieve of metadata from PDBe RESTful API?"
-  content = "The **P**rotein **D**ata**B**ank </br>is regarded as one of the most valuable resources in bioinformatics researches but requires huge storage to scan through a large amount of PDB Entry. The [RESTful services provided by EBI](https://www.ebi.ac.uk/pdbe/pdbe-rest-api) saves users' life by providing different API calls that focus on a different aspect of relevant information like data scheme, experimental details, and so on."
+  title = "Want to perform batch retrieval of metadata from PDBe RESTful API??"
+  content = "The **P**rotein **D**ata**B**ank is regarded as one of the most valuable resources in bioinformatics researches but requires huge storage to scan through a large amount of PDB entries. The [RESTful services](https://www.ebi.ac.uk/pdbe/pdbe-rest-api) provided by EBI saves users' life by providing different API calls that focus on a different aspect of relevant information like data scheme, experimental details, and so on."
   align = "center"  # Choose `center`, `left`, or `right`.
 
   # Overlay a color or image (optional).
@@ -40,12 +40,12 @@ height = ""
   align = "center"
 
   overlay_color = "#333"  # An HTML color value.
-  overlay_img = "sele_paper.png"  # Image path relative to your `static/media/` folder.
+  overlay_img = "sele_paper.jpg"  # Image path relative to your `static/media/` folder.
   overlay_filter = 0.8  # Darken the image. Value in range 0-1. 
 
 [[item]]
   title = "Want to study in an interactional level?"
-  content = "The molecular details contained in the interaction are essential to the understanding of the biological process. And there many resources that can be dig in the different Assembly of the PDB entry."
+  content = "The molecular details contained in the interaction are essential to the understanding of the biological process. And there exists a rich resource that can be dig in the different Assembly of the PDB entry."
   align = "center"
 
   overlay_color = "#333"  # An HTML color value.

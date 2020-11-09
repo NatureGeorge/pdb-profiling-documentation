@@ -22,8 +22,8 @@ hero_media = "molecule.svg"
   # color = "navy"
   
   # Background gradient.
-  gradient_start = "#4bb4e3"
-  gradient_end = "#2b94c3"
+  gradient_start = "#282a36"
+  gradient_end = "#19252f"
   
   # Background image.
   # image = ""  # Name of image in `static/media/`.
