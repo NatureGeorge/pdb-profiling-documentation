@@ -42,6 +42,17 @@ table.dataframe {
 
 `pdb-profiling`基于Python3，是一个Python Package，需要您的电脑预先安装了Python3.6及以上版本才可使用。
 
+### *安装之前
+
+* 确保您的64位电脑安装了64位的Python
+* 为了避免一些意想不到的错误，请先运行以下命令以升级`pip`:
+
+```bash
+pip install --upgrade pip
+``` 
+
+### 正式安装步骤
+
 请在终端中执行以下pip命令以安装`pdb-profiling`:
 
 ```bash
