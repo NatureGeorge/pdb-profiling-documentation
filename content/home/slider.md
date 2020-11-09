@@ -53,12 +53,12 @@ height = ""
   overlay_filter = 0.25  # Darken the image. Value in range 0-1.
 
 [[item]]
-  title = "Want to perform the bidirectional mapping from or to `PDBResidues`?"
+  title = "Want to perform bidirectional mapping from or to PDBResidue?"
   content = "There exists a logical correspondence from the trinucleotide codon to the amino acids in the polypeptide chain and then to the residues in the protein tertiary structure. This correspondence is based on the sequential property of nucleic acid sequences and the derived polypeptide chain."
   align = "center"
 
   overlay_color = "#333"  # An HTML color value.
-  overlay_img = "genome2pdb.svg"  # Image path relative to your `static/media/` folder.
-  overlay_filter = 0.45  # Darken the image. Value in range 0-1.
+  overlay_img = "genome2pdb.drawio.svg"  # Image path relative to your `static/media/` folder.
+  overlay_filter = 0.75  # Darken the image. Value in range 0-1.
 
 +++
