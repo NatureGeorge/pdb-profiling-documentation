@@ -30,3 +30,5 @@ title: Zefeng Zhu
 user_groups:
 - Visitors
 ---
+
+Currently, I am working on programming and have a thirst for the insight of mathematic modeling. My involvement in science lays in the study of the protein 3D structure.🌏
