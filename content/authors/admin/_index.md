@@ -1,7 +1,7 @@
 ---
 authors:
 - admin
-bio:
+bio: Currently, I am working on programming and have a thirst for the insight of mathematic modeling. My involvement in science lays in the study of the protein 3D structure.
 education:
   courses:
   - course: Undergraduate Student Major in Bioinformatics
@@ -17,7 +17,7 @@ interests:
 organizations:
 - name: Minghui Lab
   url: "https://lilab.jysw.suda.edu.cn/"
-  role: Undergraduate Research Training
+role: Undergraduate Research Training
 social:
 - icon: envelope
   icon_pack: fas
