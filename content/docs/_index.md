@@ -17,7 +17,7 @@ This is a __note__ block.
 This is a __warning__ block.
 {{% /callout %}}
 
-> The text structure of document is learn from Divio Documentation.
+> The text structure of the document is learned from the Divio Documentation.
 
 ### Tutorials
 
