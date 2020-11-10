@@ -8,9 +8,7 @@ weight = 10  # Order that this section will appear.
 title = "pdb-profiling"
 
 # Hero image (optional). Enter filename of an image in the `static/media/` folder.
-hero_media = "code_cover.svg"
-
-# Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon"> www.flaticon.com</a>
+hero_media = "code_cover_cosmic.svg"
 
 [design.background]
   # Apply a background color, gradient, or image.
