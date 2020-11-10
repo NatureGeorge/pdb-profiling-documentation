@@ -7,3 +7,8 @@
   name = "Documentation"
   url = "docs/"
   weight = 10
+
+[[main]]
+  name = "GitHub"
+  url = "https://github.com/naturegeorge/pdb-profiling"
+  weight = 20

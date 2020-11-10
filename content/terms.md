@@ -5,6 +5,8 @@ subtitle: Profiling Protein Structures from Protein Data Bank and integrate
   various resources
 summary: ""
 draft: false
+authors:
+  - admin
 ---
 [![Build](https://img.shields.io/travis/naturegeorge/pdb-profiling?style=for-the-badge&logo=travis)](https://github.com/naturegeorge/pdb-profiling)
 [![SupportPythonVersion](https://img.shields.io/pypi/pyversions/pdb-profiling.svg?style=for-the-badge&logo=python)](https://pypi.org/project/pdb-profiling/)

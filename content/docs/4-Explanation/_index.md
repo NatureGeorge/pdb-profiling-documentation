@@ -10,6 +10,8 @@ icon_pack: fas
 title: Explanation
 date: "2020-11-05T00:00:00Z"
 type: book  # Do not modify.
+authors:
+  - admin
 ---
 
 Building...

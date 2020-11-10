@@ -1,6 +1,8 @@
 ---
 title: Docs
 type: book  # Do not modify.
+authors:
+  - admin
 ---
 
 ![cover](https://user-images.githubusercontent.com/43134199/95018149-58cfc200-0690-11eb-9e64-760faec5130f.png)

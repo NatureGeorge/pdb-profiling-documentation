@@ -10,6 +10,8 @@ icon_pack: fas
 title: Tutorials
 date: "2020-11-05T00:00:00Z"
 type: book  # Do not modify.
+authors:
+  - admin
 ---
 
 <style>
@@ -46,8 +48,12 @@ table.dataframe {
 
 ### *安装之前
 
+{{% callout note %}}
+
 * 确保您的64位电脑安装了64位的Python
 * 为了避免一些意想不到的错误，请先运行以下命令以升级`pip`:
+
+{{% /callout %}}
 
 ```bash
 pip install --upgrade pip
@@ -394,7 +400,9 @@ res = pdb_objects.fetch(
 
 返回的res是一个`list`，每个元素都是一个`pandas.DataFrame`，可用`pandas.concat`将多个dataframe整合。
 
-> 注意: 此步骤得到的res中，结果出现次序并不一定按照PDBs中PDB的顺序
+{{% callout note %}}
+注意: 此步骤得到的res中，结果出现次序并不一定按照PDBs中PDB的顺序。
+{{% /callout %}}
 
 ```python
 from pandas import concat
@@ -2682,7 +2690,9 @@ from pdb_profiling.processors.i3d.api import Interactome3D
 Interactome3D.pipe_init_interaction_meta().result()
 ```
 
-> 注意，上面这两行代码一旦运行过就再也不用运行，就算是重新开启python进程也是；因为上述代码是下载文件与准备数据库步骤
+{{% callout note %}}
+注意: 上面这两行代码一旦运行过就再也不用运行，就算是重新开启python进程也是。因为上述代码是下载文件与准备数据库步骤。
+{{% /callout %}}
 
 准备好数据后即可访问相关相互作用信息:
 
