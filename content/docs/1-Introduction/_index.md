@@ -27,26 +27,26 @@ authors:
 * 解析PDB完整文件需要大量存储空间与下载/计算时间，为获取相关元数据而对完整PDB文件进行处理有些南辕北辙
 * 解析各种PDB文件格式(`.pdb`, `.cif`, `.mmtf` etc.)在具有相关现成parser函数的情况下仍具有较高编程成本且存在各种边缘异常情况
 
-所幸，`EBI`提供的`PDBe RESTful API`等[^1,2]服务能够很好的解决获取元数据的便捷性问题。面对上述问题，`pdb-profiling`应用了`PDBe`的`Entry-Based API`[^1]与`Aggregated API`(`PDBe Graph API`)[^2]。利用`Entry-Based API`能够实时地获取最新的PDB在`Entry-Assembly/Model-Entity-Chain-Residue`水平的元数据信息，进行相关信息的批量检索与收集。此外，这些信息也为.pdb与.cif及其他格式之间的数据标识符转化提供了足够信息，能够做到向前兼容一些较为早期的(old history)软件所需的标识符格式信息。且不单单应对`asymmetric unit`，同时处理好`biological assembly`。利用`Entry-Based API`中的`SIFTS API`能够做到最新版本下`UniProt isoform`与对应PDB在`chain-level`以及`residue-level`的高效映射，结合`EBI's Proteins API`能够实现突变信息在转录本与对应`PDB Chain Instance`的残基的双向映射。`PDBe`的`Aggregated API`与`Entry-Based API`还一同提供了`chain-level`和`residue-level`的丰富注释信息，能够获取结构域、二级结构、残基保守性、配体结合倾向等大量且丰富的预先计算好的特征。
+所幸，`EBI`提供的`PDBe RESTful API`等[^1][^2]服务能够很好的解决获取元数据的便捷性问题。面对上述问题，`pdb-profiling`应用了`PDBe`的`Entry-Based API`[^1]与`Aggregated API`(`PDBe Graph API`)[^2]。利用`Entry-Based API`能够实时地获取最新的PDB在`Entry-Assembly/Model-Entity-Chain-Residue`水平的元数据信息，进行相关信息的批量检索与收集。此外，这些信息也为`.pdb`与`.cif`及其他格式之间的数据标识符转化提供了足够信息，能够做到向前兼容一些较为早期的(old history)软件所需的标识符格式信息。且不单单应对`asymmetric unit`，同时处理好`biological assembly`。利用`Entry-Based API`中的`SIFTS API`[^3]能够做到最新版本下`UniProt isoform`与对应PDB在`chain-level`以及`residue-level`的高效映射，结合`EBI's Proteins API`[^4]能够实现突变信息在转录本与对应`PDB Chain Instance`的残基的双向映射。`PDBe`的`Aggregated API`与`Entry-Based API`还一同提供了`chain-level`和`residue-level`的丰富注释信息，能够获取结构域、二级结构、残基保守性、配体结合倾向等大量且丰富的预先计算好的特征[^2]。
 
 ## 与`UniProt-KB`数据资源在整合时的问题
 
 此外，在`UniProt`视角下，不少`UniProt`对应的PDB晶体结构在对`UniProt`序列的覆盖度上有着较大的冗余度，对特定参考序列下进行蛋白质晶体结构的代表集结构确定是个由来已久的需求。且考虑到:
 
-* 不少PDB结构依照具有一定局限性的序列匹配算法被错误对应上，这其中包括
-  * Insertion
-  * Deletion
-  * InDel
-  * repeated mapping
-  * reversed mapping
-  * mapped out (head and tail) segment
-  * residue conflict
+* PDB结构与UniProt Isoform的匹配采用SIFTS资源，而SIFTS的匹配结果是以PDB的SEQRES序列为参考序列利用BLAST算法进行匹配产生的[^3]，这就使得以UniProt Isoform为参考序列来选择PDB结构时需要注意如下情况:
+  * Insertion: 部分匹配上的PDB链的序列在匹配区域中间存在一段或多段参考序列上不具有的序列片段
+  * Deletion: 部分匹配上的PDB链的序列在匹配区域中间缺失一段或多段参考序列上本来具有的序列片段
+  * InDel: 部分匹配上的PDB链的序列在匹配区域中间与参考序列的部分片段存在较大差异
+  * repeated mapping: 部分UniProt Isoform序列片段被多次匹配上PDB链的序列片段
+  * reversed mapping: 部分UniProt Isoform序列片段被倒序匹配于PDB链的某序列片段
+  * mapped out (head and tail) segment: PDB链在除了匹配上对应UniProt Isoform的片段之外在C/N端还具有其他较大的序列片段
+  * residue conflict: 在匹配区域中，PDB链的序列与参考序列存在个别残基差异
 * PDB结构中存在着
-  * missing residue
-  * UNK residue
-  * modified residue
-  * ligand binding residue
-  * ca_p_only chain
+  * missing residues (unmodelled residues): 晶体结构在解析时并不一定能够解析出SEQRES所有残基的空间结构，存在部分残基未被建模出来
+  * UNK residues: 晶体结构中由于实验方法的限制，有时候不能确定解析出的残基的氨基酸种类
+  * modified residues: 晶体结构中有时会有部分残基被化学修饰，氨基酸的侧链发生改变使得其为非标准氨基酸
+  * ligand binding residues: 晶体结构中会有部分残基与配体相结合
+  * ca_p_only chain: 由于实验方法的限制，有时解析出的整条多肽链都只有C-alpha而无侧链原子
 * UniProt数据本身也会随着版本更新而对条目数据进行变化，包括条目的增删改、canonical isoform的重新界定等
 
 这使得确定一个严谨准确的蛋白质结构代表集流程对科学研究有着相当的重要性。
@@ -139,7 +139,7 @@ authors:
 同时，对于二元相互作用(同聚体相互作用、异聚体相互作用)，进行代表集相互作用结构筛选时有必要考虑到
 
 * UniProt binary interaction是否具有生物学意义
-* crystal interaction是否具有意义
+* crystal interaction是否具有意义，是单纯的crystal patch还是说确实在分子表型层面其能够形成相互作用
 * 同一对binary interaction下the residues of interacting interface的区别
 
 ## 代表集结构的确定问题
@@ -268,7 +268,7 @@ SIFTSs(('P21359', 'Q5VST9', 'P21359-5')).fetch('pipe_select_mo').run().result()
     </tr>
     <tr>
         <td>
-            PDBe Entry-Based API[^1]
+            PDBe Entry-Based API
         </td>
         <td>
             <p>https://www.ebi.ac.uk/pdbe/api/doc/pdb.html</p>
@@ -278,7 +278,7 @@ SIFTSs(('P21359', 'Q5VST9', 'P21359-5')).fetch('pipe_select_mo').run().result()
     </tr>
     <tr>
         <td>
-            PDBe Aggregated API/PDBe Graph API[^2]
+            PDBe Aggregated API/PDBe Graph API
         </td>
         <td>
             <p>https://www.ebi.ac.uk/pdbe/graph-api/pdbe_doc/</p>
@@ -357,3 +357,5 @@ SIFTSs(('P21359', 'Q5VST9', 'P21359-5')).fetch('pipe_select_mo').run().result()
 
 [^1]: Mir S, Alhroub Y, Anyango S, Armstrong DR, Berrisford JM, Clark AR, Conroy MJ, Dana JM, Deshpande M, Gupta D, Gutmanas A, Haslam P, Mak L, Mukhopadhyay A, Nadzirin N, Paysan-Lafosse T, Sehnal D, Sen S, Smart OS, Varadi M, Kleywegt GJ, Velankar S. PDBe: towards reusable data delivery infrastructure at protein data bank in Europe. Nucleic Acids Res. 2018 Jan 4;46(D1):D486-D492. doi: 10.1093/nar/gkx1070. PMID: 29126160; PMCID: PMC5753225.
 [^2]: PDBe-KB consortium. PDBe-KB: a community-driven resource for structural and functional annotations. Nucleic Acids Res. 2020 Jan 8;48(D1):D344-D353. doi: 10.1093/nar/gkz853. PMID: 31584092; PMCID: PMC6943075.
+[^3]: Dana JM, Gutmanas A, Tyagi N, Qi G, O'Donovan C, Martin M, Velankar S. SIFTS: updated Structure Integration with Function, Taxonomy and Sequences resource allows 40-fold increase in coverage of structure-based annotations for proteins. Nucleic Acids Res. 2019 Jan 8;47(D1):D482-D489. doi: 10.1093/nar/gky1114. PMID: 30445541; PMCID: PMC6324003.
+[^4]: Andrew Nightingale, Ricardo Antunes, Emanuele Alpi, Borisas Bursteinas, Leonardo Gonzales, Wudong Liu, Jie Luo, Guoying Qi, Edd Turner, Maria Martin, The Proteins API: accessing key integrated protein and genome information, Nucleic Acids Research, Volume 45, Issue W1, 3 July 2017, Pages W539–W544, https://doi.org/10.1093/nar/gkx237
