@@ -36,7 +36,9 @@ table.dataframe {
 * pip安装Python Package知识
 * 熟悉Pandas包的DataFrame相关知识
 
-阅读这部分不需要对Python Asynchronous Programming有任何了解。
+{{% callout note %}}
+阅读这部分不需要对**Python Asynchronous Programming**有任何了解。
+{{% /callout %}}
 
 ## 安装
 
