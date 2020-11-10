@@ -9,6 +9,14 @@ authors:
 
 Welcome to the documentation of `pdb-profiling`.
 
+{{% callout note %}}
+This is a __note__ block.
+{{% /callout %}}
+
+{{% callout warning %}}
+This is a __warning__ block.
+{{% /callout %}}
+
 > The text structure of document is learn from Divio Documentation.
 
 ### Tutorials
