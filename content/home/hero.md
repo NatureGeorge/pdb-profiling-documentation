@@ -8,7 +8,7 @@ weight = 10  # Order that this section will appear.
 title = "pdb-profiling"
 
 # Hero image (optional). Enter filename of an image in the `static/media/` folder.
-hero_media = "molecule.svg"
+hero_media = "code_cover.png"
 
 # Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon"> www.flaticon.com</a>
 
