@@ -123,6 +123,10 @@ building...
 ### Defined by `pdb-profiling`
 
 * `multi_method`: whether the PDB entry was determined by multiple method
+* `1/resolution`: as name said
+* `id_score`
+  * calculated by `-sum(ord(i) for i in chain_id)`
+  * used for multi-criteria sorting of chains according to their chain_id
 * `SEQRES_COUNT`: the count of the residues in SEQRES
 * `OBS_INDEX`: the index of observed/modelled (with coordinates) residues of the PDB Chain Instance
 * `OBS_COUNT`: the count of observed/modelled (with coordinates) residues of the PDB Chain Instance

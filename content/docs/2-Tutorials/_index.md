@@ -14762,6 +14762,8 @@ PDB(record['pdb_id']).get_map_res_df(
 
 </details>
 
+传入的`your_sites`即对应结果中的`unp_residue_number`列。
+
 {{% callout note %}}
 `get_map_res_df`有一个`unp2pdb`参数默认为True,表示此函数将把`your_sites`传入的参数认定为UniProt Isoform上的位点，进而映射至PDB链上。若要让此函数将`your_sites`传入的参数认定为PDB链上的位点，进而映射至UniProt Isoform上，请设置`unp2pdb=False`:
 {{% /callout %}}
@@ -14868,6 +14870,8 @@ PDB(record['pdb_id']).get_map_res_df(
 
 </details>
 
+传入的`your_sites`即对应结果中的`residue_number`列。
+
 {{% callout note %}}
 若设置了`unp2pdb=False`且传入的`your_sites`中位点是`author_residue_number`+`author_insertion_code`,请传入参数`author_site=True`:
 {{% /callout %}}
@@ -14884,95 +14888,94 @@ PDB(record['pdb_id']).get_map_res_df(
     struct_asym_id=record['struct_asym_id']).result()
 ```
 
-<details><summary>Click to view dataframe</summary>
-
-<table class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>author_insertion_code</th>
-      <th>author_residue_number</th>
-      <th>chain_id</th>
-      <th>entity_id</th>
-      <th>multiple_conformers</th>
-      <th>observed_ratio</th>
-      <th>pdb_id</th>
-      <th>residue_name</th>
-      <th>residue_number</th>
-      <th>struct_asym_id</th>
-      <th>UniProt</th>
-      <th>unp_residue_number</th>
-      <th>conflict_code</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td></td>
-      <td>2</td>
-      <td>E</td>
-      <td>1</td>
-      <td>NaN</td>
-      <td>1.0</td>
-      <td>3sqh</td>
-      <td>GLY</td>
-      <td>5</td>
-      <td>A</td>
-      <td>P00734</td>
-      <td>337</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>A</td>
-      <td>14</td>
-      <td>E</td>
-      <td>1</td>
-      <td>NaN</td>
-      <td>1.0</td>
-      <td>3sqh</td>
-      <td>LYS</td>
-      <td>18</td>
-      <td>A</td>
-      <td>P00734</td>
-      <td>350</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>E</td>
-      <td>14</td>
-      <td>E</td>
-      <td>1</td>
-      <td>NaN</td>
-      <td>1.0</td>
-      <td>3sqh</td>
-      <td>GLU</td>
-      <td>22</td>
-      <td>A</td>
-      <td>P00734</td>
-      <td>354</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td></td>
-      <td>195</td>
-      <td>E</td>
-      <td>1</td>
-      <td>NaN</td>
-      <td>1.0</td>
-      <td>3sqh</td>
-      <td>ALA</td>
-      <td>236</td>
-      <td>A</td>
-      <td>P00734</td>
-      <td>568</td>
-      <td>S</td>
-    </tr>
-  </tbody>
-</table>
-
+<details>
+  <summary>Click to view dataframe</summary>
+  <table class="dataframe">
+    <thead>
+      <tr style="text-align: right;">
+        <th></th>
+        <th>author_insertion_code</th>
+        <th>author_residue_number</th>
+        <th>chain_id</th>
+        <th>entity_id</th>
+        <th>multiple_conformers</th>
+        <th>observed_ratio</th>
+        <th>pdb_id</th>
+        <th>residue_name</th>
+        <th>residue_number</th>
+        <th>struct_asym_id</th>
+        <th>UniProt</th>
+        <th>unp_residue_number</th>
+        <th>conflict_code</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th>0</th>
+        <td></td>
+        <td>2</td>
+        <td>E</td>
+        <td>1</td>
+        <td>NaN</td>
+        <td>1.0</td>
+        <td>3sqh</td>
+        <td>GLY</td>
+        <td>5</td>
+        <td>A</td>
+        <td>P00734</td>
+        <td>337</td>
+        <td>NaN</td>
+      </tr>
+      <tr>
+        <th>1</th>
+        <td>A</td>
+        <td>14</td>
+        <td>E</td>
+        <td>1</td>
+        <td>NaN</td>
+        <td>1.0</td>
+        <td>3sqh</td>
+        <td>LYS</td>
+        <td>18</td>
+        <td>A</td>
+        <td>P00734</td>
+        <td>350</td>
+        <td>NaN</td>
+      </tr>
+      <tr>
+        <th>2</th>
+        <td>E</td>
+        <td>14</td>
+        <td>E</td>
+        <td>1</td>
+        <td>NaN</td>
+        <td>1.0</td>
+        <td>3sqh</td>
+        <td>GLU</td>
+        <td>22</td>
+        <td>A</td>
+        <td>P00734</td>
+        <td>354</td>
+        <td>NaN</td>
+      </tr>
+      <tr>
+        <th>3</th>
+        <td></td>
+        <td>195</td>
+        <td>E</td>
+        <td>1</td>
+        <td>NaN</td>
+        <td>1.0</td>
+        <td>3sqh</td>
+        <td>ALA</td>
+        <td>236</td>
+        <td>A</td>
+        <td>P00734</td>
+        <td>568</td>
+        <td>S</td>
+      </tr>
+    </tbody>
+  </table>
 </details>
 
 按照如上教程，您应该已经可以利用`pdb-profiling`完成不少任务了。若想了解更多其中的编程逻辑、处理逻辑与数据解释，可以继续阅读文档的剩余部分，在那里将会有更为详细的说明。
