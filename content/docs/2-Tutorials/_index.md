@@ -14378,4 +14378,601 @@ df5
 
 `pipe_select_smr_mo`会根据传入的SIFTS单体选择结果结合SMR提供的model的覆盖范围来判断可用选择哪些模型结构作为补充。
 
+## 位点映射
+
+以P00734与3sqh(chain_id: E)的映射关系为例:
+
+{{% callout note %}}
+下面两个函数的`conflict_pdb_index`参数是可选的，不一定需要传入，当您对映射位点上是否存在残基冲突(即PDB链上残基与UniProt Isoform上残基不一致)感兴趣时,才需要传入。
+{{% /callout %}}
+
+```python
+df1 = SIFTS('P00734').pipe_select_mo().result()
+record = df1[df1.pdb_id.eq('3sqh')].iloc[0]  # df1[df1.select_tag.eq(True)].iloc[0]
+record
+'''
+UniProt                                      P00734
+chain_id                                          E
+entity_id                                         1
+identity                                          1
+is_canonical                                   True
+pdb_id                                         3sqh
+struct_asym_id                                    A
+pdb_range                                 [[1,290]]
+unp_range                               [[333,622]]
+Entry                                        P00734
+range_diff                                      [0]
+sifts_range_tag                                Safe
+repeated                                      False
+reversed                                      False
+InDel_sum                                         0
+new_pdb_range                             [[1,290]]
+new_unp_range                           [[333,622]]
+conflict_pdb_index                      {"236":"S"}
+conflict_pdb_range                      [[236,236]]
+conflict_unp_range                      [[568,568]]
+unp_len                                         622
+OBS_INDEX                    ((1, 181), (188, 290))
+OBS_COUNT                                       284
+OBS_RATIO_SUM                                 283.9
+BINDING_LIGAND_INDEX                             ()
+BINDING_LIGAND_COUNT                              0
+molecule_type                        polypeptide(L)
+ca_p_only                                     False
+SEQRES_COUNT                                    290
+STD_INDEX                               ((1, 290),)
+STD_COUNT                                       290
+NON_INDEX                                        ()
+NON_COUNT                                         0
+UNK_INDEX                                        ()
+UNK_COUNT                                         0
+ARTIFACT_INDEX                                   ()
+OBS_STD_INDEX                ((1, 181), (188, 290))
+OBS_STD_COUNT                                   284
+RAW_BS                                     0.439318
+RAW_BS_IG3                                 0.439318
+resolution                                      2.2
+experimental_method_class                     x-ray
+experimental_method               X-ray diffraction
+multi_method                                  False
+revision_date                              20120523
+deposition_date                            20110705
+1/resolution                               0.454545
+id_score                                        -69
+select_tag                                    False
+select_rank                                       8
+'''
+```
+
+通过下面代码来得到匹配区间的所有位点映射关系:
+
+```python
+PDB(record['pdb_id']).get_expanded_map_res_df(
+    record['UniProt'],
+    record['new_unp_range'],
+    record['new_pdb_range'],
+    conflict_pdb_index=record['conflict_pdb_index'],
+    struct_asym_id=record['struct_asym_id']).result()
+```
+
+<details><summary>Click to view dataframe</summary>
+
+<table class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>unp_residue_number</th>
+      <th>residue_number</th>
+      <th>UniProt</th>
+      <th>author_insertion_code</th>
+      <th>author_residue_number</th>
+      <th>chain_id</th>
+      <th>entity_id</th>
+      <th>multiple_conformers</th>
+      <th>observed_ratio</th>
+      <th>pdb_id</th>
+      <th>residue_name</th>
+      <th>struct_asym_id</th>
+      <th>conflict_code</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>333</td>
+      <td>1</td>
+      <td>P00734</td>
+      <td>C</td>
+      <td>1</td>
+      <td>E</td>
+      <td>1</td>
+      <td>NaN</td>
+      <td>1.0</td>
+      <td>3sqh</td>
+      <td>GLU</td>
+      <td>A</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>334</td>
+      <td>2</td>
+      <td>P00734</td>
+      <td>B</td>
+      <td>1</td>
+      <td>E</td>
+      <td>1</td>
+      <td>NaN</td>
+      <td>1.0</td>
+      <td>3sqh</td>
+      <td>ALA</td>
+      <td>A</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>335</td>
+      <td>3</td>
+      <td>P00734</td>
+      <td>A</td>
+      <td>1</td>
+      <td>E</td>
+      <td>1</td>
+      <td>NaN</td>
+      <td>1.0</td>
+      <td>3sqh</td>
+      <td>ASP</td>
+      <td>A</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>336</td>
+      <td>4</td>
+      <td>P00734</td>
+      <td></td>
+      <td>1</td>
+      <td>E</td>
+      <td>1</td>
+      <td>NaN</td>
+      <td>1.0</td>
+      <td>3sqh</td>
+      <td>CYS</td>
+      <td>A</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>337</td>
+      <td>5</td>
+      <td>P00734</td>
+      <td></td>
+      <td>2</td>
+      <td>E</td>
+      <td>1</td>
+      <td>NaN</td>
+      <td>1.0</td>
+      <td>3sqh</td>
+      <td>GLY</td>
+      <td>A</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>285</th>
+      <td>618</td>
+      <td>286</td>
+      <td>P00734</td>
+      <td></td>
+      <td>243</td>
+      <td>E</td>
+      <td>1</td>
+      <td>NaN</td>
+      <td>1.0</td>
+      <td>3sqh</td>
+      <td>ASP</td>
+      <td>A</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>286</th>
+      <td>619</td>
+      <td>287</td>
+      <td>P00734</td>
+      <td></td>
+      <td>244</td>
+      <td>E</td>
+      <td>1</td>
+      <td>NaN</td>
+      <td>1.0</td>
+      <td>3sqh</td>
+      <td>GLN</td>
+      <td>A</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>287</th>
+      <td>620</td>
+      <td>288</td>
+      <td>P00734</td>
+      <td></td>
+      <td>245</td>
+      <td>E</td>
+      <td>1</td>
+      <td>NaN</td>
+      <td>1.0</td>
+      <td>3sqh</td>
+      <td>PHE</td>
+      <td>A</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>288</th>
+      <td>621</td>
+      <td>289</td>
+      <td>P00734</td>
+      <td></td>
+      <td>246</td>
+      <td>E</td>
+      <td>1</td>
+      <td>NaN</td>
+      <td>1.0</td>
+      <td>3sqh</td>
+      <td>GLY</td>
+      <td>A</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>289</th>
+      <td>622</td>
+      <td>290</td>
+      <td>P00734</td>
+      <td></td>
+      <td>247</td>
+      <td>E</td>
+      <td>1</td>
+      <td>NaN</td>
+      <td>0.9</td>
+      <td>3sqh</td>
+      <td>GLU</td>
+      <td>A</td>
+      <td>NaN</td>
+    </tr>
+  </tbody>
+</table>
+
+</details>
+
+或者通过如下代码来指定映射位点的映射关系:
+
+
+```python
+PDB(record['pdb_id']).get_map_res_df(
+    record['UniProt'],
+    record['new_unp_range'],
+    record['new_pdb_range'],
+    your_sites=(336, 353, 568, 362),
+    conflict_pdb_index=record['conflict_pdb_index'],
+    struct_asym_id=record['struct_asym_id']).result()
+```
+
+<details><summary>Click to view dataframe</summary>
+
+<table class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>author_insertion_code</th>
+      <th>author_residue_number</th>
+      <th>chain_id</th>
+      <th>entity_id</th>
+      <th>multiple_conformers</th>
+      <th>observed_ratio</th>
+      <th>pdb_id</th>
+      <th>residue_name</th>
+      <th>residue_number</th>
+      <th>struct_asym_id</th>
+      <th>unp_residue_number</th>
+      <th>UniProt</th>
+      <th>conflict_code</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td></td>
+      <td>1</td>
+      <td>E</td>
+      <td>1</td>
+      <td>NaN</td>
+      <td>1.0</td>
+      <td>3sqh</td>
+      <td>CYS</td>
+      <td>4</td>
+      <td>A</td>
+      <td>336</td>
+      <td>P00734</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>D</td>
+      <td>14</td>
+      <td>E</td>
+      <td>1</td>
+      <td>NaN</td>
+      <td>1.0</td>
+      <td>3sqh</td>
+      <td>ARG</td>
+      <td>21</td>
+      <td>A</td>
+      <td>353</td>
+      <td>P00734</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>M</td>
+      <td>14</td>
+      <td>E</td>
+      <td>1</td>
+      <td>NaN</td>
+      <td>1.0</td>
+      <td>3sqh</td>
+      <td>GLY</td>
+      <td>30</td>
+      <td>A</td>
+      <td>362</td>
+      <td>P00734</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td></td>
+      <td>195</td>
+      <td>E</td>
+      <td>1</td>
+      <td>NaN</td>
+      <td>1.0</td>
+      <td>3sqh</td>
+      <td>ALA</td>
+      <td>236</td>
+      <td>A</td>
+      <td>568</td>
+      <td>P00734</td>
+      <td>S</td>
+    </tr>
+  </tbody>
+</table>
+
+</details>
+
+{{% callout note %}}
+`get_map_res_df`有一个`unp2pdb`参数默认为True,表示此函数将把`your_sites`传入的参数认定为UniProt Isoform上的位点，进而映射至PDB链上。若要让此函数将`your_sites`传入的参数认定为PDB链上的位点，进而映射至UniProt Isoform上，请设置`unp2pdb=False`:
+{{% /callout %}}
+
+```python
+PDB(record['pdb_id']).get_map_res_df(
+    record['UniProt'],
+    record['new_unp_range'],
+    record['new_pdb_range'],
+    your_sites=(22, 31, 5, 237),
+    conflict_pdb_index=record['conflict_pdb_index'],
+    unp2pdb=False,
+    struct_asym_id=record['struct_asym_id']).result()
+```
+
+<details><summary>Click to view dataframe</summary>
+
+<table class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>author_insertion_code</th>
+      <th>author_residue_number</th>
+      <th>chain_id</th>
+      <th>entity_id</th>
+      <th>multiple_conformers</th>
+      <th>observed_ratio</th>
+      <th>pdb_id</th>
+      <th>residue_name</th>
+      <th>residue_number</th>
+      <th>struct_asym_id</th>
+      <th>unp_residue_number</th>
+      <th>UniProt</th>
+      <th>conflict_code</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td></td>
+      <td>2</td>
+      <td>E</td>
+      <td>1</td>
+      <td>NaN</td>
+      <td>1.0</td>
+      <td>3sqh</td>
+      <td>GLY</td>
+      <td>5</td>
+      <td>A</td>
+      <td>337</td>
+      <td>P00734</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>E</td>
+      <td>14</td>
+      <td>E</td>
+      <td>1</td>
+      <td>NaN</td>
+      <td>1.0</td>
+      <td>3sqh</td>
+      <td>GLU</td>
+      <td>22</td>
+      <td>A</td>
+      <td>354</td>
+      <td>P00734</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td></td>
+      <td>15</td>
+      <td>E</td>
+      <td>1</td>
+      <td>NaN</td>
+      <td>1.0</td>
+      <td>3sqh</td>
+      <td>ARG</td>
+      <td>31</td>
+      <td>A</td>
+      <td>363</td>
+      <td>P00734</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td></td>
+      <td>196</td>
+      <td>E</td>
+      <td>1</td>
+      <td>NaN</td>
+      <td>1.0</td>
+      <td>3sqh</td>
+      <td>GLY</td>
+      <td>237</td>
+      <td>A</td>
+      <td>569</td>
+      <td>P00734</td>
+      <td>NaN</td>
+    </tr>
+  </tbody>
+</table>
+
+</details>
+
+{{% callout note %}}
+若设置了`unp2pdb=False`且传入的`your_sites`中位点是`author_residue_number`+`author_insertion_code`,请传入参数`author_site=True`:
+{{% /callout %}}
+
+```python
+PDB(record['pdb_id']).get_map_res_df(
+    record['UniProt'],
+    record['new_unp_range'],
+    record['new_pdb_range'],
+    your_sites=('14E', '2', '14A', '195'),
+    conflict_pdb_index=record['conflict_pdb_index'],
+    unp2pdb=False,
+    author_site=True,
+    struct_asym_id=record['struct_asym_id']).result()
+```
+
+<details><summary>Click to view dataframe</summary>
+
+<table class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>author_insertion_code</th>
+      <th>author_residue_number</th>
+      <th>chain_id</th>
+      <th>entity_id</th>
+      <th>multiple_conformers</th>
+      <th>observed_ratio</th>
+      <th>pdb_id</th>
+      <th>residue_name</th>
+      <th>residue_number</th>
+      <th>struct_asym_id</th>
+      <th>UniProt</th>
+      <th>unp_residue_number</th>
+      <th>conflict_code</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td></td>
+      <td>2</td>
+      <td>E</td>
+      <td>1</td>
+      <td>NaN</td>
+      <td>1.0</td>
+      <td>3sqh</td>
+      <td>GLY</td>
+      <td>5</td>
+      <td>A</td>
+      <td>P00734</td>
+      <td>337</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>A</td>
+      <td>14</td>
+      <td>E</td>
+      <td>1</td>
+      <td>NaN</td>
+      <td>1.0</td>
+      <td>3sqh</td>
+      <td>LYS</td>
+      <td>18</td>
+      <td>A</td>
+      <td>P00734</td>
+      <td>350</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>E</td>
+      <td>14</td>
+      <td>E</td>
+      <td>1</td>
+      <td>NaN</td>
+      <td>1.0</td>
+      <td>3sqh</td>
+      <td>GLU</td>
+      <td>22</td>
+      <td>A</td>
+      <td>P00734</td>
+      <td>354</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td></td>
+      <td>195</td>
+      <td>E</td>
+      <td>1</td>
+      <td>NaN</td>
+      <td>1.0</td>
+      <td>3sqh</td>
+      <td>ALA</td>
+      <td>236</td>
+      <td>A</td>
+      <td>P00734</td>
+      <td>568</td>
+      <td>S</td>
+    </tr>
+  </tbody>
+</table>
+
+</details>
+
 按照如上教程，您应该已经可以利用`pdb-profiling`完成不少任务了。若想了解更多其中的编程逻辑、处理逻辑与数据解释，可以继续阅读文档的剩余部分，在那里将会有更为详细的说明。
