@@ -14,17 +14,12 @@ authors:
 pip install --upgrade pdb-profiling
 ```
 
+## Import Packages & Settings
 
 ```python
-import sys; sys.path.append("C:/GitWorks/pdb-profiling")
-
 from pdb_profiling import default_config
-
 default_config("C:/GitWorks/pdb-profiling/test/demo")
-```
 
-
-```python
 from pdb_profiling.processors import SIFTS, PDB, PDBAssemble, PDBInterface, SIFTSs, Base
 from pdb_profiling.utils import DisplayPDB
 
@@ -102,8 +97,6 @@ df1[df1.select_tag.eq(True)].T
 
     Wall time: 654 ms
     
-
-
 
 
 <div>
@@ -338,7 +331,6 @@ df1[df1.select_tag.eq(True)].T
   </tbody>
 </table>
 </div>
-
 
 
 
@@ -624,8 +616,6 @@ df2[df2.i_select_tag.eq(True)]
 
     HBox(children=(FloatProgress(value=0.0, max=5.0), HTML(value='')))
 
-
-    
     Wall time: 2.47 s
     
 
@@ -910,8 +900,6 @@ df3[df3.i_select_tag.eq(True)]
 
     HBox(children=(FloatProgress(value=0.0, max=3.0), HTML(value='')))
 
-
-    
     Wall time: 2.23 s
     
 
@@ -2733,34 +2721,13 @@ plt.figure(figsize=(10,8))
 sns.heatmap(expanded_seq_conser_df, cmap='viridis')
 ```
 
-
-
-
-    <matplotlib.axes._subplots.AxesSubplot at 0x24d31235908>
-
-
-
-
-![png](output_30_1.png)
-
+![png](../../../media/output_30_1.png)
 
 
 ```python
 sns.clustermap(expanded_seq_conser_df, cmap='viridis', method='ward')
 ```
 
+![png](../../../media/output_31_1.png)
 
 
-
-    <seaborn.matrix.ClusterGrid at 0x24d23ac29e8>
-
-
-
-
-![png](output_31_1.png)
-
-
-
-```python
-
-```

@@ -14,4 +14,9 @@ authors:
   - admin
 ---
 
-Building...
+## Selection-plus-FunPDBe-Study-Case-of-Q13426
+
+This How-to-Guide that take `Q13426` as an example can suit your following need:
+
+* For a single UniProt Isoform, I want to look into the details of the mapped PDB Chains
+* Meanwhile, I want to annotate selected PDB Entries/Chains with annotation from `PDBe Entry-Based API` and `PDBe Aggregated API`
