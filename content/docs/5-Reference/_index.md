@@ -56,7 +56,59 @@ authors:
 
 ## Package Method API Reference
 
-building...
+### Base, Compounds, PDB, SIFTS
+
+```python
+from pdb_profiling.processors import Base, Compounds, PDB, SIFTS
+```
+
+### PDBAssemble, PDBInterface
+
+```python
+from pdb_profiling.processors import PDBAssemble, PDBInterface
+```
+
+### PDBs, SIFTSs
+
+```python
+from pdb_profiling.processors import PDBs, SIFTSs
+```
+
+### Identifier, Identifiers
+
+```python
+from pdb_profiling.processors import Identifier, Identifiers
+```
+
+### PDBeModelServer, PDBArchive, PDBVersioned
+
+```python
+from pdb_profiling.processors import PDBeModelServer, PDBArchive, PDBVersioned
+```
+
+### UniProtFASTA, ProteinsAPI, EnsemblAPI, EutilsAPI, SMR
+
+```python
+from pdb_profiling.processors import UniProtFASTA, ProteinsAPI, EnsemblAPI, EutilsAPI, SMR
+```
+
+### Interactome3D
+
+```python
+from pdb_profiling.processors.i3d.api import Interactome3D
+```
+
+### cif_gz_stream
+
+```python
+from pdb_profiling import cif_gz_stream
+```
+
+### PISAErrorWarning
+
+```python
+from pdb_profiling.warnings import PISAErrorWarning
+```
 
 ## Column Name Reference
 

@@ -38,7 +38,7 @@ This section explains why `pdb-profiling` not only includes interaction data fro
 This section explains:
 
 1. the ranges/intervals-format that `pdb-profiling` implements for the representation of sequence coverage range on a reference sequence
-2. which metric `pdb-profiling` apply to measure the similarity/distance between two ranges and why
+2. which metric `pdb-profiling` apply to measure the similarity/distance between two ranges in different situation and why
 
 ## Selection Algorithm
 
