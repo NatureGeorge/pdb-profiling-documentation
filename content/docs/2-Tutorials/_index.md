@@ -14385,7 +14385,7 @@ df5
 * `unp_residue_number`是UniProt Isoform对应序列的从1开始计数的索引位置
 * `resiude_number`是对pdb链从1开始计数的索引
 * `author_residue_numer`是pdb文件作者定义的索引
-  * 作者可能会定义`author_insertion_code`来作为`author_residue_numer`索引的尾缀以区别部分残基
+* 作者可能会定义`author_insertion_code`来作为`author_residue_numer`索引的尾缀以区别部分残基
 
 {{% /callout %}}
 

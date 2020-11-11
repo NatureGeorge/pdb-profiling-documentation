@@ -20,7 +20,7 @@ pip install --upgrade pdb-profiling
 from pdb_profiling import default_config
 default_config("C:/GitWorks/pdb-profiling/test/demo")
 
-from pdb_profiling.processors import SIFTS, PDB, PDBAssemble, PDBInterface, SIFTSs, Base
+from pdb_profiling.processors import SIFTS, PDB, Base
 from pdb_profiling.utils import DisplayPDB
 
 from tqdm.notebook import tqdm
@@ -28,8 +28,8 @@ from pandas import concat, DataFrame
 ```
 
 ```python
-# 链层面筛选过滤
-# 设置SISTS.chain_filter条件: UNK_COUNT < SEQRES_COUNT，下面展示默认值
+# 链层面筛选过滤 (Chain Level Filtering)
+# 设置SISTS.chain_filter条件: UNK_COUNT < SEQRES_COUNT，下面展示默认值(Default value is shown below)
 SIFTS.chain_filter = '''
     UNK_COUNT < SEQRES_COUNT
     and ca_p_only == False
@@ -61,8 +61,8 @@ valid filters:
 |OBS_STD_COUNT|int|the count of the observed standard residues of the PDB Chain Instance|
 
 ```python
-# PDB条目层面筛选过滤
-# 设置SISTS.entry_filter条件，下面展示默认值
+# PDB条目层面筛选过滤(Entry Level Filtering)
+# 设置SISTS.entry_filter条件，下面展示默认值(Default value is shown below)
 SIFTS.entry_filter = '''
     (experimental_method in ["X-ray diffraction", "Electron Microscopy"] and resolution <= 3) or 
     experimental_method == "Solution NMR"
