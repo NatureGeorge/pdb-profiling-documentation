@@ -14380,7 +14380,24 @@ df5
 
 ## 位点映射
 
-以P00734与3sqh(chain_id: E)的映射关系为例:
+{{% callout note %}}
+
+* `unp_residue_number`是UniProt Isoform对应序列的从1开始计数的索引位置
+* `resiude_number`是对pdb链从1开始计数的索引
+* `author_residue_numer`是pdb文件作者定义的索引
+  * 作者可能会定义`author_insertion_code`来作为`author_residue_numer`索引的尾缀以区别部分残基
+
+{{% /callout %}}
+
+`unp_residue_number`和`author_residue_numer`可能会不一致。而在研究蛋白位点时，不少第三方预测软件需要`author_residue_number`作为输入，所以将位点统一转为`author_residue_number`是个重要需求。
+
+{{% callout note %}}
+
+一般没法事先知道PDB Chain与UniProt Isoform的位点标号是否一致，这是一个索引映射的问题: 比如UniProt Isoform是100长度，索引就是1,2,..100。而与这个UniProt Isoform匹配上的PDB晶体结构，它的对应匹配上的链是长度为91;作者给这条链的标号是66,67,...156，那么就不好对应上。
+
+{{% /callout %}}
+
+下面以P00734与3sqh(chain_id: E)的映射关系为例:
 
 {{% callout note %}}
 下面两个函数的`conflict_pdb_index`参数是可选的，不一定需要传入，当您对映射位点上是否存在残基冲突(即PDB链上残基与UniProt Isoform上残基不一致)感兴趣时,才需要传入。
@@ -14977,5 +14994,9 @@ PDB(record['pdb_id']).get_map_res_df(
     </tbody>
   </table>
 </details>
+
+可以看到，如上步骤能够便捷地实现PDBResidue的双向映射。
+
+---
 
 按照如上教程，您应该已经可以利用`pdb-profiling`完成不少任务了。若想了解更多其中的编程逻辑、处理逻辑与数据解释，可以继续阅读文档的剩余部分，在那里将会有更为详细的说明。
