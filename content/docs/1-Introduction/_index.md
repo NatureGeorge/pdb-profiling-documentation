@@ -181,7 +181,7 @@ $$
 \text{OSC}_{\text{mo}} = \cfrac{|\text{unp\_mapped\_res1}\cap\text{unp\_mapped\_res2}|}{\min(|\text{unp\_mapped\_res1}|, |\text{unp\_mapped\_res2}|)}
 $$
 
-对与同聚体与异聚体蛋白结构代表集选择，`pdb-profiling`同时整合了`Interactome3D`与`PISA`的相互作用信息，给出`asymmetric unit`与`biological assembly`层面的`chain-level binary interaction`。并考虑到两条链的打分排名情况依照映射回`UniProt Isoform`的`interface residues`利用贪婪算法分别在`wasserstein distance`与`dice similarity coefficient` metric下选择出排名较好的、`interface region`有足够差异的相互作用。
+对与同聚体与异聚体蛋白结构代表集选择，`pdb-profiling`同时整合了`PISA`[^5]与`Interactome3D`[^6]的相互作用信息，给出`asymmetric unit`与`biological assembly`层面的`chain-level binary interaction`。并考虑到两条链的打分排名情况依照映射回`UniProt Isoform`的`interface residues`利用贪婪算法分别在`wasserstein distance`与`dice similarity coefficient` metric下选择出排名较好的、`interface region`有足够差异的相互作用。
 
 $$
 \text{DSC}_{\text{he}} = \cfrac{2|\text{interface\_res1}\cap\text{interface\_res2}|}{|\text{interface\_res1}| + |\text{interface\_res2}|}
@@ -208,7 +208,7 @@ $$
 
 ## 模型结构
 
-为了弥补部分`UniProt Isoform`的部分区域无法被现有晶体结构覆盖的问题，`pdb-profiling`也应用了`SWISS-MODEL Repository API`来获取最新的相应`UniProt Isoform`的可用同源建模模型相关元数据，可自动根据建模区域判断其是否覆盖于晶体结构无法覆盖到的部分。
+为了弥补部分`UniProt Isoform`的部分区域无法被现有晶体结构覆盖的问题，`pdb-profiling`也应用了`SWISS-MODEL Repository API`[^7]来获取最新的相应`UniProt Isoform`的可用同源建模模型相关元数据，可自动根据建模区域判断其是否覆盖于晶体结构无法覆盖到的部分。
 
 ## 函数接口
 
@@ -359,3 +359,6 @@ SIFTSs(('P21359', 'Q5VST9', 'P21359-5')).fetch('pipe_select_mo').run().result()
 [^2]: PDBe-KB consortium. PDBe-KB: a community-driven resource for structural and functional annotations. Nucleic Acids Res. 2020 Jan 8;48(D1):D344-D353. doi: 10.1093/nar/gkz853. PMID: 31584092; PMCID: PMC6943075.
 [^3]: Dana JM, Gutmanas A, Tyagi N, Qi G, O'Donovan C, Martin M, Velankar S. SIFTS: updated Structure Integration with Function, Taxonomy and Sequences resource allows 40-fold increase in coverage of structure-based annotations for proteins. Nucleic Acids Res. 2019 Jan 8;47(D1):D482-D489. doi: 10.1093/nar/gky1114. PMID: 30445541; PMCID: PMC6324003.
 [^4]: Andrew Nightingale, Ricardo Antunes, Emanuele Alpi, Borisas Bursteinas, Leonardo Gonzales, Wudong Liu, Jie Luo, Guoying Qi, Edd Turner, Maria Martin, The Proteins API: accessing key integrated protein and genome information, Nucleic Acids Research, Volume 45, Issue W1, 3 July 2017, Pages W539–W544, https://doi.org/10.1093/nar/gkx237
+[^5]: Protein interfaces, surfaces and assemblies' service PISA at the European Bioinformatics Institute. (http://www.ebi.ac.uk/pdbe/prot_int/pistart.html), paper E. Krissinel and K. Henrick (2007). 'Inference of macromolecular assemblies from crystalline state.'. J. Mol. Biol. 372, 774--797.
+[^6]: Mosca R, Céol A, Aloy P. Interactome3D: adding structural details to protein networks. Nat Methods. 2013 Jan;10(1):47-53. doi: 10.1038/nmeth.2289. Epub 2012 Dec 16. PMID: 23399932.
+[^7]: Stefan Bienert, Andrew Waterhouse, Tjaart A. P. de Beer, Gerardo Tauriello, Gabriel Studer, Lorenza Bordoli, Torsten Schwede, The SWISS-MODEL Repository—new features and functionality, Nucleic Acids Research, Volume 45, Issue D1, January 2017, Pages D313–D319, https://doi.org/10.1093/nar/gkw1132

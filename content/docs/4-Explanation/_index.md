@@ -20,18 +20,18 @@ This section explains how does `pdb-profiling` define a weighted score that meas
 
 ## UniProt Isoform
 
-This section explains why `pdb-profiling` implement SIFTS's `api/mappings/all_isoforms/` API that mapped with all the available alternative products of a UniProt Entry in the `Selection` pipeline.
+This section explains why does `pdb-profiling` implement SIFTS's `api/mappings/all_isoforms/` API that mapped with all the available alternative products of a UniProt Entry in the `Selection` pipeline.
 
 * From the point of transcript mapping
 * From the point of the best-mapped isoform of a PDB Entity
 
 ## UniProt Isoform Interaction
 
-This section explains why `pdb-profiling` includes isoform-level interaction instead of just focuses on canonical interaction.
+This section explains why does `pdb-profiling` includes isoform-level interaction instead of just focuses on canonical interaction.
 
 ## Asymmetric Unit & Biological Unit
 
-This section explains why `pdb-profiling` not only includes interaction data from asymmetric unit but also from those author/software defined biological assembly. Besides, this section also shows the barriers that `pdb-profiling` overcame in the process of integrating biological assembly information.
+This section explains why does `pdb-profiling` not only includes interaction data from asymmetric unit but also from those author/software defined biological assembly. Besides, this section also shows the barriers that `pdb-profiling` overcame in the process of integrating biological assembly information.
 
 ## Metrics that measure the similarity/distance between two ranges
 

@@ -7,4 +7,68 @@ date: "2020-11-11T00:00:00+01:00"
 weight: 6
 authors:
   - admin
+subtitle: This section explains why does `pdb-profiling` implement SIFTS's `api/mappings/all_isoforms/` API that mapped with all the available alternative products of a UniProt Entry in the `Selection` pipeline.
 ---
+
+## From the point of transcript mapping
+
+Let's first talk about the procedure of mapping sites.
+
+There are two problems in mapping genomic sites to transcriptional sites and from transcriptional sites to protein sites:
+
+1. Because of the huge amount of genomic data resources, mapping sites need a lot of computing resources although it is simple in logic and computation
+2. Genomic identifiers, transcriptional identifiers and protein identifiers can be updated, and there are often large updates on ID identifiers and specific sites
+
+Fortunately, these levels of work are contracted out by institutions such as NCBI and EBI. They are the storage and update site of data resources, and they have sufficient computing resources and funds to complete these tasks conveniently and well. When obtaining the mutation related data of human genome, the data provider will also give the sites mapped to the transcripts or alternative products of proteins (usually using ensemble gene / transcript / protein or RefSeq nucleotide / transcript / protein).
+
+{{% callout note %}}
+If the original mutation data do not give specific protein sites, there are also a large number of tools for transformation, which will not be repeated here.
+{{% /callout %}}
+
+In the study of proteins, the data resource of `UniProt KB` is basically indispensable, which assigns specific identifiers to each gene of a large number of species (i.e. UniProt Accession / Entry: P21359): At the same time, a large number of items are identified by specialists (UniProt Entries that are identified will be marked as `reviewed`, otherwise `unreviewed`); Entries not reviewed are generally predicted by computational methods based on homology and other theories, and are not generally used. It is worth noting that `UniProt KB` takes the phenomenon of alternative splicing([click here to learn more](https://www.uniprot.org/help/canonical_and_isoforms)) at the transcriptional level into account.
+
+Therefore, under the UniProt Entries with alternative products, `UniProt-KB` also provides suffixes for isoform(e.g `P21359-1, P21359-2, P21359-3, P21359-4, P21359-5`). These alternative products are different in sequence, so the corresponding complete protein structure may be different.
+
+{{% callout note %}}
+If the sequences of a part of a variable products differs from that of another part of a variable products to a certain extent, `UniProt-KB` will assign a new entry to to that part of the isoforms.
+{{% /callout %}}
+
+Among the isoforms of a UniProt Entry, the `UniProt KB` will select an isofrom as the canonical isoform to represent the that UniProt Entry. Usually the longest one, but could be other cases. The selected canonical isoform will not display its specific isoform suffix in `UniProt-KB` by default. For instance, the canonical isoform of `P21359` is `P21359-1` and in `UniProt-KB`, `P21359` generally means `P21359-1`.
+
+{{% callout note %}}
+`UniProt-KB` uses `VAR_032459` and so on to represent the difference between the sequence and canonical sequence of each alternative products.
+{{% /callout %}}
+
+As the holder of `UniProt-KB` and `Ensemble`, EBI matches `Ensembl` with `UniProt` Entries, and accurately matches those UniProt isoforms of the reviewed UniProt entries to the specific corresponding Ensembl isoform. At the same time, it cooperates with NCBI to match the 'RefSeq' resources. Here are the examples:
+
+```python
+# Ensembl
+ENST00000356175; ENSP00000348498; ENSG00000196712 [P21359-2]
+ENST00000358273; ENSP00000351015; ENSG00000196712 [P21359-1]
+ENST00000431387; ENSP00000412921; ENSG00000196712 [P21359-5]
+ENST00000487476; ENSP00000491589; ENSG00000196712 [P21359-3]
+# RefSeq
+NP_000258.1, NM_000267.3 [P21359-2]
+NP_001035957.1, NM_001042492.2 [P21359-1]
+NP_001121619.1, NM_001128147.2 [P21359-5]
+```
+
+{{% callout note %}}
+Not all reviewed UniProt Entries have alternative products.
+{{% /callout %}}
+
+{{% callout warning %}}
+For those transcripts mapped with reviewed UniProt Entries but not assigned with isoform suffix, it could probably result from the sequence conflict. Here is an example:
+{{% /callout %}}
+
+`NM_001304360.1, NP_001291289.1` mapped with `Q9C0B2` but with non-identical sequence.
+
+```python
+Q9C0B2 1500:
+FDPRHRE----------EAEELRPILVTLDYIQFDTDTPAPPATRELQVGCIRTTQPSPKK--------------------P---------------------D----HPLMVSALLQLRGDVKETY...
+NP_001291289.1 1500:
+FDPRHREASSRPGPLSPEAEELRPILVTLDYIQFDTDTPAPPATRELQVGCIRTTQPSPKKTVEFSIDSVASLQHKGFSIEPSRGSVERGQTKTISISWVPPADFDPDHPLMVSALLQLRGDVKETY...
+```
+
+
+## From the point of the best-mapped isoform of a PDB Entity
