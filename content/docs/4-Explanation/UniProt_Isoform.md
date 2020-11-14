@@ -576,7 +576,7 @@ Following sequence segments are isoform-specific and not appear in the canonical
 
 Noted that the last segment is a missing segment, so this segment would not appear in `[(1, 176), (188, 221), (426, 971)]`.
 
-When we focus on the distribution of the isoform-specific-segments-length of a considerable amount of non-canonical isoforms (exclude external isoforms), we can find this:
+When we focus on the distribution of the isoform-specific-segments-length of a considerable amount of non-canonical isoforms (exclude `external` or `not described` isoforms), we can find this:
 
 * Scatter Plot
 
@@ -630,6 +630,8 @@ When we focus on the distribution of the isoform-specific-segments-length of a c
 * `com_range_ratio`: `com_range_len / unp_len`
 
 It is not surprising that some of the conflict(s), variant(s) and/or posttranslational modification(s) and so on would fall into these isoform-specific segments.
+
+{{< figure library="true" src="unp_iso_site_dist.svg" title="Here the 'Alternative Sites' denoted as the sites where alternative splicing happended" >}}
 
 ---
 
