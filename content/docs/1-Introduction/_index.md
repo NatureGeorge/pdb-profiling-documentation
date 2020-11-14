@@ -51,88 +51,23 @@ authors:
 
 这使得确定一个严谨准确的蛋白质结构代表集流程对科学研究有着相当的重要性。
 
-<table>
-  <tr>
-    <td>
-      <img src="https://naturegeorge.github.io/eigenblog/assets/img/unp_map_pdb.drawio.svg">
-    </td>
-  </tr>
-  <tr>
-    <td>
-      P68871 mapped with 1a01 Chain B
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <img src="https://naturegeorge.github.io/eigenblog/assets/img/unp_map_pdb_insertion.drawio.svg">
-    </td>
-  </tr>
-  <tr>
-    <td>
-      Insertion: P30038-3 mapped with 4oe5 Chain D
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <img src="https://naturegeorge.github.io/eigenblog/assets/img/unp_map_pdb_deletion.drawio.svg">
-    </td>
-  </tr>
-  <tr>
-    <td>
-      Deletion: Q13303-3 mapped with 1zsx Chain A
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <img src="https://naturegeorge.github.io/eigenblog/assets/img/unp_map_pdb_indel.drawio.svg">
-    </td>
-  </tr>
-  <tr>
-    <td>
-      InDel: Q01780 mapped with 6d6q Chain J
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <img src="https://raw.githubusercontent.com/NatureGeorge/pdb-profiling/a7841d4033b3d5be6d17d225133e40912cf000ea/docs/figs/sifts_reversed_mapping.drawio.svg">
-    </td>
-  </tr>
-  <tr>
-    <td>
-      Reversed Mapping: P00441 mapped with 5j0c Chain A
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <img src="https://raw.githubusercontent.com/NatureGeorge/pdb-profiling/a7841d4033b3d5be6d17d225133e40912cf000ea/docs/figs/sifts_repeated_mapping.drawio.svg">
-    </td>
-  </tr>
-  <tr>
-    <td>
-      Repeated Mapping: Q7KZ85-3 mapped with 6gmh Chain M
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <img src="https://raw.githubusercontent.com/NatureGeorge/pdb-profiling/a7841d4033b3d5be6d17d225133e40912cf000ea/docs/figs/sifts_mapped_out_1.drawio.svg">
-    </td>
-  </tr>
-  <tr>
-    <td>
-      Mapped Out Situation: P14647 mapped with 3agp Chain A
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <img src="https://raw.githubusercontent.com/NatureGeorge/pdb-profiling/a7841d4033b3d5be6d17d225133e40912cf000ea/docs/figs/sifts_mapped_out_2.drawio.svg">
-    </td>
-  </tr>
-  <tr>
-    <td>
-      Mapped Out Situation: Q16611 mapped with 4u2v Chain C
-    </td>
-  </tr>
-</table>
+{{< figure library="true" src="unp_map_pdb.drawio.svg" title="P68871 mapped with 1a01 Chain B" >}}
+
+{{< figure library="true" src="unp_map_pdb_insertion.drawio.svg" title="Insertion: P30038-3 mapped with 4oe5 Chain D" >}}
+
+{{< figure library="true" src="unp_map_pdb_deletion.drawio.svg" title="Deletion: Q13303-3 mapped with 1zsx Chain A" >}}
+
+{{< figure library="true" src="unp_map_pdb_indel.drawio.svg" title="InDel: Q01780 mapped with 6d6q Chain J" >}}
+
+{{< figure library="true" src="sifts_reversed_mapping.drawio.svg" title="Reversed Mapping: P00441 mapped with 5j0c Chain A" >}}
+
+{{< figure library="true" src="sifts_repeated_mapping.drawio.svg" title="Repeated Mapping: Q7KZ85-3 mapped with 6gmh Chain M" >}}
+
+{{< figure library="true" src="sifts_repeated_mapping.drawio.svg" title="Repeated Mapping: Q7KZ85-3 mapped with 6gmh Chain M" >}}
+
+{{< figure library="true" src="sifts_mapped_out_1.drawio.svg" title="Mapped Out Situation: P14647 mapped with 3agp Chain A" >}}
+
+{{< figure library="true" src="sifts_mapped_out_2.drawio.svg" title="Mapped Out Situation: Q16611 mapped with 4u2v Chain C" >}}
 
 ## 与二元相互作用数据资源在整合时的问题
 
@@ -193,18 +128,7 @@ $$
 
 ### Selection Algorithm
 
-<table>
-  <tr>
-    <td>
-      <img src="https://raw.githubusercontent.com/NatureGeorge/pdb-profiling/a7841d4033b3d5be6d17d225133e40912cf000ea/docs/figs/greedy_algorithm.drawio.svg">
-    </td>
-  </tr>
-  <tr>
-    <td>
-      Selection Algorithm
-    </td>
-  </tr>
-</table>
+{{< figure library="true" src="greedy_algorithm.drawio.svg" title="Selection Algorithm" >}}
 
 ## 模型结构
 

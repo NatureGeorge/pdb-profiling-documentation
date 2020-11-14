@@ -2721,13 +2721,12 @@ plt.figure(figsize=(10,8))
 sns.heatmap(expanded_seq_conser_df, cmap='viridis')
 ```
 
-![png](../../../media/output_30_1.png)
+{{< figure library="true" src="output_30_1.png" title="HeatMap" >}}
 
 
 ```python
 sns.clustermap(expanded_seq_conser_df, cmap='viridis', method='ward')
 ```
 
-![png](../../../media/output_31_1.png)
 
-
+{{< figure library="true" src="output_31_1.png" title="ClusterMap" >}}
