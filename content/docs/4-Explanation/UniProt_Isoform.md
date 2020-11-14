@@ -128,7 +128,7 @@ iso_df[~iso_df.iso_range.isnull()]
         <th>sequence</th>
         <th>sequenceStatus</th>
         <th>synonyms</th>
-        <th>alt_range</th>
+        <th>iso_range</th>
       </tr>
     </thead>
     <tbody>
@@ -582,15 +582,30 @@ When we focus on the distribution of the isoform-specific-segments-length of the
 
 * Scatter Plot
 
-{{< chart data="unp_iso_scatter" >}}
+ <iframe
+       src="./unp_iso_scatter.html"
+       width="90%"
+       height="500px"
+       style="border:none;">
+ </iframe>
 
 * Bar Plot
 
-{{< chart data="unp_iso_bar_num" >}}
+ <iframe
+       src="./unp_iso_bar_num.html"
+       width="90%"
+       height="500px"
+       style="border:none;">
+ </iframe>
 
 * Bar Plot (ratio)
 
-{{< chart data="unp_iso_bar_ratio" >}}
+ <iframe
+       src="./unp_iso_bar_ratio.html"
+       width="90%"
+       height="500px"
+       style="border:none;">
+ </iframe>
 
 ---
 
