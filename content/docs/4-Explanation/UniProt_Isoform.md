@@ -103,7 +103,7 @@ demo_unps = (
         'A4UGR9', 'P01116', 'P08631', 'P21359',
         'P63092', 'P68871', 'P85299', 'Q13510',
         'Q5JWF2', 'Q5VST9', 'Q7Z7G8', 'Q8N309',
-        'Q8TBY8', 'Q9NTW7', 'Q9NZC2')
+        'Q8TBY8', 'Q9NTW7', 'Q9NZC2', 'Q9C0B2)
 
 alt_seq_df = UniProts.fetch_VAR_SEQ_from_localDB(demo_unps).result()
 iso_df = Identifier.query_from_localDB_with_unps(demo_unps, 'ALTERNATIVE_PRODUCTS').result()
@@ -589,16 +589,25 @@ When we focus on the distribution of the isoform-specific-segments-length of the
        style="border:none;">
  </iframe>
 
-* Bar Plot
+* Scatter Plot (Log)
 
  <iframe
-       src="../unp_iso_bar_num.html"
+       src="../unp_iso_scatter_log.html"
        width="90%"
        height="500px"
        style="border:none;">
  </iframe>
 
-* Bar Plot (ratio)
+* Stacked Bar Chart (Log)
+
+ <iframe
+       src="../unp_iso_bar_num_log.html"
+       width="90%"
+       height="500px"
+       style="border:none;">
+ </iframe>
+
+* Stacked Bar Chart (ratio)
 
  <iframe
        src="../unp_iso_bar_ratio.html"
@@ -606,6 +615,21 @@ When we focus on the distribution of the isoform-specific-segments-length of the
        height="500px"
        style="border:none;">
  </iframe>
+
+* Dist Plot (Log)
+
+ <iframe
+       src="../unp_iso_dist_log.html"
+       width="90%"
+       height="500px"
+       style="border:none;">
+ </iframe>
+
+* `iso_range_len`: the length of the isoform-specific-segments
+* `unp_len`: the length of the isoform sequence
+* `com_range_len`: `unp_len - iso_range_len`
+* `iso_range_ratio`: `iso_range_len / unp_len`
+* `com_range_ratio`: `com_range_len / unp_len`
 
 ---
 
