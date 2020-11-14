@@ -53,7 +53,7 @@ height = ""
   overlay_filter = 0.25  # Darken the image. Value in range 0-1.
 
 [[item]]
-  title = "Want to perform bidirectional mapping from or to PDBResidue?"
+  title = "Want to perform precise bidirectional mapping from or to PDBResidue?"
   content = "There exists a logical correspondence from the trinucleotide codon to the amino acids in the polypeptide chain and then to the residues in the protein tertiary structure. This correspondence is based on the sequential property of nucleic acid sequences and the derived polypeptide chain."
   align = "center"
 
