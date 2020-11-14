@@ -103,7 +103,7 @@ demo_unps = (
         'A4UGR9', 'P01116', 'P08631', 'P21359',
         'P63092', 'P68871', 'P85299', 'Q13510',
         'Q5JWF2', 'Q5VST9', 'Q7Z7G8', 'Q8N309',
-        'Q8TBY8', 'Q9NTW7', 'Q9NZC2', 'Q9C0B2)
+        'Q8TBY8', 'Q9NTW7', 'Q9NZC2', 'Q9C0B2')
 
 alt_seq_df = UniProts.fetch_VAR_SEQ_from_localDB(demo_unps).result()
 iso_df = Identifier.query_from_localDB_with_unps(demo_unps, 'ALTERNATIVE_PRODUCTS').result()
@@ -576,9 +576,7 @@ Following sequence segments are isoform-specific and not appear in the canonical
 
 Noted that the last segment is a missing segment, so this segment would not appear in `[(1, 176), (188, 221), (426, 971)]`.
 
-It is not surprising that some of the conflict(s), variant(s) and/or posttranslational modification(s) and so on would fall into these segments.
-
-When we focus on the distribution of the isoform-specific-segments-length of the non-canonical isoforms (exclude external isoforms) shown in above table, we can find this:
+When we focus on the distribution of the isoform-specific-segments-length of a considerable amount of non-canonical isoforms (exclude external isoforms), we can find this:
 
 * Scatter Plot
 
@@ -630,6 +628,8 @@ When we focus on the distribution of the isoform-specific-segments-length of the
 * `com_range_len`: `unp_len - iso_range_len`
 * `iso_range_ratio`: `iso_range_len / unp_len`
 * `com_range_ratio`: `com_range_len / unp_len`
+
+It is not surprising that some of the conflict(s), variant(s) and/or posttranslational modification(s) and so on would fall into these isoform-specific segments.
 
 ---
 
