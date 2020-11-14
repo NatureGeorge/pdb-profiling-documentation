@@ -583,7 +583,7 @@ When we focus on the distribution of the isoform-specific-segments-length of the
 * Scatter Plot
 
  <iframe
-       src="./unp_iso_scatter.html"
+       src="../unp_iso_scatter.html"
        width="90%"
        height="500px"
        style="border:none;">
@@ -592,7 +592,7 @@ When we focus on the distribution of the isoform-specific-segments-length of the
 * Bar Plot
 
  <iframe
-       src="./unp_iso_bar_num.html"
+       src="../unp_iso_bar_num.html"
        width="90%"
        height="500px"
        style="border:none;">
@@ -601,7 +601,7 @@ When we focus on the distribution of the isoform-specific-segments-length of the
 * Bar Plot (ratio)
 
  <iframe
-       src="./unp_iso_bar_ratio.html"
+       src="../unp_iso_bar_ratio.html"
        width="90%"
        height="500px"
        style="border:none;">
