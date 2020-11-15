@@ -51,3 +51,7 @@ This section explains the key points of `pdb-profiling`'s programming design and
 
 1. Implement Coroutine & Asynchronous Programming
 2. Take both of the advantages of file system and database system
+
+## Comparison
+
+This section compares `pdb-profiling` with previous similar works and emphasis on how `pdb-profiling` overcoming their short-comings.

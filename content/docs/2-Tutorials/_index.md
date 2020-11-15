@@ -14384,12 +14384,12 @@ df5
 
 * `unp_residue_number`是UniProt Isoform对应序列的从1开始计数的索引位置
 * `resiude_number`是对pdb链从1开始计数的索引
-* `author_residue_numer`是pdb文件作者定义的索引
-* 作者可能会定义`author_insertion_code`来作为`author_residue_numer`索引的尾缀以区别部分残基
+* `author_residue_number`是pdb文件作者定义的索引
+* 作者可能会定义`author_insertion_code`来作为`author_residue_number`索引的尾缀以区别部分残基
 
 {{% /callout %}}
 
-`unp_residue_number`和`author_residue_numer`可能会不一致。而在研究蛋白位点时，不少第三方预测软件需要`author_residue_number`作为输入，所以将位点统一转为`author_residue_number`是个重要需求。
+`unp_residue_number`和`author_residue_number`可能会不一致。而在研究蛋白位点时，不少第三方预测软件需要`author_residue_number`作为输入，所以将位点统一转为`author_residue_number`是个重要需求。
 
 {{% callout note %}}
 
