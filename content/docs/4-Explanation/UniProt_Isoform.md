@@ -905,10 +905,10 @@ When we focus on the distribution of the isoform-specific-segments-length of a c
  </iframe>
 
 * `iso_range_len`: the length of the isoform-specific-segments
-* `unp_len`: the length of the isoform sequence
-* `com_range_len`: `unp_len - iso_range_len`
-* `iso_range_ratio`: `iso_range_len / unp_len`
-* `com_range_ratio`: `com_range_len / unp_len`
+* `length`: the length of the isoform sequence
+* `com_range_len`: `length - iso_range_len`
+* `iso_range_ratio`: `iso_range_len / length`
+* `com_range_ratio`: `com_range_len / length`
 
 It is not surprising that some of the conflict(s), variant(s) and/or posttranslational modification(s) and so on would fall into these isoform-specific segments.
 
@@ -930,3 +930,1272 @@ For more details and explanations:
 
 
 ## From the point of the best-mapped isoform of a PDB Entity
+
+In the aspect of PDB Entity, we can also find that there are also some isoform-specific PDB entities. To verify this point, let's implement `SIFTS`'s `api/mappings/isoforms/:pdbid` API which provide *mappings (as assigned by the SIFTS process) from PDB structures to UniProt and returns the best isoform found in UniProt.*
+
+Use the following script to achieve this goal:
+
+<details>
+  <summary>click to view demo_pdb id set</summary>
+  
+  ```python
+      ['6k1k', '4h9p', '3aze', '4yyk', '4qut', '5y0d', '4u9w', '6a5o',
+       '3qzs', '3uvw', '4quu', '4hga', '2lvm', '6k1i', '6t90', '7c0m',
+       '5c3i', '6y5e', '3afa', '6t7c', '3azj', '4h9q', '3azi', '3uvx',
+       '6kxv', '4yyj', '5b0z', '6r90', '6upl', '3o36', '6see', '6a5t',
+       '6k1j', '3f9z', '6a5r', '2rny', '3qzv', '6x5a', '6jxd', '5b24',
+       '6o1d', '6buz', '3nqj', '3ij1', '6upk', '6mup', '4qyd', '3an2',
+       '3w97', '2ig0', '5x7x', '6se6', '2kwn', '3uvy', '5b2i', '6j4x',
+       '5cpj', '3waa', '4yyd', '6j4z', '6y5d', '5y0c', '3qby', '5cpi',
+       '5ffw', '6ir9', '6inq', '6j4w', '6e0p', '5gse', '3cfv', '5cpk',
+       '3azk', '2kwo', '4yy6', '2rs9', '5jrg', '4h9n', '6j4y', '6r92',
+       '6t7b', '6usj', '4ym5', '6jr1', '6vo5', '3av1', '5fa5', '5avc',
+       '5teg', '3azf', '4yyn', '6x59', '3r45', '6r93', '6l4a', '1zkk',
+       '6hkt', '4yyh', '3azl', '6r8z', '5kdm', '5av8', '6kvd', '4h9r',
+       '6rny', '5av9', '3w99', '3w96', '5b33', '3cfs', '3azg', '6rxs',
+       '4h9o', '3a6n', '5b32', '3azh', '3w98', '6j50', '6r94', '6c0w',
+       '3ayw', '3wtp', '6t93', '3uw9', '6r91', '3f9y', '5av6', '4yym',
+       '5ay8', '3azm', '3wkj', '4z5t', '3av2', '5b40', '5z23', '6r8y',
+       '5b31', '6a5p', '3qzt', '4gqb', '4h9s', '3f9x', '6jr0', '6mlc',
+       '5gxq', '5avb', '3f9w', '5z30', '3azn', '4yyg', '4ym6', '6yov',
+       '4yyi', '3wa9', '6j51', '5zbx', '2qqs', '5b2j', '6jou', '6a5l',
+       '6a5u', '5b0y', '6xjd', '6t7d', '5gtc', '6e0c', '6l49', '6fml',
+       '6t7a', '5av5', '7a08', '6sef', '6muo', '6t79', '3x1u', '5zgc',
+       '6ipu', '2cv5', '6r0c', '3x1t', '4n4f', '6l9h', '4n3w', '6ke9',
+       '5ye3', '6la8', '5ja4', '6m44', '6le9', '6m4d', '5gt0', '5gt3',
+       '5ye4', '4z2m', '6seg', '3x1v', '6m4h', '6iq4', '6se0', '6la9',
+       '5fwe', '6m3v', '5bnx', '3jpx', '6hts', '3x1s', '5xf5', '6v92',
+       '5xf4', '3nqu', '7jo9', '6acp', '7joa', '5gsu', '5bnv', '5bo0',
+       '2rje', '4m38', '6m4g', '5xf3', '1y0c', '1o1o', '1y2z', '3nl7',
+       '1xye', '1c7b', '1yvt', '1nej', '6kaq', '1yie', '4mqh', '1cmy',
+       '1y4p', '3qjc', '1y4b', '1a0z', '1ygf', '4mqg', '1aj9', '1y5j',
+       '6kao', '2hbs', '6kar', '1yeq', '5jdo', '1y45', '1y4v', '4wjg',
+       '1j7w', '1ye1', '1ygd', '1c7c', '1o1i', '1bzz', '5e6e', '1y22',
+       '1y46', '2w72', '1c7d', '1xzu', '1y4g', '1gli', '1y0a', '1a3o',
+       '1yen', '1yeu', '1abw', '1j7y', '1y35', '1y83', '1bab', '1qi8',
+       '6l5w', '5vmm', '1y8w', '1xz5', '4mqc', '3qjb', '1ye2', '1hbs',
+       '1y7d', '1xzv', '3qje', '1buw', '1rvw', '1y31', '1r1x', '1r1y',
+       '4xs0', '1dxu', '3szk', '1o1m', '1yvq', '1yff', '1ye0', '3nmm',
+       '1xz4', '1o1j', '1a01', '1y7c', '1yih', '1vwt', '1y4q', '5hu6',
+       '6kap', '2yrs', '1j7s', '3s65', '1m9p', '4fc3', '1y7z', '1xz7',
+       '1y4f', '1nqp', '5ufj', '1gbv', '6hbw', '5ee4', '3qjd', '1o1p',
+       '4mqi', '1hba', '1hdb', '1yev', '1yg5', '1rqa', '1y5f', '1gbu',
+       '1y5k', '6tb2', '3dut', '1o1k', '2dn2', '5sw7', '1rq4', '1yeo',
+       '1o1n', '1xy0', '1a00', '1y09', '3s66', '1bz1', '6l5v', '1o1l',
+       '1a0u', '1y0w', '1k1k', '4ij2', '1aby', '5u3i', '1y4r', '1ydz',
+       '1y7g', '1y0t', '1dxv', '1lfz', '1uiw', '6lcx', '1bz0', '1dke',
+       '1sdl', '3ic0', '5x2u', '1j3y', '5x2s', '6kye', '4rol', '1xz2',
+       '2dn3', '1y85', '1mko', '6bwu', '1qxe', '2d5z', '1ird', '6kah',
+       '6nbd', '1qxd', '1hab', '1j40', '6bnr', '6di4', '3p5q', '2dxm',
+       '3ic2', '1y0d', '4m4b', '4n7p', '1b86', '1lfv', '3odq', '1lfq',
+       '5ksi', '2dn1', '6kau', '1bij', '1rq3', '3hxn', '4n7n', '1qsi',
+       '1j41', '1hho', '4l7y', '4n7o', '2hco', '5urc', '1dxt', '1hga',
+       '6kai', '5x2t', '1qsh', '6bb5', '1ljw', '1yh9', '1jy7', '5ucu',
+       '6nbc', '3oo5', '1a9w', '4n8t', '1shr', '3whm', '2w6v', '3b75',
+       '4rom', '1si4', '5ksj', '5x2r', '6l5x', '3wcp', '1rps', '5woh',
+       '4hhb', '3kmf', '6kae', '5wog', '5hy8', '1hac', '6kat', '6kav',
+       '1kd2', '4m4a', '1nih', '1cls', '1hgb', '6hal', '1lfy', '5ni1',
+       '6bwp', '1k0y', '6nq5', '1z8u', '1lfl', '1hco', '2d60', '3r5i',
+       '4x0l', '3d17', '4ni1', '6lcw', '1yhr', '1thb', '3ia3', '4mqj',
+       '2hhd', '3oo4', '1g9v', '2hbc', '3onz', '1bbb', '3d7o', '1fn3',
+       '2hhb', '2hbe', '1yhe', '1coh', '2h35', '1gzx', '6kas', '3hhb',
+       '6hk2', '1lft', '1a3n', '2m6z', '6l5y', '2hhe', '1xxt', '1j3z',
+       '1fdh', '1hbb', '4mqk', '3s48', '1sdk', '6ka9', '1hgc', '2hbf',
+       '5kdq', '1y01', '1yzi', '4ni0', '3ovu', '2hbd', '4guo', '4guq',
+       '3vd1', '4g82', '2kby', '3vd2', '4g83', '2nb1', '5hob', '5hoc',
+       '5kbd', '2wqj', '2xwc', '2wtt', '4a63', '3vd0', '2wqi', '1dxs',
+       '6ijq', '6fgs', '1cok', '2mps', '2ou8', '2qar', '5jdt', '1cv3',
+       '6kk1', '1l88', '1ky0', '261l', '2rbq', '4ldl', '1l15', '1t8f',
+       '1l16', '5vex', '6lzm', '1l40', '6d9m', '6d26', '108l', '234l',
+       '4ekp', '3f9l', '2a4t', '188l', '5dsg', '1t6h', '4eks', '1p3n',
+       '175l', '6k69', '1l46', '227l', '4w58', '2rbs', '4w52', '231l',
+       '262l', '1qtc', '112l', '1l10', '123l', '1l85', '3lzm', '5cxv',
+       '162l', '2rbp', '1l49', '1sx2', '3huk', '166l', '1qt8', '1pqi',
+       '5ewx', '5x7d', '212l', '1d3j', '1qt4', '5b2g', '1p37', '6kk7',
+       '1l57', '1l70', '3dn8', '1l48', '1t8a', '1qth', '3guo', '1c6m',
+       '3cdv', '3gui', '1qud', '3htf', '118l', '1l12', '5xez', '226l',
+       '206l', '1l43', '104l', '6a9j', '214l', '1d9w', '5khz', '5v86',
+       '114l', '1pqj', '3ht9', '3cdo', '5vba', '109l', '4djh', '1i6s',
+       '1l77', '1qt6', '1l04', '1l75', '4ekr', '6mxt', '127l', '4w8f',
+       '1l13', '252l', '3eml', '1l76', '2b6x', '4iap', '1g1w', '176l',
+       '5vnr', '1dyf', '1p64', '5xsz', '1owz', '5xpe', '1c67', '1owy',
+       '195l', '190l', '3ht7', '138l', '4w51', '1g0q', '3dmx', '2b75',
+       '1jqu', '168l', '240l', '122l', '3htb', '187l', '2o4w', '172l',
+       '3gum', '1l08', '1c6g', '5lzm', '230l', '3uon', '1lyh', '1l17',
+       '2rh1', '4phu', '1sx7', '1llh', '6ffh', '3g3v', '223l', '1l18',
+       '1li2', '184l', '1qtb', '3dke', '4u14', '1cu5', '1li3', '3hh6',
+       '6d27', '2rbo', '6j20', '4i7s', '3g3w', '4exm', '5g27', '3guk',
+       '126l', '3g3x', '248l', '238l', '186l', '237l', '5jgr', '5jgv',
+       '1d3m', '1l80', '2otz', '3l2x', '1c68', '5t1a', '115l', '5eut',
+       '1cx6', '191l', '1dye', '3dmz', '5jgz', '131l', '1l73', '2hul',
+       '1l0k', '1l72', '3sn6', '1l19', '1t8g', '3qak', '1l33', '1c66',
+       '5x93', '6k1q', '110l', '1c69', '3oe6', '1g1v', '141l', '5jqh',
+       '1ks3', '3run', '220l', '5jwu', '4s0w', '148l', '1l00', '1c6a',
+       '3cdt', '1kni', '1l32', '1t97', '1l96', '1c6i', '1lwk', '1ov5',
+       '224l', '1tla', '2igc', '181l', '3ht6', '1l45', '182l', '3dn1',
+       '1cu0', '3hu8', '1c61', '128l', '5w0p', '2nth', '1l91', '4gbr',
+       '3vw7', '1ssw', '5zbh', '4k5y', '4xes', '5jws', '1xep', '4yxa',
+       '3hh5', '5tzr', '152l', '2lcb', '1l84', '5cgc', '4i7m', '1l14',
+       '5jwv', '4qkx', '4i7k', '5ndz', '6j21', '1l74', '3c82', '146l',
+       '3p0g', '1c64', '151l', '4daj', '1lyi', '2b6t', '3jr6', '1cuq',
+       '1lyf', '5zbq', '239l', '178l', '2b6z', '1lyg', '242l', '1pqd',
+       '3fi5', '1kw5', '4ej4', '1cu2', '251l', '1l97', '211l', '228l',
+       '185l', '1c65', '4xee', '4epi', '5ki3', '1c60', '5kig', '1lw9',
+       '5d5b', '160l', '2o79', '167l', '1dyc', '1c6l', '1l38', '1c6n',
+       '2b7x', '1l68', '6kpc', '4i7o', '1pqk', '1p36', '1l44', '6cm4',
+       '2b72', '3fa0', '5d6l', '3dn2', '125l', '3cdq', '1ov7', '197l',
+       '1lgw', '1qt5', '2qb0', '1c6c', '249l', '3c7z', '3huq', '1l67',
+       '200l', '4i7l', '173l', '6bg5', '217l', '2oe9', '1zyt', '5v83',
+       '3c7y', '1l37', '3nya', '2b74', '1qs9', '1l24', '1c6f', '107l',
+       '1zwn', '4grv', '3cdr', '5i14', '3gup', '155l', '1c6p', '1lyj',
+       '3sb9', '235l', '5yqr', '158l', '174l', '3sbb', '1lgu', '5kim',
+       '5kii', '243l', '198l', '2f2q', '1cv4', '180l', '1dyd', '2q9e',
+       '6a73', '2oea', '199l', '1oyu', '1cv6', '1l55', '163l', '3fad',
+       '1g0j', '1lwg', '1lye', '5v7f', '1c6j', '4w56', '1l39', '1l93',
+       '1g07', '4w53', '1ky1', '218l', '1p7s', '3hu9', '1l29', '2b73',
+       '2ntg', '1cvk', '129l', '1swy', '3c81', '1l65', '1l99', '113l',
+       '1cv5', '5yqz', '5kw2', '4w54', '3dmv', '1lyd', '1nhb', '3gul',
+       '219l', '5v7d', '241l', '5kgr', '7lzm', '1g0p', '1c63', '3sb7',
+       '1cup', '3hwl', '1p2r', '1l07', '1l28', '3sba', '1l52', '1qsq',
+       '120l', '1l54', '2hum', '4dkl', '5jgu', '5kio', '165l', '3v2w',
+       '3k2r', '1l62', '1l36', '255l', '1l42', '205l', '3pbl', '5tzy',
+       '157l', '1l50', '1cv1', '245l', '3d4s', '142l', '5xf1', '3c8s',
+       '2b70', '1quh', '1l23', '143l', '5ee7', '192l', '6m9t', '1ovh',
+       '4i7t', '5ndd', '1dya', '2rb0', '1ctw', '4w59', '4yx7', '1l47',
+       '215l', '2raz', '2ou9', '1zur', '1b6i', '6qaj', '1l25', '5gli',
+       '5vew', '1swz', '5zkq', '3oe9', '3v2y', '5cgd', '1qs5', '3dn0',
+       '2rb2', '5zhp', '149l', '1l71', '4ldo', '1d2w', '4lde', '1l69',
+       '209l', '1qug', '4ekq', '1kw7', '2rbr', '5xpr', '1g0g', '1ovj',
+       '5wf5', '3rze', '169l', '247l', '5d5a', '6iih', '2f32', '3hua',
+       '4arj', '3htg', '225l', '1quo', '1c6k', '1l22', '2l78', '1l02',
+       '1qtv', '5v7e', '1d3n', '1lgx', '1c6d', '3dn6', '2lc9', '1p46',
+       '1l20', '201l', '1l30', '3guj', '1dyg', '5jgx', '130l', '236l',
+       '1jtn', '1c6e', '3l64', '1cu3', '246l', '3c8r', '3f8v', '256l',
+       '3hh3', '3oe0', '1pqo', '1p56', '1g06', '2ou0', '3dna', '258l',
+       '222l', '2cuu', '1l0j', '1l79', '1d3f', '183l', '1l09', '2f47',
+       '1dyb', '5vnq', '1cx7', '3sb5', '1p5c', '1lpy', '3odu', '2lzm',
+       '4oo9', '1l03', '161l', '5lwo', '5glh', '1l31', '140l', '3ny8',
+       '2oe7', '3c80', '4wtv', '3htd', '1qt7', '3c83', '2rbn', '1d2y',
+       '233l', '1c6t', '1l92', '4i7q', '5jwt', '103l', '4zwj', '1l90',
+       '5dgy', '1l34', '5jgn', '1l60', '1l82', '4i7p', '3dn3', '1cv0',
+       '3oe8', '260l', '2ray', '1ssy', '2b6w', '4i7j', '2b6y', '259l',
+       '3dn4', '1epy', '1l06', '119l', '1qtd', '1l61', '1cu6', '150l',
+       '2o7a', '3c8q', '5ki1', '2oty', '1l59', '1l35', '2oe4', '137l',
+       '1l26', '2huk', '4i7r', '4w55', '145l', '1p2l', '250l', '1l05',
+       '1l86', '1l53', '254l', '1l11', '1c6b', '229l', '257l', '156l',
+       '5v88', '3gun', '111l', '139l', '1pqm', '5ki2', '1p6y', '1l98',
+       '221l', '1l58', '3ny9', '4i7n', '4htt', '1g0l', '1qt3', '102l',
+       '1c6q', '213l', '1l83', '1l89', '216l', '1qtz', '147l', '3pds',
+       '1l64', '6ffi', '2rb1', '6kjv', '2q9d', '3hh4', '1l94', '5jww',
+       '1l87', '1l63', '1l41', '196l', '170l', '1l27', '1li6', '144l',
+       '6a9e', '1l51', '189l', '1l95', '159l', '164l', '1c62', '1ovk',
+       '4n9n', '1qsb', '4w57', '1l21', '3sb6', '5ki8', '6bg3', '5xpf',
+       '177l', '253l', '1g0k', '5wf6', '4tn3', '1l81', '3sb8', '232l',
+       '4rws', '1l56', '5jea', '1g0m', '1l66', '1l01', '1jtm', '3c7w',
+       '1c6h', '6fw2', '3ht8', '244l', '4lzm', '171l', '210l', '5t04',
+       '1ch4', '3w4u', '1cbl', '1cbm', '6fqf', '5c0w', '5k36', '5vzj',
+       '4ifd', '5okz', '5c0x', '6fsz', '6lqs', '4oo1', '5g06', '2xyn',
+       '3hl2', '4hho', '7cay', '6gy2', '3eu7', '1n0w', '6hqu', '6h3c',
+       '6r8f', '5np3', '3ulr', '5np5', '2ecd', '2kk1', '3gvu', '4eih',
+       '3hmi', '3us1', '2y9t', '3qym', '3us2', '3zy1', '1rg6', '3zy0',
+       '6ru7', '3us0', '3qyn', '6ru6', '6ru8', '2rmn', '4a9z', '6fgn',
+       '2y9u', '2vje', '5trf', '2ruh', '2c6b', '4ogt', '4ogv', '5lav',
+       '6im9', '1ycr', '3jzk', '4zyi', '4zgk', '5xxk', '4qo4', '2fop',
+       '3lbk', '4ere', '4zyc', '4jv9', '3jzr', '5mnj', '5hmh', '6kzu',
+       '6q9h', '4hfz', '3iux', '6i3s', '3tu1', '4mdq', '3iwy', '6q9o',
+       '5wts', '2c6a', '5c5a', '5laz', '4xxb', '5umm', '2axi', '2gv2',
+       '4oq3', '4jvr', '1t4e', '2vjf', '3tj2', '4dij', '4ue1', '6h22',
+       '6q9l', '5oc8', '6y4q', '4oba', '6q96', '4jv7', '4ud7', '6aaw',
+       '3mqs', '5j7g', '4ode', '3g03', '4jwr', '5oai', '4ogn', '4occ',
+       '3lnj', '4odf', '4zfi', '4jve', '6i29', '4zyf', '6sqo', '2hdp',
+       '3lnz', '2m86', '1t4f', '4wt2', '5lay', '3eqs', '6ggn', '6hfa',
+       '1rv1', '5swk', '4umn', '4hbm', '3vbg', '5j7f', '4oas', '4mdn',
+       '2lzg', '5law', '4qoc', '3tpx', '1z1m', '5vk0', '3lbl', '5afg',
+       '5zxf', '4erf', '5ln2', '6t2f', '5hmi', '4hg7', '5z02', '3v3b',
+       '3w69', '5hmk', '6t2e', '3vzv', '6t2d', '3jzs', '2d4q', '3peg',
+       '6ob3', '3p7z', '2e2x', '6v6f', '6ob2', '3pg7', '1nf1', '6v65',
+       '3q96', '3q4c', '4xv3', '1uwj', '4mnf', '4pp7', '4yht', '6cad',
+       '4mbj', '5hie', '4r5y', '5c9c', '4ksq', '5j17', '5hi2', '4g9c',
+       '4ehg', '5val', '6nsq', '2fb8', '3ppk', '4mne', '3ppj', '6n0p',
+       '4h58', '6u2g', '5vr3', '6p3d', '4fk3', '6b8u', '6q0k', '6xag',
+       '3pri', '4e4x', '3tv6', '1uwh', '3psd', '4fc0', '6pp9', '5j18',
+       '5jt2', '3idp', '6uan', '3psb', '3tv4', '6q0j', '6p7g', '4cqe',
+       '3d4q', '6u2h', '3skc', '4ehe', '3c4c', '6nyb', '6q0t', '3ii5',
+       '3ny5', '4wo5', '4xv2', '3og7', '4ksp', '3prf', '5vam', '4rzv',
+       '5hid', '5csw', '5jrq', '4jvg', '6uuo', '4g9r', '5csx', '5j2r',
+       '5ita', '5ct7', '6n0q', '5fd2', '2l05', '4rzw', '5jsm', '5vyk',
+       '4xv9', '4dbn', '4xv1', '2kbx', '3rep', '4hi9', '3f6q', '3kmw',
+       '4hi8', '6mib', '3ixe', '3kmu', '4yih', '2i7d', '4l57', '6g2n',
+       '5yu6', '5yu7', '3a6p', '5uhv', '6ulr', '6mpp', '6wgh', '6ulk',
+       '6zir', '6ziz', '6e6h', '3con', '6uln', '6zio', '6uon', '2n9c',
+       '6uli', '1b35', '3r93', '5ciu', '6ace', '7bqz', '2x4w', '7bu9',
+       '2iij', '4mzh', '3db3', '4ouc', '5vac', '4mzf', '2x4y', '4mzg',
+       '2x4x', '1wnt', '1pr9', '3d3w', '3w3d', '1emu', '1v18', '2rqu',
+       '1m5i', '1deb', '1t08', '3qhe', '1jpp', '5z8h', '4yje', '1th1',
+       '5iza', '4yk6', '3nmx', '4g69', '5iz6', '5b6g', '5iz9', '5iz8',
+       '3t7u', '4yjl', '3nmw', '3au3', '3nmz', '3rl7', '3rl8', '1v1c',
+       '6mg9', '2dku', '2edw', '4rsv', '2edl', '2edr', '4c4k', '2edq',
+       '2e7b', '2edh', '2edf', '2cr6', '2gqh', '2yz8', '2eny', '5tzm',
+       '2n56', '2dm7', '2eo1', '2mwc', '2edt', '4uow', '6pay', '1t09',
+       '4umx', '4umy', '1t0l', '5sun', '5k11', '6adg', '3map', '6vg0',
+       '6o2y', '6bl2', '6bl1', '5tqh', '5l58', '4l06', '4l04', '6vei',
+       '3mas', '6bky', '6o2z', '4xs3', '4i3k', '6b0z', '4xrx', '5de1',
+       '5yfn', '5lge', '6bkx', '4l03', '5yfm', '4i3l', '6q6f', '5svf',
+       '6io0', '6bl0', '5k10', '6u4j', '5gir', '4kzo', '5l57', '6bkz',
+       '3inm', '1zsx', '4oe5', '3v9h', '3v9i', '3v9g', '6d6r', '3saf',
+       '6d6q', '2cpr', '3sah', '3sag', '4nin', '5yul', '3kh3', '3re0',
+       '4b3e', '4bcy', '6z4m', '4a7v', '2v0a', '4xcr', '2zky', '2zkx',
+       '6spj', '5dli', '4nio', '2af2', '1fun', '1l3n', '3cqp', '2vr8',
+       '1oez', '4a7u', '4a7g', '6foi', '2lu5', '1uxm', '3qqd', '5yto',
+       '1uxl', '4a7s', '4a7t', '5wmj', '1hl4', '1pu0', '6z4h', '6fp6',
+       '2wyt', '6z4g', '3ecw', '4bd4', '2gbu', '3gzq', '4bcz', '5u9m',
+       '6dtk', '2wz5', '2wz0', '2xjk', '6b79', '5j0f', '6z4j', '5k02',
+       '4nip', '3h2p', '4ff9', '3t5w', '1n19', '1ozu', '1rk7', '6sph',
+       '3ltv', '2c9u', '6z3v', '5j0c', '2r27', '1spd', '1p1v', '6ffk',
+       '4mcm', '1ptz', '3gqf', '3ecv', '2wyz', '3cqq', '2c9v', '6z4i',
+       '2wz6', '1sos', '5iiw', '2xjl', '1ba9', '1ozt', '2nnx', '6a9o',
+       '5j0g', '1n18', '5j07', '6fol', '1azv', '1dsw', '2vr6', '4mcn',
+       '3kh4', '3ecu', '1hl5', '5o40', '4oh2', '3gtv', '6z4l', '3hff',
+       '5o3y', '6spk', '2mp3', '2gbv', '6spa', '3gzp', '2c9s', '5ytu',
+       '6fon', '6spi', '6z4k', '3gzo', '1mfm', '3h2q', '6flh', '3k91',
+       '5wor', '2vr7', '1kmg', '6z4o', '2nam', '2gbt', '4a7q', '2wko',
+       '2zkw', '6gme', '6gmh', '6ted', '1hns', '1hnr', '2mw2', '1ni8',
+       '1lr1', '6b0y', '5v9l', '5vq1', '4lrw', '5whd', '4l8g', '6t5u',
+       '6quu', '6t5b', '4pzy', '5ocg', '6gqx', '6p8z', '6w4f', '6usx',
+       '6bp1', '6zl5', '6wgn', '4luc', '1d8e', '6ase', '6quw', '6o4z',
+       '4q02', '5w22', '6tam', '6mnx', '6mbt', '6ark', '5mla', '6gom',
+       '4lyh', '6w4e', '6quv', '6jtn', '5vbm', '6f76', '4epw', '4dso',
+       '4ql3', '4ldj', '4ept', '6epn', '6cch', '5vp7', '4m1o', '6fa3',
+       '6o53', '5vq6', '6jtp', '5usj', '4pzz', '5wpm', '4lv6', '6o36',
+       '4dst', '6epo', '6tan', '4m1t', '6ptw', '6cc9', '6pq3', '5vq0',
+       '6ccx', '5tar', '5mlb', '5xco', '5v9u', '4dsu', '5uqw', '6v5l',
+       '6o46', '5wha', '4m21', '6p0z', '6o4y', '5tb5', '5kyk', '1d8d',
+       '6gj8', '6p8w', '4wa7', '1n4p', '6gqt', '4m22', '6h46', '4q01',
+       '6b0v', '6qux', '6zli', '6ms9', '5vq2', '5vpi', '4epr', '5v71',
+       '6m9w', '1kzp', '6goe', '6epm', '4dsn', '6p8y', '5oco', '4m1s',
+       '6p8x', '5yy1', '5whb', '3gft', '6gj5', '5ufe', '6pgo', '6pgp',
+       '1n4s', '6asa', '5o2s', '5wlb', '4obe', '4m1y', '5v6v', '5yxz',
+       '4tq9', '6mqg', '6cu6', '6ut0', '5vpy', '4q03', '5vq8', '4m1w',
+       '4epv', '6n2j', '4tqa', '6e6f', '6epl', '6fa1', '5uk9', '1n4q',
+       '6h47', '6god', '5vpz', '1kzo', '1n4r', '4epy', '6yr8', '6n2k',
+       '6fa4', '6epp', '6mta', '6usz', '5us4', '5f2e', '6e6g', '6t5v',
+       '6mbu', '4nmm', '6yxw', '5ufq', '4lyf', '6mqn', '6pts', '6gog',
+       '5whe', '5v9o', '6gof', '6mbq', '4lyj', '4lpk', '6oim', '6jto',
+       '6gj7', '6fa2', '6gqw', '4epx', '5v6s', '6gqy', '6o51', '6gj6',
+       '5o2t', '6bof', '5zqz', '5zrv', '6dv2', '3emm', '2a13', '2q4n',
+       '3wjb', '3wje', '3wjg', '3wjc', '3wjd', '3wjf', '4ymy', '1fpt',
+       '5z3q', '4nlw', '1tql', '5kwl', '1al2', '1pov', '2im1', '4k4s',
+       '2im3', '3jbf', '1rdr', '1l1n', '1vbd', '1ar9', '1nn8', '3ol7',
+       '1ra6', '1po1', '6psz', '6hlv', '3j48', '2ilz', '3j3p', '3jbe',
+       '1ra7', '1dgi', '1ar6', '4nlx', '4k4w', '1raj', '2im2', '4k4v',
+       '3iyc', '1asj', '4nly', '1ar7', '4nlu', '2bbp', '2bbl', '1ng7',
+       '1xyr', '1ar8', '3jbc', '5ku0', '4nlo', '4k4t', '4nlr', '3iyb',
+       '1po2', '2plv', '3j8f', '3j9f', '5ku2', '4nlp', '6q0b', '5ktz',
+       '2ily', '3jbd', '4nlv', '4nlt', '4k4u', '4nlq', '3j3o', '3jbg',
+       '4nls', '2im0', '3epc', '4dcd', '1hxs', '4r0e', '6p9o', '6p9w',
+       '4fqx', '1hdm', '4gbx', '2bc4', '1mxi', '1j85', '6ahw', '6f0x',
+       '2qyf', '6tlj', '2v64', '1go4', '3gmh', '5khu', '1klq', '1s2h',
+       '2vfx', '1duj', '5lcw', '6p8e', '5vzu', '6p8g', '2w9z', '6p8f',
+       '2w96', '2w99', '6p8h', '2w9f', '5fwk', '5fwl', '3g33', '5fwm',
+       '5fwp', '6hx3', '6hye', '6hxg', '2wjy', '2iyk', '6ej5', '2gjk',
+       '2xzo', '6z3r', '2gk6', '2wjv', '2xzp', '2gk7', '3agq', '4r71',
+       '3agp', '3avu', '3vnu', '4q7j', '3avx', '4fwt', '3avv', '3vnv',
+       '3avw', '3avt', '3avy', '3mmp', '3sqh', '3hat', '4ch8', '1qbv',
+       '1t4v', '1a5g', '1hah', '2zhe', '1sr5', '2zhf', '2bxt', '3u69',
+       '3utu', '6tdt', '4ufg', '1lhc', '6eo7', '1ypk', '1mu8', '1thr',
+       '6zv7', '1nrn', '6pxj', '1tq7', '1aix', '2pgq', '1nt1', '1tom',
+       '3k65', '1wbg', '1hxf', '1oyt', '1twx', '2uuj', '4ue7', '6tkh',
+       '3sha', '3c27', '4boh', '2pgb', '3b9f', '1bth', '2zg0', '4az2',
+       '1w7g', '4dt7', '1bmm', '1lhe', '5edk', '2gde', '1g37', '1awh',
+       '1ae8', '2pks', '1d9i', '6eo9', '1g30', '1no9', '1h8d', '6eo8',
+       '3qwc', '3p17', '1ook', '1nm6', '1nro', '1bhx', '1rd3', '6tki',
+       '4ud9', '2anm', '4dih', '4dy7', '6zv8', '4loy', '6zuu', '4rko',
+       '1gj4', '3si3', '6i51', '2a2x', '1k21', '3eq0', '5mjt', '6fjt',
+       '4dii', '2hwl', '1z8j', '2hpp', '1mu6', '3dhk', '1de7', '4bah',
+       '2zfp', '2zfr', '1nrq', '2zf0', '1eoj', '3rmm', '4o03', '6pxq',
+       '3biu', '2zhq', '2hnt', '4htc', '2zff', '4ban', '1eol', '1way',
+       '1dwc', '1o2g', '2c8w', '1qj7', '2bvs', '2zo3', '1eb1', '3rly',
+       '3egk', '4hfp', '1d3t', '2thf', '1d3p', '1o0d', '3qto', '1dit',
+       '3rml', '3lu9', '5afy', '2h9t', '2r2m', '1c4y', '2bvx', '2zc9',
+       '2ank', '1zgi', '1fph', '4rn6', '1lhd', '2zfq', '6tkl', '3qtv',
+       '2od3', '1c1v', '3sqe', '1z8i', '3vxe', '2zgx', '1d3q', '3rmo',
+       '1c1u', '1c5l', '1ypl', '5z5w', '1tbz', '1z71', '2a0q', '1awf',
+       '3tu7', '2uuf', '3qlp', '3t5f', '2ziq', '3rm0', '4h6s', '5jdu',
+       '1b5g', '1qur', '3htc', '2jh5', '1dm4', '8kme', '1sl3', '4bam',
+       '1tb6', '4bak', '1hbt', '5ew2', '3qx5', '4ax9', '1vzq', '2feq',
+       '1c1w', '5lce', '6zuh', '1a3b', '1ghx', '2hgt', '3bef', '3dt0',
+       '1dwe', '1ad8', '3u8t', '1hai', '1mh0', '1c5n', '2c90', '6p9u',
+       '1kts', '5l6n', '1shh', '5mm6', '4hzh', '4lxb', '4bao', '2hpq',
+       '1ta6', '4lz1', '1qj6', '4ayy', '2b5t', '3rm2', '1hao', '1a61',
+       '1jou', '4thn', '2zdv', '1xm1', '6zug', '6px5', '1sb1', '1k22',
+       '2gp9', '5afz', '3p70', '2v3h', '1mue', '3rlw', '5gds', '6zuw',
+       '5cmx', '3rmn', '1fpc', '2bvr', '5gim', '1nu7', '6t4a', '1c4v',
+       '1thp', '4h6t', '2zgb', '1nu9', '1lhf', '1a46', '3u9a', '1d4p',
+       '6c2w', '1ypg', '1ghv', '3r3g', '1qhr', '1d3d', '1hgt', '3s7h',
+       '2c8z', '1zrb', '5do4', '1c4u', '6bjr', '5e8e', '1e0f', '4ufd',
+       '1dwd', '1bcu', '3bv9', '4e7r', '2afq', '2c8y', '6gbw', '1nzq',
+       '6t7h', '1qj1', '2jh6', '4nzq', '3bei', '4i7y', '1d6w', '6v5t',
+       '3uwj', '2c93', '1iht', '3c1k', '1doj', '6zux', '4ch2', '4ufe',
+       '1h8i', '1xmn', '1nrr', '4ueh', '3ee0', '3b23', '1a2c', '1ktt',
+       '1hdt', '5z5x', '2zhw', '3ldx', '4mlf', '1lhg', '1abi', '2zi2',
+       '1hxe', '1hap', '2cf9', '6v64', '3hkj', '5ew1', '3e6p', '5lpd',
+       '1gj5', '1g32', '6gn7', '3biv', '1dwb', '1ai8', '6hsx', '2cf8',
+       '1ta2', '3nxp', '6t3q', '6tkg', '6eo6', '1a4w', '3si4', '3f68',
+       '4rkj', '3dux', '1ba8', '2zda', '1sgi', '6gwe', '1c5o', '3dd2',
+       '1ypm', '1ppb', '5ahg', '5af9', '2pw8', '5to3', '2jh0', '3p6z',
+       '1ny2', '5nhu', '1hlt', '6rot', '5jzy', '3d49', '1nrs', '3shc',
+       '3jz1', '1tmb', '2a45', '3po1', '5jfd', '1sfq', '2bxu', '4lz4',
+       '3gic', '1jwt', '3da9', '1a3e', '4baq', '3sv2', '1zgv', '1uvs',
+       '3u98', '2v3o', '1hut', '3qgn', '1tmt', '3pmh', '5edm', '1ype',
+       '4yes', '1ay6', '3u8o', '2uuk', '4ayv', '1ypj', '4udw', '4uff',
+       '6tkj', '1riw', '1o5g', '1ca8', '1ghw', '1abj', '2znk', '1ihs',
+       '6cym', '1bmn', '1uma', '1dx5', '1nrp', '1sg8', '1jmo', '1ths',
+       '3u8r', '1afe', '1tmu', '3bf6', '5a2m', '1t4u', '2cn0', '1ghy',
+       '2fes', '6zun', '6evv', '1aht', '3gis', '3jz2', '1hag', '2c8x',
+       '5mls', '3qdz', '3s7k', '1p8v', '2bdy', '7kme', '1tq0', '3vxf',
+       '1bb0', '1b7x', '1vr1', '5cj4', '5cj0', '3sr2', '3mud', '3q4f',
+       '1ik9', '5wlz', '3rwr', '1fu1', '5wj7', '5chx', '6abo', '4xa4',
+       '3w03', '3ii6', '3gjo', '4ogb', '5k1i', '1zkn', '3sl3', '1oyn',
+       '3v9b', '6kjz', '3iak', '2pw3', '6f8r', '6fdi', '3g4l', '6ibf',
+       '3k4s', '6iag', '6f8u', '1y2k', '1y2e', '6fdc', '1tb7', '1xon',
+       '6ink', '3g4i', '1mkd', '1q9m', '5wh5', '6ft0', '6fw3', '6rcw',
+       '6ind', '1xor', '6hwo', '3g4g', '5wh6', '2fm5', '3sl4', '2fm0',
+       '6njj', '6imt', '3iad', '6f6u', '6kk0', '3sl6', '1e9k', '6f8x',
+       '6fet', '2qyn', '1y2d', '1xom', '6f8t', '6f8v', '6akr', '4w1o',
+       '6imr', '6imo', '1ptw', '6zba', '1xoq', '6njh', '5tkb', '6im6',
+       '3g4k', '5wqa', '4wcu', '6inm', '5lbo', '6imd', '6f8w', '6imb',
+       '5k32', '1tbb', '1y2b', '3g58', '3sl5', '6fe7', '3sl8', '6fta',
+       '1y2c', '6ftw', '6nji', '6imi', '5ewl', '6e7w', '5b3j', '6e7u',
+       '5ipu', '5ipr', '6e7t', '6e7r', '5ipv', '4tll', '5ipq', '6e7s',
+       '5iou', '5ips', '6e7v', '3qel', '5ipt', '5ewj', '5tpz', '3qek',
+       '5ewm', '5un1', '4tlm', '5tpw', '5tq2', '5up2', '5iov', '6e7x',
+       '3qem', '5uow', '5tq0', '1b8i']
+  ```
+
+</details>
+
+```python
+from pdb_profiling.processors import SIFTSs, SIFTS
+from pandas import concat
+from tqdm import tqdm
+
+res = SIFTSs(demo_pdbs).fetch(
+  'fetch_from_web_api',
+  api_suffix='api/mappings/isoforms/',
+  then_func=SIFTS.to_dataframe).run(tqdm).result()
+
+res = SIFTS.reformat(concat(res, sort=False, ignore_index=True)
+                ).then(SIFTS.dealWithInDel
+                ).then(SIFTS.fix_range
+                ).result()
+```
+
+<details>
+  <summary>Click to view dataframe</summary>
+  <table class="dataframe">
+    <thead>
+      <tr>
+        <th></th>
+        <th>UniProt</th>
+        <th>chain_id</th>
+        <th>entity_id</th>
+        <th>identifier</th>
+        <th>identity</th>
+        <th>name</th>
+        <th>pdb_id</th>
+        <th>struct_asym_id</th>
+        <th>pdb_range</th>
+        <th>unp_range</th>
+        <th>Entry</th>
+        <th>range_diff</th>
+        <th>sifts_range_tag</th>
+        <th>repeated</th>
+        <th>reversed</th>
+        <th>InDel_sum</th>
+        <th>new_pdb_range</th>
+        <th>new_unp_range</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th>0</th>
+        <td>A0A068JLL8</td>
+        <td>A</td>
+        <td>1</td>
+        <td>A0A068JLL8_SPOLT</td>
+        <td>1.00</td>
+        <td>A0A068JLL8_SPOLT</td>
+        <td>6uan</td>
+        <td>A</td>
+        <td>[[1,247]]</td>
+        <td>[[1,247]]</td>
+        <td>A0A068JLL8</td>
+        <td>[0]</td>
+        <td>Safe</td>
+        <td>False</td>
+        <td>False</td>
+        <td>0</td>
+        <td>[[1,247]]</td>
+        <td>[[1,247]]</td>
+      </tr>
+      <tr>
+        <th>1</th>
+        <td>A0A068JLL8</td>
+        <td>Z</td>
+        <td>1</td>
+        <td>A0A068JLL8_SPOLT</td>
+        <td>1.00</td>
+        <td>A0A068JLL8_SPOLT</td>
+        <td>6uan</td>
+        <td>B</td>
+        <td>[[1,247]]</td>
+        <td>[[1,247]]</td>
+        <td>A0A068JLL8</td>
+        <td>[0]</td>
+        <td>Safe</td>
+        <td>False</td>
+        <td>False</td>
+        <td>0</td>
+        <td>[[1,247]]</td>
+        <td>[[1,247]]</td>
+      </tr>
+      <tr>
+        <th>2</th>
+        <td>A0A140T913</td>
+        <td>A</td>
+        <td>1</td>
+        <td>A0A140T913_HUMAN</td>
+        <td>1.00</td>
+        <td>A0A140T913_HUMAN</td>
+        <td>6o4y</td>
+        <td>A</td>
+        <td>[[1,274]]</td>
+        <td>[[25,298]]</td>
+        <td>A0A140T913</td>
+        <td>[0]</td>
+        <td>Safe</td>
+        <td>False</td>
+        <td>False</td>
+        <td>0</td>
+        <td>[[1,274]]</td>
+        <td>[[25,298]]</td>
+      </tr>
+      <tr>
+        <th>3</th>
+        <td>A0A140T913</td>
+        <td>A</td>
+        <td>1</td>
+        <td>A0A140T913_HUMAN</td>
+        <td>1.00</td>
+        <td>A0A140T913_HUMAN</td>
+        <td>6o4z</td>
+        <td>A</td>
+        <td>[[1,274]]</td>
+        <td>[[25,298]]</td>
+        <td>A0A140T913</td>
+        <td>[0]</td>
+        <td>Safe</td>
+        <td>False</td>
+        <td>False</td>
+        <td>0</td>
+        <td>[[1,274]]</td>
+        <td>[[25,298]]</td>
+      </tr>
+      <tr>
+        <th>4</th>
+        <td>A0A140T913</td>
+        <td>A</td>
+        <td>1</td>
+        <td>A0A140T913_HUMAN</td>
+        <td>1.00</td>
+        <td>A0A140T913_HUMAN</td>
+        <td>6o51</td>
+        <td>A</td>
+        <td>[[1,274]]</td>
+        <td>[[25,298]]</td>
+        <td>A0A140T913</td>
+        <td>[0]</td>
+        <td>Safe</td>
+        <td>False</td>
+        <td>False</td>
+        <td>0</td>
+        <td>[[1,274]]</td>
+        <td>[[25,298]]</td>
+      </tr>
+      <tr>
+        <th>...</th>
+        <td>...</td>
+        <td>...</td>
+        <td>...</td>
+        <td>...</td>
+        <td>...</td>
+        <td>...</td>
+        <td>...</td>
+        <td>...</td>
+        <td>...</td>
+        <td>...</td>
+        <td>...</td>
+        <td>...</td>
+        <td>...</td>
+        <td>...</td>
+        <td>...</td>
+        <td>...</td>
+        <td>...</td>
+        <td>...</td>
+      </tr>
+      <tr>
+        <th>8937</th>
+        <td>V9P4T4</td>
+        <td>Y</td>
+        <td>3</td>
+        <td>V9P4T4_SPOEX</td>
+        <td>1.00</td>
+        <td>V9P4T4_SPOEX</td>
+        <td>6q0j</td>
+        <td>F</td>
+        <td>[[1,247]]</td>
+        <td>[[1,247]]</td>
+        <td>V9P4T4</td>
+        <td>[0]</td>
+        <td>Safe</td>
+        <td>False</td>
+        <td>False</td>
+        <td>0</td>
+        <td>[[1,247]]</td>
+        <td>[[1,247]]</td>
+      </tr>
+      <tr>
+        <th>8938</th>
+        <td>V9P4T4</td>
+        <td>X</td>
+        <td>3</td>
+        <td>V9P4T4_SPOEX</td>
+        <td>1.00</td>
+        <td>V9P4T4_SPOEX</td>
+        <td>6q0t</td>
+        <td>D</td>
+        <td>[[1,247]]</td>
+        <td>[[1,247]]</td>
+        <td>V9P4T4</td>
+        <td>[0]</td>
+        <td>Safe</td>
+        <td>False</td>
+        <td>False</td>
+        <td>0</td>
+        <td>[[1,247]]</td>
+        <td>[[1,247]]</td>
+      </tr>
+      <tr>
+        <th>8939</th>
+        <td>V9P4T4</td>
+        <td>Y</td>
+        <td>3</td>
+        <td>V9P4T4_SPOEX</td>
+        <td>1.00</td>
+        <td>V9P4T4_SPOEX</td>
+        <td>6q0t</td>
+        <td>E</td>
+        <td>[[1,247]]</td>
+        <td>[[1,247]]</td>
+        <td>V9P4T4</td>
+        <td>[0]</td>
+        <td>Safe</td>
+        <td>False</td>
+        <td>False</td>
+        <td>0</td>
+        <td>[[1,247]]</td>
+        <td>[[1,247]]</td>
+      </tr>
+      <tr>
+        <th>8940</th>
+        <td>X7YCN8</td>
+        <td>A</td>
+        <td>1</td>
+        <td>X7YCN8_MYCKA</td>
+        <td>0.96</td>
+        <td>X7YCN8_MYCKA</td>
+        <td>5vba</td>
+        <td>A</td>
+        <td>[[182,437]]</td>
+        <td>[[16,271]]</td>
+        <td>X7YCN8</td>
+        <td>[0]</td>
+        <td>Safe</td>
+        <td>False</td>
+        <td>False</td>
+        <td>0</td>
+        <td>[[182,437]]</td>
+        <td>[[16,271]]</td>
+      </tr>
+      <tr>
+        <th>8941</th>
+        <td>X7YCN8</td>
+        <td>B</td>
+        <td>1</td>
+        <td>X7YCN8_MYCKA</td>
+        <td>0.96</td>
+        <td>X7YCN8_MYCKA</td>
+        <td>5vba</td>
+        <td>B</td>
+        <td>[[182,437]]</td>
+        <td>[[16,271]]</td>
+        <td>X7YCN8</td>
+        <td>[0]</td>
+        <td>Safe</td>
+        <td>False</td>
+        <td>False</td>
+        <td>0</td>
+        <td>[[182,437]]</td>
+        <td>[[16,271]]</td>
+      </tr>
+    </tbody>
+  </table>
+</details>
+
+```python
+from collections import Counter
+
+print(Counter(re_res.sifts_range_tag))
+print(Counter(re_res.repeated))
+print(Counter(re_res.reversed))
+```
+
+```txt
+Counter({'Safe': 8597, 'InDel_1': 157, 'Deletion': 125, 'Insertion': 47, 'InDel_2': 13, 'Insertion_Undivided': 3})
+Counter({False: 8928, True: 14})
+Counter({False: 8917, True: 25})
+```
+
+```python
+import matplotlib.pyplot as plt
+import seaborn as sns
+sns.set_style('darkgrid')
+
+sns.distplot(re_res.identity, rug=True)
+```
+
+{{< figure library="true" src="best_iso_all_identity.svg" title="Distribution of the identity between the best mapped isoform and the PDB Chain" >}}
+
+```python
+is_canonical = re_res.UniProt.apply(lambda x: '-' not in x)
+is_canonical.describe()
+```
+
+```txt
+count     8942
+unique       2
+top       True
+freq      8385
+```
+
+```python
+non_can_re_res = re_res[is_canonical.eq(False)]
+non_can_re_res
+```
+
+<details>
+  <summary>Click to view dataframe</summary>
+  <table class="dataframe">
+    <thead>
+      <tr>
+        <th></th>
+        <th>UniProt</th>
+        <th>chain_id</th>
+        <th>entity_id</th>
+        <th>identifier</th>
+        <th>identity</th>
+        <th>name</th>
+        <th>pdb_id</th>
+        <th>struct_asym_id</th>
+        <th>pdb_range</th>
+        <th>unp_range</th>
+        <th>Entry</th>
+        <th>range_diff</th>
+        <th>sifts_range_tag</th>
+        <th>repeated</th>
+        <th>reversed</th>
+        <th>InDel_sum</th>
+        <th>new_pdb_range</th>
+        <th>new_unp_range</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th>34</th>
+        <td>A0A1L8F5J9-6</td>
+        <td>A</td>
+        <td>1</td>
+        <td>NMDZ1_XENLA</td>
+        <td>0.99</td>
+        <td>NMDZ1_XENLA</td>
+        <td>3qek</td>
+        <td>A</td>
+        <td>[[2,384]]</td>
+        <td>[[23,405]]</td>
+        <td>A0A1L8F5J9</td>
+        <td>[0]</td>
+        <td>Safe</td>
+        <td>False</td>
+        <td>False</td>
+        <td>0</td>
+        <td>[[2,384]]</td>
+        <td>[[23,405]]</td>
+      </tr>
+      <tr>
+        <th>35</th>
+        <td>A0A1L8F5J9-6</td>
+        <td>B</td>
+        <td>1</td>
+        <td>NMDZ1_XENLA</td>
+        <td>0.99</td>
+        <td>NMDZ1_XENLA</td>
+        <td>3qek</td>
+        <td>B</td>
+        <td>[[2,384]]</td>
+        <td>[[23,405]]</td>
+        <td>A0A1L8F5J9</td>
+        <td>[0]</td>
+        <td>Safe</td>
+        <td>False</td>
+        <td>False</td>
+        <td>0</td>
+        <td>[[2,384]]</td>
+        <td>[[23,405]]</td>
+      </tr>
+      <tr>
+        <th>36</th>
+        <td>A0A1L8F5J9-6</td>
+        <td>A</td>
+        <td>1</td>
+        <td>NMDZ1_XENLA</td>
+        <td>0.99</td>
+        <td>NMDZ1_XENLA</td>
+        <td>3qel</td>
+        <td>A</td>
+        <td>[[1,383]]</td>
+        <td>[[23,405]]</td>
+        <td>A0A1L8F5J9</td>
+        <td>[0]</td>
+        <td>Safe</td>
+        <td>False</td>
+        <td>False</td>
+        <td>0</td>
+        <td>[[1,383]]</td>
+        <td>[[23,405]]</td>
+      </tr>
+      <tr>
+        <th>37</th>
+        <td>A0A1L8F5J9-6</td>
+        <td>C</td>
+        <td>1</td>
+        <td>NMDZ1_XENLA</td>
+        <td>0.99</td>
+        <td>NMDZ1_XENLA</td>
+        <td>3qel</td>
+        <td>C</td>
+        <td>[[1,383]]</td>
+        <td>[[23,405]]</td>
+        <td>A0A1L8F5J9</td>
+        <td>[0]</td>
+        <td>Safe</td>
+        <td>False</td>
+        <td>False</td>
+        <td>0</td>
+        <td>[[1,383]]</td>
+        <td>[[23,405]]</td>
+      </tr>
+      <tr>
+        <th>38</th>
+        <td>A0A1L8F5J9-6</td>
+        <td>A</td>
+        <td>1</td>
+        <td>NMDZ1_XENLA</td>
+        <td>0.99</td>
+        <td>NMDZ1_XENLA</td>
+        <td>3qem</td>
+        <td>A</td>
+        <td>[[1,383]]</td>
+        <td>[[23,405]]</td>
+        <td>A0A1L8F5J9</td>
+        <td>[0]</td>
+        <td>Safe</td>
+        <td>False</td>
+        <td>False</td>
+        <td>0</td>
+        <td>[[1,383]]</td>
+        <td>[[23,405]]</td>
+      </tr>
+      <tr>
+        <th>...</th>
+        <td>...</td>
+        <td>...</td>
+        <td>...</td>
+        <td>...</td>
+        <td>...</td>
+        <td>...</td>
+        <td>...</td>
+        <td>...</td>
+        <td>...</td>
+        <td>...</td>
+        <td>...</td>
+        <td>...</td>
+        <td>...</td>
+        <td>...</td>
+        <td>...</td>
+        <td>...</td>
+        <td>...</td>
+        <td>...</td>
+      </tr>
+      <tr>
+        <th>8858</th>
+        <td>Q9UJX2-2</td>
+        <td>C</td>
+        <td>3</td>
+        <td>CDC23_HUMAN</td>
+        <td>1.00</td>
+        <td>CDC23_HUMAN</td>
+        <td>5khu</td>
+        <td>C</td>
+        <td>[[1,124]]</td>
+        <td>[[1,124]]</td>
+        <td>Q9UJX2</td>
+        <td>[0]</td>
+        <td>Safe</td>
+        <td>False</td>
+        <td>False</td>
+        <td>0</td>
+        <td>[[1,124]]</td>
+        <td>[[1,124]]</td>
+      </tr>
+      <tr>
+        <th>8859</th>
+        <td>Q9UJX2-2</td>
+        <td>P</td>
+        <td>3</td>
+        <td>CDC23_HUMAN</td>
+        <td>1.00</td>
+        <td>CDC23_HUMAN</td>
+        <td>5khu</td>
+        <td>O</td>
+        <td>[[1,124]]</td>
+        <td>[[1,124]]</td>
+        <td>Q9UJX2</td>
+        <td>[0]</td>
+        <td>Safe</td>
+        <td>False</td>
+        <td>False</td>
+        <td>0</td>
+        <td>[[1,124]]</td>
+        <td>[[1,124]]</td>
+      </tr>
+      <tr>
+        <th>8869</th>
+        <td>Q9UJX5-3</td>
+        <td>I</td>
+        <td>7</td>
+        <td>APC4_HUMAN</td>
+        <td>1.00</td>
+        <td>APC4_HUMAN</td>
+        <td>5khu</td>
+        <td>H</td>
+        <td>[[1,808]]</td>
+        <td>[[1,809]]</td>
+        <td>Q9UJX5</td>
+        <td>[1]</td>
+        <td>Deletion</td>
+        <td>False</td>
+        <td>False</td>
+        <td>1</td>
+        <td>((1, 440), (441, 808))</td>
+        <td>((1, 440), (442, 809))</td>
+      </tr>
+      <tr>
+        <th>8870</th>
+        <td>Q9UJX5-3</td>
+        <td>I</td>
+        <td>8</td>
+        <td>APC4_HUMAN</td>
+        <td>1.00</td>
+        <td>APC4_HUMAN</td>
+        <td>5lcw</td>
+        <td>I</td>
+        <td>[[1,808]]</td>
+        <td>[[1,809]]</td>
+        <td>Q9UJX5</td>
+        <td>[1]</td>
+        <td>Deletion</td>
+        <td>False</td>
+        <td>False</td>
+        <td>1</td>
+        <td>((1, 440), (441, 808))</td>
+        <td>((1, 440), (442, 809))</td>
+      </tr>
+      <tr>
+        <th>8871</th>
+        <td>Q9UJX5-3</td>
+        <td>I</td>
+        <td>8</td>
+        <td>APC4_HUMAN</td>
+        <td>1.00</td>
+        <td>APC4_HUMAN</td>
+        <td>6tlj</td>
+        <td>I</td>
+        <td>[[1,808]]</td>
+        <td>[[1,809]]</td>
+        <td>Q9UJX5</td>
+        <td>[1]</td>
+        <td>Deletion</td>
+        <td>False</td>
+        <td>False</td>
+        <td>1</td>
+        <td>((1, 440), (441, 808))</td>
+        <td>((1, 440), (442, 809))</td>
+      </tr>
+    </tbody>
+  </table>
+</details>
+
+```python
+print(Counter(non_can_re_res.sifts_range_tag))
+print(Counter(non_can_re_res.repeated))
+print(Counter(non_can_re_res.reversed))
+sns.boxplot(non_can_re_res.identity)
+```
+
+```txt
+Counter({'Safe': 530, 'Deletion': 23, 'InDel_2': 2, 'Insertion': 1, 'InDel_1': 1})
+Counter({False: 556, True: 1})
+Counter({False: 556, True: 1})
+```
+
+{{< figure library="true" src="best_iso_non_can_identity.svg" title="Distribution of the identity between the best mapped isoform and the PDB Chain" >}}
+
+```python
+from pdb_profiling.utils import overlap_range, range_len, a_concat
+
+alt_df = Identifiers(non_can_re_res.Entry.unique()).query_from_DB_with_unps('ALTERNATIVE_PRODUCTS').run(tqdm).then(a_concat).result()
+
+non_can_re_res = non_can_re_res.merge(alt_df[~alt_df.iso_range.isnull()][['iso_range', 'iso_range_len','isoform']].rename(columns={'isoform': 'UniProt'}), how='left')
+non_can_re_res['unp_iso_range'] = non_can_re_res.apply(lambda x: overlap_range(x['new_unp_range'], x['iso_range']), axis=1)
+non_can_re_res['unp_iso_range_len'] = non_can_re_res.unp_iso_range.apply(range_len)
+non_can_re_res
+```
+
+<details>
+  <summary>Click to view the dataframe</summary>
+   <table class="dataframe">
+    <thead>
+      <tr>
+        <th></th>
+        <th>UniProt</th>
+        <th>chain_id</th>
+        <th>entity_id</th>
+        <th>identifier</th>
+        <th>identity</th>
+        <th>name</th>
+        <th>pdb_id</th>
+        <th>struct_asym_id</th>
+        <th>pdb_range</th>
+        <th>unp_range</th>
+        <th>...</th>
+        <th>sifts_range_tag</th>
+        <th>repeated</th>
+        <th>reversed</th>
+        <th>InDel_sum</th>
+        <th>new_pdb_range</th>
+        <th>new_unp_range</th>
+        <th>iso_range</th>
+        <th>iso_range_len</th>
+        <th>unp_iso_range</th>
+        <th>unp_iso_range_len</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th>0</th>
+        <td>A0A1L8F5J9-6</td>
+        <td>A</td>
+        <td>1</td>
+        <td>NMDZ1_XENLA</td>
+        <td>0.99</td>
+        <td>NMDZ1_XENLA</td>
+        <td>3qek</td>
+        <td>A</td>
+        <td>[[2,384]]</td>
+        <td>[[23,405]]</td>
+        <td>...</td>
+        <td>Safe</td>
+        <td>False</td>
+        <td>False</td>
+        <td>0</td>
+        <td>[[2,384]]</td>
+        <td>[[23,405]]</td>
+        <td>[(189, 210), (883, 902)]</td>
+        <td>42.0</td>
+        <td>((189, 210),)</td>
+        <td>22</td>
+      </tr>
+      <tr>
+        <th>1</th>
+        <td>A0A1L8F5J9-6</td>
+        <td>B</td>
+        <td>1</td>
+        <td>NMDZ1_XENLA</td>
+        <td>0.99</td>
+        <td>NMDZ1_XENLA</td>
+        <td>3qek</td>
+        <td>B</td>
+        <td>[[2,384]]</td>
+        <td>[[23,405]]</td>
+        <td>...</td>
+        <td>Safe</td>
+        <td>False</td>
+        <td>False</td>
+        <td>0</td>
+        <td>[[2,384]]</td>
+        <td>[[23,405]]</td>
+        <td>[(189, 210), (883, 902)]</td>
+        <td>42.0</td>
+        <td>((189, 210),)</td>
+        <td>22</td>
+      </tr>
+      <tr>
+        <th>2</th>
+        <td>A0A1L8F5J9-6</td>
+        <td>A</td>
+        <td>1</td>
+        <td>NMDZ1_XENLA</td>
+        <td>0.99</td>
+        <td>NMDZ1_XENLA</td>
+        <td>3qel</td>
+        <td>A</td>
+        <td>[[1,383]]</td>
+        <td>[[23,405]]</td>
+        <td>...</td>
+        <td>Safe</td>
+        <td>False</td>
+        <td>False</td>
+        <td>0</td>
+        <td>[[1,383]]</td>
+        <td>[[23,405]]</td>
+        <td>[(189, 210), (883, 902)]</td>
+        <td>42.0</td>
+        <td>((189, 210),)</td>
+        <td>22</td>
+      </tr>
+      <tr>
+        <th>3</th>
+        <td>A0A1L8F5J9-6</td>
+        <td>C</td>
+        <td>1</td>
+        <td>NMDZ1_XENLA</td>
+        <td>0.99</td>
+        <td>NMDZ1_XENLA</td>
+        <td>3qel</td>
+        <td>C</td>
+        <td>[[1,383]]</td>
+        <td>[[23,405]]</td>
+        <td>...</td>
+        <td>Safe</td>
+        <td>False</td>
+        <td>False</td>
+        <td>0</td>
+        <td>[[1,383]]</td>
+        <td>[[23,405]]</td>
+        <td>[(189, 210), (883, 902)]</td>
+        <td>42.0</td>
+        <td>((189, 210),)</td>
+        <td>22</td>
+      </tr>
+      <tr>
+        <th>4</th>
+        <td>A0A1L8F5J9-6</td>
+        <td>A</td>
+        <td>1</td>
+        <td>NMDZ1_XENLA</td>
+        <td>0.99</td>
+        <td>NMDZ1_XENLA</td>
+        <td>3qem</td>
+        <td>A</td>
+        <td>[[1,383]]</td>
+        <td>[[23,405]]</td>
+        <td>...</td>
+        <td>Safe</td>
+        <td>False</td>
+        <td>False</td>
+        <td>0</td>
+        <td>[[1,383]]</td>
+        <td>[[23,405]]</td>
+        <td>[(189, 210), (883, 902)]</td>
+        <td>42.0</td>
+        <td>((189, 210),)</td>
+        <td>22</td>
+      </tr>
+      <tr>
+        <th>...</th>
+        <td>...</td>
+        <td>...</td>
+        <td>...</td>
+        <td>...</td>
+        <td>...</td>
+        <td>...</td>
+        <td>...</td>
+        <td>...</td>
+        <td>...</td>
+        <td>...</td>
+        <td>...</td>
+        <td>...</td>
+        <td>...</td>
+        <td>...</td>
+        <td>...</td>
+        <td>...</td>
+        <td>...</td>
+        <td>...</td>
+        <td>...</td>
+        <td>...</td>
+        <td>...</td>
+      </tr>
+      <tr>
+        <th>552</th>
+        <td>Q9UJX2-2</td>
+        <td>C</td>
+        <td>3</td>
+        <td>CDC23_HUMAN</td>
+        <td>1.00</td>
+        <td>CDC23_HUMAN</td>
+        <td>5khu</td>
+        <td>C</td>
+        <td>[[1,124]]</td>
+        <td>[[1,124]]</td>
+        <td>...</td>
+        <td>Safe</td>
+        <td>False</td>
+        <td>False</td>
+        <td>0</td>
+        <td>[[1,124]]</td>
+        <td>[[1,124]]</td>
+        <td>[(125, 151)]</td>
+        <td>27.0</td>
+        <td>()</td>
+        <td>0</td>
+      </tr>
+      <tr>
+        <th>553</th>
+        <td>Q9UJX2-2</td>
+        <td>P</td>
+        <td>3</td>
+        <td>CDC23_HUMAN</td>
+        <td>1.00</td>
+        <td>CDC23_HUMAN</td>
+        <td>5khu</td>
+        <td>O</td>
+        <td>[[1,124]]</td>
+        <td>[[1,124]]</td>
+        <td>...</td>
+        <td>Safe</td>
+        <td>False</td>
+        <td>False</td>
+        <td>0</td>
+        <td>[[1,124]]</td>
+        <td>[[1,124]]</td>
+        <td>[(125, 151)]</td>
+        <td>27.0</td>
+        <td>()</td>
+        <td>0</td>
+      </tr>
+      <tr>
+        <th>554</th>
+        <td>Q9UJX5-3</td>
+        <td>I</td>
+        <td>7</td>
+        <td>APC4_HUMAN</td>
+        <td>1.00</td>
+        <td>APC4_HUMAN</td>
+        <td>5khu</td>
+        <td>H</td>
+        <td>[[1,808]]</td>
+        <td>[[1,809]]</td>
+        <td>...</td>
+        <td>Deletion</td>
+        <td>False</td>
+        <td>False</td>
+        <td>1</td>
+        <td>((1, 440), (441, 808))</td>
+        <td>((1, 440), (442, 809))</td>
+        <td>[(439, 440)]</td>
+        <td>2.0</td>
+        <td>((439, 440),)</td>
+        <td>2</td>
+      </tr>
+      <tr>
+        <th>555</th>
+        <td>Q9UJX5-3</td>
+        <td>I</td>
+        <td>8</td>
+        <td>APC4_HUMAN</td>
+        <td>1.00</td>
+        <td>APC4_HUMAN</td>
+        <td>5lcw</td>
+        <td>I</td>
+        <td>[[1,808]]</td>
+        <td>[[1,809]]</td>
+        <td>...</td>
+        <td>Deletion</td>
+        <td>False</td>
+        <td>False</td>
+        <td>1</td>
+        <td>((1, 440), (441, 808))</td>
+        <td>((1, 440), (442, 809))</td>
+        <td>[(439, 440)]</td>
+        <td>2.0</td>
+        <td>((439, 440),)</td>
+        <td>2</td>
+      </tr>
+      <tr>
+        <th>556</th>
+        <td>Q9UJX5-3</td>
+        <td>I</td>
+        <td>8</td>
+        <td>APC4_HUMAN</td>
+        <td>1.00</td>
+        <td>APC4_HUMAN</td>
+        <td>6tlj</td>
+        <td>I</td>
+        <td>[[1,808]]</td>
+        <td>[[1,809]]</td>
+        <td>...</td>
+        <td>Deletion</td>
+        <td>False</td>
+        <td>False</td>
+        <td>1</td>
+        <td>((1, 440), (441, 808))</td>
+        <td>((1, 440), (442, 809))</td>
+        <td>[(439, 440)]</td>
+        <td>2.0</td>
+        <td>((439, 440),)</td>
+        <td>2</td>
+      </tr>
+    </tbody>
+  </table>
+</details>
+
+```python
+print("Total number of the non-canonical best mappings:", non_can_re_res.shape[0])
+print("The number of the non-canonical best mappings that without isoform-specific segments in the reference UniProt isoform sequence:", non_can_re_res.iso_range.isnull().sum())
+```
+
+```txt
+Total number of the non-canonical best mappings: 557
+The number of the non-canonical best mappings that without isoform-specific segments in the reference UniProt isoform sequence: 104
+```
+
+```python
+histogram_boxplot(
+    non_can_re_res.unp_iso_range_len/non_can_re_res.iso_range_len,
+    kde=False, 
+    xlabel="ratio",
+    title="Distribution of the ratio of the mapped iso-specific segments in the PDB Chains")
+```
+
+{{< figure library="true" src="best_iso_non_can_mapped_iso_ratio.svg" title="Distribution of the ratio of the mapped iso-specific segments in the PDB Chains" >}}
+
