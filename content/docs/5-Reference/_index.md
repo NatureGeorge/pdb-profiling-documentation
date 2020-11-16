@@ -86,10 +86,10 @@ from pdb_profiling.processors import Identifier, Identifiers
 from pdb_profiling.processors import PDBeModelServer, PDBArchive, PDBVersioned
 ```
 
-### UniProtFASTA, ProteinsAPI, EnsemblAPI, EutilsAPI, SMR
+### UniProts, UniProtFASTA, ProteinsAPI, EnsemblAPI, EutilsAPI, SMR
 
 ```python
-from pdb_profiling.processors import UniProtFASTA, ProteinsAPI, EnsemblAPI, EutilsAPI, SMR
+from pdb_profiling.processors import UniProts, UniProtFASTA, ProteinsAPI, EnsemblAPI, EutilsAPI, SMR
 ```
 
 ### Interactome3D

@@ -1571,7 +1571,7 @@ We can find that most of the mappings are Safe except some InDel cases.
 ```python
 import matplotlib.pyplot as plt
 import seaborn as sns
-sns.set_style('darkgrid')
+sns.set_style('whitegrid')
 
 sns.distplot(re_res.identity, rug=True)
 ```
@@ -1592,7 +1592,7 @@ top       True
 freq      8385
 ```
 
-We can see that most of the PDB Chains are best-mapped to the canonical isoform while still have considerable amount of mappings are best-mapped to non-canonical isoforms.
+We can see that most of the PDB Chains are best-mapped to the canonical isoform while still have a not-to-be-ignored amount of mappings are best-mapped to non-canonical isoforms.
 
 ```python
 non_can_re_res = re_res[is_canonical.eq(False)]
@@ -1876,7 +1876,7 @@ Counter({False: 556, True: 1})
 
 {{< figure library="true" src="best_iso_non_can_identity.svg" title="Distribution of the identity between the best mapped isoform and the PDB Chain" >}}
 
-To explore of the UniProt-isoform-specific segments as mentioned above and their mapping situations in this isoform-specific entities, we can calculate the overlapping ratio of the isoform-specific segments in the coverage segments of these entities.
+To explore of the UniProt-isoform-specific segments as mentioned above and their mapping situations in these isoform-specific entities, we can calculate the overlapping ratio of the isoform-specific segments in the coverage segments of these entities.
 
 ```python
 from pdb_profiling.processors import Identifiers
