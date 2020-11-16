@@ -936,7 +936,7 @@ In the aspect of PDB Entity, we can also find that there are also some isoform-s
 Use the following script to achieve this goal:
 
 <details>
-  <summary>click to view demo_pdb id set</summary>
+  <summary>Click to view demo_pdb id set</summary>
   
   ```python
       ['6k1k', '4h9p', '3aze', '4yyk', '4qut', '5y0d', '4u9w', '6a5o',
@@ -1566,6 +1566,8 @@ Counter({False: 8928, True: 14})
 Counter({False: 8917, True: 25})
 ```
 
+We can find that most of the mappings are Safe except some InDel cases.
+
 ```python
 import matplotlib.pyplot as plt
 import seaborn as sns
@@ -1575,6 +1577,8 @@ sns.distplot(re_res.identity, rug=True)
 ```
 
 {{< figure library="true" src="best_iso_all_identity.svg" title="Distribution of the identity between the best mapped isoform and the PDB Chain" >}}
+
+And most of the mapping-identity are high enough.
 
 ```python
 is_canonical = re_res.UniProt.apply(lambda x: '-' not in x)
@@ -1587,6 +1591,8 @@ unique       2
 top       True
 freq      8385
 ```
+
+We can see that most of the PDB Chains are best-mapped to the canonical isoform while still have considerable amount of mappings are best-mapped to non-canonical isoforms.
 
 ```python
 non_can_re_res = re_res[is_canonical.eq(False)]
@@ -1870,7 +1876,10 @@ Counter({False: 556, True: 1})
 
 {{< figure library="true" src="best_iso_non_can_identity.svg" title="Distribution of the identity between the best mapped isoform and the PDB Chain" >}}
 
+To explore of the UniProt-isoform-specific segments as mentioned above and their mapping situations in this isoform-specific entities, we can calculate the overlapping ratio of the isoform-specific segments in the coverage segments of these entities.
+
 ```python
+from pdb_profiling.processors import Identifiers
 from pdb_profiling.utils import overlap_range, range_len, a_concat
 
 alt_df = Identifiers(non_can_re_res.Entry.unique()).query_from_DB_with_unps('ALTERNATIVE_PRODUCTS').run(tqdm).then(a_concat).result()
@@ -2179,6 +2188,9 @@ non_can_re_res
   </table>
 </details>
 
+* `unp_iso_range`: the overlapping isoform-specific ranges/intervals/segments in the PDB Chain's coverage segments(`new_unp_range`) of that mapping
+* `unp_iso_range_len`: the length of `unp_iso_range`
+
 ```python
 print("Total number of the non-canonical best mappings:", non_can_re_res.shape[0])
 print("The number of the non-canonical best mappings that without isoform-specific segments in the reference UniProt isoform sequence:", non_can_re_res.iso_range.isnull().sum())
@@ -2189,13 +2201,31 @@ Total number of the non-canonical best mappings: 557
 The number of the non-canonical best mappings that without isoform-specific segments in the reference UniProt isoform sequence: 104
 ```
 
+We can find that among the 557 isoform-specific mappings, there are 453 mappings might cover the UniProt-isoform-specific segments. And to explore the mapped ratio of these 453 mappings, we can use the following script to get the distribution of the ratio.
+
 ```python
 histogram_boxplot(
     non_can_re_res.unp_iso_range_len/non_can_re_res.iso_range_len,
-    kde=False, 
+    kde=False,
     xlabel="ratio",
     title="Distribution of the ratio of the mapped iso-specific segments in the PDB Chains")
 ```
 
 {{< figure library="true" src="best_iso_non_can_mapped_iso_ratio.svg" title="Distribution of the ratio of the mapped iso-specific segments in the PDB Chains" >}}
 
+```python
+{'count': 453.0,
+ 'mean': 0.32208247546675994,
+ 'std': 0.18217533589183843,
+ 'min': 0.0,
+ '25%': 0.25925925925925924,
+ '50%': 0.2962962962962963,
+ '75%': 0.2962962962962963,
+ 'max': 1.0}
+```
+
+We can find that most of the PDB Chains cover a significant portion (around 30%) of the UniProt-isoform-specific segments.
+
+---
+
+In summary, it is vital to consider isoform mapping in the process of mapping transcript and mapping PDB structures.
