@@ -57,10 +57,10 @@ from pdb_profiling.processors import PDBs, SIFTSs
 from pdb_profiling.processors import Identifier, Identifiers
 ```
 
-## PDBeModelServer, PDBArchive, PDBVersioned
+## PDBeModelServer, PDBeCoordinateServer, PDBArchive, PDBVersioned
 
 ```python
-from pdb_profiling.processors import PDBeModelServer, PDBArchive, PDBVersioned
+from pdb_profiling.processors import PDBeModelServer, PDBeCoordinateServer, PDBArchive, PDBVersioned
 ```
 
 ## UniProts, UniProtFASTA, ProteinsAPI, EnsemblAPI, EutilsAPI, SMR

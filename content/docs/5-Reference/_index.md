@@ -27,13 +27,14 @@ authors:
 * ModelServer API (A successor of the CoordinateServer)
   * `PDBe`: <https://www.ebi.ac.uk/pdbe/model-server/>
   * `RCSB`: <https://models.rcsb.org/> (NOTE: Its' update frequency may fall behind the PDBe's.)
-* 🚧PDBe CoordinateServer API
+* PDBe CoordinateServer API
   * <https://www.ebi.ac.uk/pdbe/coordinates/index.html>
   * <https://cs.litemol.org/>
 * 🚧PDBe DensityServer API
   * <https://ds.litemol.org/>
 * 🚧PDBe VolumeServer API
-  * <https://www.ebi.ac.uk/pdbe/volume-server/>
+  * `PDBe`: <https://www.ebi.ac.uk/pdbe/volume-server/>
+  * `RCSB`: <https://maps.rcsb.org/>
 * SWISS-MODEL Repository API
   * <https://swissmodel.expasy.org/docs/smr_openapi>
 * EBI Proteins API
@@ -80,10 +81,10 @@ from pdb_profiling.processors import PDBs, SIFTSs
 from pdb_profiling.processors import Identifier, Identifiers
 ```
 
-### PDBeModelServer, PDBArchive, PDBVersioned
+### PDBeModelServer, PDBeCoordinateServer, PDBArchive, PDBVersioned
 
 ```python
-from pdb_profiling.processors import PDBeModelServer, PDBArchive, PDBVersioned
+from pdb_profiling.processors import PDBeModelServer, PDBeCoordinateServer, PDBArchive, PDBVersioned
 ```
 
 ### UniProts, UniProtFASTA, ProteinsAPI, EnsemblAPI, EutilsAPI, SMR

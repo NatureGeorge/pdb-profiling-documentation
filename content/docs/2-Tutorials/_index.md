@@ -14404,8 +14404,10 @@ df5
 {{% /callout %}}
 
 ```python
-df1 = SIFTS('P00734').pipe_select_mo().result()
-record = df1[df1.pdb_id.eq('3sqh')].iloc[0]  # df1[df1.select_tag.eq(True)].iloc[0]
+# df1 = SIFTS('P00734').pipe_select_mo().result()
+# record = df1[df1.pdb_id.eq('3sqh')].iloc[0]  # df1[df1.select_tag.eq(True)].iloc[0]
+df_3sqh, _, _ = SIFTS('3sqh').pipe_score().result()
+record = df_3sqh.iloc[0]
 record
 '''
 UniProt                                      P00734
