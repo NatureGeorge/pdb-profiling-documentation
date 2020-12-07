@@ -108,7 +108,7 @@ from pdb_profiling.processors import PDB
 ```python
 pdb_object = PDB('3hl2')
 
-dfrm = pdb_object.fetch_from_web_api('api/pdb/entry/molecules/', PDB.to_dataframe).result()
+dfrm = pdb_object.fetch_from_pdbe_api('api/pdb/entry/molecules/', PDB.to_dataframe).result()
 ```
 
 <details>
@@ -271,7 +271,7 @@ dfrm = pdb_object.fetch_from_web_api('api/pdb/entry/molecules/', PDB.to_datafram
 也可通过不传入其他参数而直接获取文件路径:
 
 ```python
-pdb_object.fetch_from_web_api('api/pdb/entry/molecules/').result()
+pdb_object.fetch_from_pdbe_api('api/pdb/entry/molecules/').result()
 # >>> WindowsPath('./api/pdb/entry/molecules/api%pdb%entry%molecules%+3hl2.tsv')
 ```
 
@@ -395,7 +395,7 @@ pdb_objects = PDBs(['1a01', '2xyn', '3hl2', '4hho'])
 
 ```python
 res = pdb_objects.fetch(
-    'fetch_from_web_api', 
+    'fetch_from_pdbe_api', 
     api_suffix='api/pdb/entry/summary/', 
     then_func=PDB.to_dataframe).run().result()
 ```
@@ -599,7 +599,7 @@ sifts_from_unp_demo = SIFTS('Q5VST9')  # <SIFTS UniProt Q5VST9>
 下面展示利用`SIFTS API`获取目标PDB对应的所有蛋白链已知的对应UniProt Isoform信息:
 
 ```python
-sifts_from_pdb_demo.fetch_from_web_api('api/mappings/all_isoforms/', SIFTS.to_dataframe).result()
+sifts_from_pdb_demo.fetch_from_pdbe_api('api/mappings/all_isoforms/', SIFTS.to_dataframe).result()
 ```
 
 <details>
@@ -708,7 +708,7 @@ sifts_from_pdb_demo.fetch_from_web_api('api/mappings/all_isoforms/', SIFTS.to_da
 利用`SIFTS API`获取目标UniPRot Isoform对应的所有PDB链信息也是同理:
 
 ```python
-sifts_from_unp_demo.fetch_from_web_api('api/mappings/all_isoforms/', SIFTS.to_dataframe).result()
+sifts_from_unp_demo.fetch_from_pdbe_api('api/mappings/all_isoforms/', SIFTS.to_dataframe).result()
 ```
 
 <details>
@@ -1300,7 +1300,7 @@ sifts_from_unp_demo.fetch_from_web_api('api/mappings/all_isoforms/', SIFTS.to_da
 对于SIFTS中提供的信息，`pdb-profiling`还可进行后续的匹配区域修正和InDel segment、repeated segment、reversed segment以及conflict segment的检测:
 
 ```python
-SIFTS('P21359-2').fetch_from_web_api('api/mappings/all_isoforms/', SIFTS.to_dataframe
+SIFTS('P21359-2').fetch_from_pdbe_api('api/mappings/all_isoforms/', SIFTS.to_dataframe
     ).then(SIFTS.reformat
     ).then(SIFTS.dealWithInDel
     ).then(SIFTS.fix_range
@@ -1730,7 +1730,7 @@ SIFTS('P21359-2').fetch_from_web_api('api/mappings/all_isoforms/', SIFTS.to_data
 同样，`pdb-profling`也提供了`SIFTSs`类供用户批量检索`SIFTS API`相关数据。
 
 ```python
-SIFTSs(('P21359', 'Q5VST9', 'P21359-5')).fetch('fetch_from_web_api', api_suffix='api/mappings/all_isoforms/', then_func=SIFTS.to_dataframe).run().result()
+SIFTSs(('P21359', 'Q5VST9', 'P21359-5')).fetch('fetch_from_pdbe_api', api_suffix='api/mappings/all_isoforms/', then_func=SIFTS.to_dataframe).run().result()
 ```
 
 ### 对SIFTS匹配关系进行打分

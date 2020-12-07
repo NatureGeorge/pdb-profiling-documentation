@@ -1280,7 +1280,7 @@ from pandas import concat
 from tqdm import tqdm
 
 res = SIFTSs(demo_pdbs).fetch(
-  'fetch_from_web_api',
+  'fetch_from_pdbe_api',
   api_suffix='api/mappings/isoforms/',
   then_func=SIFTS.to_dataframe).run(tqdm).result()
 

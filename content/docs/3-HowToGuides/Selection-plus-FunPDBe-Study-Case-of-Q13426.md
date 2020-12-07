@@ -1271,7 +1271,7 @@ pdb_ob
 
 
 ```python
-funpdbe_df = pdb_ob.fetch_from_web_api('graph-api/pdb/funpdbe_annotation/', Base.to_dataframe).result()
+funpdbe_df = pdb_ob.fetch_from_pdbe_api('graph-api/pdb/funpdbe_annotation/', Base.to_dataframe).result()
 funpdbe_df[funpdbe_df.chain_id.eq(record['chain_id'])]
 ```
 
@@ -1536,7 +1536,7 @@ Structure Integration with Function, Taxonomy and Sequence (SIFTS) is a project 
 
 
 ```python
-pdb_ob.fetch_from_web_api('api/mappings/interpro/', Base.to_dataframe).result().query('chain_id == "{}"'.format(record['chain_id']))
+pdb_ob.fetch_from_pdbe_api('api/mappings/interpro/', Base.to_dataframe).result().query('chain_id == "{}"'.format(record['chain_id']))
 ```
 
 
@@ -1616,7 +1616,7 @@ pdb_ob.fetch_from_web_api('api/mappings/interpro/', Base.to_dataframe).result().
 
 
 ```python
-pdb_ob.fetch_from_web_api('api/mappings/pfam/', Base.to_dataframe).result().query('chain_id == "{}"'.format(record['chain_id']))
+pdb_ob.fetch_from_pdbe_api('api/mappings/pfam/', Base.to_dataframe).result().query('chain_id == "{}"'.format(record['chain_id']))
 ```
 
 
@@ -1662,7 +1662,7 @@ pdb_ob.fetch_from_web_api('api/mappings/pfam/', Base.to_dataframe).result().quer
 
 
 ```python
-pdb_ob.fetch_from_web_api('api/mappings/structural_domains/', Base.to_dataframe).result().query('chain_id == "{}"'.format(record['chain_id']))
+pdb_ob.fetch_from_pdbe_api('api/mappings/structural_domains/', Base.to_dataframe).result().query('chain_id == "{}"'.format(record['chain_id']))
 ```
 
 
@@ -1748,7 +1748,7 @@ pdb_ob.fetch_from_web_api('api/mappings/structural_domains/', Base.to_dataframe)
 
 
 ```python
-pdb_ob.fetch_from_web_api('api/mappings/cath_b/', Base.to_dataframe).result().query('chain_id == "{}"'.format(record['chain_id']))
+pdb_ob.fetch_from_pdbe_api('api/mappings/cath_b/', Base.to_dataframe).result().query('chain_id == "{}"'.format(record['chain_id']))
 ```
 
 
@@ -1834,7 +1834,7 @@ pdb_ob.fetch_from_web_api('api/mappings/cath_b/', Base.to_dataframe).result().qu
 
 
 ```python
-pdb_ob.fetch_from_web_api('api/mappings/go/', Base.to_dataframe).result().query('chain_id == "{}"'.format(record['chain_id']))
+pdb_ob.fetch_from_pdbe_api('api/mappings/go/', Base.to_dataframe).result().query('chain_id == "{}"'.format(record['chain_id']))
 ```
 
 
@@ -1926,7 +1926,7 @@ pdb_ob.fetch_from_web_api('api/mappings/go/', Base.to_dataframe).result().query(
 
 
 ```python
-pdb_ob.fetch_from_web_api('api/mappings/ec/', Base.to_dataframe).result().query('chain_id == "{}"'.format(record['chain_id']))
+pdb_ob.fetch_from_pdbe_api('api/mappings/ec/', Base.to_dataframe).result().query('chain_id == "{}"'.format(record['chain_id']))
 ```
 
 
@@ -1971,7 +1971,7 @@ pdb_ob.fetch_from_web_api('api/mappings/ec/', Base.to_dataframe).result().query(
 
 
 ```python
-pdb_ob.fetch_from_web_api('api/mappings/hmmer/', Base.to_dataframe).result().query('chain_id == "{}"'.format(record['chain_id']))
+pdb_ob.fetch_from_pdbe_api('api/mappings/hmmer/', Base.to_dataframe).result().query('chain_id == "{}"'.format(record['chain_id']))
 ```
 
 
@@ -2037,7 +2037,7 @@ pdb_ob.fetch_from_web_api('api/mappings/hmmer/', Base.to_dataframe).result().que
 
 
 ```python
-pdb_ob.fetch_from_web_api('api/pdb/entry/secondary_structure/', Base.to_dataframe).result().query('chain_id == "{}"'.format(record['chain_id']))
+pdb_ob.fetch_from_pdbe_api('api/pdb/entry/secondary_structure/', Base.to_dataframe).result().query('chain_id == "{}"'.format(record['chain_id']))
 ```
 
 
@@ -2212,7 +2212,7 @@ pdb_ob.fetch_from_web_api('api/pdb/entry/secondary_structure/', Base.to_datafram
 
 
 ```python
-seq_conser_df = pdb_ob.fetch_from_web_api(
+seq_conser_df = pdb_ob.fetch_from_pdbe_api(
     'graph-api/pdb/sequence_conservation/', 
     Base.to_dataframe, 
     mask_id="%s/%s" % (record['pdb_id'], record['entity_id'])

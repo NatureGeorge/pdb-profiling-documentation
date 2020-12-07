@@ -22,6 +22,7 @@ authors:
   * <https://www.ebi.ac.uk/pdbe/api/doc/pdb.html>
   * <https://www.ebi.ac.uk/pdbe/api/doc/pisa.html>
   * <https://www.ebi.ac.uk/pdbe/api/doc/sifts.html>
+  * 🚧PDBe search service <https://www.ebi.ac.uk/pdbe/api/doc/search.html>
 * PDBe Graph API (Neo4j Graph DataBase)
   * <https://www.ebi.ac.uk/pdbe/graph-api/pdbe_doc/>
 * ModelServer API (A successor of the CoordinateServer)
@@ -54,6 +55,11 @@ authors:
   * wwPDB&RCSB: <https://ftp.wwpdb.org/pub/pdb/data/structures/>
   * EBI: <http://ftp.ebi.ac.uk/pub/databases/pdb/data/structures/>
   * wwPDB Versioned: <http://ftp-versioned.wwpdb.org/pdb_versioned/data/entries/>
+* RCSB Data API
+  * <https://data.rcsb.org/>
+  * both RESTful API & GraphQL API
+* 🚧RCSB Search API
+  * <http://search.rcsb.org/>
 
 ## Package Method API Reference
 
