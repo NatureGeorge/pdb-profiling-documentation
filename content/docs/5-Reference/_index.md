@@ -60,7 +60,8 @@ authors:
   * both RESTful API & GraphQL API
 * 🚧RCSB Search API
   * <http://search.rcsb.org/>
-
+* 🚧RCSB PDB 1D Coordinate Server API
+  * <https://1d-coordinates.rcsb.org/>
 ## Package Method API Reference
 
 ### Base, Compounds, PDB, SIFTS

@@ -15,24 +15,6 @@ height = ""
 
 # Slides.
 # Duplicate an `[[item]]` block to add more slides.
-[[item]]
-  title = "Want to perform batch retrieval of metadata from PDBe RESTful API?"
-  content = "The **P**rotein **D**ata **B**ank is regarded as one of the most valuable resources in bioinformatics researches but requires huge storage to scan through a large amount of PDB entries. The [RESTful services](https://www.ebi.ac.uk/pdbe/pdbe-rest-api) provided by EBI save users' life by providing different API calls that focus on a different aspect of relevant information like data scheme, experimental details, and so on."
-  align = "center"  # Choose `center`, `left`, or `right`.
-
-  # Overlay a color or image (optional).
-  #   Deactivate an option by commenting out the line, prefixing it with `#`.
-  overlay_color = "#333"  # An HTML color value.
-  overlay_img = "api_webinars_promo.png"  # Image path relative to your `static/media/` folder.
-  overlay_filter = 0.8  # Darken the image. Value in range 0-1.
-
-  # Call to action button (optional).
-  #   Activate the button by specifying a URL and button label below.
-  #   Deactivate by commenting out parameters, prefixing lines with `#`.
-  cta_label = "Learn more"
-  cta_url = "https://pdbeurope.github.io/api-webinars/"
-  cta_icon_pack = "fas"
-  cta_icon = "book"
   
 [[item]]
   title = "What is the representative set of my target proteins?"
@@ -60,5 +42,24 @@ height = ""
   overlay_color = "#333"  # An HTML color value.
   overlay_img = "genome2pdb.drawio.svg"  # Image path relative to your `static/media/` folder.
   overlay_filter = 0.75  # Darken the image. Value in range 0-1.
+
+[[item]]
+  title = "Want to perform batch retrieval of metadata from PDBe RESTful API?"
+  content = "The **P**rotein **D**ata **B**ank is regarded as one of the most valuable resources in bioinformatics researches but requires huge storage to scan through a large amount of PDB entries. The [RESTful services](https://www.ebi.ac.uk/pdbe/pdbe-rest-api) provided by EBI save users' life by providing different API calls that focus on a different aspect of relevant information like data scheme, experimental details, and so on."
+  align = "center"  # Choose `center`, `left`, or `right`.
+
+  # Overlay a color or image (optional).
+  #   Deactivate an option by commenting out the line, prefixing it with `#`.
+  overlay_color = "#333"  # An HTML color value.
+  overlay_img = "api_webinars_promo.png"  # Image path relative to your `static/media/` folder.
+  overlay_filter = 0.8  # Darken the image. Value in range 0-1.
+
+  # Call to action button (optional).
+  #   Activate the button by specifying a URL and button label below.
+  #   Deactivate by commenting out parameters, prefixing lines with `#`.
+  cta_label = "Learn more"
+  cta_url = "https://pdbeurope.github.io/api-webinars/"
+  cta_icon_pack = "fas"
+  cta_icon = "book"
 
 +++
