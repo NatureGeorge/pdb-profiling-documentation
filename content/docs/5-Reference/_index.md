@@ -58,7 +58,7 @@ authors:
 * RCSB Data API
   * <https://data.rcsb.org/>
   * both RESTful API & GraphQL API
-* 🚧RCSB Search API
+* RCSB Search API
   * <http://search.rcsb.org/>
 * 🚧RCSB PDB 1D Coordinate Server API
   * <https://1d-coordinates.rcsb.org/>
