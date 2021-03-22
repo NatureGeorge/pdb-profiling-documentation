@@ -8,6 +8,240 @@ authors:
   - admin
 ---
 
+## Folder Tree
+
+To starts with, you need to choose a folder as the output dir of PDB-Profiling. The current path would be the default arg and you don't have to specify `--folder` arg if you intend to use the current path. 
+
+```bash
+# The following commands are not required to run in your actual task.
+# They are just to show the sub-folders and files that the `pdb_profiling` command would create if not exist.
+pdb_profiling --folder $your_output_folder init # or just: pdb_profiling init
+tree $your_output_folder
+```
+
+```bash
+pdb_profiling init
+```
+
+<details>
+<summary>Click to view tree</summary>
+
+```tree
+.
+├── api
+│   ├── mappings
+│   │   ├── all_isoforms
+│   │   ├── best_structures
+│   │   ├── cath
+│   │   ├── cath_b
+│   │   ├── ec
+│   │   ├── ensembl
+│   │   ├── go
+│   │   ├── hmmer
+│   │   ├── homologene
+│   │   ├── homologene_uniref90
+│   │   ├── interpro
+│   │   ├── isoforms
+│   │   ├── pfam
+│   │   ├── scop
+│   │   ├── sequence_domains
+│   │   ├── structural_domains
+│   │   ├── uniprot
+│   │   ├── uniprot_publications
+│   │   ├── uniprot_segments
+│   │   ├── uniprot_to_pfam
+│   │   └── uniref90
+│   ├── nucleic_mappings
+│   │   ├── rfam
+│   │   └── sequence_domains
+│   ├── pdb
+│   │   └── entry
+│   │       ├── assembly
+│   │       ├── binding_sites
+│   │       ├── carbohydrate_polymer
+│   │       ├── cofactor
+│   │       ├── drugbank
+│   │       ├── electron_density_statistics
+│   │       ├── entities
+│   │       ├── experiment
+│   │       ├── files
+│   │       ├── ligand_monomers
+│   │       ├── modified_AA_or_NA
+│   │       ├── molecules
+│   │       ├── mutated_AA_or_NA
+│   │       ├── observed_residues_ratio
+│   │       ├── polymer_coverage
+│   │       ├── related_experiment_data
+│   │       ├── residue_listing
+│   │       ├── secondary_structure
+│   │       ├── status
+│   │       └── summary
+│   ├── pisa
+│   │   ├── asiscomponent
+│   │   ├── interfacedetail
+│   │   └── interfacelist
+│   └── validation
+│       ├── global-percentiles
+│       │   └── entry
+│       ├── key_validation_stats
+│       │   └── entry
+│       ├── nmr_cyrange_cores
+│       │   └── entry
+│       ├── nmr_ensemble_clustering
+│       │   └── entry
+│       ├── outliers
+│       │   └── all
+│       ├── protein-ramachandran-sidechain-outliers
+│       │   └── entry
+│       ├── protein-RNA-DNA-geometry-outlier-residues
+│       │   └── entry
+│       ├── rama_sidechain_listing
+│       │   └── entry
+│       ├── residuewise_outlier_summary
+│       │   └── entry
+│       ├── RNA_pucker_suite_outliers
+│       │   └── entry
+│       ├── summary_quality_scores
+│       │   └── entry
+│       ├── vdw_clashes
+│       │   └── entry
+│       └── xray_refine_data_stats
+│           └── entry
+├── coordinate-server
+│   ├── ambientResidues
+│   ├── assembly
+│   ├── backbone
+│   ├── cartoon
+│   ├── chainsentities
+│   ├── full
+│   ├── het
+│   ├── ligandInteraction
+│   ├── residueRange
+│   ├── residues
+│   ├── sidechain
+│   ├── symmetryMates
+│   ├── trace
+│   └── water
+├── data_rcsb
+│   ├── assembly
+│   ├── branched_entity
+│   ├── branched_entity_instance
+│   ├── entry
+│   ├── graphql
+│   ├── nonpolymer_entity
+│   │   └── polymer_entity_instance
+│   ├── nonpolymer_entity_instance
+│   ├── polymer_entity
+│   └── search
+├── ensembl
+│   ├── archive
+│   │   └── id
+│   └── sequence
+│       └── id
+├── eutils
+│   └── efetch
+├── graph-api
+│   ├── compound
+│   │   ├── atoms
+│   │   ├── bonds
+│   │   ├── cofactors
+│   │   └── summary
+│   ├── mappings
+│   │   ├── all_isoforms
+│   │   ├── best_structures
+│   │   ├── ensembl
+│   │   ├── homologene
+│   │   ├── isoforms
+│   │   ├── sequence_domains
+│   │   ├── uniprot
+│   │   └── uniprot_segments
+│   ├── pdb
+│   │   ├── bound_excluding_branched
+│   │   ├── bound_molecule_interactions
+│   │   ├── bound_molecules
+│   │   ├── funpdbe
+│   │   ├── funpdbe_annotation
+│   │   │   ├── 14-3-3-pred
+│   │   │   ├── 3Dcomplex
+│   │   │   ├── 3dligandsite
+│   │   │   ├── akid
+│   │   │   ├── camkinet
+│   │   │   ├── canSAR
+│   │   │   ├── cath-funsites
+│   │   │   ├── ChannelsDB
+│   │   │   ├── depth
+│   │   │   ├── dynamine
+│   │   │   ├── FoldX
+│   │   │   ├── M-CSA
+│   │   │   ├── MetalPDB
+│   │   │   ├── Missense3D
+│   │   │   ├── p2rank
+│   │   │   ├── POPScomp_PDBML
+│   │   │   └── ProKinO
+│   │   ├── ligand_monomers
+│   │   ├── modified_AA_or_NA
+│   │   ├── mutated_AA_or_NA
+│   │   ├── secondary_structure
+│   │   └── sequence_conservation
+│   ├── pdbe_pages
+│   │   ├── annotations
+│   │   ├── binding_sites
+│   │   ├── domains
+│   │   ├── interfaces
+│   │   ├── rfam
+│   │   ├── secondary_structure
+│   │   └── uniprot_mapping
+│   ├── residue_mapping
+│   └── uniprot
+│       ├── annotations
+│       ├── domains
+│       ├── interface_residues
+│       ├── ligand_sites
+│       ├── secondary_structures
+│       ├── sequence_conservation
+│       └── unipdb
+├── interactome3d
+│   └── split
+├── local_db
+│   ├── custom.db
+│   ├── I3DDB.db
+│   ├── PDBeDB.db
+│   ├── proteinsAPI.db
+│   ├── RCSBDB.db
+│   └── uniprot.db
+├── model-server
+│   ├── assembly
+│   ├── atoms
+│   ├── full
+│   ├── ligandresidueSurroundings
+│   ├── query-many
+│   ├── residueInteraction
+│   └── symmetryMates
+├── pdb
+│   └── data
+│       └── structures
+│           ├── divided
+│           │   ├── mmCIF
+│           │   ├── pdb
+│           │   └── XML
+│           └── obsolete
+│               ├── mmCIF
+│               ├── pdb
+│               └── XML
+├── pdbe_assembly_cif
+├── proteins
+│   └── api
+│       └── proteins
+├── swissmodel
+│   └── repository
+│       └── uniprot
+└── UniProt
+    ├── fasta
+    └── uploadlists
+```
+
+</details>
+
 ## Map from transcript/protein identifier to UniProt Isoform
 
 > for canonical isoform, the isoform suffix would be dropped
