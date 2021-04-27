@@ -19,10 +19,6 @@ pdb_profiling --folder $your_output_folder init # or just: pdb_profiling init
 tree $your_output_folder
 ```
 
-```bash
-pdb_profiling init
-```
-
 <details>
 <summary>Click to view tree</summary>
 
@@ -129,9 +125,9 @@ pdb_profiling init
 │   ├── entry
 │   ├── graphql
 │   ├── nonpolymer_entity
-│   │   └── polymer_entity_instance
 │   ├── nonpolymer_entity_instance
 │   ├── polymer_entity
+│   ├── polymer_entity_instance
 │   └── search
 ├── ensembl
 │   ├── archive

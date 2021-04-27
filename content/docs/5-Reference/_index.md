@@ -60,8 +60,9 @@ authors:
   * both RESTful API & GraphQL API
 * RCSB Search API
   * <http://search.rcsb.org/>
-* 🚧RCSB PDB 1D Coordinate Server API
+* RCSB PDB 1D Coordinate Server API
   * <https://1d-coordinates.rcsb.org/>
+
 ## Package Method API Reference
 
 ### Base, Compounds, PDB, SIFTS
@@ -70,10 +71,10 @@ authors:
 from pdb_profiling.processors import Base, Compounds, PDB, SIFTS
 ```
 
-### PDBAssemble, PDBInterface
+### PDBAssembly, PDBInterface
 
 ```python
-from pdb_profiling.processors import PDBAssemble, PDBInterface
+from pdb_profiling.processors import PDBAssembly, PDBInterface
 ```
 
 ### PDBs, SIFTSs

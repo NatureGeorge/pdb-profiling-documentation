@@ -39,10 +39,10 @@ from pdb_profiling.processors import Base, Compounds, PDB, SIFTS
 
 ```
 
-## PDBAssemble, PDBInterface
+## PDBAssembly, PDBInterface
 
 ```python
-from pdb_profiling.processors import PDBAssemble, PDBInterface
+from pdb_profiling.processors import PDBAssembly, PDBInterface
 ```
 
 ## PDBs, SIFTSs

@@ -2605,24 +2605,24 @@ pdb_object.profile_id().result()
 
 #### Assembly
 
-`pdb-profiling`依照面对对象编程的思想，也提供了Assembly的相应类`PDBAssemble`，可通过如下方式获取到PDB的相关Biological Assembly:
+`pdb-profiling`依照面对对象编程的思想，也提供了Assembly的相应类`PDBAssembly`，可通过如下方式获取到PDB的相关Biological Assembly:
 
 ```python
 pdb_object.set_assembly().result()
 assemblies = pdb_object.assembly
 '''
 >>> assemblies  # Note a python dictionary
->>> {0: <PDBAssemble 3hl2/0>, 1: <PDBAssemble 3hl2/1>, 2: <PDBAssemble 3hl2/2>}
+>>> {0: <PDBAssembly 3hl2/0>, 1: <PDBAssembly 3hl2/1>, 2: <PDBAssembly 3hl2/2>}
 '''
 ```
 
 如若事先知道PDB条目的某一Assembly的编号，也可通过下面的方式获得对应对象:
 
 ```python
-from pdb_profiling.processors import PDBAssemble
+from pdb_profiling.processors import PDBAssembly
 
-pdb_assembly_object = PDBAssemble('3hl2/1')
-pdb_assembly_object.assemble_summary
+pdb_assembly_object = PDBAssembly('3hl2/1')
+pdb_assembly_object.Assembly_summary
 '''
 {'preferred': True, 'form': 'hetero', 'name': 'pentamer', 'assembly_id': '1'}
 '''
@@ -2632,7 +2632,7 @@ pdb_assembly_object.assemble_summary
 
 > 整合PDBe PISA API 资源
 
-对于PISA资源中定义的Interface，`pdb-profiling`也提供了Interface的相应类`PDBInterface`，可通过如下方式获取到PDBAssemble的相关Interface:
+对于PISA资源中定义的Interface，`pdb-profiling`也提供了Interface的相应类`PDBInterface`，可通过如下方式获取到PDBAssembly的相关Interface:
 
 ```python
 pdb_assembly_object = assemblies[1]

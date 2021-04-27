@@ -23,7 +23,7 @@ subtitle = "Provides a convenient solution for data collection and processing of
 [[feature]]
   icon = "object-ungroup"
   icon_pack = "fas"
-  name = "Compatibility"
+  name = "Integration"
   description = "Provide a unified call for API-interface and return-data-form as well as subsequent data processing."
 
 [[feature]]
