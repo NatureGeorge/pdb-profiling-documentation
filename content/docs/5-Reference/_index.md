@@ -121,6 +121,10 @@ from pdb_profiling.warnings import PISAErrorWarning
 
 ## Column Name Reference
 
+### Terminology in PDB
+
+* <https://www.wwpdb.org/documentation/procedure>
+
 ### Defined by `PDBe`
 
 * `pdb_id`: PDB Entry ID

@@ -14,7 +14,7 @@ authors:
   - admin
 ---
 
-## `RAW_BS` Score
+## `bs-score` Score
 
 This section explains how does `pdb-profiling` define a weighted score that measure the correspondence between the UniProt Isoform and the PDB chain instance (apo-state) in the sequence-level.
 
@@ -43,7 +43,6 @@ This section explains:
 ## Selection Algorithm
 
 This section explains the greedy algorithm that `pdb-profiling` implements to yield a non-redundant set of coverage ranges, which can be used to define the representative set of protein structures in different polymer forms.
-
 
 ## Programming Details
 
